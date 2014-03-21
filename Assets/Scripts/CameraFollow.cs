@@ -11,7 +11,7 @@ public class CameraFollow : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		poi = GameObject.Find ("Kirby").transform;
+		poi = GameObject.Find ("Player").transform;
 	}
 	
 	// Update is called once per frame

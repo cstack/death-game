@@ -48,7 +48,7 @@ TextureImporter:
         y: 145
         width: 16
         height: 16
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: kirby_1
       rect:
@@ -57,7 +57,7 @@ TextureImporter:
         y: 145
         width: 15
         height: 15
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: kirby_2
       rect:
@@ -66,7 +66,7 @@ TextureImporter:
         y: 145
         width: 16
         height: 16
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: kirby_3
       rect:
@@ -75,7 +75,7 @@ TextureImporter:
         y: 145
         width: 16
         height: 16
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: kirby_4
       rect:
@@ -84,7 +84,7 @@ TextureImporter:
         y: 145
         width: 15
         height: 15
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: kirby_5
       rect:
@@ -93,7 +93,7 @@ TextureImporter:
         y: 145
         width: 16
         height: 16
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: kirby_6
       rect:
@@ -102,7 +102,7 @@ TextureImporter:
         y: 127
         width: 16
         height: 16
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: kirby_7
       rect:
@@ -111,7 +111,7 @@ TextureImporter:
         y: 127
         width: 16
         height: 16
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: kirby_8
       rect:
@@ -120,7 +120,7 @@ TextureImporter:
         y: 127
         width: 16
         height: 16
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: kirby_9
       rect:
@@ -129,7 +129,7 @@ TextureImporter:
         y: 127
         width: 16
         height: 16
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: kirby_10
       rect:
@@ -138,7 +138,7 @@ TextureImporter:
         y: 109
         width: 16
         height: 16
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: kirby_11
       rect:
@@ -147,7 +147,7 @@ TextureImporter:
         y: 109
         width: 16
         height: 16
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: kirby_12
       rect:
@@ -156,7 +156,7 @@ TextureImporter:
         y: 109
         width: 15
         height: 16
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: kirby_13
       rect:
@@ -165,7 +165,7 @@ TextureImporter:
         y: 109
         width: 16
         height: 16
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: kirby_14
       rect:
@@ -174,7 +174,7 @@ TextureImporter:
         y: 109
         width: 16
         height: 16
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: kirby_15
       rect:
@@ -183,7 +183,7 @@ TextureImporter:
         y: 109
         width: 15
         height: 16
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: kirby_16
       rect:
@@ -192,7 +192,7 @@ TextureImporter:
         y: 109
         width: 16
         height: 16
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: kirby_17
       rect:
@@ -201,7 +201,7 @@ TextureImporter:
         y: 109
         width: 16
         height: 16
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: kirby_18
       rect:
@@ -210,7 +210,7 @@ TextureImporter:
         y: 93
         width: 22
         height: 14
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: kirby_19
       rect:
@@ -219,7 +219,7 @@ TextureImporter:
         y: 93
         width: 16
         height: 9
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: kirby_20
       rect:
@@ -228,7 +228,7 @@ TextureImporter:
         y: 93
         width: 16
         height: 9
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: kirby_21
       rect:
@@ -237,7 +237,7 @@ TextureImporter:
         y: 93
         width: 22
         height: 14
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: kirby_22
       rect:
@@ -246,7 +246,7 @@ TextureImporter:
         y: 69
         width: 16
         height: 22
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: kirby_23
       rect:
@@ -255,7 +255,7 @@ TextureImporter:
         y: 69
         width: 16
         height: 16
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: kirby_24
       rect:
@@ -264,7 +264,7 @@ TextureImporter:
         y: 69
         width: 16
         height: 16
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: kirby_25
       rect:
@@ -273,7 +273,7 @@ TextureImporter:
         y: 69
         width: 16
         height: 22
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: kirby_26
       rect:
@@ -282,7 +282,7 @@ TextureImporter:
         y: 44
         width: 23
         height: 23
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: kirby_27
       rect:
@@ -291,7 +291,7 @@ TextureImporter:
         y: 44
         width: 23
         height: 23
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: kirby_28
       rect:
@@ -300,7 +300,7 @@ TextureImporter:
         y: 44
         width: 23
         height: 23
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: kirby_29
       rect:
@@ -309,7 +309,7 @@ TextureImporter:
         y: 44
         width: 23
         height: 23
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: kirby_30
       rect:
@@ -318,7 +318,7 @@ TextureImporter:
         y: 19
         width: 23
         height: 22
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: kirby_31
       rect:
@@ -327,7 +327,7 @@ TextureImporter:
         y: 19
         width: 22
         height: 23
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: kirby_32
       rect:
@@ -336,7 +336,7 @@ TextureImporter:
         y: 19
         width: 23
         height: 23
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: kirby_33
       rect:
@@ -345,7 +345,7 @@ TextureImporter:
         y: 19
         width: 23
         height: 23
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: kirby_34
       rect:
@@ -354,7 +354,7 @@ TextureImporter:
         y: 19
         width: 22
         height: 23
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: kirby_35
       rect:
@@ -363,7 +363,7 @@ TextureImporter:
         y: 19
         width: 23
         height: 22
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: kirby_36
       rect:
@@ -372,7 +372,7 @@ TextureImporter:
         y: 1
         width: 15
         height: 16
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: kirby_37
       rect:
@@ -381,7 +381,7 @@ TextureImporter:
         y: 1
         width: 15
         height: 16
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
   spritePackingTag: 
   userData: 
