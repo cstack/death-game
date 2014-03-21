@@ -15,5 +15,5 @@ public class CharacterHealth {
 			return false;
 	}
 	
-	private virtual void Die() {}
+	public virtual void Die() {}
 }
