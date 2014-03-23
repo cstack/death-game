@@ -4,6 +4,9 @@ using System.Collections;
 public class PlayerHealth : MonoBehaviour {
 	public int currentHealth;
 	public int maxHealth;
+	public int currentBreath;
+	public int maxBreath;
+	public float breathPercent = 100f;
 	public int current_life_count;
 	public bool invulnerable;
 
@@ -15,6 +18,24 @@ public class PlayerHealth : MonoBehaviour {
 		timer_control = poi.GetComponent<TimerControl>();
 	}
 	
+	public void resetBreath() {
+		currentBreath = maxBreath;
+		breathPercent = (float) currentBreath / maxBreath;
+	}
+	
+	public void decreaseBreath(int amount) {
+		if(currentBreath <= 0) {
+			decreaseHealth (amount);
+		} else {
+			currentBreath -= amount;
+			breathPercent = (float) currentBreath / maxBreath;
+		}
+	}
+	
+	public void resetHealth() {
+		currentHealth = maxHealth;
+	}
+
 	public void increaseHealth(int amount) {
 		currentHealth += amount;
 		checkPossible();

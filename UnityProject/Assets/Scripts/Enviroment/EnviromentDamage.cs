@@ -3,12 +3,40 @@ using System.Collections;
 
 public class EnviromentDamage : MonoBehaviour {
 
-	public float damageAmount = 0.5f;
+	public int damageAmount = 1;
+	public float drownTimer = 0.2f;
 
-	void OnTriggerEnter2D(Collider2D col) {
-		Debug.Log("Player enter");
+	private GameObject plyr;
+	private bool drowning = false;
+	private float drwntime = 0f;
+
+	void Update () {
+		if (drowning && plyr != null) {
+			if (drwntime > 0f) {
+				drwntime -= Time.deltaTime;
+			} else {
+				plyr.SendMessage("decreaseBreath", damageAmount);
+				drwntime = drownTimer;
+			}
+		}
+	}
+	
+	void OnTriggerEnter2D (Collider2D col) {
+		//		Debug.Log("Player enter");
 		if (col.gameObject.tag == "Player") {
-			col.gameObject.SendMessage("TakeDamage", damageAmount);
+			plyr = col.gameObject;
+			drowning = true;
+			drwntime = drownTimer;
+		}
+	}
+
+	void OnTriggerExit2D (Collider2D col) {
+		//		Debug.Log("Player enter");
+		if (col.gameObject.tag == "Player") {
+			if (plyr != null) {
+				drowning = false;
+				plyr.SendMessage ("resetBreath");
+			}
 		}
 	}
 
