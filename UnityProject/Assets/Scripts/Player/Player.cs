@@ -7,6 +7,8 @@ public class Player : CharacterBase {
 	public bool grounded;
 	public float jumpSpeed = 5f;
 
+	private float playerHealth;
+
 	private float speed;
 	private enum IdleOrRunningStates {
 		Idle, Running
@@ -51,5 +53,9 @@ public class Player : CharacterBase {
 				animator.SetBool("grounded", true);
 			}
 		}
+	}
+
+	public void TakeDamage (float dmg) {
+
 	}
 }
