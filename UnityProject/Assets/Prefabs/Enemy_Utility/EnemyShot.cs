@@ -37,12 +37,15 @@ public class EnemyShot : MonoBehaviour {
 		}
 	}
 
-	public void init_shot(bool left){
+	public void init_shot(bool left, Vector2 parent_position){
+		transform.position = parent_position;
 		if(left){
 			rigidbody2D.velocity = new Vector2(-speed, 0);
+			transform.position += new Vector3(-1f, 0, 0);
 		}
 		else {
 			rigidbody2D.velocity = new Vector2(speed, 0);
+			transform.position += new Vector3(1f, 0, 0);
 		}
 	}
 }

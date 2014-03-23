@@ -54,7 +54,6 @@ public class FireEnemy : CharacterBase {
 
 		EnemyShot shot = (EnemyShot)Instantiate(shot_prefab);
 		// assign direction
-		shot.init_shot(dir == Direction.Left);
-		shot.transform.position = new Vector2(transform.position.x, transform.position.y);
+		shot.init_shot(dir == Direction.Left, transform.position);
 	}
 }
