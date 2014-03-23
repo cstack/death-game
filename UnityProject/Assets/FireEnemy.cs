@@ -9,6 +9,8 @@ public class FireEnemy : CharacterBase {
 	private Player player;
 	private float timeOfLastAttack;
 
+	public EnemyShot shot_prefab;
+
 	// Use this for initialization
 	void Start () {
 		player = (GameObject.Find ("Player")).GetComponent<Player>();
@@ -49,5 +51,10 @@ public class FireEnemy : CharacterBase {
 
 	private void Attack() {
 		Debug.Log ("Attack");
+
+		EnemyShot shot = (EnemyShot)Instantiate(shot_prefab);
+		// assign direction
+		shot.init_shot(dir == Direction.Left);
+		shot.transform.position = new Vector2(transform.position.x, transform.position.y);
 	}
 }

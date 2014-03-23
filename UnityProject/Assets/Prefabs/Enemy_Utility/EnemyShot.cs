@@ -4,12 +4,12 @@ using System.Collections;
 public class EnemyShot : MonoBehaviour {
 
 	//private int shotPower = 5;
-	
+	public float speed = 10;
 	public float shotTimerEnd = 1.0f;
 	private float shotTimer = 0;
 	// Use this for initialization
 	void Start () {
-		
+
 	}
 	
 	// Update is called once per frame
@@ -37,4 +37,12 @@ public class EnemyShot : MonoBehaviour {
 		}
 	}
 
+	public void init_shot(bool left){
+		if(left){
+			rigidbody2D.velocity = new Vector2(-speed, 0);
+		}
+		else {
+			rigidbody2D.velocity = new Vector2(speed, 0);
+		}
+	}
 }
