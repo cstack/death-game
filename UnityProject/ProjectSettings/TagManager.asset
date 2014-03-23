@@ -20,11 +20,11 @@ TagManager:
   User Layer 10: 
   User Layer 11: 
   User Layer 12: 
-  User Layer 13: 
+  User Layer 13: Player
   User Layer 14: 
   User Layer 15: 
   User Layer 16: 
-  User Layer 17: 
+  User Layer 17: Enemies
   User Layer 18: 
   User Layer 19: 
   User Layer 20: 
@@ -32,7 +32,7 @@ TagManager:
   User Layer 22: 
   User Layer 23: 
   User Layer 24: 
-  User Layer 25: 
+  User Layer 25: Background
   User Layer 26: 
   User Layer 27: 
   User Layer 28: 
@@ -40,7 +40,11 @@ TagManager:
   User Layer 30: 
   User Layer 31: 
   m_SortingLayers:
-  - name: Default
+  - name: Enemies
+    userID: 0
+    uniqueID: 0
+    locked: 0
+  - name: Backgrounds
     userID: 0
     uniqueID: 0
     locked: 0

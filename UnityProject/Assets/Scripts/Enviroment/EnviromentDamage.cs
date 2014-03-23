@@ -5,10 +5,10 @@ public class EnviromentDamage : MonoBehaviour {
 
 	public float damageAmount = 0.5f;
 
-	void OnTriggerEnter2D(Collider2D other) {
+	void OnTriggerEnter2D(Collider2D col) {
 		Debug.Log("Player enter");
-		if (other.gameObject.tag == "Player") {
-			other.gameObject.SendMessage("TakeDamage", damageAmount);
+		if (col.gameObject.tag == "Player") {
+			col.gameObject.SendMessage("TakeDamage", damageAmount);
 		}
 	}
 
