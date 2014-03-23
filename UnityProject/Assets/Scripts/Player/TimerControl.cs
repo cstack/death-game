@@ -6,6 +6,7 @@ using System.Collections;
 public class TimerControl : MonoBehaviour {
 	// the time you have in this cycle of life
 	public float available_time;
+	public float max_available_time;
 	// the scale of decrease relative to real world time
 	private float decreasing_scale = 1;
 	
@@ -54,5 +55,9 @@ public class TimerControl : MonoBehaviour {
 	
 	public void accelerate_time(float scale){
 		decreasing_scale /= scale;
+	}
+
+	public void restartTimer(){
+		available_time = max_available_time;
 	}
 }

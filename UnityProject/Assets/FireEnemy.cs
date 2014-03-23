@@ -8,6 +8,7 @@ public class FireEnemy : CharacterBase {
 
 	private Player player;
 	private float timeOfLastAttack;
+
 	// Use this for initialization
 	void Start () {
 		player = (GameObject.Find ("Player")).GetComponent<Player>();

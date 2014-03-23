@@ -6,9 +6,13 @@ public class PlayerHealth : MonoBehaviour {
 	public int maxHealth;
 	public int current_life_count;
 	public bool invulnerable;
-	
+
+	private Transform poi;
+	private TimerControl timer_control;
+
 	void Start() {
-		
+		poi = GameObject.Find("Player").transform;
+		timer_control = poi.GetComponent<TimerControl>();
 	}
 	
 	public void increaseHealth(int amount) {
@@ -61,6 +65,11 @@ public class PlayerHealth : MonoBehaviour {
 	
 	private void tempDeath()
 	{
+		// reinitialize everything
+		currentHealth = maxHealth;
+
+		timer_control.restartTimer();
+
 		respawn();
 	}
 	
