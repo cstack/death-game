@@ -99,7 +99,9 @@ public class PlayerHealth : MonoBehaviour {
 		timer_control.restartTimer();
 
 		poi.ability = ability;
-		poi.ability.setPlayer(poi);
+		if (ability != null) {
+			poi.ability.setPlayer(poi);
+		}
 
 		poi.transform.position = spawnPoint.transform.position;
 	}
