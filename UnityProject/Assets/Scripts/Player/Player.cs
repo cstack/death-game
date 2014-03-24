@@ -8,8 +8,9 @@ public class Player : EntityBase {
 	public float jumpSpeed = 5f;
 
 	private float playerHealth;
+	public SprintPowerup sprintPower;
 	public ActiveAbility ability;
-	private float speed;
+	public float speed;
 	private enum IdleOrRunningStates {
 		Idle, Running
 	}
@@ -19,6 +20,8 @@ public class Player : EntityBase {
 	private void Start() {
 		dir = Direction.Right;
 		animator = GetComponent<Animator> ();
+		sprintPower = new SprintPowerup();
+		sprintPower.setPlayer(this);
 	}
 
 	private void Update () {
@@ -43,8 +46,9 @@ public class Player : EntityBase {
 			updateYVelocity(0);
 		}
 
-		if (Input.GetButtonDown("Fire1") && ability != null) {
-			ability.use();
+		if (Input.GetButtonDown("Fire1")) {
+			Debug.Log("Use ability");
+			sprintPower.Activate();
 		}
 	}
 

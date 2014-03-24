@@ -197,7 +197,8 @@ Prefab:
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 914590429}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11400000, guid: 99c0ed75dca6c4391b1cf4ea4c9c0792, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 99c0ed75dca6c4391b1cf4ea4c9c0792, type: 2}
   m_RootGameObject: {fileID: 682764831}
   m_IsPrefabParent: 0
@@ -314,10 +315,10 @@ GameObject:
   - 95: {fileID: 682764838}
   - 50: {fileID: 682764837}
   - 61: {fileID: 682764836}
-  - 114: {fileID: 682764835}
   - 114: {fileID: 682764834}
   - 114: {fileID: 682764833}
   - 114: {fileID: 682764832}
+  - 114: {fileID: 682764835}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -435,9 +436,8 @@ MonoBehaviour:
 --- !u!114 &682764835
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400000, guid: 99c0ed75dca6c4391b1cf4ea4c9c0792,
-    type: 2}
-  m_PrefabInternal: {fileID: 91120646}
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 682764831}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -446,7 +446,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 5
   grounded: 0
-  jumpSpeed: 10
+  jumpSpeed: 5
   sprintPower: {fileID: 0}
   ability: {fileID: 0}
   speed: 0
