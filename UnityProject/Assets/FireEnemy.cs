@@ -55,6 +55,6 @@ public class FireEnemy : EntityBase {
 
 	private void Attack() {
 		EnemyShot shot = (EnemyShot)Instantiate(shot_prefab);
-		shot.init_shot(this);
+		shot.init_shot(this, false);
 	}
 }

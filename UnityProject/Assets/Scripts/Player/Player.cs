@@ -8,7 +8,7 @@ public class Player : EntityBase {
 	public float jumpSpeed = 5f;
 
 	private float playerHealth;
-
+	public ActiveAbility ability;
 	private float speed;
 	private enum IdleOrRunningStates {
 		Idle, Running
@@ -41,6 +41,10 @@ public class Player : EntityBase {
 
 		if (Input.GetButtonUp("Jump") && rigidbody2D.velocity.y > 0) {
 			updateYVelocity(0);
+		}
+
+		if (Input.GetButtonDown("Fire1") && ability != null) {
+			ability.use();
 		}
 	}
 

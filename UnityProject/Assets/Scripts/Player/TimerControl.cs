@@ -33,7 +33,7 @@ public class TimerControl : MonoBehaviour {
 		
 		// if time runs out
 		if(available_time <= 0){
-			player_health.playerDeath();
+			player_health.playerDeath(null);
 		}
 	}
 	

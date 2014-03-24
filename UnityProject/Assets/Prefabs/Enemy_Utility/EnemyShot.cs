@@ -7,6 +7,12 @@ public class EnemyShot : EntityBase {
 	public float speed = 10;
 	public float shotTimerEnd = 1.0f;
 	private float shotTimer = 0;
+	public int attackPower;
+
+	private bool friendly;
+
+	public ActiveAbility ability;
+
 	// Use this for initialization
 	void Start () {
 
@@ -31,14 +37,20 @@ public class EnemyShot : EntityBase {
 		}
 	}*/
 
-	void OnCollisionEnter2D (Collision2D other){
-		if(other.gameObject.tag == "Player"){
+	void OnTriggerEnter2D (Collider2D other){
+		if(other.gameObject.tag == "Player" && !friendly){
 			Destroy(this.gameObject);
+			other.gameObject.GetComponent<PlayerHealth>().decreaseHealth(attackPower, ability);
+		}
+		else if(other.gameObject.tag == "Enemy" && friendly){
+			Destroy(this.gameObject);
+			Destroy(other.gameObject);
 		}
 	}
 
-	public void init_shot(EntityBase source){
-		transform.position = source.transform.position;
+	public void init_shot(EntityBase source, bool friend){
+		friendly = friend;
+		transform.position = source.transform.position + new Vector3(0, 0.5f, 0);
 		dir = source.dir;
 		if(dir == Direction.Left){
 			rigidbody2D.velocity = new Vector2(-speed, 0);

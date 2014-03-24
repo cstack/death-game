@@ -11,11 +11,11 @@ public class PlayerHealth : MonoBehaviour {
 	public bool invulnerable;
 	public GameObject spawnPoint;
 
-	private Transform poi;
+	private Player poi;
 	private TimerControl timer_control;
 
 	void Start() {
-		poi = GameObject.Find("Player").transform;
+		poi = (Player)GameObject.Find("Player").GetComponent<Player>();
 		timer_control = poi.GetComponent<TimerControl>();
 	}
 	
@@ -26,7 +26,7 @@ public class PlayerHealth : MonoBehaviour {
 	
 	public void decreaseBreath(int amount) {
 		if(currentBreath <= 0) {
-			decreaseHealth (amount);
+			decreaseHealth (amount, null);
 		} else {
 			currentBreath -= amount;
 			breathPercent = (float) currentBreath / maxBreath;
@@ -42,10 +42,10 @@ public class PlayerHealth : MonoBehaviour {
 		checkPossible();
 	}
 	
-	public void decreaseHealth(int amount) {
+	public void decreaseHealth(int amount, ActiveAbility ability) {
 		if(invulnerable){return;}
 		currentHealth -= amount;
-		checkAlive();
+		checkAlive(ability);
 	}
 	
 	public void increaseMaxHealth(int amount) {
@@ -56,9 +56,9 @@ public class PlayerHealth : MonoBehaviour {
 		current_life_count += amount;
 	}
 	
-	private void checkAlive() { 
+	private void checkAlive(ActiveAbility ability) { 
 		if(currentHealth <= 0){
-			playerDeath();
+			playerDeath(ability);
 		}
 	}
 	
@@ -69,37 +69,32 @@ public class PlayerHealth : MonoBehaviour {
 	}
 	
 	// check if perma or temp death
-	public void playerDeath() {
+	public void playerDeath(ActiveAbility ability) {
 		--current_life_count;
 		if(current_life_count <= 0){
 			permaDeath();
 		}
 		else
 		{
-			tempDeath();
+			tempDeath(ability);
 		}
 	}
 	
 	private void permaDeath()
 	{
-		endGame();
+		//endGame();
 	}
 	
-	private void tempDeath()
+	private void tempDeath(ActiveAbility ability)
 	{
 		// reinitialize everything
 		currentHealth = maxHealth;
 
 		timer_control.restartTimer();
 
-		respawn();
-	}
-	
-	private void respawn() {
-		poi.position = spawnPoint.transform.position;
-	}
-	
-	private void endGame() { 
-		
+		poi.ability = ability;
+		poi.ability.setPlayer(poi);
+
+		poi.transform.position = spawnPoint.transform.position;
 	}
 }
