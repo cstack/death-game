@@ -6,7 +6,8 @@ public class PlayerHealth : MonoBehaviour {
 	public int maxHealth;
 	public int currentBreath;
 	public int maxBreath;
-	public float breathPercent = 100f;
+	public bool inWater = false;
+	public float breathPercent = 1f;
 	public int current_life_count;
 	public bool invulnerable;
 	public GameObject spawnPoint;
@@ -18,8 +19,13 @@ public class PlayerHealth : MonoBehaviour {
 		poi = (Player)GameObject.Find("Player").GetComponent<Player>();
 		timer_control = poi.GetComponent<TimerControl>();
 	}
+
+	public void enterWater () {
+		inWater = true;
+	}
 	
-	public void resetBreath() {
+	public void exitWater () {
+		inWater = false;
 		currentBreath = maxBreath;
 		breathPercent = (float) currentBreath / maxBreath;
 	}

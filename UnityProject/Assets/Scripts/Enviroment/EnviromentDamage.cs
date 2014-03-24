@@ -25,6 +25,7 @@ public class EnviromentDamage : MonoBehaviour {
 		//		Debug.Log("Player enter");
 		if (col.gameObject.tag == "Player") {
 			plyr = col.gameObject;
+			plyr.SendMessage("enterWater");
 			drowning = true;
 			drwntime = drownTimer;
 		}
@@ -35,7 +36,7 @@ public class EnviromentDamage : MonoBehaviour {
 		if (col.gameObject.tag == "Player") {
 			if (plyr != null) {
 				drowning = false;
-				plyr.SendMessage ("resetBreath");
+				plyr.SendMessage("exitWater");
 			}
 		}
 	}
