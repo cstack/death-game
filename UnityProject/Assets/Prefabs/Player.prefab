@@ -88,6 +88,7 @@ MonoBehaviour:
   maxSpeed: 5
   grounded: 0
   jumpSpeed: 10
+  ability: {fileID: 0}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -158,6 +159,7 @@ MonoBehaviour:
     m_FixedHeight: 0
     m_StretchWidth: 1
     m_StretchHeight: 0
+  sizeConstant: 1
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -186,6 +188,7 @@ MonoBehaviour:
   maxHealth: 100
   currentBreath: 0
   maxBreath: 0
+  inWater: 0
   breathPercent: 100
   current_life_count: 3
   invulnerable: 0
@@ -211,7 +214,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300000, guid: b2ae03850b36c4ce3973678ddb4c29ed, type: 3}
+  m_Sprite: {fileID: 21300002, guid: dfdb55cff3c224ee381dd388db6935e4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
