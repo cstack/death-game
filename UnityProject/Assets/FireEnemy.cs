@@ -3,7 +3,7 @@ using System.Collections;
 
 public class FireEnemy : EntityBase {
 	public float maxSpeed = 3f;
-	public float range = 4f;
+	public float range;
 	public float cooldownTime = 2f;
 
 	private Player player;
@@ -31,6 +31,10 @@ public class FireEnemy : EntityBase {
 			} else {
 				speed = -1 * maxSpeed;
 			}
+		} else if (offset > 0 && dir == Direction.Left) {
+			dir = Direction.Right;
+		} else if (offset < 0 && dir == Direction.Right) {
+			dir = Direction.Left;
 		} else {
 			speed = 0;
 			float timeSinceLastAttack = Time.time - timeOfLastAttack;
@@ -50,10 +54,7 @@ public class FireEnemy : EntityBase {
 	}
 
 	private void Attack() {
-		Debug.Log ("Attack");
-
 		EnemyShot shot = (EnemyShot)Instantiate(shot_prefab);
-		// assign direction
 		shot.init_shot(this);
 	}
 }
