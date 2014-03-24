@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyShot : MonoBehaviour {
+public class EnemyShot : EntityBase {
 
 	//private int shotPower = 5;
 	public float speed = 10;
@@ -37,9 +37,10 @@ public class EnemyShot : MonoBehaviour {
 		}
 	}
 
-	public void init_shot(bool left, Vector2 parent_position){
-		transform.position = parent_position;
-		if(left){
+	public void init_shot(EntityBase source){
+		transform.position = source.transform.position;
+		dir = source.dir;
+		if(dir == Direction.Left){
 			rigidbody2D.velocity = new Vector2(-speed, 0);
 			transform.position += new Vector3(-1f, 0, 0);
 		}

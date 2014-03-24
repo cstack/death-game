@@ -1,7 +1,7 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
-public class Player : CharacterBase {
+public class Player : EntityBase {
 	public float maxSpeed = 5f;
 
 	public bool grounded;

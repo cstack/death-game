@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FireEnemy : CharacterBase {
+public class FireEnemy : EntityBase {
 	public float maxSpeed = 3f;
 	public float range = 4f;
 	public float cooldownTime = 2f;
@@ -54,6 +54,6 @@ public class FireEnemy : CharacterBase {
 
 		EnemyShot shot = (EnemyShot)Instantiate(shot_prefab);
 		// assign direction
-		shot.init_shot(dir == Direction.Left, transform.position);
+		shot.init_shot(this);
 	}
 }
