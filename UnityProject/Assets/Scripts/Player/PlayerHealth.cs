@@ -9,6 +9,7 @@ public class PlayerHealth : MonoBehaviour {
 	public float breathPercent = 100f;
 	public int current_life_count;
 	public bool invulnerable;
+	public GameObject spawnPoint;
 
 	private Transform poi;
 	private TimerControl timer_control;
@@ -94,8 +95,8 @@ public class PlayerHealth : MonoBehaviour {
 		respawn();
 	}
 	
-	private void respawn() { 
-		
+	private void respawn() {
+		poi.position = spawnPoint.transform.position;
 	}
 	
 	private void endGame() { 

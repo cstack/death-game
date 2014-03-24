@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78ad67243acde456a8e256c492b14368, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackPower: 0
+  attackPower: 50
   knockbackSpeed: 0
   knockupSpeed: 0
 --- !u!135 &13500000
