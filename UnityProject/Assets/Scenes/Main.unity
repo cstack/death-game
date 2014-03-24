@@ -525,7 +525,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: faec91547dd59454092419d81929d56f, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -.0342255831
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: faec91547dd59454092419d81929d56f, type: 2}
       propertyPath: m_LocalPosition.z
@@ -665,7 +665,7 @@ Transform:
   m_GameObject: {fileID: 1302715320}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -10.9799995, y: 0, z: 0}
-  m_LocalScale: {x: 50, y: 1, z: 1}
+  m_LocalScale: {x: 36.2500153, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!1 &1327526004
@@ -767,7 +767,7 @@ Transform:
   m_PrefabInternal: {fileID: 1188890310}
   m_GameObject: {fileID: 1477388127}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.9722023, y: -.0342255831, z: 0}
+  m_LocalPosition: {x: 11.9722023, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 989293161}
@@ -1273,7 +1273,9 @@ MonoBehaviour:
   maxSpeed: 5
   grounded: 0
   jumpSpeed: 10
+  sprintPower: {fileID: 0}
   ability: {fileID: 0}
+  speed: 0
 --- !u!114 &1925227803
 MonoBehaviour:
   m_ObjectHideFlags: 0
