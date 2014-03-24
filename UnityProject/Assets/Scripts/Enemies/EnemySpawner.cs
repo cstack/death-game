@@ -44,7 +44,11 @@ public class EnemySpawner : MonoBehaviour
 	void SpawnEnemy() {
 		enemy = (GameObject)Instantiate(enemyPrefab, transform.position, transform.rotation);
 		enemyMovement = enemy.GetComponent<EnemyMovement>();
-		
+
+		if (enemy == null || enemyMovement == null) {
+			return;
+		}
+
 		enemyMovement.spawnPosistion = transform.position;
 		enemyMovement.moveTimePeriod = moveTimePeriod;
 		enemyMovement.moveUpAndDown = moveUpAndDown;

@@ -14,6 +14,7 @@ public class PlayerHealth : MonoBehaviour {
 
 	private Player poi;
 	private TimerControl timer_control;
+	private LungCapacity lungs = new LungCapacity ();
 
 	void Start() {
 		poi = (Player)GameObject.Find("Player").GetComponent<Player>();
@@ -32,7 +33,7 @@ public class PlayerHealth : MonoBehaviour {
 	
 	public void decreaseBreath(int amount) {
 		if(currentBreath <= 0) {
-			decreaseHealth (amount, null);
+			decreaseHealth (amount, lungs);
 		} else {
 			currentBreath -= amount;
 			breathPercent = (float) currentBreath / maxBreath;
@@ -89,18 +90,31 @@ public class PlayerHealth : MonoBehaviour {
 	private void permaDeath()
 	{
 		//endGame();
+		Application.LoadLevel ("Main");
 	}
 	
 	private void tempDeath(ActiveAbility ability)
 	{
+		//Prints ability that's being added
+		print (ability.abilityName);
+
 		// reinitialize everything
 		currentHealth = maxHealth;
 
 		timer_control.restartTimer();
+		
+		if (ability.abilityName == "LungCapacity") {
+			maxBreath += 50;
+		}
 
-		poi.ability = ability;
+
 		if (ability != null) {
-			poi.ability.setPlayer(poi);
+			
+			if (ability.abilityName != "LungCapacity") {
+				poi.ability = ability;
+				poi.ability.setPlayer(poi);
+			}
+
 		}
 
 		poi.transform.position = spawnPoint.transform.position;
