@@ -189,6 +189,10 @@ Prefab:
       propertyPath: currentBreath
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 11400006, guid: 99c0ed75dca6c4391b1cf4ea4c9c0792, type: 2}
+      propertyPath: breathPercent
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 99c0ed75dca6c4391b1cf4ea4c9c0792, type: 2}
   m_RootGameObject: {fileID: 682764831}
@@ -388,6 +392,7 @@ MonoBehaviour:
     m_FixedHeight: 0
     m_StretchWidth: 1
     m_StretchHeight: 0
+  sizeConstant: 1
 --- !u!114 &682764833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -418,7 +423,8 @@ MonoBehaviour:
   maxHealth: 100
   currentBreath: 100
   maxBreath: 100
-  breathPercent: 100
+  inWater: 0
+  breathPercent: 1
   current_life_count: 3
   invulnerable: 0
 --- !u!114 &682764835
@@ -965,7 +971,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
-  drownTimer: 2
+  drownTimer: .0500000007
 --- !u!1 &2064113870
 GameObject:
   m_ObjectHideFlags: 0
