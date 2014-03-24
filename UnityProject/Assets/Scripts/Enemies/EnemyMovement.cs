@@ -29,6 +29,7 @@ public class EnemyMovement : MonoBehaviour {
 		Scrooge = GameObject.FindGameObjectWithTag("Player");
 		enemyHealth = GetComponent<EnemyHealth>();
 		sprite = GetComponent<SpriteRenderer>();
+		spawnPosistion = new Vector3 (0f, 0f, 0f);
 	}
 	
 	void Update () {

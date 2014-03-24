@@ -447,9 +447,13 @@ MonoBehaviour:
   maxSpeed: 5
   grounded: 0
   jumpSpeed: 10
+<<<<<<< HEAD
   sprintPower: {fileID: 0}
   ability: {fileID: 0}
   speed: 0
+=======
+  ability: {fileID: 0}
+>>>>>>> FETCH_HEAD
 --- !u!61 &682764836
 BoxCollider2D:
   m_ObjectHideFlags: 0

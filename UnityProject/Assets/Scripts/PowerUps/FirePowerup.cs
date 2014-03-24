@@ -14,4 +14,8 @@ public class FirePowerup : ActiveAbility {
 		EnemyShot shot = (EnemyShot)Instantiate(shot_prefab);
 		shot.init_shot(player, true);
 	}
+
+	public FirePowerup () {
+		abilityName = "FirePowerup";
+	}
 }

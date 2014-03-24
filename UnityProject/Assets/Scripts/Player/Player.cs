@@ -62,8 +62,4 @@ public class Player : EntityBase {
 			}
 		}
 	}
-
-	public void TakeDamage (float dmg) {
-
-	}
 }
