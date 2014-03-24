@@ -193,6 +193,10 @@ Prefab:
       propertyPath: breathPercent
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400006, guid: 99c0ed75dca6c4391b1cf4ea4c9c0792, type: 2}
+      propertyPath: spawnPoint
+      value: 
+      objectReference: {fileID: 914590429}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 99c0ed75dca6c4391b1cf4ea4c9c0792, type: 2}
   m_RootGameObject: {fileID: 682764831}
@@ -427,6 +431,7 @@ MonoBehaviour:
   breathPercent: 1
   current_life_count: 3
   invulnerable: 0
+  spawnPoint: {fileID: 914590429}
 --- !u!114 &682764835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -772,6 +777,32 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 857960797}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &914590429
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 914590430}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &914590430
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 914590429}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.53447247, y: 1.36597633, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &1370999072
 GameObject:
   m_ObjectHideFlags: 0
