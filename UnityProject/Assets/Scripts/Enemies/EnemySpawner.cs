@@ -6,8 +6,7 @@ public class EnemySpawner : MonoBehaviour
 	public float moveTimePeriod = 0.6f;
 	public bool moveUpAndDown = true;
 	public bool spawnFacingScrooge = false;
-	public bool spawnOnlyOnStart = false;
-
+	public bool spawnOnlyOnce = false;
 
 	public GameObject enemyPrefab;
 	public EnemyType enemyType;
@@ -16,29 +15,26 @@ public class EnemySpawner : MonoBehaviour
 	private EnemyMovement enemyMovement;
 	private Plane[] planes;
 	private Camera cam;
+	private bool hasSpawned = false;
 	
 	void Start ()
 	{
 		cam = Camera.main;
-		if (spawnOnlyOnStart)
-			SpawnEnemy();
 	}
 
 	void Update ()
 	{
+		// If the camera can see enemy spawner, and enemy is dead, respawn
+		if (isOnScreen() && enemy == null && !(hasSpawned && spawnOnlyOnce)) {
+			SpawnEnemy();
+			hasSpawned = true;
+		}
+	}
+
+	private bool isOnScreen() {
 		// Current camera location
 		planes = GeometryUtility.CalculateFrustumPlanes(cam);
-		
-		// If the camera can see enemy spawner, and enemy is dead, respawn
-		if (GeometryUtility.TestPlanesAABB(planes, gameObject.collider.bounds)) {
-			if (enemy == null)
-				SpawnEnemy();
-		}
-		else if (enemy != null) {
-			if (!GeometryUtility.TestPlanesAABB(planes, enemy.renderer.bounds) && !spawnOnlyOnStart)
-				Destroy(enemy);
-		}
-
+		return GeometryUtility.TestPlanesAABB (planes, gameObject.collider.bounds);
 	}
 
 	void SpawnEnemy() {

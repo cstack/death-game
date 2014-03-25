@@ -48,7 +48,9 @@ public class Player : EntityBase {
 
 		if (Input.GetButtonDown("Fire1")) {
 			Debug.Log("Use ability");
-			sprintPower.Activate();
+			if (ability != null) {
+				ability.use();
+			}
 		}
 	}
 
