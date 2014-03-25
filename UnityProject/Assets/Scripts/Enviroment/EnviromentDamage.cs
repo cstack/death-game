@@ -22,22 +22,25 @@ public class EnviromentDamage : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter2D (Collider2D col) {
-		//		Debug.Log("Player enter");
-		if (col.gameObject.tag == "Player") {
-			plyr = col.gameObject;
-			plyr.SendMessage("enterWater");
+		if (col.gameObject.tag == "PlayerHead") {
+			plyr = col.transform.parent.gameObject;
+			plyr.SendMessage("headEnterWater");
 			drowning = true;
 			drwntime = drownTimer;
+		} else if (col.gameObject.tag == "Player") {
+			plyr = col.gameObject;
+			plyr.SendMessage("feetEnterWater");
 		}
 	}
 
 	void OnTriggerExit2D (Collider2D col) {
-		//		Debug.Log("Player enter");
-		if (col.gameObject.tag == "Player") {
-			if (plyr != null) {
-				drowning = false;
-				plyr.SendMessage("exitWater");
-			}
+		if (col.gameObject.tag == "PlayerHead") {
+			plyr = col.transform.parent.gameObject;
+			plyr.SendMessage("headExitWater");
+			drowning = false;
+		} else if (col.gameObject.tag == "Player") {
+			plyr = col.gameObject;
+			plyr.SendMessage("feetExitWater");
 		}
 	}
 

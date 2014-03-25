@@ -5,9 +5,13 @@ public class Player : CharacterBase {
 	public float maxSpeed = 5f;
 
 	public bool grounded;
+	public bool feetInWater;
+	public bool headUnderwater;
 	public float jumpSpeed = 5f;
+	public float swimSpeed = 2f;
+	public float waterGravity = 0.5f;
 
-	private float playerHealth;
+	private PlayerHealth playerHealth;
 	public Ability ability;
 	public float speed;
 	private enum IdleOrRunningStates {
@@ -19,6 +23,7 @@ public class Player : CharacterBase {
 	private void Start() {
 		dir = Direction.Right;
 		animator = GetComponent<Animator> ();
+		playerHealth = GetComponent<PlayerHealth> ();
 	}
 
 	private void Update () {
@@ -33,8 +38,12 @@ public class Player : CharacterBase {
 			dir = Direction.Left;
 		}
 
-		if (Input.GetButtonDown("Jump") && grounded) {
-			updateYVelocity(jumpSpeed);
+		if (Input.GetButtonDown("Jump") && (grounded || feetInWater)) {
+			if (headUnderwater) {
+				updateYVelocity(swimSpeed);
+			} else {
+				updateYVelocity(jumpSpeed);
+			}
 			grounded = false;
 			animator.SetBool("grounded", false);
 		}
@@ -62,5 +71,30 @@ public class Player : CharacterBase {
 	public void AddAbility(Ability newAbility){
 		ability = newAbility;
 		ability.character = this;
+	}
+
+	private void OnCollisionExit2D(Collision2D other) {
+		if (other.gameObject.tag == "ground") {
+			grounded = false;
+			animator.SetBool("grounded", false);
+		}
+	}
+
+	public void headEnterWater () {
+		headUnderwater = true;
+		playerHealth.startDrowning ();
+	}
+
+	public void headExitWater () {
+		headUnderwater = false;
+		playerHealth.stopDrowning ();
+	}
+
+	public void feetEnterWater () {
+		feetInWater = true;
+	}
+	
+	public void feetExitWater () {
+		feetInWater = false;
 	}
 }

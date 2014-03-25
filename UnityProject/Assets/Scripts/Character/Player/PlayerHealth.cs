@@ -6,7 +6,7 @@ public class PlayerHealth : MonoBehaviour {
 	public int maxHealth;
 	public int currentBreath;
 	public int maxBreath;
-	public bool inWater = false;
+	private bool inWater;
 	public float breathPercent = 1f;
 	public int current_life_count;
 	public bool invulnerable;
@@ -21,14 +21,18 @@ public class PlayerHealth : MonoBehaviour {
 		timer_control = poi.GetComponent<TimerControl>();
 	}
 
-	public void enterWater () {
+	public void startDrowning() {
 		inWater = true;
 	}
-	
-	public void exitWater () {
+
+	public void stopDrowning() {
 		inWater = false;
 		currentBreath = maxBreath;
 		breathPercent = (float) currentBreath / maxBreath;
+	}
+
+	public bool isDrowning() {
+		return inWater;
 	}
 	
 	public void decreaseBreath(int amount) {
@@ -92,22 +96,28 @@ public class PlayerHealth : MonoBehaviour {
 		//endGame();
 		Application.LoadLevel ("Main");
 	}
+
+	private void resetPlayer() {
+		currentHealth = maxHealth;
+		timer_control.restartTimer();
+		poi.transform.position = spawnPoint.transform.position;
+		if (poi.feetInWater) {
+			poi.feetExitWater();
+		}
+		if (poi.headUnderwater) {
+			poi.headExitWater();
+		}
+	}
 	
 	private void tempDeath(Ability ability)
 	{
+		resetPlayer ();
+
 		//Prints ability that's being added
-		print (ability.abilityName);
-
-		// reinitialize everything
-		currentHealth = maxHealth;
-
-		timer_control.restartTimer();
-
-
+		Debug.Log ("Died and gained the ability " + ability.abilityName);
+	
 		if (ability != null) {
 			poi.AddAbility(ability);
 		}
-
-		poi.transform.position = spawnPoint.transform.position;
 	}
 }

@@ -39,7 +39,7 @@ public class GUIControl : MonoBehaviour {
 		GUI.Label(life_pos, "Lives: " + player_health.current_life_count, customGUIStyle);
 
 
-		if (player_health.inWater) {
+		if (player_health.isDrowning()) {
 			breath_pos = new Rect(20f, 80f, 125f, 15f);
 			GUI.skin.box.normal.background = MakeTex (1, 1, Color.black);
 			GUI.Box (breath_pos, "");
