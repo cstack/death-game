@@ -181,6 +181,10 @@ Prefab:
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 1156648661}
+    - target: {fileID: 11400000, guid: 99c0ed75dca6c4391b1cf4ea4c9c0792, type: 2}
+      propertyPath: swimSpeed
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 99c0ed75dca6c4391b1cf4ea4c9c0792, type: 2}
   m_RootGameObject: {fileID: 1925227796}
@@ -1204,7 +1208,7 @@ MonoBehaviour:
   feetInWater: 0
   headUnderwater: 0
   jumpSpeed: 10
-  swimSpeed: 4
+  swimSpeed: 5
   waterGravity: .5
   ability: {fileID: 0}
   speed: 0

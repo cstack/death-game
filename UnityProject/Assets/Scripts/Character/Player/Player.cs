@@ -9,6 +9,7 @@ public class Player : CharacterBase {
 	public bool headUnderwater;
 	public float jumpSpeed = 5f;
 	public float swimSpeed = 2f;
+	public float waterDrag = 4f;
 	public float waterGravity = 0.5f;
 
 	private PlayerHealth playerHealth;
@@ -82,11 +83,13 @@ public class Player : CharacterBase {
 
 	public void headEnterWater () {
 		headUnderwater = true;
+		rigidbody2D.drag += waterDrag;
 		playerHealth.startDrowning ();
 	}
 
 	public void headExitWater () {
 		headUnderwater = false;
+		rigidbody2D.drag -= waterDrag;
 		playerHealth.stopDrowning ();
 	}
 
