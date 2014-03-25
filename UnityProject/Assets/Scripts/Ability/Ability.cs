@@ -7,20 +7,6 @@ public class Ability : MonoBehaviour {
 	public Texture2D abilityIcon;
 
 	public CharacterBase character;
-
-	public Ability() { character = null; }
-	public Ability(CharacterBase newCharacter) {
-		character = newCharacter;
-	}
-
-	private bool isCharacterSet() {
-		if (character == null) {
-			Debug.LogWarning("Character is not set in ability " + abilityName);
-			return false;
-		}
-		else
-			return true;
-	}
 	
 	protected virtual void Awake () {
 		abilityName = "Unknown";
@@ -35,10 +21,9 @@ public class Ability : MonoBehaviour {
 	protected virtual void OnActivate () {}
 
 	public void Activate () {
-		if (isCharacterSet())
+		if (character == null) 
+			Debug.LogWarning("Character is not set in ability " + abilityName);
+		else 
 			OnActivate();
-	}
-
-
-	
+	}			
 }
