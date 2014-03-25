@@ -19,18 +19,18 @@ public abstract class EntityBase : MonoBehaviour {
 			}
 		}
 	}
-
+	
 	protected void FlipSprite() {
 		// Flip the sprite over the anchor point
 		Vector3 scale = transform.localScale;
 		scale.x *= -1;
 		transform.localScale = scale;
 	}
-
+	
 	protected void updateXVelocity(float x) {
 		updateXVelocity(rigidbody2D, x);
 	}
-
+	
 	protected void updateXVelocity(Rigidbody2D obj, float x) {
 		Vector2 vel = obj.velocity;
 		vel.x = x;
@@ -43,3 +43,4 @@ public abstract class EntityBase : MonoBehaviour {
 		rigidbody2D.velocity = vel;
 	}
 }
+

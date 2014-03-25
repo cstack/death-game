@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class PlayerHealth : MonoBehaviour {
@@ -14,7 +14,7 @@ public class PlayerHealth : MonoBehaviour {
 
 	private Player poi;
 	private TimerControl timer_control;
-	private LungCapacity lungs = new LungCapacity ();
+	private LungCapacityAbility lungs = new LungCapacityAbility ();
 
 	void Start() {
 		poi = (Player)GameObject.Find("Player").GetComponent<Player>();
@@ -49,7 +49,7 @@ public class PlayerHealth : MonoBehaviour {
 		checkPossible();
 	}
 	
-	public void decreaseHealth(int amount, ActiveAbility ability) {
+	public void decreaseHealth(int amount, Ability ability) {
 		if(invulnerable){return;}
 		currentHealth -= amount;
 		checkAlive(ability);
@@ -63,7 +63,7 @@ public class PlayerHealth : MonoBehaviour {
 		current_life_count += amount;
 	}
 	
-	private void checkAlive(ActiveAbility ability) { 
+	private void checkAlive(Ability ability) { 
 		if(currentHealth <= 0){
 			playerDeath(ability);
 		}
@@ -76,7 +76,7 @@ public class PlayerHealth : MonoBehaviour {
 	}
 	
 	// check if perma or temp death
-	public void playerDeath(ActiveAbility ability) {
+	public void playerDeath(Ability ability) {
 		--current_life_count;
 		if(current_life_count <= 0){
 			permaDeath();
@@ -93,7 +93,7 @@ public class PlayerHealth : MonoBehaviour {
 		Application.LoadLevel ("Main");
 	}
 	
-	private void tempDeath(ActiveAbility ability)
+	private void tempDeath(Ability ability)
 	{
 		//Prints ability that's being added
 		print (ability.abilityName);
@@ -102,19 +102,10 @@ public class PlayerHealth : MonoBehaviour {
 		currentHealth = maxHealth;
 
 		timer_control.restartTimer();
-		
-		if (ability.abilityName == "LungCapacity") {
-			maxBreath += 50;
-		}
 
 
 		if (ability != null) {
-			
-			if (ability.abilityName != "LungCapacity") {
-				poi.ability = ability;
-				poi.ability.setPlayer(poi);
-			}
-
+			poi.AddAbility(ability);
 		}
 
 		poi.transform.position = spawnPoint.transform.position;

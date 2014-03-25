@@ -1,15 +1,14 @@
 using UnityEngine;
 using System.Collections;
 
-public class Player : EntityBase {
+public class Player : CharacterBase {
 	public float maxSpeed = 5f;
 
 	public bool grounded;
 	public float jumpSpeed = 5f;
 
 	private float playerHealth;
-	public SprintPowerup sprintPower;
-	public ActiveAbility ability;
+	public Ability ability;
 	public float speed;
 	private enum IdleOrRunningStates {
 		Idle, Running
@@ -20,8 +19,6 @@ public class Player : EntityBase {
 	private void Start() {
 		dir = Direction.Right;
 		animator = GetComponent<Animator> ();
-		sprintPower = new SprintPowerup();
-		sprintPower.setPlayer(this);
 	}
 
 	private void Update () {
@@ -46,9 +43,8 @@ public class Player : EntityBase {
 			updateYVelocity(0);
 		}
 
-		if (Input.GetButtonDown("Fire1")) {
-			Debug.Log("Use ability");
-			sprintPower.Activate();
+		if (Input.GetButtonDown("Fire1") && ability != null) {
+			ability.Activate();
 		}
 	}
 
@@ -61,5 +57,10 @@ public class Player : EntityBase {
 				animator.SetBool("grounded", true);
 			}
 		}
+	}
+
+	public void AddAbility(Ability newAbility){
+		ability = newAbility;
+		ability.character = this;
 	}
 }
