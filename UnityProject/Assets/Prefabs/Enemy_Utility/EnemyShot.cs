@@ -11,7 +11,7 @@ public class EnemyShot : EntityBase {
 
 	private bool friendly;
 
-	public ActiveAbility ability;
+	public FireballAbility ability;
 
 	// Use this for initialization
 	void Start () {

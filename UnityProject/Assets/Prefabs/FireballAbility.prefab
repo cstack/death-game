@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 400000}
   - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: FirePowerup
+  m_Name: FireballAbility
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,9 +35,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9626cdc34e2ca46c9bb2ff67addafaa4, type: 3}
+  m_Script: {fileID: 11500000, guid: 221e48b6d23fe4bcd92b54dfebef94e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  abilityName: 
+  abilityIcon: {fileID: 0}
+  character: {fileID: 0}
+  icon: {fileID: 0}
   shot_prefab: {fileID: 11400004, guid: ec2239724f6674316ae0e8daf2d8acce, type: 2}
 --- !u!1001 &100100000
 Prefab:

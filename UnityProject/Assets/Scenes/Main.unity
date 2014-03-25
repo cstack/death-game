@@ -1311,7 +1311,6 @@ MonoBehaviour:
   maxSpeed: 5
   grounded: 0
   jumpSpeed: 10
-  sprintPower: {fileID: 0}
   ability: {fileID: 0}
   speed: 0
 --- !u!114 &1925227803

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FireEnemy : EntityBase {
+public class FireEnemy : CharacterBase {
 	public float maxSpeed = 3f;
 	public float range;
 	public float cooldownTime = 2f;
