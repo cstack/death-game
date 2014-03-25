@@ -185,6 +185,10 @@ Prefab:
       propertyPath: swimSpeed
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 99c0ed75dca6c4391b1cf4ea4c9c0792, type: 2}
+      propertyPath: waterDrag
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 99c0ed75dca6c4391b1cf4ea4c9c0792, type: 2}
   m_RootGameObject: {fileID: 1925227796}
@@ -1209,6 +1213,7 @@ MonoBehaviour:
   headUnderwater: 0
   jumpSpeed: 10
   swimSpeed: 5
+  waterDrag: 3
   waterGravity: .5
   ability: {fileID: 0}
   speed: 0
@@ -1283,7 +1288,12 @@ MonoBehaviour:
     m_FixedHeight: 0
     m_StretchWidth: 1
     m_StretchHeight: 0
-  sizeConstant: 1
+  fgImage: {fileID: 0}
+  bgImage: {fileID: 0}
+  ability_1_icon: {fileID: 0}
+  ability_2_icon: {fileID: 0}
+  ability_3_icon: {fileID: 0}
+  ability_4_icon: {fileID: 0}
 --- !u!114 &1925227804
 MonoBehaviour:
   m_ObjectHideFlags: 0

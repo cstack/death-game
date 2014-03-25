@@ -5,67 +5,89 @@ using System.Collections;
 [RequireComponent(typeof(TimerControl))]
 
 public class GUIControl : MonoBehaviour {
+	public GUIStyle customGUIStyle;
+	
 	private Transform poi;
 	private TimerControl timer_control;
 	private PlayerHealth player_health;
 	
-	public GUIStyle customGUIStyle;
-	public float sizeConstant = 1.0f;
-	private Rect timer_pos = new Rect(20f, 20f, 40f, 20f);
-	private Rect health_pos = new Rect(20f, 40f, 40f, 20f);
-	private Rect life_pos = new Rect(20f, 60f, 40f, 20f);
-	private Rect breath_pos = new Rect(20f, 80f, 80f, 10f);
-	private Rect breath = new Rect(20f, 80f, 80f, 10f); 
-	
+	// timer text format
 	private string time_text;
+	// breath bar format
+	public Texture2D fgImage;
+	public Texture2D bgImage;
+	// ability box
+	private GUIStyle abilityStyle;
+	public Texture2D ability_1_icon;
+	public Texture2D ability_2_icon;
+	public Texture2D ability_3_icon;
+	public Texture2D ability_4_icon;
+	// ability font
+	private GUIStyle afontStyle;
 	
-	// Use this for initialization
+	
 	void Start () {
 		poi = GameObject.Find ("Player").transform;
 		timer_control = poi.GetComponent<TimerControl>();
 		player_health = poi.GetComponent<PlayerHealth>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		//Debug.Log(timer_control.read_time());
+		
+		// setup ability box style
+		abilityStyle = new GUIStyle();
+		abilityStyle.fixedHeight = 48;
+		abilityStyle.fixedWidth = 48;
+		abilityStyle.margin = new RectOffset(4, 4, 4, 4);
+		
+		// setup ability font style
+		afontStyle = new GUIStyle();
+		afontStyle.fixedHeight = 48;
+		afontStyle.fixedWidth = 48;
+		afontStyle.margin = new RectOffset(4, 4, 4, 4);
+		afontStyle.fontSize = 20;
+		afontStyle.alignment = TextAnchor.MiddleCenter;
 	}
 	
 	void OnGUI ()
 	{
-		time_text = string.Format("{0:00}:{1:00}", timer_control.read_time() / 60, timer_control.read_time() % 60);
-		GUI.Label(timer_pos, "Time: " + time_text, customGUIStyle);
-		GUI.Label(health_pos, "Health: " + player_health.currentHealth + " / " + player_health.maxHealth, customGUIStyle);
-		GUI.Label(life_pos, "Lives: " + player_health.current_life_count, customGUIStyle);
-
-
-		if (player_health.isDrowning()) {
-			breath_pos = new Rect(20f, 80f, 125f, 15f);
-			GUI.skin.box.normal.background = MakeTex (1, 1, Color.black);
-			GUI.Box (breath_pos, "");
-
-			//GUI Box behaves strangely 
-			if (player_health.breathPercent > 0.04f) {
-				GUI.skin.box.normal.background = MakeTex (1, 1, Color.blue);
-				breath = new Rect(20f, 80f, 125f * player_health.breathPercent, 15f);
-//				Debug.Log (125f * player_health.breathPercent);
-				GUI.Box (breath, "");
-			}
-		}
-
+		healthUI();
+		AbilityUI();
 	}
-
-	private Texture2D MakeTex (int width, int height, Color col) {
-		Color[] pix = new Color[width * height];
+	
+	// Mingrui
+	private void healthUI(){
+		time_text = string.Format("{0:00}:{1:00}", timer_control.read_time() / 60, timer_control.read_time() % 60);
 		
-		for( int i = 0; i < pix.Length; ++i ) {
-			pix[ i ] = col;
-		}
+		// time health lives
+		GUILayout.BeginArea(new Rect(20, 20, 200, 80));
+		GUILayout.Label("Time: " + time_text, customGUIStyle);
+		GUILayout.Label("Health: " + player_health.currentHealth + " / " + player_health.maxHealth, customGUIStyle);
+		GUILayout.Label("Lives: " + player_health.current_life_count, customGUIStyle);
+		GUILayout.Label("Breath: ", customGUIStyle);
+		GUILayout.EndArea();
 		
-		Texture2D result = new Texture2D( width, height );
-		result.SetPixels( pix );
-		result.Apply();
-		return result;
-		
+		// breath bar
+		GUILayout.BeginArea(new Rect(78, 78, 100, 14));
+		GUI.DrawTexture(new Rect(0, 0, 100, 16), bgImage);
+		GUI.DrawTexture(new Rect(0, 0, 100*player_health.breathPercent, 16), fgImage);
+		GUILayout.EndArea();
+	}
+	
+	// Mingrui
+	private void AbilityUI(){
+		GUILayout.BeginArea(new Rect(20, 100, 200, 100));
+		GUILayout.BeginHorizontal();
+		GUILayout.Box(ability_1_icon, abilityStyle);
+		GUILayout.Box(ability_2_icon, abilityStyle);
+		GUILayout.Box(ability_3_icon, abilityStyle);
+		GUILayout.Box(ability_4_icon, abilityStyle);
+		GUILayout.EndHorizontal();
+		GUILayout.EndArea();
+		GUILayout.BeginArea(new Rect(20, 134, 200, 100));
+		GUILayout.BeginHorizontal();
+		GUILayout.Box("Q", afontStyle);
+		GUILayout.Box("W", afontStyle);
+		GUILayout.Box("E", afontStyle);
+		GUILayout.Box("R", afontStyle);
+		GUILayout.EndHorizontal();
+		GUILayout.EndArea();
 	}
 }
