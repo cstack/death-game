@@ -281,10 +281,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 100
   maxHealth: 100
-  currentBreath: 0
-  maxBreath: 0
+  currentBreath: 20
+  maxBreath: 20
   inWater: 0
-  breathPercent: 100
+  breathPercent: 1
   current_life_count: 3
   invulnerable: 0
   spawnPoint: {fileID: 1403714272}
@@ -304,6 +304,7 @@ MonoBehaviour:
   grounded: 0
   jumpSpeed: 10
   ability: {fileID: 0}
+  speed: 0
 --- !u!61 &685693209
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -382,19 +383,19 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
---- !u!1 &1027022320
+--- !u!1 &1131818760
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 1027022325}
-  - 20: {fileID: 1027022324}
-  - 92: {fileID: 1027022323}
-  - 124: {fileID: 1027022322}
-  - 81: {fileID: 1027022321}
-  - 114: {fileID: 1027022326}
+  - 4: {fileID: 1131818766}
+  - 20: {fileID: 1131818765}
+  - 92: {fileID: 1131818764}
+  - 124: {fileID: 1131818763}
+  - 81: {fileID: 1131818762}
+  - 114: {fileID: 1131818761}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -402,33 +403,52 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1027022321
+--- !u!114 &1131818761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1131818760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7f5bf5d52ac5432ab408439d1db4bca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poi: {fileID: 0}
+  u: .400000006
+  minX: 0
+  maxX: 100
+  minY: 0
+  maxY: 10
+  yOffest: .5
+  z: -9
+--- !u!81 &1131818762
 AudioListener:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1027022320}
+  m_GameObject: {fileID: 1131818760}
   m_Enabled: 1
---- !u!124 &1027022322
+--- !u!124 &1131818763
 Behaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1027022320}
+  m_GameObject: {fileID: 1131818760}
   m_Enabled: 1
---- !u!92 &1027022323
+--- !u!92 &1131818764
 Behaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1027022320}
+  m_GameObject: {fileID: 1131818760}
   m_Enabled: 1
---- !u!20 &1027022324
+--- !u!20 &1131818765
 Camera:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1027022320}
+  m_GameObject: {fileID: 1131818760}
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
@@ -443,7 +463,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -452,34 +472,17 @@ Camera:
   m_TargetTexture: {fileID: 0}
   m_HDR: 0
   m_OcclusionCulling: 1
---- !u!4 &1027022325
+--- !u!4 &1131818766
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1027022320}
+  m_GameObject: {fileID: 1131818760}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
---- !u!114 &1027022326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1027022320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7f5bf5d52ac5432ab408439d1db4bca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poi: {fileID: 0}
-  u: .400000006
-  distanceFromEdge: 1
-  levelWidth: 63.7000008
-  y: 4
-  z: -9
 --- !u!1 &1197941324
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,7 +515,7 @@ MonoBehaviour:
   moveTimePeriod: .600000024
   moveUpAndDown: 0
   spawnFacingScrooge: 1
-  spawnOnlyOnStart: 0
+  spawnOnlyOnce: 0
   enemyPrefab: {fileID: 100000, guid: cd596d2b9c1bf4148939b239830ee097, type: 2}
   enemyType: 0
 --- !u!65 &1197941326
@@ -786,7 +789,7 @@ MonoBehaviour:
   moveTimePeriod: .600000024
   moveUpAndDown: 0
   spawnFacingScrooge: 1
-  spawnOnlyOnStart: 0
+  spawnOnlyOnce: 0
   enemyPrefab: {fileID: 100000, guid: 93083bebbd8cf4cc2a77036a198a7a1d, type: 2}
   enemyType: 0
 --- !u!65 &1666953428
