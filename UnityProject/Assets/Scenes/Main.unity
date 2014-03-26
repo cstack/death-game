@@ -530,6 +530,7 @@ GameObject:
   - 23: {fileID: 1086274430}
   - 114: {fileID: 1086274429}
   - 61: {fileID: 1086274428}
+  - 114: {fileID: 1086274432}
   m_Layer: 0
   m_Name: WaterBlock
   m_TagString: Untagged
@@ -604,6 +605,23 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1188890310}
   m_GameObject: {fileID: 1086274426}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1086274432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1086274426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e47f356f674594cc78d309a6684b9d10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frames:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  framesPerSecond: 10
 --- !u!1 &1156648661
 GameObject:
   m_ObjectHideFlags: 0
@@ -1226,6 +1244,45 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1188890310}
   m_GameObject: {fileID: 1643580022}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1692195512
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100002, guid: 99c0ed75dca6c4391b1cf4ea4c9c0792, type: 2}
+  m_PrefabInternal: {fileID: 659786858}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1692195513}
+  - 61: {fileID: 1692195514}
+  m_Layer: 0
+  m_Name: Head
+  m_TagString: PlayerHead
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1692195513
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400002, guid: 99c0ed75dca6c4391b1cf4ea4c9c0792, type: 2}
+  m_PrefabInternal: {fileID: 659786858}
+  m_GameObject: {fileID: 1692195512}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: .680000007, z: 0}
+  m_LocalScale: {x: 1, y: .5, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1925227799}
+--- !u!61 &1692195514
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6100002, guid: 99c0ed75dca6c4391b1cf4ea4c9c0792,
+    type: 2}
+  m_PrefabInternal: {fileID: 659786858}
+  m_GameObject: {fileID: 1692195512}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1925227796
 GameObject:
   m_ObjectHideFlags: 0
@@ -1298,6 +1355,7 @@ Transform:
   m_LocalPosition: {x: -4.6613121, y: 2.27610874, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1692195513}
   - {fileID: 1608087091}
   m_Father: {fileID: 0}
 --- !u!50 &1925227800
@@ -1346,6 +1404,7 @@ MonoBehaviour:
   headUnderwater: 0
   jumpSpeed: 10
   swimSpeed: 4
+  waterDrag: 4
   waterGravity: .5
   ability: {fileID: 0}
   speed: 0
