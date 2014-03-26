@@ -82,6 +82,7 @@ public class PlayerHealth : MonoBehaviour {
 	// check if perma or temp death
 	public void playerDeath(Ability ability) {
 		--current_life_count;
+		resetPlayer ();
 		if(current_life_count <= 0){
 			permaDeath();
 		}
@@ -111,8 +112,6 @@ public class PlayerHealth : MonoBehaviour {
 	
 	private void tempDeath(Ability ability)
 	{
-		resetPlayer ();
-
 		//Prints ability that's being added
 		Debug.Log ("Died and gained the ability " + ability.abilityName);
 	
