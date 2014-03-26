@@ -617,10 +617,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   frames:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2800000, guid: 4dc2efa1cdd4c4f00ab2234503ada9ce, type: 3}
+  - {fileID: 2800000, guid: 1b1adf914f9ac442189c0bb4a771eeb3, type: 3}
+  - {fileID: 2800000, guid: 537d0d6cd5594464599d9de812cd69da, type: 3}
+  - {fileID: 2800000, guid: 5da00c08fc9744117b9a7d600b789ff1, type: 3}
   framesPerSecond: 10
 --- !u!1 &1156648661
 GameObject:
@@ -992,45 +992,6 @@ Transform:
   m_LocalScale: {x: 5, y: .5, z: 1}
   m_Children: []
   m_Father: {fileID: 1477388128}
---- !u!1 &1608087089
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100002, guid: 99c0ed75dca6c4391b1cf4ea4c9c0792, type: 2}
-  m_PrefabInternal: {fileID: 1799565431}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1608087091}
-  - 61: {fileID: 1608087090}
-  m_Layer: 0
-  m_Name: Head
-  m_TagString: PlayerHead
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!61 &1608087090
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6100002, guid: 99c0ed75dca6c4391b1cf4ea4c9c0792,
-    type: 2}
-  m_PrefabInternal: {fileID: 1799565431}
-  m_GameObject: {fileID: 1608087089}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Size: {x: 1, y: 1}
-  m_Center: {x: 0, y: 0}
---- !u!4 &1608087091
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400002, guid: 99c0ed75dca6c4391b1cf4ea4c9c0792, type: 2}
-  m_PrefabInternal: {fileID: 1799565431}
-  m_GameObject: {fileID: 1608087089}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .680000007, z: 0}
-  m_LocalScale: {x: 1, y: .5, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1925227799}
 --- !u!1 &1624410158
 GameObject:
   m_ObjectHideFlags: 0
@@ -1356,7 +1317,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1692195513}
-  - {fileID: 1608087091}
   m_Father: {fileID: 0}
 --- !u!50 &1925227800
 Rigidbody2D:

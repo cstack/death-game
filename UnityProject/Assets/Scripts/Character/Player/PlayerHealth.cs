@@ -14,7 +14,7 @@ public class PlayerHealth : MonoBehaviour {
 
 	private Player poi;
 	private TimerControl timer_control;
-	private LungCapacityAbility lungs = new LungCapacityAbility ();
+	private LungCapacityAbility lungs;
 
 	void Start() {
 		poi = (Player)GameObject.Find("Player").GetComponent<Player>();
