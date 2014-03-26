@@ -248,7 +248,6 @@ MonoBehaviour:
   maxHealth: 100
   currentBreath: 50
   maxBreath: 50
-  inWater: 0
   breathPercent: 1
   current_life_count: 3
   invulnerable: 0
@@ -267,7 +266,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 5
   grounded: 0
+  feetInWater: 0
+  headUnderwater: 0
   jumpSpeed: 10
+  swimSpeed: 4
+  waterDrag: 4
+  waterGravity: .5
   ability: {fileID: 0}
   speed: 0
 --- !u!61 &685693209
@@ -346,8 +350,48 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.19428492, y: 2.01213193, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 781893148}
   m_Father: {fileID: 0}
+--- !u!1 &781893147
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100002, guid: 99c0ed75dca6c4391b1cf4ea4c9c0792, type: 2}
+  m_PrefabInternal: {fileID: 198060879}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 781893148}
+  - 61: {fileID: 781893149}
+  m_Layer: 0
+  m_Name: Head
+  m_TagString: PlayerHead
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &781893148
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400002, guid: 99c0ed75dca6c4391b1cf4ea4c9c0792, type: 2}
+  m_PrefabInternal: {fileID: 198060879}
+  m_GameObject: {fileID: 781893147}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: .680000007, z: 0}
+  m_LocalScale: {x: 1, y: .5, z: 1}
+  m_Children: []
+  m_Father: {fileID: 685693213}
+--- !u!61 &781893149
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6100002, guid: 99c0ed75dca6c4391b1cf4ea4c9c0792,
+    type: 2}
+  m_PrefabInternal: {fileID: 198060879}
+  m_GameObject: {fileID: 781893147}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1131818760
 GameObject:
   m_ObjectHideFlags: 0

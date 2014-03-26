@@ -92,15 +92,16 @@ public class PlayerHealth : MonoBehaviour {
 		}
 	}
 	
+    // Time is RESET here
 	private void permaDeath()
 	{
-		//endGame();
+        timer_control.restartTimer();
 		Application.LoadLevel ("Main");
 	}
 
+    // This function does NOT reset time
 	private void resetPlayer() {
 		currentHealth = maxHealth;
-		timer_control.restartTimer();
 		poi.transform.position = spawnPoint.transform.position;
 		if (poi.feetInWater) {
 			poi.feetExitWater();
