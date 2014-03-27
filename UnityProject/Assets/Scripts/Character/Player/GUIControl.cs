@@ -22,6 +22,7 @@ public class GUIControl : MonoBehaviour {
 	public Texture2D ability_2_icon;
 	public Texture2D ability_3_icon;
 	public Texture2D ability_4_icon;
+    public Texture2D ability_selection_icon;
 	// ability font
 	private GUIStyle afontStyle;
 	
@@ -73,7 +74,7 @@ public class GUIControl : MonoBehaviour {
 	
 	// Mingrui
 	private void AbilityUI(){
-		GUILayout.BeginArea(new Rect(20, 100, 200, 100));
+		GUILayout.BeginArea(new Rect(20, 100, 300, 100));
 		GUILayout.BeginHorizontal();
 		GUILayout.Box(ability_1_icon, abilityStyle);
 		GUILayout.Box(ability_2_icon, abilityStyle);
@@ -81,7 +82,10 @@ public class GUIControl : MonoBehaviour {
 		GUILayout.Box(ability_4_icon, abilityStyle);
 		GUILayout.EndHorizontal();
 		GUILayout.EndArea();
-		GUILayout.BeginArea(new Rect(20, 134, 200, 100));
+
+        detectInput();
+
+		GUILayout.BeginArea(new Rect(20, 134, 300, 100));
 		GUILayout.BeginHorizontal();
 		GUILayout.Box("Q", afontStyle);
 		GUILayout.Box("W", afontStyle);
@@ -90,4 +94,44 @@ public class GUIControl : MonoBehaviour {
 		GUILayout.EndHorizontal();
 		GUILayout.EndArea();
 	}
+
+    private void detectInput() { 
+        GUILayout.BeginArea(new Rect(20, 100, 300, 100));
+        GUILayout.BeginHorizontal();
+        if(Input.GetKey(KeyCode.Q)){
+            GUILayout.Box(ability_selection_icon, abilityStyle);
+        }
+        GUILayout.EndHorizontal();
+        GUILayout.EndArea();
+        GUILayout.BeginArea(new Rect(20, 100, 300, 100));
+        GUILayout.BeginHorizontal();
+        if (Input.GetKey(KeyCode.W))
+        {
+            GUILayout.Box("", abilityStyle);
+            GUILayout.Box(ability_selection_icon, abilityStyle);
+        }
+        GUILayout.EndHorizontal();
+        GUILayout.EndArea();
+        GUILayout.BeginArea(new Rect(20, 100, 300, 100));
+        GUILayout.BeginHorizontal();
+        if (Input.GetKey(KeyCode.E))
+        {
+            GUILayout.Box("", abilityStyle);
+            GUILayout.Box("", abilityStyle);
+            GUILayout.Box(ability_selection_icon, abilityStyle);
+        }
+        GUILayout.EndHorizontal();
+        GUILayout.EndArea();
+        GUILayout.BeginArea(new Rect(20, 100, 300, 100));
+        GUILayout.BeginHorizontal();
+        if (Input.GetKey(KeyCode.R))
+        {
+            GUILayout.Box("", abilityStyle);
+            GUILayout.Box("", abilityStyle);
+            GUILayout.Box("", abilityStyle);
+            GUILayout.Box(ability_selection_icon, abilityStyle);
+        }
+        GUILayout.EndHorizontal();
+        GUILayout.EndArea();
+    }
 }
