@@ -27,15 +27,6 @@ public class EnemyShot : EntityBase {
 		}
 		shotTimer += Time.deltaTime;
 	}
-	
-	/*void OnTriggerEnter2D(Collider2D col)
-	{
-		if (col.name == "hero")
-		{
-			Destroy(this.gameObject);
-			col.gameObject.GetComponent<Health>().decreaseHealth(shotPower);
-		}
-	}*/
 
 	void OnTriggerEnter2D (Collider2D other){
 		if(other.gameObject.tag == "Player" && !friendly){
