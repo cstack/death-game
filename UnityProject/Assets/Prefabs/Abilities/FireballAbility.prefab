@@ -41,7 +41,6 @@ MonoBehaviour:
   abilityName: 
   abilityIcon: {fileID: 0}
   character: {fileID: 0}
-  icon: {fileID: 0}
   shot_prefab: {fileID: 11400004, guid: ec2239724f6674316ae0e8daf2d8acce, type: 2}
 --- !u!1001 &100100000
 Prefab:
