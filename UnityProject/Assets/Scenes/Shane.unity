@@ -369,7 +369,7 @@ GameObject:
   m_Icon: {fileID: -1003283189, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &329049019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -533,6 +533,8 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 604cc16bdcbc34c109584d5d9b1b30aa, type: 3}
   - {fileID: 2800000, guid: 8514c4485e59d402e8f2c90850620135, type: 3}
   framesPerSecond: 10
+  currentStrength: 3
+  objectsInRiver: []
 --- !u!61 &485612968
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -894,7 +896,7 @@ GameObject:
   m_Icon: {fileID: -1003283189, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &623742334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2071,6 +2073,10 @@ Prefab:
       propertyPath: spawnOnlyOnce
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 25dda0fc8921d41fd8a29b6ad9211c0a, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 25dda0fc8921d41fd8a29b6ad9211c0a, type: 2}
   m_RootGameObject: {fileID: 329049018}
@@ -2191,6 +2197,10 @@ Prefab:
       propertyPath: spawnOnlyOnce
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 25dda0fc8921d41fd8a29b6ad9211c0a, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 25dda0fc8921d41fd8a29b6ad9211c0a, type: 2}
   m_RootGameObject: {fileID: 623742333}
@@ -2212,7 +2222,7 @@ GameObject:
   m_Icon: {fileID: -1003283189, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1893474766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2301,6 +2311,10 @@ Prefab:
     - target: {fileID: 11400002, guid: 25dda0fc8921d41fd8a29b6ad9211c0a, type: 2}
       propertyPath: spawnOnlyOnce
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 25dda0fc8921d41fd8a29b6ad9211c0a, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 25dda0fc8921d41fd8a29b6ad9211c0a, type: 2}
