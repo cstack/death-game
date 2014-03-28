@@ -52,7 +52,7 @@ TextureImporter:
         y: 0
         width: 256
         height: 256
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: RunningIdleSheet_1
       rect:
@@ -61,7 +61,7 @@ TextureImporter:
         y: 0
         width: 256
         height: 256
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: RunningIdleSheet_2
       rect:
@@ -70,7 +70,7 @@ TextureImporter:
         y: 0
         width: 256
         height: 256
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: RunningIdleSheet_3
       rect:
@@ -79,7 +79,7 @@ TextureImporter:
         y: 0
         width: 256
         height: 256
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: RunningIdleSheet_4
       rect:
@@ -88,7 +88,7 @@ TextureImporter:
         y: 0
         width: 256
         height: 256
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: RunningIdleSheet_5
       rect:
@@ -97,7 +97,7 @@ TextureImporter:
         y: 0
         width: 256
         height: 256
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
   spritePackingTag: 
   userData: 
