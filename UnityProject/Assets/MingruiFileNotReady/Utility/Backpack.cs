@@ -3,8 +3,7 @@ using System.Collections;
 
 public class Backpack : MonoBehaviour {
     public int max_javelin_count;
-
-    private int current_javelin_count;
+    public int current_javelin_count;
 
     // adds to javelin count and then returns the new count
     public int add_javelin(int number) {
