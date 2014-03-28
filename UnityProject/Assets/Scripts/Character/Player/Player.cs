@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Player : CharacterBase {
 	public float maxSpeed = 5f;
@@ -14,6 +15,7 @@ public class Player : CharacterBase {
 
 	private PlayerHealth playerHealth;
 	public Ability ability;
+
 	public float speed;
 	private enum IdleOrRunningStates {
 		Idle, Running
@@ -57,6 +59,8 @@ public class Player : CharacterBase {
 			ability.Activate();
 		}
 	}
+
+
 
 	private void OnCollisionStay2D(Collision2D other) {
 		if (other.gameObject.tag == "ground") {
