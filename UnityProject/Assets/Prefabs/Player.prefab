@@ -16,7 +16,7 @@ GameObject:
   - 114: {fileID: 11400006}
   - 114: {fileID: 11400004}
   - 114: {fileID: 11400002}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -32,7 +32,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400002}
   - 61: {fileID: 6100002}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Head
   m_TagString: PlayerHead
   m_Icon: {fileID: 0}
