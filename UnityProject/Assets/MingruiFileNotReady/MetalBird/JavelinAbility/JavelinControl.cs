@@ -84,11 +84,11 @@ public class JavelinControl : MonoBehaviour {
             }
             else if (aim == (int)GlobalConstant.direction.left)
             {
-                transform.right = Vector3.Slerp(transform.right, rigidbody2D.velocity.normalized, 1.3f * Time.deltaTime);
+                transform.right = Vector3.Slerp(transform.right, rigidbody2D.velocity.normalized, 0.5f * Time.deltaTime);
             }
             else if (aim == (int)GlobalConstant.direction.right)
             {
-                transform.right = Vector3.Slerp(transform.right, rigidbody2D.velocity.normalized, 1.3f * Time.deltaTime);
+                transform.right = Vector3.Slerp(transform.right, rigidbody2D.velocity.normalized, 0.5f * Time.deltaTime);
             }
         }
 	}

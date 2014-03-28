@@ -5,6 +5,10 @@ public class Backpack : MonoBehaviour {
     public int max_javelin_count;
     public int current_javelin_count;
 
+	public int Get_Javelin(){
+		return current_javelin_count;
+	}
+
     // adds to javelin count and then returns the new count
     public int add_javelin(int number) {
         if (current_javelin_count + number < max_javelin_count)

@@ -3,22 +3,22 @@ using System.Collections;
 
 public class GlobalConstant : MonoBehaviour {
     [HideInInspector]
-    public KeyCode keycode_up = KeyCode.UpArrow;
+    public static KeyCode keycode_up = KeyCode.UpArrow;
     [HideInInspector]
-    public KeyCode keycode_down = KeyCode.DownArrow;
+    public static KeyCode keycode_down = KeyCode.DownArrow;
     [HideInInspector]
-    public KeyCode keycode_left = KeyCode.LeftArrow;
+    public static KeyCode keycode_left = KeyCode.LeftArrow;
     [HideInInspector]
-    public KeyCode keycode_right = KeyCode.RightArrow;
+    public static KeyCode keycode_right = KeyCode.RightArrow;
 
     [HideInInspector]
-    public KeyCode keycode_ability_1 = KeyCode.Q;
+    public static KeyCode keycode_ability_1 = KeyCode.Q;
     [HideInInspector]
-    public KeyCode keycode_ability_2 = KeyCode.W;
+    public static KeyCode keycode_ability_2 = KeyCode.W;
     [HideInInspector]
-    public KeyCode keycode_ability_3 = KeyCode.E;
+    public static KeyCode keycode_ability_3 = KeyCode.E;
 	[HideInInspector]
-	public KeyCode keycode_ability_4 = KeyCode.R;
+	public static KeyCode keycode_ability_4 = KeyCode.R;
 
     [HideInInspector]
     public enum direction

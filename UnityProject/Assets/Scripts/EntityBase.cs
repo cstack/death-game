@@ -3,7 +3,7 @@ using System.Collections;
 
 public abstract class EntityBase : MonoBehaviour {
 	public enum Direction {
-		Right, Left
+		Right, Left, Up, Down
 	}
 	private Direction _dir;
 	public Direction dir {
