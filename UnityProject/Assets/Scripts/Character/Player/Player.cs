@@ -14,7 +14,7 @@ public class Player : CharacterBase {
 	public float waterGravity = 0.5f;
 
 	private PlayerHealth playerHealth;
-	public Ability ability; // mingrui
+	public Ability ability;
 	public float speed;
 	private enum IdleOrRunningStates {
 		Idle, Running
@@ -22,7 +22,10 @@ public class Player : CharacterBase {
 
 	private Animator animator;
 
-	private AbilityControl ability_control; // mingrui
+	private AbilityControl ability_control; // mingrui, for array of ability
+	private int aim; // mingrui, for aiming javelin
+	private Backpack backpack; // mingrui, for holding javelin count
+	public GameObject javelin; // mingrui, javelin object
 
 	private void Start() {
 		dir = Direction.Right;
@@ -34,14 +37,58 @@ public class Player : CharacterBase {
 		}
 
 		ability_control = GetComponent<AbilityControl>(); // mingrui
+		backpack = GetComponent<Backpack>(); // mingrui
 	}
 
 	private void Update () {
+		Get_Aim(); // mingrui
+		Throw_Javelin(); // mingrui
 
 		HorizontalMove ();
 		VerticalMove ();
 		AbilityDetect ();
 
+	}
+
+	//mingrui
+	// get arrow key direction
+	private void Get_Aim() {
+		if(Input.GetKey(GlobalConstant.keycode_up)){
+			aim = (int)GlobalConstant.direction.up;
+		}
+		else if(Input.GetKey(GlobalConstant.keycode_down)){
+			aim = (int)GlobalConstant.direction.down;
+		}
+		else if(Input.GetKey(GlobalConstant.keycode_left)){
+			aim = (int)GlobalConstant.direction.left;
+		}
+		else if (Input.GetKey(GlobalConstant.keycode_right))
+		{
+			aim = (int)GlobalConstant.direction.right;
+		}
+	}
+
+	//mingrui
+	// throw javelin
+	private void Throw_Javelin(){
+		if(backpack.Get_Javelin() > 0){
+			if(Input.GetKeyDown(GlobalConstant.keycode_ability_4)){
+				GameObject new_javelin;
+				if(aim == (int)GlobalConstant.direction.left){
+					new_javelin = (GameObject)Instantiate(javelin, 
+					                                                 transform.position + new Vector3(1, 2f, 0), 
+					                                                 transform.rotation);
+				}
+				else{
+					new_javelin = (GameObject)Instantiate(javelin, 
+					                                                 transform.position + new Vector3(-1, 2f, 0), 
+					                                                 transform.rotation);
+				}
+
+				new_javelin.GetComponent<JavelinControl>().Create_Javelin(gameObject, aim);
+				backpack.remove_jevelin(1);
+			}
+		}
 	}
 
 	private void HorizontalMove () {
