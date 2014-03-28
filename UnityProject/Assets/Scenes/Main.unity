@@ -321,7 +321,7 @@ MonoBehaviour:
   moveUpAndDown: 0
   spawnFacingScrooge: 1
   spawnOnlyOnce: 1
-  enemyPrefab: {fileID: 100000, guid: 93083bebbd8cf4cc2a77036a198a7a1d, type: 2}
+  enemyPrefab: {fileID: 100002, guid: 4dc35863c23af450682e65df832d20e2, type: 2}
   enemyType: 0
 --- !u!65 &976966853
 BoxCollider:
@@ -778,7 +778,7 @@ Prefab:
     - target: {fileID: 11400002, guid: 25dda0fc8921d41fd8a29b6ad9211c0a, type: 2}
       propertyPath: enemyPrefab
       value: 
-      objectReference: {fileID: 100000, guid: 93083bebbd8cf4cc2a77036a198a7a1d, type: 2}
+      objectReference: {fileID: 100002, guid: 4dc35863c23af450682e65df832d20e2, type: 2}
     - target: {fileID: 11400002, guid: 25dda0fc8921d41fd8a29b6ad9211c0a, type: 2}
       propertyPath: spawnOnlyOnStart
       value: 1
@@ -1312,6 +1312,8 @@ GameObject:
   - 114: {fileID: 1925227805}
   - 114: {fileID: 1925227804}
   - 114: {fileID: 1925227803}
+  - 114: {fileID: 1925227807}
+  - 114: {fileID: 1925227806}
   m_Layer: 13
   m_Name: Player
   m_TagString: Player
@@ -1421,6 +1423,7 @@ MonoBehaviour:
   waterGravity: .5
   ability: {fileID: 11400000, guid: 0f722a17ee475459a8ac2cb48cc8df13, type: 2}
   speed: 0
+  javelin: {fileID: 100000, guid: df7b4fea313777f46a4d069ee2f2e40a, type: 2}
 --- !u!114 &1925227803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1494,10 +1497,10 @@ MonoBehaviour:
     m_StretchHeight: 0
   fgImage: {fileID: 2800000, guid: 1ad14312511a94bfa85f0bb1f49a87f5, type: 3}
   bgImage: {fileID: 2800000, guid: cea1a9d1c889a41f1bf136ac5c0a58fa, type: 3}
-  ability_1_icon: {fileID: 2800000, guid: 44d8d3a264efc46558ca6813b7d01b77, type: 3}
-  ability_2_icon: {fileID: 2800000, guid: f1e8313d9bbc849b3aa2eb0ceaa0bd18, type: 3}
-  ability_3_icon: {fileID: 2800000, guid: 9fb7d10cc14ba426196083544ac55716, type: 3}
-  ability_4_icon: {fileID: 2800000, guid: 5cab25fe42de94fff8d6def18a33b982, type: 3}
+  ability_1_icon: {fileID: 2800000, guid: 297ca3406301544e4bb149dfb41a3c9a, type: 3}
+  ability_2_icon: {fileID: 2800000, guid: 297ca3406301544e4bb149dfb41a3c9a, type: 3}
+  ability_3_icon: {fileID: 2800000, guid: 297ca3406301544e4bb149dfb41a3c9a, type: 3}
+  ability_4_icon: {fileID: 2800000, guid: 297ca3406301544e4bb149dfb41a3c9a, type: 3}
   ability_selection_icon: {fileID: 2800000, guid: 1b538248f3f9e6b4fb4f48160a43a052,
     type: 3}
 --- !u!114 &1925227804
@@ -1534,6 +1537,32 @@ MonoBehaviour:
   current_life_count: 3
   invulnerable: 0
   spawnPoint: {fileID: 1156648661}
+--- !u!114 &1925227806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400012, guid: 99c0ed75dca6c4391b1cf4ea4c9c0792,
+    type: 2}
+  m_PrefabInternal: {fileID: 432328548}
+  m_GameObject: {fileID: 1925227796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 113be9aa46499493c80600edc8bea6b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1925227807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400010, guid: 99c0ed75dca6c4391b1cf4ea4c9c0792,
+    type: 2}
+  m_PrefabInternal: {fileID: 432328548}
+  m_GameObject: {fileID: 1925227796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d11fa5f6eaea88644a3f859129291070, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  max_javelin_count: 3
+  current_javelin_count: 3
 --- !u!1 &1993012342
 GameObject:
   m_ObjectHideFlags: 0
