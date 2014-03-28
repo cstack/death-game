@@ -83,7 +83,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 9793836}
   - 61: {fileID: 9793837}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Head
   m_TagString: PlayerHead
   m_Icon: {fileID: 0}
@@ -264,7 +264,7 @@ GameObject:
   - 114: {fileID: 275875641}
   m_Layer: 0
   m_Name: WaterBlock
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -349,8 +349,8 @@ Transform:
   m_PrefabInternal: {fileID: 557749360}
   m_GameObject: {fileID: 275875640}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.5, y: -2, z: 0}
-  m_LocalScale: {x: 5, y: 4, z: 1}
+  m_LocalPosition: {x: 7.5, y: -1.80393517, z: 0}
+  m_LocalScale: {x: 5, y: 4.45000029, z: 1}
   m_Children: []
   m_Father: {fileID: 1446147818}
 --- !u!1 &329049018
@@ -495,7 +495,7 @@ GameObject:
   - 114: {fileID: 485612967}
   m_Layer: 0
   m_Name: River
-  m_TagString: Untagged
+  m_TagString: River
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -533,6 +533,8 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 604cc16bdcbc34c109584d5d9b1b30aa, type: 3}
   - {fileID: 2800000, guid: 8514c4485e59d402e8f2c90850620135, type: 3}
   framesPerSecond: 10
+  currentStrength: 3
+  objectsInRiver: []
 --- !u!61 &485612968
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -596,8 +598,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 485612966}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 125.050087, y: -29.7867622, z: 0}
-  m_LocalScale: {x: 92.5851059, y: 18.8236294, z: 1}
+  m_LocalPosition: {x: 125.050087, y: -29.7867622, z: 1}
+  m_LocalScale: {x: 92.5851059, y: 20.7060013, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!1 &525108378
@@ -742,6 +744,18 @@ Prefab:
     - target: {fileID: 100002, guid: faec91547dd59454092419d81929d56f, type: 2}
       propertyPath: m_Name
       value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 100012, guid: faec91547dd59454092419d81929d56f, type: 2}
+      propertyPath: m_TagString
+      value: Water
+      objectReference: {fileID: 0}
+    - target: {fileID: 400012, guid: faec91547dd59454092419d81929d56f, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 4.45000029
+      objectReference: {fileID: 0}
+    - target: {fileID: 400012, guid: faec91547dd59454092419d81929d56f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.80393517
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: faec91547dd59454092419d81929d56f, type: 2}
@@ -953,7 +967,7 @@ GameObject:
   - 114: {fileID: 630498997}
   - 114: {fileID: 630498996}
   - 114: {fileID: 630498995}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1037,6 +1051,8 @@ MonoBehaviour:
   ability_2_icon: {fileID: 2800000, guid: f1e8313d9bbc849b3aa2eb0ceaa0bd18, type: 3}
   ability_3_icon: {fileID: 2800000, guid: 9fb7d10cc14ba426196083544ac55716, type: 3}
   ability_4_icon: {fileID: 2800000, guid: 5cab25fe42de94fff8d6def18a33b982, type: 3}
+  ability_selection_icon: {fileID: 2800000, guid: 1b538248f3f9e6b4fb4f48160a43a052,
+    type: 3}
 --- !u!114 &630498996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1069,7 +1085,7 @@ MonoBehaviour:
   maxBreath: 50
   breathPercent: 1
   current_life_count: 3
-  invulnerable: 0
+  invulnerable: 1
   spawnPoint: {fileID: 1520272207}
 --- !u!114 &630498998
 MonoBehaviour:
@@ -1101,7 +1117,7 @@ BoxCollider2D:
   m_PrefabInternal: {fileID: 2109524530}
   m_GameObject: {fileID: 630498994}
   m_Enabled: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b93f399b4579141a5ab7ae13f67761a2, type: 2}
   m_IsTrigger: 0
   m_Size: {x: 1, y: 1}
   m_Center: {x: 0, y: .5}
@@ -1167,7 +1183,7 @@ Transform:
   m_PrefabInternal: {fileID: 2109524530}
   m_GameObject: {fileID: 630498994}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.6613121, y: 2.27610874, z: 0}
+  m_LocalPosition: {x: -5.10911989, y: 2.96073389, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9793836}
@@ -2385,11 +2401,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 99c0ed75dca6c4391b1cf4ea4c9c0792, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -4.6613121
+      value: -5.10911989
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 99c0ed75dca6c4391b1cf4ea4c9c0792, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.27610874
+      value: 2.96073389
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 99c0ed75dca6c4391b1cf4ea4c9c0792, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2430,6 +2446,10 @@ Prefab:
     - target: {fileID: 400002, guid: 99c0ed75dca6c4391b1cf4ea4c9c0792, type: 2}
       propertyPath: m_LocalPosition.y
       value: .870000005
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400006, guid: 99c0ed75dca6c4391b1cf4ea4c9c0792, type: 2}
+      propertyPath: invulnerable
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 99c0ed75dca6c4391b1cf4ea4c9c0792, type: 2}

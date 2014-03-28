@@ -19,6 +19,7 @@ public abstract class EntityBase : MonoBehaviour {
 			}
 		}
 	}
+	private float riverSpeed = 0.0f;
 	
 	protected void FlipSprite() {
 		// Flip the sprite over the anchor point
@@ -33,7 +34,7 @@ public abstract class EntityBase : MonoBehaviour {
 	
 	protected void updateXVelocity(Rigidbody2D obj, float x) {
 		Vector2 vel = obj.velocity;
-		vel.x = x;
+		vel.x = x + riverSpeed;
 		obj.velocity = vel;
 	}
 	
@@ -41,6 +42,15 @@ public abstract class EntityBase : MonoBehaviour {
 		Vector2 vel = rigidbody2D.velocity;
 		vel.y = y;
 		rigidbody2D.velocity = vel;
+	}
+
+	//right is if river flows right or not
+	public void enterRiver(float rvSpeed) {
+		riverSpeed = rvSpeed;
+	}
+
+	public void exitRiver() {
+		riverSpeed = 0f;
 	}
 }
 
