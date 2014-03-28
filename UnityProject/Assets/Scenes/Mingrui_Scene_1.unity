@@ -511,8 +511,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 6200000, guid: b93f399b4579141a5ab7ae13f67761a2, type: 2}
   m_IsTrigger: 0
-  m_Size: {x: 1, y: 2}
-  m_Center: {x: 0, y: 1}
+  m_Size: {x: 1.10000002, y: 2}
+  m_Center: {x: .100000001, y: 1.05999994}
 --- !u!50 &685693210
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -687,7 +687,7 @@ Transform:
   m_PrefabInternal: {fileID: 769845503}
   m_GameObject: {fileID: 781893147}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.060567379, y: 2.20061827, z: 0}
+  m_LocalPosition: {x: -.060567379, y: 2.22428489, z: 0}
   m_LocalScale: {x: 1, y: .100000001, z: 1}
   m_Children: []
   m_Father: {fileID: 685693213}
@@ -701,8 +701,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .5, y: 4}
-  m_Center: {x: 0, y: 0}
+  m_Size: {x: .550000012, y: 3}
+  m_Center: {x: .100000001, y: 0}
 --- !u!1 &792222118
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,7 +734,7 @@ MonoBehaviour:
   abilityName: JavelinAbility
   abilityIcon: {fileID: 2800000, guid: 5cab25fe42de94fff8d6def18a33b982, type: 3}
   character: {fileID: 0}
-  javelin_prefab: {fileID: 0}
+  javelin_prefab: {fileID: 100000, guid: df7b4fea313777f46a4d069ee2f2e40a, type: 2}
 --- !u!4 &792222120
 Transform:
   m_ObjectHideFlags: 0
@@ -780,6 +780,10 @@ Prefab:
     - target: {fileID: 400000, guid: df7b4fea313777f46a4d069ee2f2e40a, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000000, guid: df7b4fea313777f46a4d069ee2f2e40a, type: 2}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: df7b4fea313777f46a4d069ee2f2e40a, type: 2}

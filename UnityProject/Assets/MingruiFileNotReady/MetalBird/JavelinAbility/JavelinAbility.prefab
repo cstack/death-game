@@ -41,7 +41,7 @@ MonoBehaviour:
   abilityName: JavelinAbility
   abilityIcon: {fileID: 2800000, guid: 5cab25fe42de94fff8d6def18a33b982, type: 3}
   character: {fileID: 0}
-  javelin_prefab: {fileID: 0}
+  javelin_prefab: {fileID: 100000, guid: df7b4fea313777f46a4d069ee2f2e40a, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
