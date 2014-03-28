@@ -118,4 +118,8 @@ public class Player : CharacterBase {
 	public void feetExitWater () {
 		feetInWater = false;
 	}
+
+	public void AbilityFinished() {
+
+	}
 }
