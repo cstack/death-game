@@ -20,13 +20,11 @@ public class Player : CharacterBase {
 		Idle, Running
 	}
 
-	private Animator animator;
-
 	private AbilityControl ability_control; // mingrui
 
-	private void Start() {
+	override protected void Start() {
+		base.Start ();
 		dir = Direction.Right;
-		animator = GetComponent<Animator> ();
 		playerHealth = GetComponent<PlayerHealth> ();
 
 		if (ability != null) {

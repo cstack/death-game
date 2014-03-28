@@ -1,11 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FireEnemy : EnemyBase {
-	public float maxSpeed = 3f;
-	public float range;
+public class Brute : EnemyBase {
+	public float maxSpeed = 1.5f;
+	public float range = 1f;
+	public int attackPower = 50;
+	public Ability deathAbility = null;
 
-	public EnemyShot shot_prefab;
+	private GameObject attackCollider;
+
+	override protected void Start() {
+		base.Start ();
+		attackCollider = transform.FindChild ("Attack").gameObject;
+	}
 
 	// Update is called once per frame
 	void Update () {
@@ -27,19 +34,24 @@ public class FireEnemy : EnemyBase {
 				Attack();
 			}
 		}
-
+		
 		updateXVelocity (speed);
-
+		animator.SetFloat ("speed", Mathf.Abs(speed));
+		
 		if (dir == Direction.Left && speed > 0) {
 			dir = Direction.Right;
 		} else if (dir == Direction.Right && speed < 0) {
 			dir = Direction.Left;
 		}
 	}
-
+	
 	override protected void Attack() {
 		base.Attack ();
-		EnemyShot shot = (EnemyShot)Instantiate(shot_prefab);
-		shot.init_shot(this, false);
+		animator.SetTrigger ("attack");
+		attackCollider.SetActive (true);
+	}
+
+	public void AbilityAnimationFinished() {
+		attackCollider.SetActive (false);
 	}
 }
