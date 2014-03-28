@@ -83,7 +83,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 9793836}
   - 61: {fileID: 9793837}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Head
   m_TagString: PlayerHead
   m_Icon: {fileID: 0}
@@ -953,7 +953,7 @@ GameObject:
   - 114: {fileID: 630498997}
   - 114: {fileID: 630498996}
   - 114: {fileID: 630498995}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1037,6 +1037,8 @@ MonoBehaviour:
   ability_2_icon: {fileID: 2800000, guid: f1e8313d9bbc849b3aa2eb0ceaa0bd18, type: 3}
   ability_3_icon: {fileID: 2800000, guid: 9fb7d10cc14ba426196083544ac55716, type: 3}
   ability_4_icon: {fileID: 2800000, guid: 5cab25fe42de94fff8d6def18a33b982, type: 3}
+  ability_selection_icon: {fileID: 2800000, guid: 1b538248f3f9e6b4fb4f48160a43a052,
+    type: 3}
 --- !u!114 &630498996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1101,7 +1103,7 @@ BoxCollider2D:
   m_PrefabInternal: {fileID: 2109524530}
   m_GameObject: {fileID: 630498994}
   m_Enabled: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b93f399b4579141a5ab7ae13f67761a2, type: 2}
   m_IsTrigger: 0
   m_Size: {x: 1, y: 1}
   m_Center: {x: 0, y: .5}
@@ -1131,7 +1133,7 @@ Animator:
   m_GameObject: {fileID: 630498994}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: da54946f282294ce78965af137983d15, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9be082cacf9e847f1952864f635839de, type: 2}
   m_CullingMode: 0
   m_ApplyRootMotion: 0
   m_AnimatePhysics: 0
@@ -2431,6 +2433,10 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: .870000005
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 99c0ed75dca6c4391b1cf4ea4c9c0792, type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 9be082cacf9e847f1952864f635839de, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 99c0ed75dca6c4391b1cf4ea4c9c0792, type: 2}
   m_RootGameObject: {fileID: 630498994}
