@@ -154,6 +154,46 @@ Prefab:
   m_RootGameObject: {fileID: 626674345}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1001 &524704613
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 1c25b78009e5c48c7a0cdc5b2a02f516, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: .887573123
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1c25b78009e5c48c7a0cdc5b2a02f516, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 3.74079609
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1c25b78009e5c48c7a0cdc5b2a02f516, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1c25b78009e5c48c7a0cdc5b2a02f516, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1c25b78009e5c48c7a0cdc5b2a02f516, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1c25b78009e5c48c7a0cdc5b2a02f516, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1c25b78009e5c48c7a0cdc5b2a02f516, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 1c25b78009e5c48c7a0cdc5b2a02f516, type: 2}
+  m_RootGameObject: {fileID: 792222118}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &529347265
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,8 +496,8 @@ MonoBehaviour:
   feetInWater: 0
   headUnderwater: 0
   jumpSpeed: 10
-  swimSpeed: 4
-  waterDrag: 4
+  swimSpeed: 7
+  waterDrag: 3
   waterGravity: .5
   ability: {fileID: 0}
   speed: 0
@@ -471,8 +511,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 6200000, guid: b93f399b4579141a5ab7ae13f67761a2, type: 2}
   m_IsTrigger: 0
-  m_Size: {x: 1, y: 1}
-  m_Center: {x: 0, y: .5}
+  m_Size: {x: 1, y: 2}
+  m_Center: {x: 0, y: 1}
 --- !u!50 &685693210
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -499,7 +539,7 @@ Animator:
   m_GameObject: {fileID: 685693204}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: da54946f282294ce78965af137983d15, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9be082cacf9e847f1952864f635839de, type: 2}
   m_CullingMode: 0
   m_ApplyRootMotion: 0
   m_AnimatePhysics: 0
@@ -526,7 +566,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300002, guid: dfdb55cff3c224ee381dd388db6935e4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3def618e1c84549dd973e0c65e99f246, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &685693213
 Transform:
@@ -647,8 +687,8 @@ Transform:
   m_PrefabInternal: {fileID: 769845503}
   m_GameObject: {fileID: 781893147}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .680000007, z: 0}
-  m_LocalScale: {x: 1, y: .5, z: 1}
+  m_LocalPosition: {x: -.060567379, y: 2.20061827, z: 0}
+  m_LocalScale: {x: 1, y: .100000001, z: 1}
   m_Children: []
   m_Father: {fileID: 685693213}
 --- !u!61 &781893149
@@ -661,8 +701,51 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: .5, y: 4}
   m_Center: {x: 0, y: 0}
+--- !u!1 &792222118
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 1c25b78009e5c48c7a0cdc5b2a02f516, type: 2}
+  m_PrefabInternal: {fileID: 524704613}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 792222120}
+  - 114: {fileID: 792222119}
+  m_Layer: 0
+  m_Name: JavelinAbility
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &792222119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 1c25b78009e5c48c7a0cdc5b2a02f516,
+    type: 2}
+  m_PrefabInternal: {fileID: 524704613}
+  m_GameObject: {fileID: 792222118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5187dcc1c382c46c1866b935adae88ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityName: JavelinAbility
+  abilityIcon: {fileID: 2800000, guid: 5cab25fe42de94fff8d6def18a33b982, type: 3}
+  character: {fileID: 0}
+  javelin_prefab: {fileID: 0}
+--- !u!4 &792222120
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 1c25b78009e5c48c7a0cdc5b2a02f516, type: 2}
+  m_PrefabInternal: {fileID: 524704613}
+  m_GameObject: {fileID: 792222118}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .887573123, y: 3.74079609, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1001 &1004768051
 Prefab:
   m_ObjectHideFlags: 0
