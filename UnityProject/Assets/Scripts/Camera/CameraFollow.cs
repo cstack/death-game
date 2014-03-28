@@ -4,10 +4,10 @@ using System.Collections;
 public class CameraFollow : MonoBehaviour {
 	public Transform poi;
 	public float u = 0.4f;
-	public float minX = 0f;
+	public float minX = -1f;
 	public float maxX = 100f;
 	public float minY = 25.6f;
-	public float maxY = 25.6f;
+	public float maxY = 200f;
 	public float yOffest = 5f;
 	public float z = -9f;
 

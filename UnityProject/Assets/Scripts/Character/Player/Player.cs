@@ -41,6 +41,7 @@ public class Player : CharacterBase {
 		HorizontalMove ();
 		VerticalMove ();
 		AbilityDetect ();
+
 	}
 
 	private void HorizontalMove () {

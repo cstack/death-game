@@ -19,6 +19,7 @@ public class PlayerHealth : MonoBehaviour {
 	void Start() {
 		poi = (Player)GameObject.Find("Player").GetComponent<Player>();
 		timer_control = poi.GetComponent<TimerControl>();
+		lungs = (LungCapacityAbility) gameObject.AddComponent ("LungCapacityAbility");
 	}
 
 	public void startDrowning() {
