@@ -26,8 +26,10 @@ public class GUIControl : MonoBehaviour {
     public Texture2D ability_selection_icon;
 	// ability font
 	private GUIStyle afontStyle;
+	//rect for UI Ability Boxes
+	private Rect abilityRect = new Rect (Screen.width/3.3f, Screen.height-50, 300, 100);
+	//Ability Icon Texture List
 	private List<Texture2D> ability_icon_list = new List<Texture2D>();
-	
 	
 	void Start () {
 		poi = GameObject.Find ("Player").transform;
@@ -76,7 +78,7 @@ public class GUIControl : MonoBehaviour {
 	
 	// Mingrui
 	private void AbilityUI(){
-		GUILayout.BeginArea(new Rect(20, 100, 300, 100));
+		GUILayout.BeginArea(abilityRect);
 		GUILayout.BeginHorizontal();
 		GUILayout.Box(ability_1_icon, abilityStyle);
 		GUILayout.Box(ability_2_icon, abilityStyle);
@@ -87,7 +89,7 @@ public class GUIControl : MonoBehaviour {
 
         detectInput();
 
-		GUILayout.BeginArea(new Rect(20, 134, 300, 100));
+		GUILayout.BeginArea(abilityRect);
 		GUILayout.BeginHorizontal();
 		GUILayout.Box("Q", afontStyle);
 		GUILayout.Box("W", afontStyle);
@@ -98,14 +100,14 @@ public class GUIControl : MonoBehaviour {
 	}
 
     private void detectInput() { 
-        GUILayout.BeginArea(new Rect(20, 100, 300, 100));
+		GUILayout.BeginArea(abilityRect);
         GUILayout.BeginHorizontal();
         if(Input.GetKey(KeyCode.Q)){
             GUILayout.Box(ability_selection_icon, abilityStyle);
         }
         GUILayout.EndHorizontal();
         GUILayout.EndArea();
-        GUILayout.BeginArea(new Rect(20, 100, 300, 100));
+		GUILayout.BeginArea(abilityRect);
         GUILayout.BeginHorizontal();
         if (Input.GetKey(KeyCode.W))
         {
@@ -114,7 +116,7 @@ public class GUIControl : MonoBehaviour {
         }
         GUILayout.EndHorizontal();
         GUILayout.EndArea();
-        GUILayout.BeginArea(new Rect(20, 100, 300, 100));
+		GUILayout.BeginArea(abilityRect);
         GUILayout.BeginHorizontal();
         if (Input.GetKey(KeyCode.E))
         {
@@ -124,7 +126,7 @@ public class GUIControl : MonoBehaviour {
         }
         GUILayout.EndHorizontal();
         GUILayout.EndArea();
-        GUILayout.BeginArea(new Rect(20, 100, 300, 100));
+		GUILayout.BeginArea(abilityRect);
         GUILayout.BeginHorizontal();
         if (Input.GetKey(KeyCode.R))
         {
