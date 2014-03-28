@@ -39,7 +39,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityName: 
-  abilityIcon: {fileID: 0}
+  abilityIcon: {fileID: 2800000, guid: 2d5f53cfaf4d64f84abea28d8a06fca5, type: 3}
   character: {fileID: 0}
   shot_prefab: {fileID: 11400004, guid: ec2239724f6674316ae0e8daf2d8acce, type: 2}
 --- !u!1001 &100100000
