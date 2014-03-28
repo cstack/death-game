@@ -15,7 +15,6 @@ public class Player : CharacterBase {
 
 	private PlayerHealth playerHealth;
 	public Ability ability;
-
 	public float speed;
 	private enum IdleOrRunningStates {
 		Idle, Running
@@ -30,17 +29,29 @@ public class Player : CharacterBase {
 	}
 
 	private void Update () {
+
+		HorizontalMove ();
+		VerticalMove ();
+		AbilityDetect ();
+	}
+
+	private void HorizontalMove () {
+		
 		speed = Input.GetAxis ("Horizontal") * maxSpeed;
 		updateXVelocity (speed);
-
+		
 		animator.SetFloat ("speed", Mathf.Abs(speed));
-
+		
 		if (dir == Direction.Left && speed > 0) {
 			dir = Direction.Right;
 		} else if (dir == Direction.Right && speed < 0) {
 			dir = Direction.Left;
 		}
 
+	}
+
+	private void VerticalMove () {
+		
 		if (Input.GetButtonDown("Jump") && (grounded || feetInWater)) {
 			if (headUnderwater) {
 				updateYVelocity(swimSpeed);
@@ -50,19 +61,22 @@ public class Player : CharacterBase {
 			grounded = false;
 			animator.SetBool("grounded", false);
 		}
-
+		
 		if (Input.GetButtonUp("Jump") && rigidbody2D.velocity.y > 0) {
 			updateYVelocity(0);
 		}
 
+	}
+
+	private void AbilityDetect () {
+		
 		if (Input.GetButtonDown("Fire1") && ability != null) {
 			ability.Activate();
 		}
+
 	}
 
-
-
-	private void OnCollisionStay2D(Collision2D other) {
+	private void OnCollisionStay2D (Collision2D other) {
 		if (other.gameObject.tag == "ground") {
 			if (other.contacts.Length > 0 && rigidbody2D.velocity.y <= 0 &&
 			    Vector2.Dot(other.contacts[0].normal, Vector2.up) > 0.5) {
@@ -73,12 +87,12 @@ public class Player : CharacterBase {
 		}
 	}
 
-	public void AddAbility(Ability newAbility){
+	public void AddAbility (Ability newAbility){
 		ability = newAbility;
 		ability.character = this;
 	}
 
-	private void OnCollisionExit2D(Collision2D other) {
+	private void OnCollisionExit2D (Collision2D other) {
 		if (other.gameObject.tag == "ground") {
 			grounded = false;
 			animator.SetBool("grounded", false);
