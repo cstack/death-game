@@ -21,13 +21,18 @@ public class Player : CharacterBase {
 	}
 
 	private Animator animator;
-	
+
 	private AbilityControl ability_control; // mingrui
 
 	private void Start() {
 		dir = Direction.Right;
 		animator = GetComponent<Animator> ();
 		playerHealth = GetComponent<PlayerHealth> ();
+
+		if (ability != null) {
+			ability.character = this;
+		}
+
 		ability_control = GetComponent<AbilityControl>(); // mingrui
 	}
 
@@ -40,12 +45,12 @@ public class Player : CharacterBase {
 	}
 
 	private void HorizontalMove () {
-		
+
 		speed = Input.GetAxis ("Horizontal") * maxSpeed;
 		updateXVelocity (speed);
-		
+
 		animator.SetFloat ("speed", Mathf.Abs(speed));
-		
+
 		if (dir == Direction.Left && speed > 0) {
 			dir = Direction.Right;
 		} else if (dir == Direction.Right && speed < 0) {
@@ -55,7 +60,7 @@ public class Player : CharacterBase {
 	}
 
 	private void VerticalMove () {
-		
+
 		if (Input.GetButtonDown("Jump") && (grounded || feetInWater)) {
 			if (headUnderwater) {
 				updateYVelocity(swimSpeed);
@@ -65,7 +70,7 @@ public class Player : CharacterBase {
 			grounded = false;
 			animator.SetBool("grounded", false);
 		}
-		
+
 		if (Input.GetButtonUp("Jump") && rigidbody2D.velocity.y > 0) {
 			updateYVelocity(0);
 		}
@@ -73,7 +78,7 @@ public class Player : CharacterBase {
 	}
 
 	private void AbilityDetect () {
-		
+
 		if (Input.GetButtonDown("Fire1") && ability != null) {
 			ability.Activate();
 		}
@@ -119,12 +124,16 @@ public class Player : CharacterBase {
 	public void feetEnterWater () {
 		feetInWater = true;
 	}
-	
+
 	public void feetExitWater () {
 		feetInWater = false;
 	}
 
-	public void AbilityFinished() {
+	public void AbilityAnimationHit() {
+		ability.Hit ();
+	}
 
+	public void AbilityAnimationFinished() {
+		ability.Finish ();
 	}
 }
