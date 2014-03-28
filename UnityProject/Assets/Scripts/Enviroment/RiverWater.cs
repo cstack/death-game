@@ -17,21 +17,6 @@ public class RiverWater : MonoBehaviour {
 			renderer.material.mainTexture = frames[index];
 		}
 
-		if (objectsInRiver.Count > 0) {
-			moveObjects ();
-		}
-	}
-
-	void moveObjects () {
-		foreach (GameObject gob in objectsInRiver) {
-			print ("yes");
-			if (gob.rigidbody2D != null) {
-				print ("no");
-				Vector2 vel = gob.rigidbody2D.velocity;
-				vel.x = vel.x + currentStrength;
-				gob.rigidbody2D.velocity = vel;
-			}
-		}
 	}
 
 	void OnTriggerEnter2D (Collider2D col) {
