@@ -371,7 +371,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400002, guid: faec91547dd59454092419d81929d56f, type: 2}
   m_PrefabInternal: {fileID: 1188890310}
   m_GameObject: {fileID: 989293160}
-  m_LocalRotation: {x: 0, y: 0, z: .707106888, w: .707106769}
+  m_LocalRotation: {x: 0, y: 0, z: .707106829, w: .707106709}
   m_LocalPosition: {x: 10.25, y: -2, z: 0}
   m_LocalScale: {x: 5, y: .5, z: 1}
   m_Children: []
@@ -515,8 +515,8 @@ MonoBehaviour:
   minX: 0
   maxX: 100
   minY: 0
-  maxY: 10
-  yOffest: .5
+  maxY: 25.6000004
+  yOffest: 1
   z: -9
 --- !u!1 &1086274426
 GameObject:
@@ -616,11 +616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e47f356f674594cc78d309a6684b9d10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frames:
-  - {fileID: 2800000, guid: 4dc2efa1cdd4c4f00ab2234503ada9ce, type: 3}
-  - {fileID: 2800000, guid: 1b1adf914f9ac442189c0bb4a771eeb3, type: 3}
-  - {fileID: 2800000, guid: 537d0d6cd5594464599d9de812cd69da, type: 3}
-  - {fileID: 2800000, guid: 5da00c08fc9744117b9a7d600b789ff1, type: 3}
+  frames: []
   framesPerSecond: 10
 --- !u!1 &1156648661
 GameObject:
@@ -1087,7 +1083,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400000, guid: faec91547dd59454092419d81929d56f, type: 2}
   m_PrefabInternal: {fileID: 1188890310}
   m_GameObject: {fileID: 1638648301}
-  m_LocalRotation: {x: 0, y: 0, z: .707106888, w: .707106769}
+  m_LocalRotation: {x: 0, y: 0, z: .707106829, w: .707106709}
   m_LocalPosition: {x: 4.75, y: -2, z: 0}
   m_LocalScale: {x: 5, y: .5, z: 1}
   m_Children: []
@@ -1214,7 +1210,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1692195513}
   - 61: {fileID: 1692195514}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Head
   m_TagString: PlayerHead
   m_Icon: {fileID: 0}
@@ -1228,8 +1224,8 @@ Transform:
   m_PrefabInternal: {fileID: 659786858}
   m_GameObject: {fileID: 1692195512}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .680000007, z: 0}
-  m_LocalScale: {x: 1, y: .5, z: 1}
+  m_LocalPosition: {x: -.060567379, y: 2.20061827, z: 0}
+  m_LocalScale: {x: 1, y: .100000001, z: 1}
   m_Children: []
   m_Father: {fileID: 1925227799}
 --- !u!61 &1692195514
@@ -1242,7 +1238,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: .5, y: 4}
   m_Center: {x: 0, y: 0}
 --- !u!1 &1925227796
 GameObject:
@@ -1260,7 +1256,7 @@ GameObject:
   - 114: {fileID: 1925227805}
   - 114: {fileID: 1925227804}
   - 114: {fileID: 1925227803}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1277,7 +1273,7 @@ Animator:
   m_GameObject: {fileID: 1925227796}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: da54946f282294ce78965af137983d15, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9be082cacf9e847f1952864f635839de, type: 2}
   m_CullingMode: 0
   m_ApplyRootMotion: 0
   m_AnimatePhysics: 0
@@ -1304,7 +1300,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300002, guid: dfdb55cff3c224ee381dd388db6935e4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3def618e1c84549dd973e0c65e99f246, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1925227799
 Transform:
@@ -1342,10 +1338,10 @@ BoxCollider2D:
   m_PrefabInternal: {fileID: 659786858}
   m_GameObject: {fileID: 1925227796}
   m_Enabled: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b93f399b4579141a5ab7ae13f67761a2, type: 2}
   m_IsTrigger: 0
-  m_Size: {x: 1, y: 1}
-  m_Center: {x: 0, y: .5}
+  m_Size: {x: 1, y: 2}
+  m_Center: {x: 0, y: 1}
 --- !u!114 &1925227802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1363,8 +1359,8 @@ MonoBehaviour:
   feetInWater: 0
   headUnderwater: 0
   jumpSpeed: 10
-  swimSpeed: 4
-  waterDrag: 4
+  swimSpeed: 7
+  waterDrag: 3
   waterGravity: .5
   ability: {fileID: 0}
   speed: 0
