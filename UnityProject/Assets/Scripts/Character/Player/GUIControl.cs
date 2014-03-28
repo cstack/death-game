@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic; // List
 
 [RequireComponent(typeof(PlayerHealth))]
 [RequireComponent(typeof(TimerControl))]
@@ -25,6 +26,7 @@ public class GUIControl : MonoBehaviour {
     public Texture2D ability_selection_icon;
 	// ability font
 	private GUIStyle afontStyle;
+	private List<Texture2D> ability_icon_list = new List<Texture2D>();
 	
 	
 	void Start () {

@@ -6,7 +6,7 @@ public class JavelinControl : MonoBehaviour {
     public float speed;
     private GameObject thrower;
     private int aim;
-    private bool launch;
+    private bool launch = true;
     private bool flying = false;
 
     public void Create_Javelin(GameObject _thrower, int direction)
@@ -21,8 +21,9 @@ public class JavelinControl : MonoBehaviour {
     }
 	
 	void Update () {
-        if (!flying)
+        if (launch) // initial throw
         {
+			launch = false;
             flying = true;
             if (aim == (int)GlobalConstant.direction.up)
             {
@@ -71,7 +72,7 @@ public class JavelinControl : MonoBehaviour {
                     );
             }
         }
-        else
+        else // flying
         {
             if (aim == (int)GlobalConstant.direction.up)
             {
@@ -102,12 +103,14 @@ public class JavelinControl : MonoBehaviour {
         {
             // freeze the javelin in place
             rigidbody2D.fixedAngle = true;
+			flying = false;
         }
 
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            if (transform.rigidbody2D.velocity != new Vector2(0, 0))
+            if (flying)
             {
+				flying = false;
                 if (collision.transform == thrower.transform)
                 {
                     // arrow cannot hurt thrower that launched it
@@ -132,10 +135,15 @@ public class JavelinControl : MonoBehaviour {
         }
 
         // if collided with Enemy and it is not "frozen" on ground
-        if (collision.transform.tag == "Enemy" && transform.rigidbody2D.velocity != new Vector2(0, 0))
+        if (collision.transform.tag == "Enemy" && flying)
         {
-            // deal damage
-            //collision.transform.GetComponent<Health>().Change_Color();
+			if(flying){
+				flying = false;
+			}
+			else {
+				// deal damage
+				//collision.transform.GetComponent<Health>().Change_Color();
+			}
         }
     }
 }
