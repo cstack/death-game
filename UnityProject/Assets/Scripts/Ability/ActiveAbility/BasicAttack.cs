@@ -2,20 +2,23 @@
 using System.Collections;
 
 public class BasicAttack : ActiveAbility {
-	public GameObject attackColliderPrefab;
+	private GameObject attackCollider;
 
 	protected override void Awake() {
 		abilityName = "Melee";
 	}
 	
-	protected override IEnumerator OnActivate () {
-		GameObject collider = Instantiate (attackColliderPrefab) as GameObject;
-		collider.transform.position = character.transform.position;
-		if (character.dir == EntityBase.Direction.Left) {
-			collider.transform.position += new Vector3(-1f, 0f, 0f);
-		} else {
-			collider.transform.position += new Vector3(1f, 0f, 0f);
-		}
-		character.GetComponent<Animator> ().SetInteger ("ability", (int) GlobalConstant.AbilityAnimation.MeleeAttack);
+	protected override void OnActivate () {
+		am.SetInteger ("ability", (int) GlobalConstant.AbilityAnimation.MeleeAttack);
+		am.SetTrigger ("attack");
+	}
+
+	protected override void OnHit() {
+		attackCollider = (GameObject) character.transform.FindChild ("Attack").gameObject;
+		attackCollider.SetActive (true);
+	}
+
+	protected override void OnFinish() {
+		attackCollider.SetActive (false);
 	}
 }

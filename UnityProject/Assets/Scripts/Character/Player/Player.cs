@@ -26,6 +26,9 @@ public class Player : CharacterBase {
 		dir = Direction.Right;
 		animator = GetComponent<Animator> ();
 		playerHealth = GetComponent<PlayerHealth> ();
+		if (ability != null) {
+			ability.character = this;
+		}
 	}
 
 	private void Update () {
@@ -119,7 +122,11 @@ public class Player : CharacterBase {
 		feetInWater = false;
 	}
 
-	public void AbilityFinished() {
+	public void AbilityAnimationHit() {
+		ability.Hit ();
+	}
 
+	public void AbilityAnimationFinished() {
+		ability.Finish ();
 	}
 }

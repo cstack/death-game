@@ -38,6 +38,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d966c681ea059457b948606eebc62969, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  abilityName: 
+  abilityIcon: {fileID: 0}
+  attackColliderPrefab: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
