@@ -16,6 +16,6 @@ public class AbilityControl : MonoBehaviour {
 
 	public void add_ability(Ability new_ability) {
 		ability_array.Add(new_ability);
-		gui_control.ability_4_icon = new_ability.abilityIcon;
+		gui_control.Add_Ability_Icon(new_ability.abilityIcon);
 	}
 }

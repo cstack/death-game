@@ -24,12 +24,16 @@ public class GUIControl : MonoBehaviour {
 	public Texture2D ability_3_icon;
 	public Texture2D ability_4_icon;
     public Texture2D ability_selection_icon;
+	//Ability Icon Texture List
+	private List<Texture2D> ability_icon_list = new List<Texture2D>();
+	// list index to the most first ability to refresh, initialy right most one
+	private int ability_index;
+	private int max_index = 3;
+
 	// ability font
 	private GUIStyle afontStyle;
 	//rect for UI Ability Boxes
 	private Rect abilityRect = new Rect (Screen.width/3.3f, Screen.height-50, 300, 100);
-	//Ability Icon Texture List
-	private List<Texture2D> ability_icon_list = new List<Texture2D>();
 	
 	void Start () {
 		poi = GameObject.Find ("Player").transform;
@@ -49,6 +53,13 @@ public class GUIControl : MonoBehaviour {
 		afontStyle.margin = new RectOffset(4, 4, 4, 4);
 		afontStyle.fontSize = 20;
 		afontStyle.alignment = TextAnchor.MiddleCenter;
+
+		// setup ability icon list here
+		ability_icon_list.Add(ability_1_icon);
+		ability_icon_list.Add(ability_2_icon);
+		ability_icon_list.Add(ability_3_icon);
+		ability_icon_list.Add(ability_4_icon);
+		ability_index = max_index;
 	}
 	
 	void OnGUI ()
@@ -80,10 +91,10 @@ public class GUIControl : MonoBehaviour {
 	private void AbilityUI(){
 		GUILayout.BeginArea(abilityRect);
 		GUILayout.BeginHorizontal();
-		GUILayout.Box(ability_1_icon, abilityStyle);
-		GUILayout.Box(ability_2_icon, abilityStyle);
-		GUILayout.Box(ability_3_icon, abilityStyle);
-		GUILayout.Box(ability_4_icon, abilityStyle);
+		foreach(Texture2D icon in ability_icon_list)
+		{
+			GUILayout.Box(icon, abilityStyle);
+		}	
 		GUILayout.EndHorizontal();
 		GUILayout.EndArea();
 
@@ -99,6 +110,7 @@ public class GUIControl : MonoBehaviour {
 		GUILayout.EndArea();
 	}
 
+	// mingrui
     private void detectInput() { 
 		GUILayout.BeginArea(abilityRect);
         GUILayout.BeginHorizontal();
@@ -138,4 +150,21 @@ public class GUIControl : MonoBehaviour {
         GUILayout.EndHorizontal();
         GUILayout.EndArea();
     }
+
+	//mingrui
+	public void Add_Ability_Icon(Texture2D new_icon){
+		ability_icon_list[ability_index] = new_icon;
+		Refresh_Index();
+	}
+
+	// calculate the new index to use.
+	// the index should cycle through towards the head of the list
+	private void Refresh_Index(){
+		if(ability_index == 0){
+			ability_index = max_index;
+		}
+		else {
+			--ability_index;
+		}
+	}
 }
