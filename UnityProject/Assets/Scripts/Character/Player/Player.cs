@@ -25,6 +25,9 @@ public class Player : CharacterBase {
 	private Backpack backpack; // mingrui, for holding javelin count
 	public GameObject javelin; // mingrui, javelin object
 
+
+	public AudioClip Melee;
+
 	override protected void Start() {
 		base.Start ();
 		dir = Direction.Right;
@@ -125,6 +128,12 @@ public class Player : CharacterBase {
 	private void AbilityDetect () {
 
 		if (Input.GetButtonDown("Fire1") && ability != null) {
+
+			//Example Music Code
+			if (Melee != null) {
+				audio.clip = Melee;
+			}
+
 			ability.Activate();
 		}
 

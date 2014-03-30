@@ -24,7 +24,9 @@ public class RiverWater : MonoBehaviour {
 			objectsInRiver.Add (col.gameObject);
 			EntityBase tmp = col.gameObject.GetComponent<EntityBase> ();
 
-			tmp.enterRiver (currentStrength);
+			if (tmp != null) {
+				tmp.enterRiver (currentStrength);
+			}
 		}
 	}
 	
@@ -32,8 +34,10 @@ public class RiverWater : MonoBehaviour {
 		if (col.gameObject.tag != "PlayerHead") {
 			objectsInRiver.Remove (col.gameObject);
 			EntityBase tmp = col.gameObject.GetComponent<EntityBase> ();
-
-			tmp.exitRiver ();
+			
+			if (tmp != null) {
+				tmp.exitRiver ();
+			}
 		}
 	}
 }
