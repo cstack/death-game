@@ -1,0 +1,1183 @@
+fileFormatVersion: 2
+guid: deae17819d6bc41258d42b4813ea4a3a
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: 0
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: iPhone
+    maxTextureSize: 1024
+    textureFormat: -2
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: league-of-legends-item-icons_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 597
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_1
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 597
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_2
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 597
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_3
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 597
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_4
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 597
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_5
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 597
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_6
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 597
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_7
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 597
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_8
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 597
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 554
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_10
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 554
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_11
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 554
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_12
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 554
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_13
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 554
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_14
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 554
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_15
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 554
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_16
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 554
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_17
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 554
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 511
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_19
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 511
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_20
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 511
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_21
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 511
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_22
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 511
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_23
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 511
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_24
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 511
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_25
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 511
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_26
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 511
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 468
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_28
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 468
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_29
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 468
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_30
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 468
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_31
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 468
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_32
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 468
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_33
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 468
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_34
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 468
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_35
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 468
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 425
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_37
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 425
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_38
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 425
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_39
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 425
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_40
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 425
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_41
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 425
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_42
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 425
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_43
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 425
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_44
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 425
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 382
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_46
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 382
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_47
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 382
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_48
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 382
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_49
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 382
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_50
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 382
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_51
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 382
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_52
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 382
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_53
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 382
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 339
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_55
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 339
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_56
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 339
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_57
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 339
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_58
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 339
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_59
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 339
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_60
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 339
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_61
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 339
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_62
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 339
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_63
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 296
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_64
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 296
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_65
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 296
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_66
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 296
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_67
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 296
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_68
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 296
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_69
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 296
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_70
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 296
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_71
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 296
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 253
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_73
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 253
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_74
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 253
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_75
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 253
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_76
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 253
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_77
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 253
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_78
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 253
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_79
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 253
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_80
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 253
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_81
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 210
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_82
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 210
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_83
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 210
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_84
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 210
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_85
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 210
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_86
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 210
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_87
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 210
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_88
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 210
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_89
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 210
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_90
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 167
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_91
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 167
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_92
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 167
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_93
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 167
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_94
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 167
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_95
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 167
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_96
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 167
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_97
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 167
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_98
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 167
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_99
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 124
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_100
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 124
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_101
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 124
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_102
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 124
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_103
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 124
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_104
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 124
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_105
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 124
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_106
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 124
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_107
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 124
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_108
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 81
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_109
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 81
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_110
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 81
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_111
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 81
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_112
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 81
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_113
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 81
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_114
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 81
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_115
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 81
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_116
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 81
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_117
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 38
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_118
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 38
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_119
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 38
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_120
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 38
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_121
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 38
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_122
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 38
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_123
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 38
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_124
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 38
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: league-of-legends-item-icons_125
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 38
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+  spritePackingTag: 
+  userData: 

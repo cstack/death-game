@@ -41,8 +41,10 @@ public class Ability : MonoBehaviour {
 	public void Activate () {
 		if (character == null) 
 			Debug.LogWarning("Character is not set in ability " + abilityName);
-		else 
+		else {
+			character.currentAbility = this;
 			OnActivate();
+		}
 	}
 
 	public void Hit () {

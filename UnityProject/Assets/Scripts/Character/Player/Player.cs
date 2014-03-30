@@ -14,13 +14,13 @@ public class Player : CharacterBase {
 	public float waterGravity = 0.5f;
 
 	private PlayerHealth playerHealth;
-	public Ability ability;
 	public float speed;
 	private enum IdleOrRunningStates {
 		Idle, Running
 	}
 
 	private AbilityControl ability_control; // mingrui, for array of ability
+	private Ability currentAbility;
 	private int aim; // mingrui, for aiming javelin
 	private Backpack backpack; // mingrui, for holding javelin count
 	public GameObject javelin; // mingrui, javelin object
@@ -33,10 +33,6 @@ public class Player : CharacterBase {
 		dir = Direction.Right;
 		playerHealth = GetComponent<PlayerHealth> ();
 
-		if (ability != null) {
-			ability.character = this;
-		}
-
 		ability_control = GetComponent<AbilityControl>(); // mingrui
 		backpack = GetComponent<Backpack>(); // mingrui
 	}
@@ -47,7 +43,6 @@ public class Player : CharacterBase {
 
 		HorizontalMove ();
 		VerticalMove ();
-		AbilityDetect ();
 
 	}
 
@@ -125,20 +120,6 @@ public class Player : CharacterBase {
 
 	}
 
-	private void AbilityDetect () {
-
-		if (Input.GetButtonDown("Fire1") && ability != null) {
-
-			//Example Music Code
-			if (Melee != null) {
-				audio.clip = Melee;
-			}
-
-			ability.Activate();
-		}
-
-	}
-
 	private void OnCollisionStay2D (Collision2D other) {
 		if (other.gameObject.tag == "ground") {
 			if (other.contacts.Length > 0 && rigidbody2D.velocity.y <= 0 &&
@@ -151,8 +132,7 @@ public class Player : CharacterBase {
 	}
 
 	public void AddAbility (Ability newAbility){
-		ability = newAbility;
-		ability.character = this;
+		newAbility.character = this;
 		ability_control.add_ability(newAbility); // mingrui
 	}
 
@@ -184,10 +164,11 @@ public class Player : CharacterBase {
 	}
 
 	public void AbilityAnimationHit() {
-		ability.Hit ();
+		ability_control.current_ability.Hit ();
 	}
 
 	public void AbilityAnimationFinished() {
-		ability.Finish ();
+		ability_control.current_ability.Finish ();
+		ability_control.current_ability = null;
 	}
 }

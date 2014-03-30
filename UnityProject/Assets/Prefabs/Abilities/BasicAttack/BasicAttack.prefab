@@ -39,8 +39,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityName: 
-  abilityIcon: {fileID: 0}
-  attackColliderPrefab: {fileID: 0}
+  abilityIcon: {fileID: 2800000, guid: 44d8d3a264efc46558ca6813b7d01b77, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
