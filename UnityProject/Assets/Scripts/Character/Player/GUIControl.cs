@@ -75,16 +75,16 @@ public class GUIControl : MonoBehaviour {
 		// time health lives
 		GUILayout.BeginArea(new Rect(20, 20, 200, 80));
 		GUILayout.Label("Time: " + time_text, customGUIStyle);
-		GUILayout.Label("Health: " + player_health.currentHealth + " / " + player_health.maxHealth, customGUIStyle);
+		//GUILayout.Label("Health: " + player_health.currentHealth + " / " + player_health.maxHealth, customGUIStyle);
 		GUILayout.Label("Lives: " + player_health.current_life_count, customGUIStyle);
-		GUILayout.Label("Breath: ", customGUIStyle);
+		//GUILayout.Label("Breath: ", customGUIStyle);
 		GUILayout.EndArea();
 		
 		// breath bar
-		GUILayout.BeginArea(new Rect(78, 78, 100, 14));
-		GUI.DrawTexture(new Rect(0, 0, 100, 16), bgImage);
-		GUI.DrawTexture(new Rect(0, 0, 100*player_health.breathPercent, 16), fgImage);
-		GUILayout.EndArea();
+		//GUILayout.BeginArea(new Rect(78, 78, 100, 14));
+		//GUI.DrawTexture(new Rect(0, 0, 100, 16), bgImage);
+		//GUI.DrawTexture(new Rect(0, 0, 100*player_health.breathPercent, 16), fgImage);
+		//GUILayout.EndArea();
 	}
 	
 	// Mingrui
