@@ -65,7 +65,7 @@ public class GUIControl : MonoBehaviour {
 	void OnGUI ()
 	{
 		healthUI();
-		AbilityUI();
+		//AbilityUI();
 	}
 	
 	// Mingrui
