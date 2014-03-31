@@ -86,8 +86,8 @@ public class PlayerHealth : MonoBehaviour {
     // Time is RESET here
 	private void permaDeath()
 	{
-        timer_control.restartTimer();
-		Application.LoadLevel ("Main");
+		timer_control.restartTimer();
+		Application.LoadLevel (UnityEditor.EditorApplication.currentScene);
 	}
 
     // This function does NOT reset time
