@@ -4,10 +4,10 @@ using System.Collections;
 public class LungCapacityAbility : PassiveAbility {
 
 	protected override void Awake() {
-		abilityName = "Lung Capacity";
+		abilityName = "Breath Underwater";
 	}
 	
 	protected override void OnActivate () {
-	
+		character.canBreathUnderwater = true;
 	}
 }

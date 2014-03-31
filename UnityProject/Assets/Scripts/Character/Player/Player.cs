@@ -145,13 +145,12 @@ public class Player : CharacterBase {
 	public void headEnterWater () {
 		headUnderwater = true;
 		rigidbody2D.drag = waterDrag;
-		playerHealth.startDrowning ();
 	}
 
 	public void headExitWater () {
 		headUnderwater = false;
 		rigidbody2D.drag = 0;
-		playerHealth.stopDrowning ();
+		playerHealth.resetBreath ();
 	}
 
 	public void feetEnterWater () {

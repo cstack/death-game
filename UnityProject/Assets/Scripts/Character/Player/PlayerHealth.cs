@@ -11,31 +11,21 @@ public class PlayerHealth : MonoBehaviour {
 	public int current_life_count;
 	public bool invulnerable;
 	public GameObject spawnPoint;
+	public LungCapacityAbility lungs;
 
 	private Player poi;
 	private TimerControl timer_control;
-	private LungCapacityAbility lungs;
 
 	void Start() {
 		poi = (Player)GameObject.Find("Player").GetComponent<Player>();
 		timer_control = poi.GetComponent<TimerControl>();
-		lungs = (LungCapacityAbility) gameObject.AddComponent ("LungCapacityAbility");
 	}
 
-	public void startDrowning() {
-		inWater = true;
-	}
-
-	public void stopDrowning() {
-		inWater = false;
+	public void resetBreath() {
 		currentBreath = maxBreath;
 		breathPercent = (float) currentBreath / maxBreath;
 	}
 
-	public bool isDrowning() {
-		return inWater;
-	}
-	
 	public void decreaseBreath(int amount) {
 		if(currentBreath <= 0) {
 			decreaseHealth (amount, lungs);

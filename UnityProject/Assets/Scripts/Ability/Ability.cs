@@ -13,6 +13,7 @@ public class Ability : MonoBehaviour {
 			_character = value;
 			if (_character != null) {
 				am = _character.GetComponent<Animator>();
+				onAttachedToCharacter();
 			} else {
 				am = null;
 			}
@@ -29,6 +30,8 @@ public class Ability : MonoBehaviour {
 	protected virtual void Start () {
 		abilityName = "Unknown";
 	}
+
+	protected virtual void onAttachedToCharacter() {}
 
 	protected virtual void Update () {}
 

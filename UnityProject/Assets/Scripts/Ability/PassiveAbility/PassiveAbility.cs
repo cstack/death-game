@@ -10,4 +10,8 @@ public class PassiveAbility : Ability {
 	protected override void Start() {
 		abilityName = "Passive";
 	}
+
+	protected override void onAttachedToCharacter() {
+		Activate ();
+	}
 }

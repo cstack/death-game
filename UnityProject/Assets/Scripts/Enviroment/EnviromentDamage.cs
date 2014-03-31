@@ -24,9 +24,11 @@ public class EnviromentDamage : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D col) {
 		if (col.gameObject.tag == "PlayerHead") {
 			plyr = col.transform.parent.gameObject;
-			plyr.SendMessage("headEnterWater");
-			drowning = true;
-			drwntime = drownTimer;
+			if (!plyr.GetComponent<Player>().canBreathUnderwater) {
+				plyr.SendMessage("headEnterWater");
+				drowning = true;
+				drwntime = drownTimer;
+			}
 		} else if (col.gameObject.tag == "Player") {
 			plyr = col.gameObject;
 			plyr.SendMessage("feetEnterWater");

@@ -3877,7 +3877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 247afe40ce4b84dba98380eaaff38efa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentAbility: {fileID: 0}
+  canBreathUnderwater: 0
   maxSpeed: 5
   grounded: 0
   feetInWater: 0
@@ -4002,6 +4002,7 @@ MonoBehaviour:
   current_life_count: 100
   invulnerable: 0
   spawnPoint: {fileID: 1156648661}
+  lungs: {fileID: 11400000, guid: 0ef81addfa1b047da969855cd0c7904d, type: 2}
 --- !u!114 &1925227806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4169,6 +4170,11 @@ Prefab:
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 1156648661}
+    - target: {fileID: 11400006, guid: 99c0ed75dca6c4391b1cf4ea4c9c0792, type: 2}
+      propertyPath: lungs
+      value: 
+      objectReference: {fileID: 11400000, guid: 0ef81addfa1b047da969855cd0c7904d,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 99c0ed75dca6c4391b1cf4ea4c9c0792, type: 2}
   m_RootGameObject: {fileID: 1925227796}
