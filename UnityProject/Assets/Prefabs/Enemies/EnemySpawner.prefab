@@ -54,7 +54,7 @@ MonoBehaviour:
   moveTimePeriod: .600000024
   moveUpAndDown: 0
   spawnFacingScrooge: 1
-  spawnOnlyOnStart: 0
+  spawnOnlyOnce: 1
   enemyPrefab: {fileID: 0}
   enemyType: 0
 --- !u!1001 &100100000

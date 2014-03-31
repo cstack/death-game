@@ -97,7 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   shotTimerEnd: 1
-  attackPower: 50
+  attackPower: 35
   ability: {fileID: 11400000, guid: 020d99838ec554d9998170b2520656ed, type: 2}
 --- !u!212 &21200000
 SpriteRenderer:

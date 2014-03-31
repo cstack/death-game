@@ -67,6 +67,13 @@ public class MetalBirdMovement : EnemyBase {
     }
 
     void engage_movement() {
+		float offset = (player.transform.position - transform.position).x;
+		if (dir == Direction.Left && offset > 0) {
+			dir = Direction.Right;
+		} else if (dir == Direction.Right && offset < 0) {
+			dir = Direction.Left;
+		}
+
         rising_movement();
 
         // attack, called from another script

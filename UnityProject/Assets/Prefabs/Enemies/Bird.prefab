@@ -87,7 +87,7 @@ MonoBehaviour:
   backpack: {fileID: 0}
   cooldownTime: 0
   speed: 2
-  engage_range: 10
+  engage_range: 15
   dive_distance: 5
   engage: 0
   hover_speed: 1

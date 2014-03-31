@@ -117,7 +117,7 @@ public class JavelinControl : MonoBehaviour {
     // up by player
     void OnCollisionEnter2D(Collision2D collision){
 
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground") && flying)
+        if (collision.gameObject.tag == "ground" && flying)
         {
             // freeze the javelin in place
             rigidbody2D.fixedAngle = true;
