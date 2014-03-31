@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class StillWater : MonoBehaviour {
-
+public class StillWater : Water {
 	public Texture2D[] frames = null;
 	public float framesPerSecond = 10.0f;
 

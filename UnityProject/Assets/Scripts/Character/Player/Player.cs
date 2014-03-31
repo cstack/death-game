@@ -111,6 +111,7 @@ public class Player : CharacterBase {
 			}
 			grounded = false;
 			animator.SetBool("grounded", false);
+			animator.SetTrigger("jump");
 		}
 
 		if (Input.GetButtonUp("Jump") && rigidbody2D.velocity.y > 0) {
@@ -131,6 +132,10 @@ public class Player : CharacterBase {
 	}
 
 	public void AddAbility (Ability newAbility){
+		if (newAbility == null) {
+			return;
+		}
+
 		newAbility.character = this;
 		ability_control.add_ability(newAbility); // mingrui
 	}

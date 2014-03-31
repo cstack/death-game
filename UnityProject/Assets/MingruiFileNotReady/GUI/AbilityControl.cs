@@ -50,8 +50,9 @@ public class AbilityControl : MonoBehaviour {
 				abilityToActivate = ability_array[3];
 			}
 		}
-		
-		if (abilityToActivate != null && current_ability == null) {
+
+		//ADD THIS AFTER TIMER ADDED TO ABILITIES:  && current_ability == null
+		if (abilityToActivate != null) {
 			current_ability = abilityToActivate;
 
 			if (abilityToActivate.abilityClip != null) {
