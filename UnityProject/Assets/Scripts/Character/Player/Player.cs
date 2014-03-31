@@ -20,7 +20,6 @@ public class Player : CharacterBase {
 	}
 
 	private AbilityControl ability_control; // mingrui, for array of ability
-	private Ability currentAbility;
 	private int aim; // mingrui, for aiming javelin
 	private Backpack backpack; // mingrui, for holding javelin count
 	public GameObject javelin; // mingrui, javelin object
