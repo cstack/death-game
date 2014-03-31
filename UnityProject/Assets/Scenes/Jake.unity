@@ -2386,7 +2386,7 @@ GameObject:
   - 4: {fileID: 445952930}
   m_Layer: 8
   m_Name: Grounds
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
