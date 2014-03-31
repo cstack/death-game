@@ -6,7 +6,7 @@ public class StillWater : Water {
 	public float framesPerSecond = 10.0f;
 
 	void Update () {
-		if (frames != null) {
+		if (frames != null && frames.Length > 0) {
 			int index = (int) (Time.time * framesPerSecond);
 			index = index % frames.Length;
 			renderer.material.mainTexture = frames[index];
