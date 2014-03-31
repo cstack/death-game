@@ -14,6 +14,7 @@ GameObject:
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
   - 50: {fileID: 5000000}
+  - 114: {fileID: 11400004}
   m_Layer: 17
   m_Name: Bird
   m_TagString: Enemy
@@ -87,7 +88,7 @@ MonoBehaviour:
   backpack: {fileID: 0}
   cooldownTime: 0
   speed: 2
-  engage_range: 15
+  engage_range: 8
   dive_distance: 5
   engage: 0
   hover_speed: 1
@@ -107,6 +108,18 @@ MonoBehaviour:
   backpack: {fileID: 0}
   cooldownTime: 2
   javelin: {fileID: 100000, guid: df7b4fea313777f46a4d069ee2f2e40a, type: 2}
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 417d3b7c75f2afa42bf1677921fac074, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bonus_seconds: 5
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

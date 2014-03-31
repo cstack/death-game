@@ -21,22 +21,18 @@ public class JavelinControl : MonoBehaviour {
 		}
 	}
 
-    private GameObject thrower;
+    public GameObject thrower;
     private int aim;
     private bool launch = true;
     private bool flying = false;
 
     public void Create_Javelin(GameObject _thrower, int direction)
     {
+		Debug.Log ("Create Javelin " + _thrower);
         thrower = _thrower;
         aim = direction;
     }
 
-    // for testing
-    void Start() {
-        thrower = GameObject.FindWithTag("Player");
-    }
-	
 	void Update () {
         if (launch) // initial throw
         {
@@ -123,7 +119,7 @@ public class JavelinControl : MonoBehaviour {
             rigidbody2D.fixedAngle = true;
 			flying = false;
 			friendly = true;
-			gameObject.layer = 0;
+			gameObject.layer = 12;
         }
 
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))

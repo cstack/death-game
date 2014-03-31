@@ -66,7 +66,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.6613121, y: 2.27610874, z: 0}
+  m_LocalPosition: {x: -5.10911989, y: 2.96073389, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400002}
@@ -226,6 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canBreathUnderwater: 0
+  backpack: {fileID: 0}
   maxSpeed: 10
   grounded: 0
   feetInWater: 0
@@ -325,8 +326,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc7abbc9342645ffbafea906c4ef050, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  available_time: 300
-  max_available_time: 300
+  available_time: 30
+  max_available_time: 30
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1

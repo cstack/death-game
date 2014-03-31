@@ -22,7 +22,7 @@ public class JavelinAbility : ActiveAbility {
 				aim = (int) GlobalConstant.direction.right;
 			}
 			
-			new_javelin.GetComponent<JavelinControl>().Create_Javelin(gameObject, aim);
+			new_javelin.GetComponent<JavelinControl>().Create_Javelin(character.gameObject, aim);
 			character.backpack.remove_jevelin(1);
 
 			//Change this to be called after the animation finishes, if implemented
