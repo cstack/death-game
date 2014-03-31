@@ -9,7 +9,6 @@ public class EnemySpawner : MonoBehaviour
 	public bool spawnOnlyOnce = false;
 
 	public GameObject enemyPrefab;
-	public EnemyType enemyType;
 
 	private GameObject enemy;
 	private EnemyMovement enemyMovement;
@@ -50,7 +49,6 @@ public class EnemySpawner : MonoBehaviour
 		enemyMovement.moveTimePeriod = moveTimePeriod;
 		enemyMovement.moveUpAndDown = moveUpAndDown;
 		enemyMovement.spawnFacingScrooge = spawnFacingPlayer;
-		enemyMovement.enemyType = enemyType;
 		
 		enemyMovement.Spawn();
 	}

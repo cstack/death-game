@@ -1,14 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public enum EnemyType {
-	RedSquid, 
-	BigPink
-}
-
 public class EnemyMovement : MonoBehaviour {
-
-	public EnemyType enemyType;
+	
 	public bool grounded = false;
 	public float moveSpeed = 4f;
 	public float moveTimePeriod = 0.6f;
@@ -33,10 +27,6 @@ public class EnemyMovement : MonoBehaviour {
 	}
 	
 	void Update () {
-		if (enemyType == EnemyType.BigPink)
-			BigPinkMove();
-		else if (enemyType == EnemyType.RedSquid)
-			RedSquidMove();
 
 	}
 
@@ -93,19 +83,5 @@ public class EnemyMovement : MonoBehaviour {
 			lastMoveTime = Time.time;
 		}
 		rigidbody2D.velocity = new Vector2(direction * moveSpeed, 0f);
-	}
-
-	void BigPinkMove() {
-		if (!enemyHealth.dead)
-			MoveLeftAndRight();
-	}
-
-	void RedSquidMove() {
-		if (!enemyHealth.dead) {
-			if (moveUpAndDown)
-				MoveUpAndDown();
-			else
-				MoveLeftAndRight();
-		}
 	}
 }
