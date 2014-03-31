@@ -22,6 +22,14 @@ public class AbilityControl : MonoBehaviour {
 	}
 
 	public void add_ability(Ability new_ability) {
+		// check if ability is already in the ability list
+		foreach(Ability abi in ability_array){
+			if(new_ability.name == abi.name){
+				// already has ability
+				return;
+			}
+		}
+
 		ability_array.Add(new_ability);
         gui_ability.Add_Ability_Icon(new_ability.abilityIcon);
 	}

@@ -189,7 +189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveTimePeriod: .600000024
   moveUpAndDown: 0
-  spawnFacingScrooge: 1
+  spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 93083bebbd8cf4cc2a77036a198a7a1d, type: 2}
   enemyType: 0
@@ -550,7 +550,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveTimePeriod: .600000024
   moveUpAndDown: 0
-  spawnFacingScrooge: 1
+  spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 0cfe9df389320418b8d0b941c646e900, type: 2}
   enemyType: 0
@@ -1793,7 +1793,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveTimePeriod: .600000024
   moveUpAndDown: 0
-  spawnFacingScrooge: 1
+  spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 93083bebbd8cf4cc2a77036a198a7a1d, type: 2}
   enemyType: 0
@@ -1907,7 +1907,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveTimePeriod: .600000024
   moveUpAndDown: 0
-  spawnFacingScrooge: 1
+  spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 93083bebbd8cf4cc2a77036a198a7a1d, type: 2}
   enemyType: 0
@@ -2239,7 +2239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveTimePeriod: .600000024
   moveUpAndDown: 0
-  spawnFacingScrooge: 1
+  spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 93083bebbd8cf4cc2a77036a198a7a1d, type: 2}
   enemyType: 0
@@ -2298,7 +2298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveTimePeriod: .600000024
   moveUpAndDown: 0
-  spawnFacingScrooge: 1
+  spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 0cfe9df389320418b8d0b941c646e900, type: 2}
   enemyType: 0
@@ -2778,7 +2778,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveTimePeriod: .600000024
   moveUpAndDown: 0
-  spawnFacingScrooge: 1
+  spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 0cfe9df389320418b8d0b941c646e900, type: 2}
   enemyType: 0
@@ -2826,7 +2826,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveTimePeriod: .600000024
   moveUpAndDown: 0
-  spawnFacingScrooge: 1
+  spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100002, guid: 4dc35863c23af450682e65df832d20e2, type: 2}
   enemyType: 0
@@ -3383,7 +3383,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveTimePeriod: .600000024
   moveUpAndDown: 0
-  spawnFacingScrooge: 1
+  spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 93083bebbd8cf4cc2a77036a198a7a1d, type: 2}
   enemyType: 0
@@ -4107,7 +4107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveTimePeriod: .600000024
   moveUpAndDown: 0
-  spawnFacingScrooge: 1
+  spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 0cfe9df389320418b8d0b941c646e900, type: 2}
   enemyType: 0
@@ -4177,7 +4177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveTimePeriod: .600000024
   moveUpAndDown: 0
-  spawnFacingScrooge: 1
+  spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 93083bebbd8cf4cc2a77036a198a7a1d, type: 2}
   enemyType: 0
@@ -4421,7 +4421,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveTimePeriod: .600000024
   moveUpAndDown: 0
-  spawnFacingScrooge: 1
+  spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 0cfe9df389320418b8d0b941c646e900, type: 2}
   enemyType: 0
@@ -5127,7 +5127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveTimePeriod: .600000024
   moveUpAndDown: 0
-  spawnFacingScrooge: 1
+  spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 93083bebbd8cf4cc2a77036a198a7a1d, type: 2}
   enemyType: 0
@@ -5175,7 +5175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveTimePeriod: .600000024
   moveUpAndDown: 0
-  spawnFacingScrooge: 1
+  spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100002, guid: 4dc35863c23af450682e65df832d20e2, type: 2}
   enemyType: 0
@@ -5911,7 +5911,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveTimePeriod: .600000024
   moveUpAndDown: 0
-  spawnFacingScrooge: 1
+  spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 93083bebbd8cf4cc2a77036a198a7a1d, type: 2}
   enemyType: 0
@@ -5970,7 +5970,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveTimePeriod: .600000024
   moveUpAndDown: 0
-  spawnFacingScrooge: 1
+  spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 0cfe9df389320418b8d0b941c646e900, type: 2}
   enemyType: 0
@@ -6120,7 +6120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveTimePeriod: .600000024
   moveUpAndDown: 0
-  spawnFacingScrooge: 1
+  spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 0cfe9df389320418b8d0b941c646e900, type: 2}
   enemyType: 0
@@ -6528,7 +6528,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveTimePeriod: .600000024
   moveUpAndDown: 0
-  spawnFacingScrooge: 1
+  spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 93083bebbd8cf4cc2a77036a198a7a1d, type: 2}
   enemyType: 0
@@ -6683,7 +6683,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveTimePeriod: .600000024
   moveUpAndDown: 0
-  spawnFacingScrooge: 1
+  spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 0cfe9df389320418b8d0b941c646e900, type: 2}
   enemyType: 0
@@ -7087,7 +7087,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveTimePeriod: .600000024
   moveUpAndDown: 0
-  spawnFacingScrooge: 1
+  spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 93083bebbd8cf4cc2a77036a198a7a1d, type: 2}
   enemyType: 0
@@ -7175,7 +7175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveTimePeriod: .600000024
   moveUpAndDown: 0
-  spawnFacingScrooge: 1
+  spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 93083bebbd8cf4cc2a77036a198a7a1d, type: 2}
   enemyType: 0
@@ -7355,7 +7355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveTimePeriod: .600000024
   moveUpAndDown: 0
-  spawnFacingScrooge: 1
+  spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 0cfe9df389320418b8d0b941c646e900, type: 2}
   enemyType: 0
@@ -8229,7 +8229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveTimePeriod: .600000024
   moveUpAndDown: 0
-  spawnFacingScrooge: 1
+  spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100002, guid: 4dc35863c23af450682e65df832d20e2, type: 2}
   enemyType: 0
@@ -9206,7 +9206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveTimePeriod: .600000024
   moveUpAndDown: 0
-  spawnFacingScrooge: 1
+  spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 93083bebbd8cf4cc2a77036a198a7a1d, type: 2}
   enemyType: 0
@@ -9309,7 +9309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveTimePeriod: .600000024
   moveUpAndDown: 0
-  spawnFacingScrooge: 1
+  spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 0cfe9df389320418b8d0b941c646e900, type: 2}
   enemyType: 0
@@ -9357,7 +9357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveTimePeriod: .600000024
   moveUpAndDown: 0
-  spawnFacingScrooge: 1
+  spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 93083bebbd8cf4cc2a77036a198a7a1d, type: 2}
   enemyType: 0
@@ -9845,7 +9845,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveTimePeriod: .600000024
   moveUpAndDown: 0
-  spawnFacingScrooge: 1
+  spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 93083bebbd8cf4cc2a77036a198a7a1d, type: 2}
   enemyType: 0
@@ -9975,7 +9975,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveTimePeriod: .600000024
   moveUpAndDown: 0
-  spawnFacingScrooge: 1
+  spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 93083bebbd8cf4cc2a77036a198a7a1d, type: 2}
   enemyType: 0
@@ -10034,7 +10034,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveTimePeriod: .600000024
   moveUpAndDown: 0
-  spawnFacingScrooge: 1
+  spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100002, guid: 4dc35863c23af450682e65df832d20e2, type: 2}
   enemyType: 0
@@ -10104,7 +10104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveTimePeriod: .600000024
   moveUpAndDown: 0
-  spawnFacingScrooge: 1
+  spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 93083bebbd8cf4cc2a77036a198a7a1d, type: 2}
   enemyType: 0
@@ -10264,7 +10264,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveTimePeriod: .600000024
   moveUpAndDown: 0
-  spawnFacingScrooge: 1
+  spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100002, guid: 4dc35863c23af450682e65df832d20e2, type: 2}
   enemyType: 0
