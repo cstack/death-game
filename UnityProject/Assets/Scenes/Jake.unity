@@ -204,7 +204,6 @@ MonoBehaviour:
   spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 93083bebbd8cf4cc2a77036a198a7a1d, type: 2}
-  enemyType: 0
 --- !u!65 &16027508
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -565,7 +564,6 @@ MonoBehaviour:
   spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 0cfe9df389320418b8d0b941c646e900, type: 2}
-  enemyType: 0
 --- !u!65 &98207014
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1758,7 +1756,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 1b20da0be885246bcae133a36821e2e7, type: 2}
+  - {fileID: 2100000, guid: 68d2e5f2d934d4e6fba48c4cb693d580, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -1808,7 +1806,6 @@ MonoBehaviour:
   spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 93083bebbd8cf4cc2a77036a198a7a1d, type: 2}
-  enemyType: 0
 --- !u!65 &329049020
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1922,7 +1919,6 @@ MonoBehaviour:
   spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 93083bebbd8cf4cc2a77036a198a7a1d, type: 2}
-  enemyType: 0
 --- !u!65 &378088782
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1977,7 +1973,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 1b20da0be885246bcae133a36821e2e7, type: 2}
+  - {fileID: 2100000, guid: 68d2e5f2d934d4e6fba48c4cb693d580, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -2009,15 +2005,15 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 787646034}
     m_Modifications:
     - target: {fileID: 400000, guid: 340573303c2b44ed18cd6c0fedfd704a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 12.1890221
+      value: 17.2617226
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 340573303c2b44ed18cd6c0fedfd704a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 32.6564331
+      value: 29.0702057
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 340573303c2b44ed18cd6c0fedfd704a, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2254,7 +2250,6 @@ MonoBehaviour:
   spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 93083bebbd8cf4cc2a77036a198a7a1d, type: 2}
-  enemyType: 0
 --- !u!65 &429098697
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2313,7 +2308,6 @@ MonoBehaviour:
   spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 0cfe9df389320418b8d0b941c646e900, type: 2}
-  enemyType: 0
 --- !u!65 &437608685
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2593,7 +2587,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 1b20da0be885246bcae133a36821e2e7, type: 2}
+  - {fileID: 2100000, guid: 68d2e5f2d934d4e6fba48c4cb693d580, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -2793,7 +2787,6 @@ MonoBehaviour:
   spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 0cfe9df389320418b8d0b941c646e900, type: 2}
-  enemyType: 0
 --- !u!65 &550538144
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2841,7 +2834,6 @@ MonoBehaviour:
   spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100002, guid: 4dc35863c23af450682e65df832d20e2, type: 2}
-  enemyType: 0
 --- !u!65 &557377069
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2912,7 +2904,7 @@ Prefab:
     - target: {fileID: 2300000, guid: faec91547dd59454092419d81929d56f, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 1b20da0be885246bcae133a36821e2e7, type: 2}
+      objectReference: {fileID: 2100000, guid: 68d2e5f2d934d4e6fba48c4cb693d580, type: 2}
     - target: {fileID: 2300006, guid: faec91547dd59454092419d81929d56f, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -2924,7 +2916,7 @@ Prefab:
     - target: {fileID: 2300002, guid: faec91547dd59454092419d81929d56f, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 1b20da0be885246bcae133a36821e2e7, type: 2}
+      objectReference: {fileID: 2100000, guid: 68d2e5f2d934d4e6fba48c4cb693d580, type: 2}
     - target: {fileID: 100000, guid: faec91547dd59454092419d81929d56f, type: 2}
       propertyPath: m_TagString
       value: Wall
@@ -3398,7 +3390,6 @@ MonoBehaviour:
   spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 93083bebbd8cf4cc2a77036a198a7a1d, type: 2}
-  enemyType: 0
 --- !u!65 &623742335
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3804,10 +3795,10 @@ Transform:
   m_PrefabInternal: {fileID: 1397779877}
   m_GameObject: {fileID: 640188173}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 172.698654, y: -43.0547371, z: 0}
+  m_LocalPosition: {x: 177.771362, y: -46.6409645, z: 0}
   m_LocalScale: {x: 42.0001945, y: 2.01637483, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 787646034}
 --- !u!1 &646766822
 GameObject:
   m_ObjectHideFlags: 0
@@ -4122,7 +4113,6 @@ MonoBehaviour:
   spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 0cfe9df389320418b8d0b941c646e900, type: 2}
-  enemyType: 0
 --- !u!65 &682364758
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4192,7 +4182,6 @@ MonoBehaviour:
   spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 93083bebbd8cf4cc2a77036a198a7a1d, type: 2}
-  enemyType: 0
 --- !u!65 &682494139
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4436,7 +4425,6 @@ MonoBehaviour:
   spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 0cfe9df389320418b8d0b941c646e900, type: 2}
-  enemyType: 0
 --- !u!65 &755765646
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4562,10 +4550,10 @@ Transform:
   m_PrefabInternal: {fileID: 1400377728}
   m_GameObject: {fileID: 778548943}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 55.3967056, y: 16.1034069, z: 0}
+  m_LocalPosition: {x: 60.4694061, y: 12.5171795, z: 0}
   m_LocalScale: {x: 1, y: 15.6312494, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 787646034}
 --- !u!1001 &784812535
 Prefab:
   m_ObjectHideFlags: 0
@@ -4610,6 +4598,36 @@ Prefab:
   m_RootGameObject: {fileID: 378088779}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &787646033
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 787646034}
+  m_Layer: 0
+  m_Name: Checkpoints
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &787646034
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 787646033}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.0727005, y: 3.58622742, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1992622891}
+  - {fileID: 640188176}
+  - {fileID: 778548946}
+  - {fileID: 1791435746}
+  m_Father: {fileID: 0}
 --- !u!1001 &798512860
 Prefab:
   m_ObjectHideFlags: 0
@@ -4957,7 +4975,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 1b20da0be885246bcae133a36821e2e7, type: 2}
+  - {fileID: 2100000, guid: 68d2e5f2d934d4e6fba48c4cb693d580, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -5142,7 +5160,6 @@ MonoBehaviour:
   spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 93083bebbd8cf4cc2a77036a198a7a1d, type: 2}
-  enemyType: 0
 --- !u!65 &879059845
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5190,7 +5207,6 @@ MonoBehaviour:
   spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100002, guid: 4dc35863c23af450682e65df832d20e2, type: 2}
-  enemyType: 0
 --- !u!65 &880389966
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5797,7 +5813,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 1b20da0be885246bcae133a36821e2e7, type: 2}
+  - {fileID: 2100000, guid: 68d2e5f2d934d4e6fba48c4cb693d580, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -5926,7 +5942,6 @@ MonoBehaviour:
   spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 93083bebbd8cf4cc2a77036a198a7a1d, type: 2}
-  enemyType: 0
 --- !u!65 &1011996696
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5985,7 +6000,6 @@ MonoBehaviour:
   spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 0cfe9df389320418b8d0b941c646e900, type: 2}
-  enemyType: 0
 --- !u!65 &1013601026
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6135,7 +6149,6 @@ MonoBehaviour:
   spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 0cfe9df389320418b8d0b941c646e900, type: 2}
-  enemyType: 0
 --- !u!65 &1055638169
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6543,7 +6556,6 @@ MonoBehaviour:
   spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 93083bebbd8cf4cc2a77036a198a7a1d, type: 2}
-  enemyType: 0
 --- !u!65 &1211013636
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6698,7 +6710,6 @@ MonoBehaviour:
   spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 0cfe9df389320418b8d0b941c646e900, type: 2}
-  enemyType: 0
 --- !u!65 &1280639381
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6844,7 +6855,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 1b20da0be885246bcae133a36821e2e7, type: 2}
+  - {fileID: 2100000, guid: 68d2e5f2d934d4e6fba48c4cb693d580, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -6866,15 +6877,15 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 787646034}
     m_Modifications:
     - target: {fileID: 400000, guid: 340573303c2b44ed18cd6c0fedfd704a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 172.698654
+      value: 177.771362
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 340573303c2b44ed18cd6c0fedfd704a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -43.0547371
+      value: -46.6409645
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 340573303c2b44ed18cd6c0fedfd704a, type: 2}
       propertyPath: m_LocalPosition.z
@@ -6918,15 +6929,15 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 787646034}
     m_Modifications:
     - target: {fileID: 400000, guid: 340573303c2b44ed18cd6c0fedfd704a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 55.3967056
+      value: 60.4694061
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 340573303c2b44ed18cd6c0fedfd704a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 16.1034069
+      value: 12.5171795
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 340573303c2b44ed18cd6c0fedfd704a, type: 2}
       propertyPath: m_LocalPosition.z
@@ -7102,7 +7113,6 @@ MonoBehaviour:
   spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 93083bebbd8cf4cc2a77036a198a7a1d, type: 2}
-  enemyType: 0
 --- !u!65 &1464375800
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7190,7 +7200,6 @@ MonoBehaviour:
   spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 93083bebbd8cf4cc2a77036a198a7a1d, type: 2}
-  enemyType: 0
 --- !u!65 &1469783178
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7370,7 +7379,6 @@ MonoBehaviour:
   spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 0cfe9df389320418b8d0b941c646e900, type: 2}
-  enemyType: 0
 --- !u!65 &1502553308
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7878,7 +7886,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 1b20da0be885246bcae133a36821e2e7, type: 2}
+  - {fileID: 2100000, guid: 68d2e5f2d934d4e6fba48c4cb693d580, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -8244,7 +8252,6 @@ MonoBehaviour:
   spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100002, guid: 4dc35863c23af450682e65df832d20e2, type: 2}
-  enemyType: 0
 --- !u!65 &1628409950
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9028,10 +9035,10 @@ Transform:
   m_PrefabInternal: {fileID: 1832133352}
   m_GameObject: {fileID: 1791435743}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 112.384087, y: -19.3449764, z: 0}
+  m_LocalPosition: {x: 117.456787, y: -22.9312038, z: 0}
   m_LocalScale: {x: 1, y: 18.757513, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 787646034}
 --- !u!1001 &1797954496
 Prefab:
   m_ObjectHideFlags: 0
@@ -9133,15 +9140,15 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 787646034}
     m_Modifications:
     - target: {fileID: 400000, guid: 340573303c2b44ed18cd6c0fedfd704a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 112.384087
+      value: 117.456787
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 340573303c2b44ed18cd6c0fedfd704a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -19.3449764
+      value: -22.9312038
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 340573303c2b44ed18cd6c0fedfd704a, type: 2}
       propertyPath: m_LocalPosition.z
@@ -9221,7 +9228,6 @@ MonoBehaviour:
   spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 93083bebbd8cf4cc2a77036a198a7a1d, type: 2}
-  enemyType: 0
 --- !u!65 &1862260700
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9324,7 +9330,6 @@ MonoBehaviour:
   spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 0cfe9df389320418b8d0b941c646e900, type: 2}
-  enemyType: 0
 --- !u!65 &1887860977
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9372,7 +9377,6 @@ MonoBehaviour:
   spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 93083bebbd8cf4cc2a77036a198a7a1d, type: 2}
-  enemyType: 0
 --- !u!65 &1893474767
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9822,10 +9826,10 @@ Transform:
   m_PrefabInternal: {fileID: 399069381}
   m_GameObject: {fileID: 1992622888}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.1890221, y: 32.6564331, z: 0}
+  m_LocalPosition: {x: 17.2617226, y: 29.0702057, z: 0}
   m_LocalScale: {x: 1, y: 15.6312494, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 787646034}
 --- !u!1 &2013095188
 GameObject:
   m_ObjectHideFlags: 0
@@ -9860,7 +9864,6 @@ MonoBehaviour:
   spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 93083bebbd8cf4cc2a77036a198a7a1d, type: 2}
-  enemyType: 0
 --- !u!65 &2013095190
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9990,7 +9993,6 @@ MonoBehaviour:
   spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 93083bebbd8cf4cc2a77036a198a7a1d, type: 2}
-  enemyType: 0
 --- !u!65 &2030836749
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10049,7 +10051,6 @@ MonoBehaviour:
   spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100002, guid: 4dc35863c23af450682e65df832d20e2, type: 2}
-  enemyType: 0
 --- !u!65 &2039372994
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10119,7 +10120,6 @@ MonoBehaviour:
   spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100000, guid: 93083bebbd8cf4cc2a77036a198a7a1d, type: 2}
-  enemyType: 0
 --- !u!65 &2047697960
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10279,7 +10279,6 @@ MonoBehaviour:
   spawnFacingPlayer: 0
   spawnOnlyOnce: 1
   enemyPrefab: {fileID: 100002, guid: 4dc35863c23af450682e65df832d20e2, type: 2}
-  enemyType: 0
 --- !u!65 &2115222825
 BoxCollider:
   m_ObjectHideFlags: 0
