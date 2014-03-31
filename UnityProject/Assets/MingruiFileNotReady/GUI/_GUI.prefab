@@ -2458,10 +2458,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1903213861c03df4aa6eb281c615707f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  q_icon: {fileID: 100030}
-  w_icon: {fileID: 100034}
-  e_icon: {fileID: 100032}
-  r_icon: {fileID: 100036}
+  abilitySlots:
+  - {fileID: 100060}
+  - {fileID: 100040}
+  - {fileID: 100046}
+  - {fileID: 100052}
 --- !u!114 &11400068
 MonoBehaviour:
   m_ObjectHideFlags: 1
