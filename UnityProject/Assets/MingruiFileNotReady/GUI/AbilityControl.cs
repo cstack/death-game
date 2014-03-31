@@ -8,13 +8,16 @@ public class AbilityControl : MonoBehaviour {
 	public Ability current_ability; // The ability currently being used
     private GUIAbilityControl gui_ability; // for changing ability icons
 	private Player player;
-	
+	private Ability abilityToActivate = null;
+
 	void Start(){
 		player = GameObject.Find ("Player").GetComponent<Player> ();
         gui_ability = GameObject.FindGameObjectWithTag("GUIAbilities").GetComponent<GUIAbilityControl>();
 		foreach (Ability ability in ability_array) {
-			ability.character = player;
-			gui_ability.Add_Ability_Icon(ability.abilityIcon);
+			if (ability != null) {
+				ability.character = player;
+				gui_ability.Add_Ability_Icon(ability.abilityIcon);
+			}
 		}
 	}
 
@@ -24,21 +27,38 @@ public class AbilityControl : MonoBehaviour {
 	}
 
 	public void Update() {
-		Ability abilityToActivate = null;
+		AbilityDetect ();
+	}
+
+	void AbilityDetect () {
+		abilityToActivate = null;
+
 		if (Input.GetKeyDown(GlobalConstant.keycode_ability_1)) {
-			abilityToActivate = ability_array[0];
+			if (ability_array.Count > 0) {
+				abilityToActivate = ability_array[0];
+			}
 		} else if (Input.GetKeyDown(GlobalConstant.keycode_ability_2)) {
-			abilityToActivate = ability_array[1];
+			if (ability_array.Count > 1) {
+				abilityToActivate = ability_array[1];
+			}
 		} else if (Input.GetKeyDown(GlobalConstant.keycode_ability_3)) {
-			abilityToActivate = ability_array[2];
+			if (ability_array.Count > 2) {
+				abilityToActivate = ability_array[2];
+			}
 		} else if (Input.GetKeyDown(GlobalConstant.keycode_ability_4)) {
-			abilityToActivate = ability_array[3];
+			if (ability_array.Count > 3) {
+				abilityToActivate = ability_array[3];
+			}
 		}
-
-
-		if (abilityToActivate != null) {
-			abilityToActivate.Activate();
+		
+		if (abilityToActivate != null && current_ability == null) {
 			current_ability = abilityToActivate;
+
+			if (abilityToActivate.abilityClip != null) {
+				audio.clip = abilityToActivate.abilityClip;
+			}
+			
+			abilityToActivate.Activate();
 		}
 	}
 }

@@ -24,9 +24,6 @@ public class Player : CharacterBase {
 	private Backpack backpack; // mingrui, for holding javelin count
 	public GameObject javelin; // mingrui, javelin object
 
-
-	public AudioClip Melee;
-
 	override protected void Start() {
 		base.Start ();
 		dir = Direction.Right;
@@ -82,6 +79,9 @@ public class Player : CharacterBase {
 
 				new_javelin.GetComponent<JavelinControl>().Create_Javelin(gameObject, aim);
 				backpack.remove_jevelin(1);
+
+				//Change this to be called after the animation finishes, if implemented
+				AbilityAnimationFinished ("javelin");
 			}
 		}
 	}
@@ -162,11 +162,24 @@ public class Player : CharacterBase {
 	}
 
 	public void AbilityAnimationHit() {
-		ability_control.current_ability.Hit ();
+		if (ability_control.current_ability != null) {
+			ability_control.current_ability.Hit ();
+		}
 	}
 
 	public void AbilityAnimationFinished() {
-		ability_control.current_ability.Finish ();
-		ability_control.current_ability = null;
+		if (ability_control.current_ability != null) {
+			ability_control.current_ability.Finish ();
+			ability_control.current_ability = null;
+		}
+	}
+
+	public void AbilityAnimationFinished( string abilityname ) {
+
+		if (ability_control.current_ability != null) {
+			ability_control.current_ability.Finish ();
+			ability_control.current_ability = null;
+			print (abilityname);
+		}
 	}
 }
