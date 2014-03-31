@@ -104,6 +104,10 @@ public class PlayerHealth : MonoBehaviour {
 	
 	private void tempDeath(Ability ability)
 	{
+		if (ability == null) {
+			return;
+		}
+
 		//Prints ability that's being added
 		Debug.Log ("Died and gained the ability " + ability.abilityName);
 	

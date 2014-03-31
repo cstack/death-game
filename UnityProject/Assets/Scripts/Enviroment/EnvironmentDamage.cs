@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnviromentDamage : MonoBehaviour {
+public class EnvironmentDamage : MonoBehaviour {
 
 	public int damageAmount = 1;
 	public float drownTimer = 0.2f;
@@ -9,13 +9,16 @@ public class EnviromentDamage : MonoBehaviour {
 	private GameObject plyr;
 	private bool drowning = false;
 	private float drwntime = 0f;
+	private bool inAirPocket = false;
 
 	void Update () {
 		if (drowning && plyr != null) {
 			if (drwntime > 0f) {
 				drwntime -= Time.deltaTime;
 			} else {
-				plyr.SendMessage("decreaseBreath", damageAmount);
+				if (!inAirPocket) {
+					plyr.SendMessage("decreaseBreath", damageAmount);
+				}
 				drwntime = drownTimer;
 			}
 		}
@@ -44,6 +47,15 @@ public class EnviromentDamage : MonoBehaviour {
 			plyr = col.gameObject;
 			plyr.SendMessage("feetExitWater");
 		}
+	}
+
+	public void enterAirPocket () {
+		inAirPocket = true;
+		plyr.GetComponent<PlayerHealth> ().resetBreath ();
+	}
+	
+	public void exitAirPocket () {
+		inAirPocket = false;
 	}
 
 }
