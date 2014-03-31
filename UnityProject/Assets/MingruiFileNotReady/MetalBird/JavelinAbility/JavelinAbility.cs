@@ -23,10 +23,13 @@ public class JavelinAbility : ActiveAbility {
 			}
 			
 			new_javelin.GetComponent<JavelinControl>().Create_Javelin(character.gameObject, aim);
+			//new_javelin.GetComponent<JavelinControl>().friendly = false; // change to try to fix javelin going through ground
 			character.backpack.remove_jevelin(1);
 
 			//Change this to be called after the animation finishes, if implemented
 			character.gameObject.GetComponent<Player> ().AbilityAnimationFinished ("JavelinAbility");
+
+			//Debug.Log(new_javelin.GetComponent<JavelinControl>().Check_If_Flying());
 		}
 	}
 }

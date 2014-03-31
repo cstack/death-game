@@ -32,7 +32,7 @@ public class MetalBirdAttack : EnemyBase {
 		} else {
 			aim = (int) GlobalConstant.direction.right;
 		}
-		Debug.Log(aim);
+		//Debug.Log(aim);
 		new_javelin.Create_Javelin(gameObject, aim);
 	}
 }
