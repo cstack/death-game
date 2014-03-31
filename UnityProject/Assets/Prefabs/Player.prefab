@@ -236,7 +236,6 @@ MonoBehaviour:
   waterGravity: .5
   speed: 0
   javelin: {fileID: 100000, guid: df7b4fea313777f46a4d069ee2f2e40a, type: 2}
-  Melee: {fileID: 8300000, guid: 33ffdd18a5a304bdeb63beb6c47ef175, type: 3}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -347,7 +346,7 @@ MonoBehaviour:
   current_life_count: 100
   invulnerable: 0
   spawnPoint: {fileID: 0}
-  lungs: {fileID: 0}
+  lungs: {fileID: 11400000, guid: 0ef81addfa1b047da969855cd0c7904d, type: 2}
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1

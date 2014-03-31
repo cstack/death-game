@@ -51,7 +51,7 @@ public class AbilityControl : MonoBehaviour {
 			}
 		}
 		
-		if (abilityToActivate != null && current_ability == null) {
+		if (abilityToActivate != null) {
 			current_ability = abilityToActivate;
 
 			if (abilityToActivate.abilityClip != null) {

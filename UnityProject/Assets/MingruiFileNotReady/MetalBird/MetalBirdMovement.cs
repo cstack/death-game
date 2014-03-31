@@ -1,16 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MetalBirdMovement : MonoBehaviour {
+public class MetalBirdMovement : EnemyBase {
 
     public int speed;
     public int engage_range;
     public int dive_distance;
     private bool is_rising = true;
 
-    private GameObject player;
     private float distance_from_player;
-    private bool engage = false;
+    public bool engage = false;
 
     // idle hover
     public float hover_speed;
@@ -21,13 +20,10 @@ public class MetalBirdMovement : MonoBehaviour {
     private bool is_nested = true; // starts at the nest position
     private float return_nest_speed = 3;
 
-    void Awake() {
-        player = GameObject.FindWithTag("Player");
-    }
-
-	void Start () {
+	public new void Start () {
+		base.Start ();
+		dir = Direction.Left;
         nest_position = transform.position;
-        //Debug.Log(nest_position);
 	}
 	
 	void Update () {
@@ -47,11 +43,9 @@ public class MetalBirdMovement : MonoBehaviour {
         if (distance_from_player < engage_range)
         {
             engage = true;
-            //Debug.Log("metal bird engage!");
         }
         else {
             engage = false;
-            //Debug.Log("metal bird disengage!");
         }
     }
 

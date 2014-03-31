@@ -5,13 +5,28 @@ public class JavelinAbility : ActiveAbility {
 
 	public GameObject javelin_prefab;
 
-	// Use this for initialization
-	protected override void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	protected override void Update () {
-	
+	protected override void OnActivate () {
+		if(character.backpack.Get_Javelin() > 0){
+			GameObject new_javelin;
+			int aim;
+			if(character.dir == EntityBase.Direction.Left){
+				new_javelin = (GameObject)Instantiate(javelin_prefab,
+				                                      character.transform.position + new Vector3(1, 2f, 0),
+				                                      transform.rotation);
+				aim = (int) GlobalConstant.direction.left;
+			}
+			else{
+				new_javelin = (GameObject)Instantiate(javelin_prefab,
+				                                      character.transform.position + new Vector3(-1, 2f, 0),
+				                                      transform.rotation);
+				aim = (int) GlobalConstant.direction.right;
+			}
+			
+			new_javelin.GetComponent<JavelinControl>().Create_Javelin(gameObject, aim);
+			character.backpack.remove_jevelin(1);
+
+			//Change this to be called after the animation finishes, if implemented
+			character.gameObject.GetComponent<Player> ().AbilityAnimationFinished ("JavelinAbility");
+		}
 	}
 }
