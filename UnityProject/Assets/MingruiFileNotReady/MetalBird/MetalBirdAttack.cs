@@ -1,17 +1,37 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MetalBirdAttack : MonoBehaviour {
+public class MetalBirdAttack : EnemyBase {
+	public GameObject javelin;
 
+	private MetalBirdMovement movement;
 
-
-	// Use this for initialization
-	void Start () {
-	    
+	public new void Start() {
+		base.Start ();
+		movement = GetComponent<MetalBirdMovement> ();
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-	    
+	    if (movement.is_engage() && canAttack()) {
+			Attack ();
+		}
+	}
+
+	protected override void Attack() {
+		base.Attack ();
+
+		JavelinControl new_javelin = ((GameObject) Instantiate (javelin,
+		                                                 transform.position + new Vector3 (1, 2f, 0),
+		                                                 transform.rotation)).GetComponent<JavelinControl>();
+		new_javelin.speed = 8;
+		new_javelin.friendly = false;
+		int aim;
+		if (dir == Direction.Left) {
+			aim = (int) GlobalConstant.direction.left;
+		} else {
+			aim = (int) GlobalConstant.direction.right;
+		}
+		new_javelin.Create_Javelin(gameObject, aim);
 	}
 }

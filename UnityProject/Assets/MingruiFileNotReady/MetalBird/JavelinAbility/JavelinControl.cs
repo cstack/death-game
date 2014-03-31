@@ -4,22 +4,35 @@ using System.Collections;
 public class JavelinControl : MonoBehaviour {
 
     public float speed;
-    private GameObject thrower;
+	public JavelinAbility javelinAbility;
+
+	private bool _friendly;
+	public bool friendly {
+		set {
+			_friendly = value;
+			if (_friendly) {
+				gameObject.layer = 11;
+			} else {
+				gameObject.layer = 10;
+			}
+		}
+		get {
+			return _friendly;
+		}
+	}
+
+    public GameObject thrower;
     private int aim;
     private bool launch = true;
     private bool flying = false;
 
     public void Create_Javelin(GameObject _thrower, int direction)
     {
+		Debug.Log ("Create Javelin " + _thrower);
         thrower = _thrower;
         aim = direction;
     }
 
-    // for testing
-    void Start() {
-        thrower = GameObject.FindWithTag("Player");
-    }
-	
 	void Update () {
         if (launch) // initial throw
         {
@@ -99,15 +112,25 @@ public class JavelinControl : MonoBehaviour {
     // if javelin is not attacking, and player is colliding with it, then it is picked
     // up by player
     void OnCollisionEnter2D(Collision2D collision){
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground") && flying)
+
+        if (collision.gameObject.tag == "ground" && flying)
         {
             // freeze the javelin in place
             rigidbody2D.fixedAngle = true;
 			flying = false;
+			friendly = true;
+			gameObject.layer = 12;
         }
 
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
+			if (!friendly) {
+				Destroy(gameObject);
+				PlayerHealth player = collision.gameObject.GetComponent<PlayerHealth>();
+				player.decreaseHealth(50, javelinAbility);
+				return;
+			}
+
             if (flying)
             {
 				flying = false;
@@ -118,7 +141,8 @@ public class JavelinControl : MonoBehaviour {
                 }
                 else
                 {
-                    // damage other player, if there is PvP
+					PlayerHealth player = collision.gameObject.GetComponent<PlayerHealth>();
+					player.decreaseHealth(50, javelinAbility);
                 }
             }
             else
@@ -136,14 +160,9 @@ public class JavelinControl : MonoBehaviour {
 
         // if collided with Enemy and it is not "frozen" on ground
         if (collision.transform.tag == "Enemy" && flying)
-        {
-			if(flying){
-				flying = false;
-			}
-			else {
-				// deal damage
-				//collision.transform.GetComponent<Health>().Change_Color();
-			}
+		{
+			Destroy(gameObject);
+			Destroy(collision.gameObject);
         }
     }
 }

@@ -8,12 +8,12 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
-  - 65: {fileID: 6500000}
-  - 114: {fileID: 11400002}
-  m_Layer: 12
-  m_Name: EnemySpawner
+  - 61: {fileID: 6100000}
+  - 114: {fileID: 11400000}
+  m_Layer: 0
+  m_Name: Checkpoint
   m_TagString: Untagged
-  m_Icon: {fileID: -1003283189, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -24,23 +24,22 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 31.3720207, y: 16.6572151, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 12.1890221, y: 32.6564331, z: 0}
+  m_LocalScale: {x: 1, y: 15.6312494, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
---- !u!65 &6500000
-BoxCollider:
+--- !u!61 &6100000
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
+  m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 2}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &11400002
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: .5, y: .5}
+--- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -48,15 +47,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d824d76213c684aacbcdfb1912f9babb, type: 3}
+  m_Script: {fileID: 11500000, guid: d401c4dc39f1643aab953c6f0441a558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveTimePeriod: .600000024
-  moveUpAndDown: 0
-  spawnFacingScrooge: 1
-  spawnOnlyOnce: 1
-  enemyPrefab: {fileID: 0}
-  enemyType: 0
+  spawnpoint: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

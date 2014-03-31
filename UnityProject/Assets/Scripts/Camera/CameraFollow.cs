@@ -11,16 +11,20 @@ public class CameraFollow : MonoBehaviour {
 	public float yOffest = 5f;
 	public float z = -9f;
 
-	// Use this for initialization
+	Vector3 targetPos;
+	Vector3 currentPos;
+	Vector3 newPos;
+
+		// Use this for initialization
 	void Start () {
 		poi = GameObject.Find ("Player").transform;
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		Vector3 targetPos = poi.position;
-		Vector3 currentPos = transform.position;
-		Vector3 newPos = (1 - u) * currentPos + u * targetPos;
+	void FixedUpdate () {
+		targetPos = poi.position;
+		currentPos = transform.position;
+		newPos = (1 - u) * currentPos + u * targetPos;
 		transform.position = new Vector3 (Mathf.Clamp(newPos.x, minX, maxX), Mathf.Clamp(newPos.y + yOffest, minY, maxY), z);
 	}
 }

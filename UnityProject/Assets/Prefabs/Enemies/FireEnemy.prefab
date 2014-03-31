@@ -13,7 +13,7 @@ GameObject:
   - 50: {fileID: 5000000}
   - 61: {fileID: 6100000}
   - 114: {fileID: 11400002}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: FireEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -68,9 +68,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c524bf601404d479f9c3779b70cbdca0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canBreathUnderwater: 0
+  cooldownTime: 2
   maxSpeed: 3
   range: 6
-  cooldownTime: 2
   shot_prefab: {fileID: 11400004, guid: ec2239724f6674316ae0e8daf2d8acce, type: 2}
 --- !u!114 &11400002
 MonoBehaviour:

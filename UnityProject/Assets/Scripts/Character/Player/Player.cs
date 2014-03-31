@@ -21,7 +21,6 @@ public class Player : CharacterBase {
 
 	private AbilityControl ability_control; // mingrui, for array of ability
 	private int aim; // mingrui, for aiming javelin
-	private Backpack backpack; // mingrui, for holding javelin count
 	public GameObject javelin; // mingrui, javelin object
 
 	override protected void Start() {
@@ -35,7 +34,6 @@ public class Player : CharacterBase {
 
 	private void Update () {
 		Get_Aim(); // mingrui
-		Throw_Javelin(); // mingrui
 
 		HorizontalMove ();
 		VerticalMove ();
@@ -57,32 +55,6 @@ public class Player : CharacterBase {
 		else if (Input.GetKey(GlobalConstant.keycode_right))
 		{
 			aim = (int)GlobalConstant.direction.right;
-		}
-	}
-
-	//mingrui
-	// throw javelin
-	private void Throw_Javelin(){
-		if(backpack.Get_Javelin() > 0){
-			if(Input.GetKeyDown(GlobalConstant.keycode_ability_4)){
-				GameObject new_javelin;
-				if(aim == (int)GlobalConstant.direction.left){
-					new_javelin = (GameObject)Instantiate(javelin,
-					                                                 transform.position + new Vector3(1, 2f, 0),
-					                                                 transform.rotation);
-				}
-				else{
-					new_javelin = (GameObject)Instantiate(javelin,
-					                                                 transform.position + new Vector3(-1, 2f, 0),
-					                                                 transform.rotation);
-				}
-
-				new_javelin.GetComponent<JavelinControl>().Create_Javelin(gameObject, aim);
-				backpack.remove_jevelin(1);
-
-				//Change this to be called after the animation finishes, if implemented
-				AbilityAnimationFinished ("javelin");
-			}
 		}
 	}
 
@@ -111,6 +83,7 @@ public class Player : CharacterBase {
 			}
 			grounded = false;
 			animator.SetBool("grounded", false);
+			animator.SetTrigger("jump");
 		}
 
 		if (Input.GetButtonUp("Jump") && rigidbody2D.velocity.y > 0) {
@@ -131,6 +104,10 @@ public class Player : CharacterBase {
 	}
 
 	public void AddAbility (Ability newAbility){
+		if (newAbility == null) {
+			return;
+		}
+
 		newAbility.character = this;
 		ability_control.add_ability(newAbility); // mingrui
 	}
@@ -179,7 +156,6 @@ public class Player : CharacterBase {
 		if (ability_control.current_ability != null) {
 			ability_control.current_ability.Finish ();
 			ability_control.current_ability = null;
-			print (abilityname);
 		}
 	}
 }

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic; // List
 
 public class AbilityControl : MonoBehaviour {
-	
+
 	public List<Ability> ability_array = new List<Ability>();
 	public Ability current_ability; // The ability currently being used
     private GUIAbilityControl gui_ability; // for changing ability icons
@@ -50,14 +50,15 @@ public class AbilityControl : MonoBehaviour {
 				abilityToActivate = ability_array[3];
 			}
 		}
-		
-		if (abilityToActivate != null && current_ability == null) {
+
+		//ADD THIS AFTER TIMER ADDED TO ABILITIES:  && current_ability == null
+		if (abilityToActivate != null) {
 			current_ability = abilityToActivate;
 
 			if (abilityToActivate.abilityClip != null) {
 				audio.clip = abilityToActivate.abilityClip;
 			}
-			
+
 			abilityToActivate.Activate();
 		}
 	}

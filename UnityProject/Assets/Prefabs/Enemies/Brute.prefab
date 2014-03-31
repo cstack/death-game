@@ -11,7 +11,7 @@ GameObject:
   - 61: {fileID: 6100000}
   - 114: {fileID: 11400000}
   - 212: {fileID: 21200000}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31,7 +31,8 @@ GameObject:
   - 61: {fileID: 6100002}
   - 50: {fileID: 5000000}
   - 114: {fileID: 11400002}
-  m_Layer: 0
+  - 114: {fileID: 11400004}
+  m_Layer: 17
   m_Name: Brute
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -136,11 +137,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 547b2044d9cc34cb9a8112ce0ed6b284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canBreathUnderwater: 0
+  backpack: {fileID: 0}
   cooldownTime: 3
   maxSpeed: 1.5
   range: 3
   attackPower: 50
   deathAbility: {fileID: 0}
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 417d3b7c75f2afa42bf1677921fac074, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bonus_seconds: 5
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

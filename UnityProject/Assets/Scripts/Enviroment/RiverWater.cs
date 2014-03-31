@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class RiverWater : MonoBehaviour {
+public class RiverWater : Water {
 	
 	public Texture2D[] frames = null;
 	public float framesPerSecond = 10.0f;
@@ -40,4 +40,5 @@ public class RiverWater : MonoBehaviour {
 			}
 		}
 	}
+
 }
