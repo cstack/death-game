@@ -27,7 +27,14 @@ public class AbilityControl : MonoBehaviour {
 		Ability abilityToActivate = null;
 		if (Input.GetKeyDown(GlobalConstant.keycode_ability_1)) {
 			abilityToActivate = ability_array[0];
+		} else if (Input.GetKeyDown(GlobalConstant.keycode_ability_2)) {
+			abilityToActivate = ability_array[1];
+		} else if (Input.GetKeyDown(GlobalConstant.keycode_ability_3)) {
+			abilityToActivate = ability_array[2];
+		} else if (Input.GetKeyDown(GlobalConstant.keycode_ability_4)) {
+			abilityToActivate = ability_array[3];
 		}
+
 
 		if (abilityToActivate != null) {
 			abilityToActivate.Activate();
