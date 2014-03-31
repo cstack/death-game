@@ -73,6 +73,7 @@ public class MetalBirdMovement : EnemyBase {
 		} else if (dir == Direction.Right && offset < 0) {
 			dir = Direction.Left;
 		}
+		//Debug.Log(dir);
 
         rising_movement();
 

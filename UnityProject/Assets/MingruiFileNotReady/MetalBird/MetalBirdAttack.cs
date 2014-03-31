@@ -27,11 +27,12 @@ public class MetalBirdAttack : EnemyBase {
 		new_javelin.speed = 8;
 		new_javelin.friendly = false;
 		int aim;
-		if (dir == Direction.Left) {
+		if (movement.dir == Direction.Left) {
 			aim = (int) GlobalConstant.direction.left;
 		} else {
 			aim = (int) GlobalConstant.direction.right;
 		}
+		Debug.Log(aim);
 		new_javelin.Create_Javelin(gameObject, aim);
 	}
 }
