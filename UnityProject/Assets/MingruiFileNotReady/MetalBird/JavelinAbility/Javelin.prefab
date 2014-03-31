@@ -8,11 +8,11 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
-  - 33: {fileID: 3300000}
   - 23: {fileID: 2300000}
   - 50: {fileID: 5000000}
   - 61: {fileID: 6100000}
   - 114: {fileID: 11400000}
+  - 33: {fileID: 3300000}
   m_Layer: 0
   m_Name: Javelin
   m_TagString: Untagged
@@ -27,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.42945576, y: 5.66025734, z: -1.54999995}
+  m_LocalPosition: {x: -7.1538887, y: 3.73388243, z: -1.54999995}
   m_LocalScale: {x: .100000001, y: 1.5, z: .100000001}
   m_Children: []
   m_Father: {fileID: 0}

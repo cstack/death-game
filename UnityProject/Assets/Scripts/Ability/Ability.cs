@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[System.Serializable]
 public class Ability : MonoBehaviour {
 
 	public string abilityName;
 	public Texture2D abilityIcon;
+	public AudioClip abilityClip;
 
 	private CharacterBase _character;
 	protected Animator am;
