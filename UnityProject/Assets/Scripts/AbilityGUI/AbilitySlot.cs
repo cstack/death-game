@@ -13,6 +13,10 @@ public class AbilitySlot : MonoBehaviour {
 	}
 
 	public void showCount() {
-		countLabel.gameObject.SetActive (true);
+		showCount (true);
+	}
+
+	public void showCount(bool show) {
+		countLabel.gameObject.SetActive (show);
 	}
 }

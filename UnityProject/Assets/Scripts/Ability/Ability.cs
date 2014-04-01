@@ -31,7 +31,9 @@ public class Ability : MonoBehaviour {
 		onGUIAttached ();
 	}
 
-	protected virtual void onGUIAttached () {}
+	protected virtual void onGUIAttached () {
+		abilityGUI.showCount (false);
+	}
 
 	protected virtual void Awake () {
 		abilityName = "Unknown";
