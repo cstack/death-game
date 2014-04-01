@@ -70,7 +70,8 @@ public class GUIControl : MonoBehaviour {
 	
 	// Mingrui
 	private void healthUI(){
-		time_text = string.Format("{0:00}:{1:00}", timer_control.read_time() / 60, timer_control.read_time() % 60);
+		int seconds = (int) timer_control.read_time ();
+		time_text = string.Format("{0:00}:{1:00}", seconds / 60, seconds % 60);
 		
 		// time health lives
 		GUILayout.BeginArea(new Rect(20, 20, 200, 80));

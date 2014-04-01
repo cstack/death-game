@@ -23,6 +23,7 @@ public class TimerControl : MonoBehaviour {
 	void Start () {
 		poi = GameObject.Find("Player").transform;
 		player_health = poi.GetComponent<PlayerHealth>();
+		restartTimer ();
 	}
 	
 	// Update is called once per frame
@@ -34,6 +35,7 @@ public class TimerControl : MonoBehaviour {
 		// if time runs out
 		if(available_time <= 0){
 			player_health.playerDeath(null);
+			restartTimer();
 		}
 	}
 	
