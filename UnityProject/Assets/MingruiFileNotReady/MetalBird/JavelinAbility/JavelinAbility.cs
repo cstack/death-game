@@ -33,4 +33,9 @@ public class JavelinAbility : ActiveAbility {
 			//Debug.Log(new_javelin.GetComponent<JavelinControl>().Check_If_Flying());
 		}
 	}
+
+	protected override void onGUIAttached() {
+		abilityGUI.setCount (3);
+		abilityGUI.showCount ();
+	}
 }

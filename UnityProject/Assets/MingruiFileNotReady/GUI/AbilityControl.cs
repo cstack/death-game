@@ -16,7 +16,7 @@ public class AbilityControl : MonoBehaviour {
 		foreach (Ability ability in ability_array) {
 			if (ability != null) {
 				ability.character = player;
-				gui_ability.Add_Ability_Icon(ability.abilityIcon);
+				gui_ability.Add_Ability(ability);
 			}
 		}
 	}
@@ -31,7 +31,7 @@ public class AbilityControl : MonoBehaviour {
 		}
 
 		ability_array.Add(new_ability);
-        gui_ability.Add_Ability_Icon(new_ability.abilityIcon);
+        gui_ability.Add_Ability(new_ability);
 	}
 
 	public void Update() {

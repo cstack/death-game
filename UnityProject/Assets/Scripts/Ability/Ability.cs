@@ -25,6 +25,14 @@ public class Ability : MonoBehaviour {
 		}
 	}
 
+	protected AbilitySlot abilityGUI;
+	public void setAbilityGUI (AbilitySlot gui) {
+		abilityGUI = gui;
+		onGUIAttached ();
+	}
+
+	protected virtual void onGUIAttached () {}
+
 	protected virtual void Awake () {
 		abilityName = "Unknown";
 	}
