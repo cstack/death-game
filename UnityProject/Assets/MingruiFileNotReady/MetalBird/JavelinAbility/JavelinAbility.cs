@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class JavelinAbility : ActiveAbility {
+public class JavelinAbility : ActiveAbility, Backpack.Observer {
 
 	public GameObject javelin_prefab;
 
 	protected override void OnActivate () {
 		if(character.backpack.Get_Javelin() > 0){
+
 			GameObject new_javelin;
 			int aim;
 			if(character.dir == EntityBase.Direction.Left){
@@ -35,7 +36,17 @@ public class JavelinAbility : ActiveAbility {
 	}
 
 	protected override void onGUIAttached() {
-		abilityGUI.setCount (3);
+		abilityGUI.setCount (character.backpack.Get_Javelin());
 		abilityGUI.showCount ();
+		character.backpack.AddObserver (this);
 	}
+
+	#region Observer implementation
+
+	public void javelinCountChanged (int numJavelins)
+	{
+		abilityGUI.setCount (numJavelins);
+	}
+
+	#endregion
 }

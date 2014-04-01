@@ -4,7 +4,7 @@ using System.Collections;
 public class AbilitySlot : MonoBehaviour {
 	private UILabel countLabel;
 
-	public void Start() {
+	public void Awake() {
 		countLabel = transform.FindChild ("Count").GetComponent<UILabel>();
 	}
 
