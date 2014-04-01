@@ -20,10 +20,16 @@ public class GUIAbilityControl : MonoBehaviour {
         }
     }
 
-    public void Add_Ability(Ability ability) {
-		AbilitySlot abilitySlot = abilitySlots [numAbilities++];
+	private void setAbilitySlot(int index, Ability ability) {
+		AbilitySlot abilitySlot = abilitySlots [index];
 		abilitySlot.transform.FindChild ("Texture").GetComponent<UITexture> ().mainTexture = ability.abilityIcon;
 		abilitySlot.gameObject.SetActive (true);
 		ability.setAbilityGUI (abilitySlot);
-    }
+	}
+
+	public void setAbilities(List<Ability> abilities) {
+		for (int i = 0; i < abilities.Count; i++) {
+			setAbilitySlot(i, abilities[i]);
+		}
+	}
 }

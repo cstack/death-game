@@ -383,8 +383,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 113be9aa46499493c80600edc8bea6b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ability_array:
-  - {fileID: 11400000, guid: 0f722a17ee475459a8ac2cb48cc8df13, type: 2}
+  basicAttack: {fileID: 11400000, guid: 0f722a17ee475459a8ac2cb48cc8df13, type: 2}
+  abilities: []
+  maxAbilities: 2
   current_ability: {fileID: 0}
 --- !u!212 &21200000
 SpriteRenderer:

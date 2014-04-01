@@ -108,7 +108,6 @@ public class Player : CharacterBase {
 			return;
 		}
 
-		newAbility.character = this;
 		ability_control.add_ability(newAbility); // mingrui
 	}
 
