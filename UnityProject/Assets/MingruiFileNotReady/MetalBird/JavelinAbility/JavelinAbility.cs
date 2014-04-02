@@ -26,7 +26,7 @@ public class JavelinAbility : ActiveAbility {
 			character.backpack.remove_jevelin(1);
 
 			//Change this to be called after the animation finishes, if implemented
-			character.gameObject.GetComponent<Player> ().AbilityAnimationFinished ("JavelinAbility");
+			character.gameObject.GetComponent<Player> ().AbilityAnimationFinished ();
 		}
 	}
 }

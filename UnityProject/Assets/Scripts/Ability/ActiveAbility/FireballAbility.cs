@@ -14,6 +14,6 @@ public class FireballAbility : ActiveAbility {
 		shot.init_shot(character, true);
 
 		//Change this to be called after the animation finishes, if implemented
-		character.gameObject.GetComponent<Player> ().AbilityAnimationFinished ("Fireball");
+		character.gameObject.GetComponent<Player> ().AbilityAnimationFinished ();
 	}
 }
