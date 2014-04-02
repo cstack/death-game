@@ -4,13 +4,13 @@ using System.Collections.Generic; // List
 
 public class GUIAbilityControl : MonoBehaviour {
 
-	public List<GameObject> abilitySlots;
+	public List<AbilitySlot> abilitySlots;
     private int numAbilities = 0;
 
 	// Use this for initialization
 	void Start () {
-		foreach (GameObject abilitySlot in abilitySlots) {
-			abilitySlot.SetActive(false);
+		foreach (AbilitySlot abilitySlot in abilitySlots) {
+			abilitySlot.gameObject.SetActive(false);
 		}
 	}
 
@@ -20,9 +20,16 @@ public class GUIAbilityControl : MonoBehaviour {
         }
     }
 
-    public void Add_Ability_Icon(Texture new_icon) {
-		GameObject abilitySlot = abilitySlots [numAbilities++];
-		abilitySlot.transform.FindChild ("Texture").gameObject.GetComponent<UITexture> ().mainTexture = new_icon;
-		abilitySlot.SetActive (true);
-    }
+	private void setAbilitySlot(int index, Ability ability) {
+		AbilitySlot abilitySlot = abilitySlots [index];
+		abilitySlot.transform.FindChild ("Texture").GetComponent<UITexture> ().mainTexture = ability.abilityIcon;
+		abilitySlot.gameObject.SetActive (true);
+		ability.setAbilityGUI (abilitySlot);
+	}
+
+	public void setAbilities(List<Ability> abilities) {
+		for (int i = 0; i < abilities.Count; i++) {
+			setAbilitySlot(i, abilities[i]);
+		}
+	}
 }

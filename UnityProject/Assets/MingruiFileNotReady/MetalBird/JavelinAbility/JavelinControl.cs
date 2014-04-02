@@ -28,7 +28,7 @@ public class JavelinControl : MonoBehaviour {
 
     public void Create_Javelin(GameObject _thrower, int direction)
     {
-		Debug.Log ("Create Javelin " + _thrower);
+		//Debug.Log ("Create Javelin " + _thrower);
         thrower = _thrower;
         aim = direction;
     }
@@ -165,4 +165,9 @@ public class JavelinControl : MonoBehaviour {
 			Destroy(collision.gameObject);
         }
     }
+
+	// for testing
+	public bool Check_If_Flying(){
+		return flying;
+	}
 }

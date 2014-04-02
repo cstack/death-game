@@ -1,12 +1,32 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic; // List
 
 public class Backpack : MonoBehaviour {
     public int max_javelin_count;
     public int current_javelin_count;
 
+	public interface Observer {
+		void javelinCountChanged (int numJavelins);
+	}
+	private List<Observer> observers;
+
+	public Backpack() {
+		observers = new List<Observer> ();
+	}
+
+	public void AddObserver(Observer observer) {
+		observers.Add (observer);
+	}
+
 	public int Get_Javelin(){
 		return current_javelin_count;
+	}
+
+	private void NotifyObservers() {
+		foreach (Observer observer in observers) {
+			observer.javelinCountChanged(current_javelin_count);
+		}
 	}
 
     // adds to javelin count and then returns the new count
@@ -18,6 +38,8 @@ public class Backpack : MonoBehaviour {
         else {
             current_javelin_count = max_javelin_count;
         }
+
+		NotifyObservers ();
 
         return current_javelin_count;
     }
@@ -32,6 +54,8 @@ public class Backpack : MonoBehaviour {
         else{
             return -1;
         }
+
+		NotifyObservers ();
 
         return current_javelin_count;
     }
