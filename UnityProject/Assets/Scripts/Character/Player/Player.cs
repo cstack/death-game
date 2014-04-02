@@ -76,20 +76,26 @@ public class Player : CharacterBase {
 	private void VerticalMove () {
 
 		if (Input.GetButtonDown("Jump") && (grounded || feetInWater)) {
-			if (headUnderwater) {
-				updateYVelocity(swimSpeed);
-			} else {
-				updateYVelocity(jumpSpeed);
-			}
-			grounded = false;
-			animator.SetBool("grounded", false);
 			animator.SetTrigger("jump");
+			animator.SetBool("grounded", false);
+
+			//Let animation finish first!
+			Invoke("Jump", 0.1f);
 		}
 
 		if (Input.GetButtonUp("Jump") && rigidbody2D.velocity.y > 0) {
 			updateYVelocity(0);
 		}
 
+	}
+
+	private void Jump() {
+		if (headUnderwater) {
+			updateYVelocity(swimSpeed);
+		} else {
+			updateYVelocity(jumpSpeed);
+		}
+		grounded = false;
 	}
 
 	private void OnCollisionStay2D (Collision2D other) {
@@ -144,14 +150,6 @@ public class Player : CharacterBase {
 	}
 
 	public void AbilityAnimationFinished() {
-		if (ability_control.current_ability != null) {
-			ability_control.current_ability.Finish ();
-			ability_control.current_ability = null;
-		}
-	}
-
-	public void AbilityAnimationFinished( string abilityname ) {
-
 		if (ability_control.current_ability != null) {
 			ability_control.current_ability.Finish ();
 			ability_control.current_ability = null;

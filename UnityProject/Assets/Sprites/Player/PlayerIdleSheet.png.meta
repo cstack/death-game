@@ -20,10 +20,10 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   seamlessCubemap: 0
-  textureFormat: -1
-  maxTextureSize: 1024
+  textureFormat: -2
+  maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
+    filterMode: 1
     aniso: 1
     mipBias: -1
     wrapMode: 1
@@ -45,7 +45,7 @@ TextureImporter:
     compressionQuality: 50
   spriteSheet:
     sprites:
-    - name: RunningIdleSheet_0
+    - name: PlayerIdleSheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -54,7 +54,7 @@ TextureImporter:
         height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: RunningIdleSheet_1
+    - name: PlayerIdleSheet_1
       rect:
         serializedVersion: 2
         x: 256
@@ -63,7 +63,7 @@ TextureImporter:
         height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: RunningIdleSheet_2
+    - name: PlayerIdleSheet_2
       rect:
         serializedVersion: 2
         x: 512
@@ -72,7 +72,7 @@ TextureImporter:
         height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: RunningIdleSheet_3
+    - name: PlayerIdleSheet_3
       rect:
         serializedVersion: 2
         x: 768
@@ -81,7 +81,7 @@ TextureImporter:
         height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: RunningIdleSheet_4
+    - name: PlayerIdleSheet_4
       rect:
         serializedVersion: 2
         x: 1024
@@ -90,7 +90,7 @@ TextureImporter:
         height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: RunningIdleSheet_5
+    - name: PlayerIdleSheet_5
       rect:
         serializedVersion: 2
         x: 1280
