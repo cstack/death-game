@@ -8,20 +8,20 @@ public class Ability : MonoBehaviour {
 	public Texture2D abilityIcon;
 	public AudioClip abilityClip;
 
-	private CharacterBase _character;
+	private Player _player;
 	protected Animator am;
-	public CharacterBase character {
+	public Player player {
 		set {
-			_character = value;
-			if (_character != null) {
-				am = _character.GetComponent<Animator>();
+			_player = value;
+			if (_player != null) {
+				am = _player.GetComponent<Animator>();
 				onAttachedToCharacter();
 			} else {
 				am = null;
 			}
 		}
 		get {
-			return _character;
+			return _player;
 		}
 	}
 
@@ -54,23 +54,23 @@ public class Ability : MonoBehaviour {
 	protected virtual void OnFinish () {}
 
 	public void Activate () {
-		if (character == null) 
-			Debug.LogWarning("Character is not set in ability " + abilityName);
+		if (player == null) 
+			Debug.LogWarning("Player is not set in ability " + abilityName);
 		else {
 			OnActivate();
 		}
 	}
 
 	public void Hit () {
-		if (character == null) 
-			Debug.LogWarning("Character is not set in ability " + abilityName);
+		if (player == null) 
+			Debug.LogWarning("Player is not set in ability " + abilityName);
 		else 
 			OnHit();
 	}
 
 	public void Finish () {
-		if (character == null) 
-			Debug.LogWarning("Character is not set in ability " + abilityName);
+		if (player == null) 
+			Debug.LogWarning("Player is not set in ability " + abilityName);
 		else 
 			OnFinish();
 	}	

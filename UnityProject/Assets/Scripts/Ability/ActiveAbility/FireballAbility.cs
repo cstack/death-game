@@ -11,9 +11,8 @@ public class FireballAbility : ActiveAbility {
 
 	protected override void OnActivate () {
 		EnemyShot shot = (EnemyShot)Instantiate(shot_prefab);
-		shot.init_shot(character, true);
+		shot.init_shot(player, true);
 
-		//Change this to be called after the animation finishes, if implemented
-		character.gameObject.GetComponent<Player> ().AbilityAnimationFinished ();
+		player.AbilityAnimationFinished();
 	}
 }

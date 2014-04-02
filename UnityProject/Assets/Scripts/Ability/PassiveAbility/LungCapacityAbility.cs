@@ -8,6 +8,6 @@ public class LungCapacityAbility : PassiveAbility {
 	}
 	
 	protected override void OnActivate () {
-		character.canBreathUnderwater = true;
+		player.canBreathUnderwater = true;
 	}
 }

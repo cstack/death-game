@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic; // List
 
@@ -16,10 +16,10 @@ public class AbilityControl : MonoBehaviour {
 		player = GameObject.Find ("Player").GetComponent<Player> ();
         gui_ability = GameObject.FindGameObjectWithTag("GUIAbilities").GetComponent<GUIAbilityControl>();
 
-		basicAttack.character = player;
+		basicAttack.player = player;
 		foreach (Ability ability in abilities) {
 			if (ability != null) {
-				ability.character = player;
+				ability.player = player;
 			}
 		}
 		updateAbilityUI ();
@@ -45,7 +45,7 @@ public class AbilityControl : MonoBehaviour {
 			abilities.RemoveAt(abilities.Count - 1);
 		}
 
-		new_ability.character = player;
+		new_ability.player = player;
 		abilities.Insert (0, new_ability); // Add ability to newest position
 		updateAbilityUI ();
 	}

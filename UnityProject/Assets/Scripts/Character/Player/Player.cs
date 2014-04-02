@@ -13,7 +13,7 @@ public class Player : CharacterBase {
 	public float waterDrag = 4f;
 	public float waterGravity = 0.5f;
 
-	private PlayerHealth playerHealth;
+	public PlayerHealth playerHealth;
 	public float speed;
 	private enum IdleOrRunningStates {
 		Idle, Running

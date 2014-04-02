@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class BasicAttack : ActiveAbility {
@@ -14,7 +14,7 @@ public class BasicAttack : ActiveAbility {
 	}
 
 	protected override void OnHit() {
-		attackCollider = (GameObject) character.transform.FindChild ("Attack").gameObject;
+		attackCollider = (GameObject) player.transform.FindChild ("Attack").gameObject;
 		attackCollider.SetActive (true);
 	}
 
