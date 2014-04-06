@@ -724,8 +724,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc7abbc9342645ffbafea906c4ef050, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  available_time: 30
-  max_available_time: 30
+  available_time: 100000
+  max_available_time: 100000
 --- !u!114 &265396104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -793,7 +793,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 265396097}
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: .0500000007
+  m_AngularDrag: 0
   m_GravityScale: 1
   m_FixedAngle: 1
   m_IsKinematic: 0
@@ -1996,7 +1996,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &831306432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4340,6 +4340,10 @@ Prefab:
     - target: {fileID: 100002, guid: 9a0e710f27c46df418faef5fe77a3a2c, type: 2}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 9a0e710f27c46df418faef5fe77a3a2c, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9a0e710f27c46df418faef5fe77a3a2c, type: 2}
