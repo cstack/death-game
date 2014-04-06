@@ -50,53 +50,53 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 256
-        height: 256
+        width: 300
+        height: 300
       alignment: 7
       pivot: {x: 0, y: 0}
     - name: PlayerIdleSheet_1
       rect:
         serializedVersion: 2
-        x: 256
+        x: 300
         y: 0
-        width: 256
-        height: 256
+        width: 300
+        height: 300
       alignment: 7
       pivot: {x: 0, y: 0}
     - name: PlayerIdleSheet_2
       rect:
         serializedVersion: 2
-        x: 512
+        x: 600
         y: 0
-        width: 256
-        height: 256
+        width: 300
+        height: 300
       alignment: 7
       pivot: {x: 0, y: 0}
     - name: PlayerIdleSheet_3
       rect:
         serializedVersion: 2
-        x: 768
+        x: 900
         y: 0
-        width: 256
-        height: 256
+        width: 300
+        height: 300
       alignment: 7
       pivot: {x: 0, y: 0}
     - name: PlayerIdleSheet_4
       rect:
         serializedVersion: 2
-        x: 1024
+        x: 1200
         y: 0
-        width: 256
-        height: 256
+        width: 300
+        height: 300
       alignment: 7
       pivot: {x: 0, y: 0}
     - name: PlayerIdleSheet_5
       rect:
         serializedVersion: 2
-        x: 1280
+        x: 1500
         y: 0
-        width: 256
-        height: 256
+        width: 300
+        height: 300
       alignment: 7
       pivot: {x: 0, y: 0}
   spritePackingTag: 
