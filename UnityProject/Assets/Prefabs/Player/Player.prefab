@@ -66,7 +66,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4, y: 0, z: 0}
+  m_LocalPosition: {x: -5.10911989, y: 2.96073389, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400002}
@@ -207,7 +207,7 @@ Animator:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 9be082cacf9e847f1952864f635839de, type: 2}
   m_CullingMode: 0
@@ -327,8 +327,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc7abbc9342645ffbafea906c4ef050, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  available_time: 100000
-  max_available_time: 100000
+  available_time: 60
+  max_available_time: 60
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -345,7 +345,7 @@ MonoBehaviour:
   currentBreath: 50
   maxBreath: 50
   breathPercent: 1
-  current_life_count: 100
+  current_life_count: 6
   invulnerable: 0
   spawnPoint: {fileID: 0}
   lungs: {fileID: 11400000, guid: 0ef81addfa1b047da969855cd0c7904d, type: 2}

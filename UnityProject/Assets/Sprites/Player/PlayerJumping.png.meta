@@ -50,34 +50,34 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 256
+        width: 300
         height: 300
       alignment: 7
       pivot: {x: 0, y: 0}
     - name: PlayerJumping_1
       rect:
         serializedVersion: 2
-        x: 256
+        x: 300
         y: 0
-        width: 256
+        width: 300
         height: 300
       alignment: 7
       pivot: {x: 0, y: 0}
     - name: PlayerJumping_2
       rect:
         serializedVersion: 2
-        x: 512
+        x: 600
         y: 0
-        width: 256
+        width: 300
         height: 300
       alignment: 7
       pivot: {x: 0, y: 0}
     - name: PlayerJumping_3
       rect:
         serializedVersion: 2
-        x: 768
+        x: 900
         y: 0
-        width: 256
+        width: 300
         height: 300
       alignment: 7
       pivot: {x: 0, y: 0}
