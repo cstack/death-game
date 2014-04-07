@@ -70,16 +70,16 @@ public class GUIControl : MonoBehaviour {
 	
 	// Mingrui
 	private void healthUI(){
-		int seconds = (int) timer_control.read_time ();
-		time_text = string.Format("{0:00}:{1:00}", seconds / 60, seconds % 60);
+		//int seconds = (int) timer_control.read_time ();
+		//time_text = string.Format("{0:00}:{1:00}", seconds / 60, seconds % 60);
 		
 		// time health lives
-		GUILayout.BeginArea(new Rect(20, 20, 200, 80));
-		GUILayout.Label("Time: " + time_text, customGUIStyle);
+		//GUILayout.BeginArea(new Rect(20, 20, 200, 80));
+		//GUILayout.Label("Time: " + time_text, customGUIStyle);
 		//GUILayout.Label("Health: " + player_health.currentHealth + " / " + player_health.maxHealth, customGUIStyle);
-		GUILayout.Label("Lives: " + player_health.current_life_count, customGUIStyle);
+		//GUILayout.Label("Lives: " + player_health.current_life_count, customGUIStyle);
 		//GUILayout.Label("Breath: ", customGUIStyle);
-		GUILayout.EndArea();
+		//GUILayout.EndArea();
 		
 		// breath bar
 		//GUILayout.BeginArea(new Rect(78, 78, 100, 14));

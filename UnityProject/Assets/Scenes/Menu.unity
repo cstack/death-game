@@ -148,7 +148,8 @@ MonoBehaviour:
     QWER = abilities
 
 
-    Escape from the underworld before your time runs out.
+    Escape from the underworld before your time runs out. Kill enemies to gain more
+    time.
 
     Good luck...'
   mFontSize: 6
