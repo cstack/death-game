@@ -657,7 +657,7 @@ GameObject:
   - 4: {fileID: 400078}
   - 114: {fileID: 11400110}
   m_Layer: 0
-  m_Name: Bonus Annoucer
+  m_Name: Bonus Announcer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3388,31 +3388,31 @@ MonoBehaviour:
     relative: 1
     absolute: 0
   updateAnchors: 1
-  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mColor: {r: 0, g: 1, b: .255172491, a: 1}
   mPivot: 4
-  mWidth: 92
+  mWidth: 200
   mHeight: 20
   mDepth: 0
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 6
+  aspectRatio: 10
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
   mFont: {fileID: 11400000, guid: 29056518aafb01b49a5b08faf8e30cff, type: 2}
-  mText: New Label
+  mText: Bonus Annoucer
   mFontSize: 20
   mFontStyle: 0
   mAlignment: 0
   mEncoding: 1
   mMaxLineCount: 0
-  mEffectStyle: 0
+  mEffectStyle: 2
   mEffectColor: {r: 0, g: 0, b: 0, a: 1}
   mSymbols: 1
   mEffectDistance: {x: 1, y: 1}
   mOverflow: 0
   mMaterial: {fileID: 0}
-  mApplyGradient: 1
+  mApplyGradient: 0
   mGradientTop: {r: 1, g: 1, b: 1, a: 1}
   mGradientBottom: {r: .699999988, g: .699999988, b: .699999988, a: 1}
   mSpacingX: 0
@@ -3433,7 +3433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 803bca54e0c5f73429136ecb6cad4fcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bonus_label: {fileID: 0}
+  bonus_label: {fileID: 11400108}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
