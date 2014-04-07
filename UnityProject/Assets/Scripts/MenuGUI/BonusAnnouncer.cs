@@ -25,7 +25,9 @@ public class BonusAnnouncer : MonoBehaviour {
 	}
 
     public void Announce_Bonus(string msg) {
-        bonus_label.text = "+ " + msg;
-        bonus_label.enabled = true;
+		if (bonus_label != null) {
+	        bonus_label.text = "+ " + msg;
+	        bonus_label.enabled = true;
+		}
     }
 }
