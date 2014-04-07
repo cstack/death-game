@@ -3,9 +3,12 @@ using System.Collections;
 
 public class PauseMenu : MonoBehaviour {
 
-    public GUITexture pause_GUI;
-
+    public GameObject pause_ui;
     private bool is_paused =false;
+
+    void Start() {
+        pause_ui.SetActive(false);
+    }
 
     void Update () {
         detect_pause();
@@ -24,12 +27,12 @@ public class PauseMenu : MonoBehaviour {
 
         if(is_paused) {
             Time.timeScale = 0;
-            pause_GUI.enabled = true;
+            pause_ui.SetActive(true);
         }
         else
         {
             Time.timeScale = 1;
-            pause_GUI.enabled = false;
+            pause_ui.SetActive(false);
         }
     }
 }
