@@ -10,7 +10,7 @@ public class GameInfo : MonoBehaviour {
 
 	public List<string> levelStrings = new List<string>()
 	{
-		"Jake",
+		"Main",
 		"Jake2"
 	};
 
