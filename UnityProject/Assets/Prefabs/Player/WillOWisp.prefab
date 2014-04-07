@@ -56,7 +56,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 2a06f3672f7527340af00ffc33d47c82, type: 2}
   m_CullingMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
 --- !u!114 &11400000
@@ -70,7 +70,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8838d38cc8322f4408a05f07e16368a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
   distance_from_player: 2
 --- !u!212 &21200000
 SpriteRenderer:
