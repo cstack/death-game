@@ -51,7 +51,9 @@ public class EnvironmentDamage : MonoBehaviour {
 
 	public void enterAirPocket () {
 		inAirPocket = true;
-		plyr.GetComponent<PlayerHealth> ().resetBreath ();
+		if (plyr != null) {
+			plyr.GetComponent<PlayerHealth> ().resetBreath ();
+		}
 	}
 	
 	public void exitAirPocket () {
