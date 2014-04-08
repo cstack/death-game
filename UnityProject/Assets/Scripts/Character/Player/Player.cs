@@ -76,25 +76,26 @@ public class Player : CharacterBase {
 	private void VerticalMove () {
 
 		if (Input.GetButtonDown("Jump") && (grounded || feetInWater)) {
-			animator.SetTrigger("jump");
-			animator.SetBool("grounded", false);
-
-			//Let animation finish first!
-			Invoke("Jump", 0.1f);
+			if (feetInWater) {
+				updateYVelocity(swimSpeed);
+			} else { 
+				animator.SetTrigger("jump");
+				animator.SetBool("grounded", false);
+				
+				//Let animation finish first!
+				Invoke("Jump", 0.1f);
+			}
 		}
 
-		if (Input.GetButtonUp("Jump") && rigidbody2D.velocity.y > 0) {
+		if (Input.GetButtonUp("Jump") && rigidbody2D.velocity.y > 0 && !feetInWater) {
 			updateYVelocity(0);
 		}
 
 	}
 
 	private void Jump() {
-		if (headUnderwater) {
-			updateYVelocity(swimSpeed);
-		} else {
-			updateYVelocity(jumpSpeed);
-		}
+
+		updateYVelocity(jumpSpeed);
 		grounded = false;
 	}
 
