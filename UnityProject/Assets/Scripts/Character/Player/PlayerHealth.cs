@@ -109,7 +109,7 @@ public class PlayerHealth : MonoBehaviour {
 		}
 
 		//Prints ability that's being added
-		Debug.Log ("Died and gained the ability " + ability.abilityName);
+//		Debug.Log ("Died and gained the ability " + ability.abilityName);
 	
 		if (ability != null) {
 			poi.AddAbility(ability);
