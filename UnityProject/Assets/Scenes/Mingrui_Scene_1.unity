@@ -10542,6 +10542,8 @@ MonoBehaviour:
   swimSpeed: 7
   waterDrag: 3
   waterGravity: .5
+  dashSpeed: 10
+  dashDuration: 2
   playerHealth: {fileID: 0}
   speed: 0
   javelin: {fileID: 100000, guid: df7b4fea313777f46a4d069ee2f2e40a, type: 2}

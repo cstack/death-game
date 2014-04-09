@@ -126,14 +126,13 @@ public class JavelinControl : MonoBehaviour {
     // if javelin is not attacking, and player is colliding with it, then it is picked
     // up by player
     void OnCollisionEnter2D(Collision2D collision){
-
         if (collision.gameObject.tag == "ground" && flying)
         {
             // freeze the javelin in place
             rigidbody2D.fixedAngle = true;
 			flying = false;
 			friendly = true;
-			gameObject.layer = 12;
+			gameObject.layer = LayerMask.NameToLayer("NeutralProjectile");
         }
 
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))

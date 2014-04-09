@@ -2932,7 +2932,7 @@ GameObject:
   - 23: {fileID: 439347363}
   - 61: {fileID: 439347362}
   - 114: {fileID: 439347361}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground
   m_TagString: ground
   m_Icon: {fileID: 0}
@@ -5474,7 +5474,7 @@ GameObject:
   - 23: {fileID: 786942052}
   - 61: {fileID: 786942051}
   - 114: {fileID: 786942050}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground
   m_TagString: ground
   m_Icon: {fileID: 0}
@@ -9030,6 +9030,8 @@ MonoBehaviour:
   swimSpeed: 7
   waterDrag: 3
   waterGravity: .5
+  dashSpeed: 10
+  dashDuration: 2
   playerHealth: {fileID: 0}
   speed: 0
   javelin: {fileID: 100000, guid: df7b4fea313777f46a4d069ee2f2e40a, type: 2}
@@ -13163,7 +13165,7 @@ GameObject:
   - 23: {fileID: 2068491171}
   - 61: {fileID: 2068491170}
   - 114: {fileID: 2068491169}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground
   m_TagString: ground
   m_Icon: {fileID: 0}
