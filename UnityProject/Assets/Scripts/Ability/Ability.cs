@@ -8,6 +8,10 @@ public class Ability : MonoBehaviour {
 	public Texture2D abilityIcon;
 	public AudioClip abilityClip;
 
+	// cooldown timer
+	public float lastuse;
+	public float cooldown;
+
 	private Player _player;
 	protected Animator am;
 	public Player player {
@@ -43,7 +47,9 @@ public class Ability : MonoBehaviour {
 		abilityName = "Unknown";
 	}
 
-	protected virtual void onAttachedToCharacter() {}
+	protected virtual void onAttachedToCharacter() {
+		lastuse = 0;
+	}
 
 	protected virtual void Update () {}
 
@@ -57,7 +63,14 @@ public class Ability : MonoBehaviour {
 		if (player == null) 
 			Debug.LogWarning("Player is not set in ability " + abilityName);
 		else {
-			OnActivate();
+			if(OffCooldown()){
+				// refresh lastuse
+				UpdateLastuse();
+				OnActivate();
+			}
+			else {
+				Debug.Log("Abilit still on cooldown!");
+			}
 		}
 	}
 
@@ -74,4 +87,17 @@ public class Ability : MonoBehaviour {
 		else 
 			OnFinish();
 	}	
+
+	private bool OffCooldown(){
+		if(Time.time - lastuse > cooldown){
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
+	private void UpdateLastuse(){
+		lastuse = Time.time;
+	}
 }

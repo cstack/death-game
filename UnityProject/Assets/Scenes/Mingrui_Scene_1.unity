@@ -4284,7 +4284,7 @@ Prefab:
     - target: {fileID: 11400000, guid: 54a558c61a90e4d74b7dfc0beaa709a7, type: 2}
       propertyPath: ability_to_test
       value: 
-      objectReference: {fileID: 11400000, guid: 1c25b78009e5c48c7a0cdc5b2a02f516,
+      objectReference: {fileID: 11400000, guid: 020d99838ec554d9998170b2520656ed,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 54a558c61a90e4d74b7dfc0beaa709a7, type: 2}
@@ -6915,7 +6915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ed4edb5de33dd4cb58239e01cab8f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ability_to_test: {fileID: 11400000, guid: 1c25b78009e5c48c7a0cdc5b2a02f516, type: 2}
+  ability_to_test: {fileID: 11400000, guid: 020d99838ec554d9998170b2520656ed, type: 2}
 --- !u!23 &1325430341
 Renderer:
   m_ObjectHideFlags: 0
