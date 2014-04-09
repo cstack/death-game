@@ -6,8 +6,8 @@ public class JavelinControl : MonoBehaviour {
     public float speed;
 	public JavelinAbility javelinAbility;
 
-	private float start_time = 0f;
-	private float alive_duration = 5f;
+	private float alive_timer = 0f;
+	public float alive_duration;
 
 	private bool _friendly;
 	public bool friendly {
@@ -37,6 +37,8 @@ public class JavelinControl : MonoBehaviour {
     }
 
 	void Update () {
+		ReturnToBag();
+
         if (launch) // initial throw
         {
 			launch = false;
@@ -109,6 +111,15 @@ public class JavelinControl : MonoBehaviour {
         }
 	}
 
+	void ReturnToBag(){
+		alive_timer += Time.deltaTime;
+		if(alive_timer > alive_duration){
+			if(thrower.GetComponent<Backpack>()){
+				thrower.GetComponent<Backpack>().add_javelin(1);
+			}
+			Destroy(gameObject);
+		}
+	}	
 
     // if javelin is attacking, damage player then drop down into not attacking mode
     // 
