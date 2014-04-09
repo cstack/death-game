@@ -9,6 +9,7 @@ public class JavelinAbility : ActiveAbility, Backpack.Observer {
 		if(player.backpack.Get_Javelin() > 0){
 
 			GameObject new_javelin;
+
 			int aim;
 			if(player.dir == EntityBase.Direction.Left){
 				new_javelin = (GameObject)Instantiate(javelin_prefab,
@@ -22,10 +23,9 @@ public class JavelinAbility : ActiveAbility, Backpack.Observer {
 				                                      transform.rotation);
 				aim = (int) GlobalConstant.direction.right;
 			}
-			
+
 			new_javelin.GetComponent<JavelinControl>().Create_Javelin(player.gameObject, aim);
 			new_javelin.GetComponent<JavelinControl>().friendly = true; // change to try to fix javelin going through ground
-			new_javelin.layer = 12;
 			player.backpack.remove_jevelin(1);
 
 			//Change this to be called after the animation finishes, if implemented
