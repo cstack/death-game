@@ -96,7 +96,7 @@ AnimationClip:
     script: {fileID: 0}
   m_EulerEditorCurves: []
   m_Events:
-  - time: .266666681
+  - time: .216666669
     functionName: AbilityAnimationHit
     data: 
     objectReferenceParameter: {fileID: 0}
