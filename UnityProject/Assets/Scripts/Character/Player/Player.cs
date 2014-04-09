@@ -12,6 +12,8 @@ public class Player : CharacterBase {
 	public float swimSpeed = 2f;
 	public float waterDrag = 4f;
 	public float waterGravity = 0.5f;
+	public float dashSpeed = 10f;
+	public float dashDuration = 2f;
 
 	public PlayerHealth playerHealth;
 	public float speed;
@@ -19,6 +21,7 @@ public class Player : CharacterBase {
 		Idle, Running
 	}
 
+	private bool dashing;
 	private AbilityControl ability_control; // mingrui, for array of ability
 	private int aim; // mingrui, for aiming javelin
 	public GameObject javelin; // mingrui, javelin object
@@ -158,6 +161,16 @@ public class Player : CharacterBase {
 		if (ability_control.current_ability != null) {
 			ability_control.current_ability.Finish ();
 			ability_control.current_ability = null;
+		}
+	}
+
+	public IEnumerator dash() {
+		dashing = true;
+		float timestep = dashDuration / 20f;
+		for (int i = 0; i < 20f; i++) {
+			float speed = (1 - i / 20) * dashSpeed;
+			updateXVelocity (speed * (dir == Direction.Left ? -1 : 1));
+			yield return new WaitForSeconds(timestep);
 		}
 	}
 }
