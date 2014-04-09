@@ -41,7 +41,8 @@ MonoBehaviour:
   abilityName: JavelinAbility
   abilityIcon: {fileID: 2800000, guid: 5cab25fe42de94fff8d6def18a33b982, type: 3}
   abilityClip: {fileID: 0}
-  cooldown: 1
+  lastuse: 20.8149986
+  cooldown: .200000003
   javelin_prefab: {fileID: 100000, guid: df7b4fea313777f46a4d069ee2f2e40a, type: 2}
 --- !u!1001 &100100000
 Prefab:

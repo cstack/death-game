@@ -9,7 +9,7 @@ public class Ability : MonoBehaviour {
 	public AudioClip abilityClip;
 
 	// cooldown timer
-	public float lastuse;
+	private float lastuse;
 	public float cooldown;
 
 	private Player _player;
