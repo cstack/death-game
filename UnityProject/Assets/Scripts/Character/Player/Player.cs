@@ -12,8 +12,8 @@ public class Player : CharacterBase {
 	public float swimSpeed = 2f;
 	public float waterDrag = 4f;
 	public float waterGravity = 0.5f;
-	public float dashSpeed = 10f;
-	public float dashDuration = 2f;
+	public float dashSpeed = 15f;
+	public float dashDuration = 0.5f;
 
 	public PlayerHealth playerHealth;
 	public float speed;
@@ -21,7 +21,8 @@ public class Player : CharacterBase {
 		Idle, Running
 	}
 
-	private bool dashing;
+	public bool dashing;
+	private float baseGravity;
 	private AbilityControl ability_control; // mingrui, for array of ability
 	private int aim; // mingrui, for aiming javelin
 	public GameObject javelin; // mingrui, javelin object
@@ -33,6 +34,7 @@ public class Player : CharacterBase {
 
 		ability_control = GetComponent<AbilityControl>(); // mingrui
 		backpack = GetComponent<Backpack>(); // mingrui
+		baseGravity = rigidbody2D.gravityScale;
 	}
 
 	private void Update () {
@@ -62,6 +64,9 @@ public class Player : CharacterBase {
 	}
 
 	private void HorizontalMove () {
+		if (dashing) {
+			return;
+		}
 
 		speed = Input.GetAxis ("Horizontal") * maxSpeed;
 		updateXVelocity (speed);
@@ -104,6 +109,14 @@ public class Player : CharacterBase {
 
 		updateYVelocity(jumpSpeed);
 		grounded = false;
+	}
+
+	private void OnCollisionEnter2D (Collision2D other) {
+		if (other.gameObject.tag == "Enemy") {
+			if (dashing) {
+				Destroy(other.gameObject);
+			}
+		}
 	}
 
 	private void OnCollisionStay2D (Collision2D other) {
@@ -164,13 +177,42 @@ public class Player : CharacterBase {
 		}
 	}
 
-	public IEnumerator dash() {
-		dashing = true;
-		float timestep = dashDuration / 20f;
-		for (int i = 0; i < 20f; i++) {
-			float speed = (1 - i / 20) * dashSpeed;
-			updateXVelocity (speed * (dir == Direction.Left ? -1 : 1));
-			yield return new WaitForSeconds(timestep);
+	public void startDash() {
+		if (dashing) {
+			return;
 		}
+
+		animator.SetInteger ("ability", (int) GlobalConstant.AbilityAnimation.DashAttack);
+		animator.SetTrigger ("attack");
+
+		dashing = true;
+		rigidbody2D.gravityScale = 0f;
+		playerHealth.invulnerable = true;
+		updateYVelocity (0f);
+		StartCoroutine (dash ());
+	}
+
+	public void stopDash() {
+		StopCoroutine ("dash");
+		onDashFinished ();
+	}
+
+	private void onDashFinished() {
+		dashing = false;
+		rigidbody2D.gravityScale = baseGravity;
+		playerHealth.invulnerable = false;
+	}
+
+	private IEnumerator dash() {
+		float startTime = Time.time;
+		while (true) {
+			float portionElapsed = (Time.time - startTime) / dashDuration;
+			if (portionElapsed >= 1) {
+				break;
+			}
+			updateXVelocity (dashSpeed * (dir == Direction.Left ? -1 : 1));
+			yield return null;
+		}
+		onDashFinished ();
 	}
 }
