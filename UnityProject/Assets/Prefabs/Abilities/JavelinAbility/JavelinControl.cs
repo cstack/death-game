@@ -114,9 +114,6 @@ public class JavelinControl : MonoBehaviour {
 	void ReturnToBag(){
 		alive_timer += Time.deltaTime;
 		if(alive_timer > alive_duration){
-			if(thrower && thrower.GetComponent<Backpack>()){
-				thrower.GetComponent<Backpack>().add_javelin(1);
-			}
 			Destroy(gameObject);
 		}
 	}	
