@@ -26,7 +26,6 @@ public class JavelinAbility : ActiveAbility, Backpack.Observer {
 
 			new_javelin.GetComponent<JavelinControl>().Create_Javelin(player.gameObject, aim);
 			new_javelin.GetComponent<JavelinControl>().friendly = true; // change to try to fix javelin going through ground
-			new_javelin.layer = 12;
 			player.backpack.remove_jevelin(1);
 
 			//Change this to be called after the animation finishes, if implemented

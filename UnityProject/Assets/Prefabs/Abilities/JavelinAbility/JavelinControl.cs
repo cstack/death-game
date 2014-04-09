@@ -114,7 +114,7 @@ public class JavelinControl : MonoBehaviour {
 	void ReturnToBag(){
 		alive_timer += Time.deltaTime;
 		if(alive_timer > alive_duration){
-			if(thrower.GetComponent<Backpack>()){
+			if(thrower && thrower.GetComponent<Backpack>()){
 				thrower.GetComponent<Backpack>().add_javelin(1);
 			}
 			Destroy(gameObject);
@@ -182,5 +182,11 @@ public class JavelinControl : MonoBehaviour {
 	// for testing
 	public bool Check_If_Flying(){
 		return flying;
+	}
+
+	void OnDestroy(){
+		if(thrower && thrower.GetComponent<Backpack>()){
+			thrower.GetComponent<Backpack>().add_javelin(1);
+		}
 	}
 }
