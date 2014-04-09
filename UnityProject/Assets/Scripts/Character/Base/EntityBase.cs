@@ -28,17 +28,17 @@ public abstract class EntityBase : MonoBehaviour {
 		transform.localScale = scale;
 	}
 	
-	protected void updateXVelocity(float x) {
+	public void updateXVelocity(float x) {
 		updateXVelocity(rigidbody2D, x);
 	}
 	
-	protected void updateXVelocity(Rigidbody2D obj, float x) {
+	public void updateXVelocity(Rigidbody2D obj, float x) {
 		Vector2 vel = obj.velocity;
 		vel.x = x + riverSpeed;
 		obj.velocity = vel;
 	}
 	
-	protected void updateYVelocity(float y) {
+	public void updateYVelocity(float y) {
 		Vector2 vel = rigidbody2D.velocity;
 		vel.y = y;
 		rigidbody2D.velocity = vel;
