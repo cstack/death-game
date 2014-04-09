@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 400000}
   - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: BasicAttack
+  m_Name: JavelinAbility
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23,7 +23,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: .887573123, y: 3.74079609, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -35,14 +35,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d966c681ea059457b948606eebc62969, type: 3}
+  m_Script: {fileID: 11500000, guid: 5187dcc1c382c46c1866b935adae88ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityName: Melee
-  abilityIcon: {fileID: 2800000, guid: 44d8d3a264efc46558ca6813b7d01b77, type: 3}
-  abilityClip: {fileID: 8300000, guid: 33ffdd18a5a304bdeb63beb6c47ef175, type: 3}
-  lastuse: 17.8973465
-  cooldown: .5
+  abilityName: JavelinAbility
+  abilityIcon: {fileID: 2800000, guid: 5cab25fe42de94fff8d6def18a33b982, type: 3}
+  abilityClip: {fileID: 0}
+  lastuse: 20.8149986
+  cooldown: .200000003
+  javelin_prefab: {fileID: 100000, guid: df7b4fea313777f46a4d069ee2f2e40a, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
