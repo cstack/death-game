@@ -2,8 +2,8 @@ using UnityEngine;
 using System.Collections;
 
 public class PlayerHealth : MonoBehaviour {
-	public int currentHealth;
-	public int maxHealth;
+	public float currentHealth;
+	public float maxHealth;
 	public int currentBreath;
 	public int maxBreath;
 	private bool inWater;
@@ -44,7 +44,7 @@ public class PlayerHealth : MonoBehaviour {
 		checkPossible();
 	}
 	
-	public void decreaseHealth(int amount, Ability ability) {
+	public void decreaseHealth(float amount, Ability ability) {
 		if(invulnerable){return;}
 		currentHealth -= amount;
 		checkAlive(ability);
