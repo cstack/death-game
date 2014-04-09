@@ -8,6 +8,8 @@ public class AbilityControl : MonoBehaviour {
 	public List<Ability> abilities = new List<Ability>();
 	public int maxAbilities = 3;
 	public Ability current_ability; // The ability currently being used
+	public bool animating = false;
+	private float animationtimer = 0f;
     private GUIAbilityControl gui_ability; // for changing ability icons
 	private Player player;
 	private Ability abilityToActivate = null;
@@ -51,7 +53,15 @@ public class AbilityControl : MonoBehaviour {
 	}
 
 	public void Update() {
-		AbilityDetect ();
+		if (!animating) {
+			AbilityDetect ();
+		}
+
+		if (animationtimer > 0f) {
+			animationtimer -= Time.deltaTime;
+		} else if (animating) {
+			animating = false;
+		}
 	}
 
 	void AbilityDetect () {
@@ -59,6 +69,10 @@ public class AbilityControl : MonoBehaviour {
 
 		if (Input.GetKeyDown(GlobalConstant.keycode_ability_1)) {
 			abilityToActivate = basicAttack;
+
+			//Example Animation Timer Use - Move Time (0.5f now) Into Each Ability, As Well As OnAbilityHit/Finish Timers, Calls, etc.
+			animating = true;
+			animationtimer = 0.5f;
 		} else if (Input.GetKeyDown(GlobalConstant.keycode_ability_2)) {
 			if (abilities.Count > 0) {
 				abilityToActivate = abilities[0];

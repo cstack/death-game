@@ -6,6 +6,9 @@ public class JavelinControl : MonoBehaviour {
     public float speed;
 	public JavelinAbility javelinAbility;
 
+	private float alive_timer = 0f;
+	public float alive_duration;
+
 	private bool _friendly;
 	public bool friendly {
 		set {
@@ -34,6 +37,8 @@ public class JavelinControl : MonoBehaviour {
     }
 
 	void Update () {
+		ReturnToBag();
+
         if (launch) // initial throw
         {
 			launch = false;
@@ -106,20 +111,25 @@ public class JavelinControl : MonoBehaviour {
         }
 	}
 
+	void ReturnToBag(){
+		alive_timer += Time.deltaTime;
+		if(alive_timer > alive_duration){
+			Destroy(gameObject);
+		}
+	}	
 
     // if javelin is attacking, damage player then drop down into not attacking mode
     // 
     // if javelin is not attacking, and player is colliding with it, then it is picked
     // up by player
     void OnCollisionEnter2D(Collision2D collision){
-
         if (collision.gameObject.tag == "ground" && flying)
         {
             // freeze the javelin in place
             rigidbody2D.fixedAngle = true;
 			flying = false;
 			friendly = true;
-			gameObject.layer = 12;
+			gameObject.layer = LayerMask.NameToLayer("NeutralProjectile");
         }
 
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
@@ -169,5 +179,11 @@ public class JavelinControl : MonoBehaviour {
 	// for testing
 	public bool Check_If_Flying(){
 		return flying;
+	}
+
+	void OnDestroy(){
+		if(thrower && thrower.GetComponent<Backpack>()){
+			thrower.GetComponent<Backpack>().add_javelin(1);
+		}
 	}
 }
