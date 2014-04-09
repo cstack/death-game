@@ -6,6 +6,9 @@ public class JavelinControl : MonoBehaviour {
     public float speed;
 	public JavelinAbility javelinAbility;
 
+	private float start_time = 0f;
+	private float alive_duration = 5f;
+
 	private bool _friendly;
 	public bool friendly {
 		set {
