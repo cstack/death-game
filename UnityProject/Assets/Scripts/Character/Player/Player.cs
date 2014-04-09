@@ -76,7 +76,21 @@ public class Player : CharacterBase {
 			return;
 		}
 
-		speed = Input.GetAxis ("Horizontal") * maxSpeed;
+		if (ability_control.animating) {
+			if (Mathf.Abs(speed) > 0.01f) {
+				//Gradually reduce the player's y velocity - change 10f to ability specific slow down constant
+				float spdbefore = speed;
+				speed -= (speed/Mathf.Abs(speed)) * Time.deltaTime * 10f;
+
+				//If it passed 0
+				if ((speed/Mathf.Abs(speed)) != (spdbefore/Mathf.Abs(spdbefore))) {
+					speed = 0f;
+				}
+			}
+		} else {
+			speed = Input.GetAxis ("Horizontal") * maxSpeed;
+		}
+
 		updateXVelocity (speed);
 
 		animator.SetFloat ("speed", Mathf.Abs(speed));
@@ -108,12 +122,13 @@ public class Player : CharacterBase {
 			updateYVelocity(0);
 		}
 
-		if (Input.GetButton("Downward") && grounded && !feetInWater) {
+		if (Input.GetButton("Downward") && grounded && !feetInWater && Input.GetAxis("Horizontal") == 0f) {
 			crouching = true;
 			animator.SetBool("crouching", crouching);
+			updateXVelocity (0f);
 		}
 
-		if (!Input.GetButton("Downward")) {
+		if (!Input.GetButton("Downward") || !grounded) {
 			crouching = false;
 			animator.SetBool("crouching", crouching);
 		}

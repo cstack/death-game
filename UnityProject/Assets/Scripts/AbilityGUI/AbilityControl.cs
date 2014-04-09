@@ -73,6 +73,9 @@ public class AbilityControl : MonoBehaviour {
 			//Example Animation Timer Use - Move Time (0.5f now) Into Each Ability, As Well As OnAbilityHit/Finish Timers, Calls, etc.
 			animating = true;
 			animationtimer = 0.5f;
+
+//			player.updateXVelocity(0f);
+
 		} else if (Input.GetKeyDown(GlobalConstant.keycode_ability_2)) {
 			if (abilities.Count > 0) {
 				abilityToActivate = abilities[0];
