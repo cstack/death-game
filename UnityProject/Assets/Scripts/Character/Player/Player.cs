@@ -8,10 +8,15 @@ public class Player : CharacterBase {
 	public bool grounded;
 	public bool feetInWater;
 	public bool headUnderwater;
+	public bool crouching = false;
+	public bool animating = false;
 	public float jumpSpeed = 5f;
 	public float swimSpeed = 2f;
 	public float waterDrag = 4f;
 	public float waterGravity = 0.5f;
+	public float jumptimer = 0.1f;
+	public float dashSpeed = 15f;
+	public float dashDuration = 0.5f;
 
 	public PlayerHealth playerHealth;
 	public float speed;
@@ -19,6 +24,8 @@ public class Player : CharacterBase {
 		Idle, Running
 	}
 
+	public bool dashing;
+	private float baseGravity;
 	private AbilityControl ability_control; // mingrui, for array of ability
 	private int aim; // mingrui, for aiming javelin
 	public GameObject javelin; // mingrui, javelin object
@@ -30,13 +37,19 @@ public class Player : CharacterBase {
 
 		ability_control = GetComponent<AbilityControl>(); // mingrui
 		backpack = GetComponent<Backpack>(); // mingrui
+		baseGravity = rigidbody2D.gravityScale;
 	}
 
 	private void Update () {
 		Get_Aim(); // mingrui
 
-		HorizontalMove ();
-		VerticalMove ();
+		if (!crouching) {
+			HorizontalMove ();
+		}
+
+		if (!ability_control.animating) {
+			VerticalMove ();
+		}
 
 	}
 
@@ -59,6 +72,9 @@ public class Player : CharacterBase {
 	}
 
 	private void HorizontalMove () {
+		if (dashing) {
+			return;
+		}
 
 		speed = Input.GetAxis ("Horizontal") * maxSpeed;
 		updateXVelocity (speed);
@@ -83,20 +99,42 @@ public class Player : CharacterBase {
 				animator.SetBool("grounded", false);
 				
 				//Let animation finish first!
-				Invoke("Jump", 0.1f);
+				Invoke("Jump", jumptimer);
 			}
 		}
 
-		if (Input.GetButtonUp("Jump") && rigidbody2D.velocity.y > 0 && !feetInWater) {
+		if (!Input.GetButton("Jump") && rigidbody2D.velocity.y > 0 && !feetInWater) {
+			animator.SetTrigger("exitjump");
 			updateYVelocity(0);
+		}
+
+		if (Input.GetButton("Downward") && grounded && !feetInWater) {
+			crouching = true;
+			animator.SetBool("crouching", crouching);
+		}
+
+		if (!Input.GetButton("Downward")) {
+			crouching = false;
+			animator.SetBool("crouching", crouching);
 		}
 
 	}
 
 	private void Jump() {
+		if (!Input.GetButton("Jump")) {
+			return;
+		}
 
 		updateYVelocity(jumpSpeed);
 		grounded = false;
+	}
+
+	private void OnCollisionEnter2D (Collision2D other) {
+		if (other.gameObject.tag == "Enemy") {
+			if (dashing) {
+				Destroy(other.gameObject);
+			}
+		}
 	}
 
 	private void OnCollisionStay2D (Collision2D other) {
@@ -145,15 +183,57 @@ public class Player : CharacterBase {
 	}
 
 	public void AbilityAnimationHit() {
+
 		if (ability_control.current_ability != null) {
 			ability_control.current_ability.Hit ();
 		}
 	}
 
 	public void AbilityAnimationFinished() {
+		ability_control.animating = false;
+
 		if (ability_control.current_ability != null) {
 			ability_control.current_ability.Finish ();
 			ability_control.current_ability = null;
 		}
+	}
+
+	public void startDash() {
+		if (dashing) {
+			return;
+		}
+
+		animator.SetInteger ("ability", (int) GlobalConstant.AbilityAnimation.DashAttack);
+		animator.SetTrigger ("attack");
+
+		dashing = true;
+		rigidbody2D.gravityScale = 0f;
+		playerHealth.invulnerable = true;
+		updateYVelocity (0f);
+		StartCoroutine (dash ());
+	}
+
+	public void stopDash() {
+		StopCoroutine ("dash");
+		onDashFinished ();
+	}
+
+	private void onDashFinished() {
+		dashing = false;
+		rigidbody2D.gravityScale = baseGravity;
+		playerHealth.invulnerable = false;
+	}
+
+	private IEnumerator dash() {
+		float startTime = Time.time;
+		while (true) {
+			float portionElapsed = (Time.time - startTime) / dashDuration;
+			if (portionElapsed >= 1) {
+				break;
+			}
+			updateXVelocity (dashSpeed * (dir == Direction.Left ? -1 : 1));
+			yield return null;
+		}
+		onDashFinished ();
 	}
 }
