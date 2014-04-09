@@ -41,8 +41,8 @@ MonoBehaviour:
   abilityName: 
   abilityIcon: {fileID: 2800000, guid: 2d5f53cfaf4d64f84abea28d8a06fca5, type: 3}
   abilityClip: {fileID: 0}
-  lastuse: 0
-  cooldown: 5
+  lastuse: 9.50337601
+  cooldown: 1
   shot_prefab: {fileID: 11400004, guid: ec2239724f6674316ae0e8daf2d8acce, type: 2}
 --- !u!1001 &100100000
 Prefab:
