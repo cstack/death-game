@@ -98,6 +98,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   javelinAbility: {fileID: 11400000, guid: 1c25b78009e5c48c7a0cdc5b2a02f516, type: 2}
+  alive_duration: 5
+  thrower: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
