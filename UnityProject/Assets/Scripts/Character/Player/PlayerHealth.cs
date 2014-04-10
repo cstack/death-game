@@ -39,7 +39,7 @@ public class PlayerHealth : MonoBehaviour {
 		currentHealth = maxHealth;
 	}
 
-	public void increaseHealth(int amount) {
+	public void increaseHealth(float amount) {
 		currentHealth += amount;
 		checkPossible();
 	}
