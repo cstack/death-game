@@ -233,7 +233,7 @@ MonoBehaviour:
   headUnderwater: 0
   crouching: 0
   animating: 0
-  jumpSpeed: 15
+  jumpSpeed: 20
   swimSpeed: 7
   waterDrag: 3
   waterGravity: .5
