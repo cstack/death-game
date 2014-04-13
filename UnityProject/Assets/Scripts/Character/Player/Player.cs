@@ -29,7 +29,7 @@ public class Player : CharacterBase {
 	private float baseGravity;
 	private AbilityControl ability_control; // mingrui, for array of ability
 	private int aim; // mingrui, for aiming javelin
-	private bool ghost;
+	public bool ghost;
 	public GameObject javelin; // mingrui, javelin object
 
 	override protected void Start() {
