@@ -9381,6 +9381,7 @@ MonoBehaviour:
   jumptimer: .100000001
   dashSpeed: 15
   dashDuration: .5
+  ghostSpeed: 10
   playerHealth: {fileID: 0}
   speed: 0
   dashing: 0

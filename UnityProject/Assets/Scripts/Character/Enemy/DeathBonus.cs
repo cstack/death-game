@@ -31,13 +31,13 @@ public class DeathBonus : MonoBehaviour {
 			return;
 		}
 		player_health.increaseHealth(extra_health);
-		bonus_announcer.Announce_Bonus(string.Format("{0} hp", (int) extra_health));
+		bonus_announcer.Announce_Bonus(string.Format("+ {0} hp", (int) extra_health));
 	}
 
     private void Time_Bonus(int extra_seconds) {
         timer_control.increase_time(extra_seconds);
         // tell bonus announcer to announce the time bonus for player to feel better
         // about themselves
-        bonus_announcer.Announce_Bonus(string.Format("{0:00}:{1:00}", extra_seconds / 60, extra_seconds % 60));
+        bonus_announcer.Announce_Bonus(string.Format("+ {0:00}:{1:00}", extra_seconds / 60, extra_seconds % 60));
     }
 }

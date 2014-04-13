@@ -17,6 +17,7 @@ public class Player : CharacterBase {
 	public float jumptimer = 0.1f;
 	public float dashSpeed = 15f;
 	public float dashDuration = 0.5f;
+	public float ghostSpeed = 10f;
 
 	public PlayerHealth playerHealth;
 	public float speed;
@@ -28,6 +29,7 @@ public class Player : CharacterBase {
 	private float baseGravity;
 	private AbilityControl ability_control; // mingrui, for array of ability
 	private int aim; // mingrui, for aiming javelin
+	private bool ghost;
 	public GameObject javelin; // mingrui, javelin object
 
 	override protected void Start() {
@@ -41,6 +43,10 @@ public class Player : CharacterBase {
 	}
 
 	private void Update () {
+		if (ghost) {
+			RespawnMove();
+			return;
+		}
 		Get_Aim(); // mingrui
 
 		if (!crouching) {
@@ -51,6 +57,35 @@ public class Player : CharacterBase {
 			VerticalMove ();
 		}
 
+	}
+
+	public void becomeGhost() {
+		ghost = true;
+		animator.SetBool ("ghost", true);
+		transform.FindChild ("Head").gameObject.SetActive (false);
+		GetComponent<BoxCollider2D> ().isTrigger = true;
+		playerHealth.invulnerable = true;
+		rigidbody2D.gravityScale = 0f;
+	}
+
+	public void RespawnMove() {
+		Vector3 target = playerHealth.spawnPoint.transform.position;
+		Vector3 displacement = target - transform.position;
+		if (displacement.magnitude < 1f) {
+			Respawn ();
+			return;
+		}
+		Vector3 direction = displacement / displacement.magnitude;
+		rigidbody2D.velocity = direction * ghostSpeed;
+	}
+
+	public void Respawn() {
+		ghost = false;
+		GetComponent<BoxCollider2D> ().isTrigger = false;
+		transform.FindChild ("Head").gameObject.SetActive (true);
+		playerHealth.invulnerable = false;
+		rigidbody2D.gravityScale = baseGravity;
+		animator.SetBool ("ghost", false);
 	}
 
 	//mingrui
