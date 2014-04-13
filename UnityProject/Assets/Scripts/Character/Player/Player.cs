@@ -62,7 +62,7 @@ public class Player : CharacterBase {
 	public void becomeGhost() {
 		ghost = true;
 		animator.SetBool ("ghost", true);
-		transform.FindChild ("Head").gameObject.SetActive (false);
+		transform.FindChild ("Head").GetComponent<BoxCollider2D> ().isTrigger = true;
 		GetComponent<BoxCollider2D> ().isTrigger = true;
 		playerHealth.invulnerable = true;
 		rigidbody2D.gravityScale = 0f;
@@ -82,7 +82,7 @@ public class Player : CharacterBase {
 	public void Respawn() {
 		ghost = false;
 		GetComponent<BoxCollider2D> ().isTrigger = false;
-		transform.FindChild ("Head").gameObject.SetActive (true);
+		transform.FindChild ("Head").GetComponent<BoxCollider2D> ().isTrigger = false;
 		playerHealth.invulnerable = false;
 		rigidbody2D.gravityScale = baseGravity;
 		animator.SetBool ("ghost", false);
