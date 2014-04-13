@@ -90,15 +90,21 @@ public class AbilityControl : MonoBehaviour {
 			}
 		}
 
-		//ADD THIS AFTER TIMER ADDED TO ABILITIES:  && current_ability == null
-		if (abilityToActivate != null) {
-			current_ability = abilityToActivate;
-
-			if (abilityToActivate.abilityClip != null) {
-				audio.clip = abilityToActivate.abilityClip;
-			}
-
-			abilityToActivate.Activate();
+		if (abilityToActivate == null) {
+			return;
 		}
+
+		if (player.ghost) {
+			return;
+		}
+
+		//ADD THIS AFTER TIMER ADDED TO ABILITIES:  && current_ability == null
+		current_ability = abilityToActivate;
+
+		if (abilityToActivate.abilityClip != null) {
+			audio.clip = abilityToActivate.abilityClip;
+		}
+
+		abilityToActivate.Activate();
 	}
 }
