@@ -15,10 +15,12 @@ public class PlayerHealth : MonoBehaviour {
 
 	private Player poi;
 	private TimerControl timer_control;
+	private BonusAnnouncer bonus_announcer;
 
 	void Start() {
 		poi = (Player)GameObject.Find("Player").GetComponent<Player>();
 		timer_control = poi.GetComponent<TimerControl>();
+		bonus_announcer = (BonusAnnouncer)GameObject.Find("Bonus Announcer").GetComponent<BonusAnnouncer>();
 	}
 
 	public void resetBreath() {
@@ -74,6 +76,7 @@ public class PlayerHealth : MonoBehaviour {
 	public void playerDeath(Ability ability) {
 		--current_life_count;
 		resetPlayer ();
+		poi.becomeGhost ();
 		if(current_life_count <= 0){
 			permaDeath();
 		}
@@ -93,7 +96,6 @@ public class PlayerHealth : MonoBehaviour {
     // This function does NOT reset time
 	private void resetPlayer() {
 		currentHealth = maxHealth;
-		poi.transform.position = spawnPoint.transform.position;
 		if (poi.feetInWater) {
 			poi.feetExitWater();
 		}
@@ -113,6 +115,7 @@ public class PlayerHealth : MonoBehaviour {
 	
 		if (ability != null) {
 			poi.AddAbility(ability);
+			bonus_announcer.Announce_Bonus("New Ability: " + ability.abilityName, 5f);
 		}
 	}
 }
