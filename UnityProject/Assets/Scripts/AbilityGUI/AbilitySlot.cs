@@ -6,6 +6,8 @@ public class AbilitySlot : MonoBehaviour {
     private float cooldown_time;
     private UISprite cooldown_sprite;
 
+    private float timer = 0;
+
     private float test_timer;
 
 	public void Awake() {
@@ -14,7 +16,8 @@ public class AbilitySlot : MonoBehaviour {
 	}
 
     void Update() {
-        testRun();
+        //testRun();
+        realRun();
     }
 
 	public void setCount(int count) {
@@ -37,6 +40,26 @@ public class AbilitySlot : MonoBehaviour {
     public void updateCooldownSprite(float time) {
         cooldown_sprite.fillAmount = time / cooldown_time;
         //Debug.Log(cooldown_sprite.fillAmount);
+    }
+
+    public void startCooldownAnimation() {
+        if(timer == 0){
+            timer = cooldown_time;
+        }
+    }
+
+    private void realRun() {
+        if (timer <= 0)
+        {
+            timer = 0;
+            return;
+        }
+        else
+        {
+            timer -= Time.deltaTime;
+        }
+
+        updateCooldownSprite(timer);
     }
 
     private void testRun() {
