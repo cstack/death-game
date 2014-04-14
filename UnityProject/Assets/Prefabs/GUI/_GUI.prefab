@@ -2273,6 +2273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bonus_label: {fileID: 11400100}
+  default_messsage_duration: 1
 --- !u!114 &11400024
 MonoBehaviour:
   m_ObjectHideFlags: 1

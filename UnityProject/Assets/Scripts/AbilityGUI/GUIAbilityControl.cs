@@ -23,6 +23,7 @@ public class GUIAbilityControl : MonoBehaviour {
 	private void setAbilitySlot(int index, Ability ability) {
 		AbilitySlot abilitySlot = abilitySlots [index];
 		abilitySlot.transform.FindChild ("Texture").GetComponent<UITexture> ().mainTexture = ability.abilityIcon;
+        abilitySlot.initializeCooldownTime(ability.cooldown);
 		abilitySlot.gameObject.SetActive (true);
 		ability.setAbilityGUI (abilitySlot);
 	}
