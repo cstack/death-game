@@ -204,7 +204,7 @@ public class Player : CharacterBase {
 	}
 
 	private void OnCollisionStay2D (Collision2D other) {
-		if (other.gameObject.tag == "ground") {
+		if (other.gameObject.tag == "ground" || other.gameObject.tag == "Enemy") {
 			if (other.contacts.Length > 0 && rigidbody2D.velocity.y <= 4 &&
 			    Vector2.Dot(other.contacts[0].normal, Vector2.up) > 0.5) {
 				// Collision was on bottom
