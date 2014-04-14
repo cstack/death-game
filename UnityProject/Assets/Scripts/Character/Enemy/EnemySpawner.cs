@@ -45,6 +45,7 @@ public class EnemySpawner : MonoBehaviour
 		}
 
 		enemy.transform.parent = this.transform;
+		enemy.renderer.sortingLayerName = "Enemies";
 		enemyMovement.spawnPosistion = transform.position;
 		enemyMovement.moveTimePeriod = moveTimePeriod;
 		enemyMovement.moveUpAndDown = moveUpAndDown;

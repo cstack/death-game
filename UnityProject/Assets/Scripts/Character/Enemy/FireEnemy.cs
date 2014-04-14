@@ -24,7 +24,11 @@ public class FireEnemy : EnemyBase {
 		} else {
 			speed = 0;
 			if (canAttack()) {
+				// Trying to figure out a way to get attack animation
+				// working, but it's not cooperating with me.
+				animator.SetBool ("Attack", true);
 				Attack();
+				animator.SetBool ("Attack", false);
 			}
 		}
 
@@ -42,4 +46,5 @@ public class FireEnemy : EnemyBase {
 		EnemyShot shot = (EnemyShot)Instantiate(shot_prefab);
 		shot.init_shot(this, false);
 	}
+
 }

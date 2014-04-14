@@ -47,7 +47,7 @@ public class Brute : EnemyBase {
 	
 	override protected void Attack() {
 		base.Attack ();
-		animator.SetTrigger ("attack");
+		animator.SetTrigger ("Attack");
 		attackCollider.SetActive (true);
 	}
 

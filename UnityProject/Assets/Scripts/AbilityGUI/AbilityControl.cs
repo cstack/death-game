@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
-using System.Collections.Generic; // List
+using System.Collections.Generic;
+using Parse;
 
 public class AbilityControl : MonoBehaviour {
 
@@ -9,6 +10,7 @@ public class AbilityControl : MonoBehaviour {
 	public int maxAbilities = 3;
 	public Ability current_ability; // The ability currently being used
 	public bool animating = false;
+	
 	private float animationtimer = 0f;
     private GUIAbilityControl gui_ability; // for changing ability icons
 	private Player player;
@@ -17,11 +19,20 @@ public class AbilityControl : MonoBehaviour {
 	void Start(){
 		player = GameObject.Find ("Player").GetComponent<Player> ();
         gui_ability = GameObject.FindGameObjectWithTag("GUIAbilities").GetComponent<GUIAbilityControl>();
+       	
+       	if (DataLogging.enabled) {
+			DataLogging.abilitiesUsed = new ParseObject("AbilitiesUsed");
+			DataLogging.gameSession["abilitiesUsed"] = DataLogging.abilitiesUsed;
+			DataLogging.gameSession.SaveAsync();
+       	}
 
 		basicAttack.player = player;
 		foreach (Ability ability in abilities) {
 			if (ability != null) {
 				ability.player = player;
+				if (DataLogging.enabled) {
+					DataLogging.abilitiesUsed[ability.abilityName] = 0;
+				}
 			}
 		}
 		updateAbilityUI ();
@@ -36,8 +47,8 @@ public class AbilityControl : MonoBehaviour {
 	public void add_ability(Ability new_ability) {
 		// check if ability is already in the ability list
 		foreach(Ability abi in abilities){
+			// already has ability
 			if(new_ability.name == abi.name){
-				// already has ability
 				return;
 			}
 		}
@@ -98,13 +109,12 @@ public class AbilityControl : MonoBehaviour {
 			return;
 		}
 
-		//ADD THIS AFTER TIMER ADDED TO ABILITIES:  && current_ability == null
-		current_ability = abilityToActivate;
-
-		if (abilityToActivate.abilityClip != null) {
-			audio.clip = abilityToActivate.abilityClip;
-		}
-
 		abilityToActivate.Activate();
+
+		if (DataLogging.enabled) {
+			DataLogging.abilitiesUsed.Increment(abilityToActivate.abilityName);
+			DataLogging.abilitiesUsed.SaveAsync();
+			DataLogging.gameSession.SaveAsync();
+		}
 	}
 }
