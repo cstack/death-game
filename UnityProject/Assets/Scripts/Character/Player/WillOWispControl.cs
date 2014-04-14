@@ -5,7 +5,7 @@ public class WillOWispControl : MonoBehaviour {
 
     public float distance_from_player;
     private float speed;
-    private GameObject player;
+    public GameObject player;
 	private float player_height_offset = 1.5f;
 	private float hover_duration = 1.5f;
 	private float hover_timer = 0;
@@ -18,8 +18,7 @@ public class WillOWispControl : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        player = GameObject.FindWithTag("Player");
-        speed = player.GetComponent<Player>().maxSpeed;
+		speed = player.GetComponent <Player> ().maxSpeed;
 	}
 	
 	// Update is called once per frame

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using Parse;
 
 public class PlayerHealth : MonoBehaviour {
 	public float currentHealth;
@@ -21,6 +22,12 @@ public class PlayerHealth : MonoBehaviour {
 		poi = (Player)GameObject.Find("Player").GetComponent<Player>();
 		timer_control = poi.GetComponent<TimerControl>();
 		bonus_announcer = (BonusAnnouncer)GameObject.Find("Bonus Announcer").GetComponent<BonusAnnouncer>();
+		
+		if (DataLogging.enabled) {
+			DataLogging.playerDeaths = new ParseObject("PlayerDeaths");
+			DataLogging.gameSession["playerDeaths"] = DataLogging.playerDeaths;
+			DataLogging.gameSession.SaveAsync();
+		}
 	}
 
 	public void resetBreath() {
@@ -80,8 +87,7 @@ public class PlayerHealth : MonoBehaviour {
 		if(current_life_count <= 0){
 			permaDeath();
 		}
-		else
-		{
+		else {
 			tempDeath(ability);
 		}
 	}
@@ -110,12 +116,18 @@ public class PlayerHealth : MonoBehaviour {
 			return;
 		}
 
+		
 		//Prints ability that's being added
 //		Debug.Log ("Died and gained the ability " + ability.abilityName);
 	
-		if (ability != null) {
-			poi.AddAbility(ability);
-			bonus_announcer.Announce_Bonus("New Ability: " + ability.abilityName, 5f);
+		poi.AddAbility(ability);
+		bonus_announcer.Announce_Bonus("New Ability: " + ability.abilityName, 5f);
+		
+		if (DataLogging.enabled) {
+			DataLogging.playerDeaths["abilityDiedTo"] = ability.abilityName;
+			DataLogging.playerDeaths["position"] = transform.position.ToString();
+			DataLogging.playerDeaths.SaveAsync();
+			DataLogging.gameSession.SaveAsync();
 		}
 	}
 }
