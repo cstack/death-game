@@ -14,6 +14,7 @@ TagManager:
   - Water
   - GUIAbilities
   - Bonus
+  - Background
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
@@ -48,11 +49,19 @@ TagManager:
   User Layer 30: 
   User Layer 31: 
   m_SortingLayers:
-  - name: Enemies
+  - name: Default
     userID: 0
     uniqueID: 0
     locked: 0
-  - name: Backgrounds
-    userID: 0
-    uniqueID: 0
+  - name: Water
+    userID: 3
+    uniqueID: 506987519
+    locked: 0
+  - name: Player
+    userID: 1
+    uniqueID: 1041695377
+    locked: 0
+  - name: Enemies
+    userID: 4
+    uniqueID: 2355698013
     locked: 0

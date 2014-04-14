@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Parse;
 
 public class Player : CharacterBase {
 	public float maxSpeed = 5f;
@@ -10,14 +11,14 @@ public class Player : CharacterBase {
 	public bool headUnderwater;
 	public bool crouching = false;
 	public bool animating = false;
-	public float jumpSpeed = 5f;
-	public float swimSpeed = 2f;
+	public float jumpSpeed = 20f;
+	public float swimSpeed = 7f;
 	public float waterDrag = 4f;
 	public float waterGravity = 0.5f;
 	public float jumptimer = 0.1f;
 	public float dashSpeed = 15f;
 	public float dashDuration = 0.5f;
-	public float ghostSpeed = 10f;
+	public float ghostSpeed = 15f;
 
 	public PlayerHealth playerHealth;
 	public float speed;
@@ -31,6 +32,12 @@ public class Player : CharacterBase {
 	private int aim; // mingrui, for aiming javelin
 	private bool ghost;
 	public GameObject javelin; // mingrui, javelin object
+	
+	void Awake() {
+		if (DataLogging.enabled) {
+			DataLogging.gameSession = new ParseObject("GameSession");
+		}
+	}
 
 	override protected void Start() {
 		base.Start ();
@@ -49,12 +56,12 @@ public class Player : CharacterBase {
 		}
 		Get_Aim(); // mingrui
 
-		if (!crouching) {
-			HorizontalMove ();
-		}
-
 		if (!ability_control.animating) {
 			VerticalMove ();
+		}
+
+		if (!crouching) {
+			HorizontalMove ();
 		}
 
 	}
@@ -142,7 +149,7 @@ public class Player : CharacterBase {
 
 		if (Input.GetButtonDown("Jump") && (grounded || feetInWater)) {
 			if (feetInWater) {
-				updateYVelocity(swimSpeed);
+				updateYVelocity(swimSpeed * 2);
 			} else { 
 				animator.SetTrigger("jump");
 				animator.SetBool("grounded", false);
@@ -154,7 +161,7 @@ public class Player : CharacterBase {
 
 		if (!Input.GetButton("Jump") && rigidbody2D.velocity.y > 0 && !feetInWater) {
 			animator.SetTrigger("exitjump");
-			updateYVelocity(0);
+			updateYVelocity (0);
 		}
 
 		if (Input.GetButton("Downward") && grounded && !feetInWater && Input.GetAxis("Horizontal") == 0f) {
@@ -189,7 +196,7 @@ public class Player : CharacterBase {
 
 	private void OnCollisionStay2D (Collision2D other) {
 		if (other.gameObject.tag == "ground") {
-			if (other.contacts.Length > 0 && rigidbody2D.velocity.y <= 0 &&
+			if (other.contacts.Length > 0 && rigidbody2D.velocity.y <= 4 &&
 			    Vector2.Dot(other.contacts[0].normal, Vector2.up) > 0.5) {
 				// Collision was on bottom
 				grounded = true;
