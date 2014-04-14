@@ -175,6 +175,7 @@ public class Player : CharacterBase {
 			updateXVelocity (0f);
 			b.size = new Vector2 (1.1f, 1.45f);
 			b.center = new Vector2 (0.1f, 0.75f);
+			Debug.Log (b.size);
 		}
 
 		if (!Input.GetButton("Downward") || !grounded) {
