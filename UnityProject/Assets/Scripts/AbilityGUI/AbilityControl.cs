@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
-using System.Collections.Generic; // List
+using System.Collections.Generic;
+using Parse;
 
 public class AbilityControl : MonoBehaviour {
 
@@ -9,19 +10,28 @@ public class AbilityControl : MonoBehaviour {
 	public int maxAbilities = 3;
 	public Ability current_ability; // The ability currently being used
 	public bool animating = false;
+	
 	private float animationtimer = 0f;
     private GUIAbilityControl gui_ability; // for changing ability icons
 	private Player player;
 	private Ability abilityToActivate = null;
+	
+	private ParseObject abilitiesUsed;
+	
+	void Awake() {
+		abilitiesUsed = new ParseObject("AbilitiesUsed");
+	}
 
 	void Start(){
 		player = GameObject.Find ("Player").GetComponent<Player> ();
         gui_ability = GameObject.FindGameObjectWithTag("GUIAbilities").GetComponent<GUIAbilityControl>();
+       
 
 		basicAttack.player = player;
 		foreach (Ability ability in abilities) {
 			if (ability != null) {
 				ability.player = player;
+				abilitiesUsed[ability.abilityName] = 0;
 			}
 		}
 		updateAbilityUI ();
@@ -99,6 +109,8 @@ public class AbilityControl : MonoBehaviour {
 			}
 
 			abilityToActivate.Activate();
+			abilitiesUsed.Increment(abilityToActivate.abilityName);
+			abilitiesUsed.SaveAsync();
 		}
 	}
 }
