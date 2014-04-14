@@ -26,6 +26,7 @@ public class PlayerHealth : MonoBehaviour {
 		if (DataLogging.enabled) {
 			DataLogging.playerDeaths = new ParseObject("PlayerDeaths");
 			DataLogging.gameSession["playerDeaths"] = DataLogging.playerDeaths;
+			DataLogging.playerDeaths["gameSession"] = DataLogging.gameSession;
 			DataLogging.gameSession.SaveAsync();
 		}
 	}
