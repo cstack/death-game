@@ -7418,8 +7418,8 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: .323529422, g: .323529422, b: .323529422, a: 1}
   mPivot: 4
-  mWidth: 100
-  mHeight: 100
+  mWidth: 120
+  mHeight: 120
   mDepth: 7
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
@@ -10418,8 +10418,8 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: .323529422, g: .323529422, b: .323529422, a: 1}
   mPivot: 4
-  mWidth: 100
-  mHeight: 100
+  mWidth: 120
+  mHeight: 120
   mDepth: 7
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
@@ -10824,8 +10824,8 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: .323529422, g: .323529422, b: .323529422, a: 1}
   mPivot: 4
-  mWidth: 100
-  mHeight: 100
+  mWidth: 120
+  mHeight: 120
   mDepth: 7
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
@@ -13488,8 +13488,8 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: .323529422, g: .323529422, b: .323529422, a: 1}
   mPivot: 4
-  mWidth: 100
-  mHeight: 100
+  mWidth: 120
+  mHeight: 120
   mDepth: 7
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
