@@ -30,6 +30,7 @@ public class Player : CharacterBase {
 	private float baseGravity;
 	private AbilityControl ability_control; // mingrui, for array of ability
 	private int aim; // mingrui, for aiming javelin
+	private BoxCollider2D b;
 	public bool ghost;
 	public GameObject javelin; // mingrui, javelin object
 	
@@ -47,6 +48,8 @@ public class Player : CharacterBase {
 		ability_control = GetComponent<AbilityControl>(); // mingrui
 		backpack = GetComponent<Backpack>(); // mingrui
 		baseGravity = rigidbody2D.gravityScale;
+
+		b = collider2D as BoxCollider2D;
 	}
 
 	private void Update () {
@@ -164,15 +167,21 @@ public class Player : CharacterBase {
 			updateYVelocity (0);
 		}
 
+		//Crouch
+
 		if (Input.GetButton("Downward") && grounded && !feetInWater && Input.GetAxis("Horizontal") == 0f) {
 			crouching = true;
 			animator.SetBool("crouching", crouching);
 			updateXVelocity (0f);
+			b.size = new Vector2 (1.1f, 1.45f);
+			b.center = new Vector2 (0.1f, 0.75f);
 		}
 
 		if (!Input.GetButton("Downward") || !grounded) {
 			crouching = false;
 			animator.SetBool("crouching", crouching);
+			b.size = new Vector2 (1.1f, 2.37f);
+			b.center = new Vector2 (0.1f, 1.185f);
 		}
 
 	}

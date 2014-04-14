@@ -9,8 +9,10 @@ public class Checkpoint : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D col) {
 		if (col.name == "Player")
 		{
-			spawnpoint.transform.position = transform.position + new Vector3 (2f, 2f, 0f);
-			spriteAnimation.SetBool ("Toggled", true);
+			if (!col.gameObject.GetComponent<Player> ().ghost) {
+				spawnpoint.transform.position = transform.position + new Vector3 (2f, 2f, 0f);
+				spriteAnimation.SetBool ("Toggled", true);
+			}
 		}
 	}
 }
