@@ -10071,7 +10071,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400002, guid: faec91547dd59454092419d81929d56f, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1226729809}
-  m_LocalRotation: {x: 0, y: 0, z: .797164261, w: .603762448}
+  m_LocalRotation: {x: 0, y: 0, z: .797164321, w: .603762507}
   m_LocalPosition: {x: -159.215363, y: 57.9186096, z: 0}
   m_LocalScale: {x: 4.28183937, y: .5, z: 1}
   m_Children: []
@@ -11084,7 +11084,7 @@ MonoBehaviour:
   jumptimer: .0500000007
   dashSpeed: 15
   dashDuration: .5
-  ghostSpeed: 15
+  ghostSpeed: 10
   playerHealth: {fileID: 0}
   speed: 0
   dashing: 0
@@ -14288,7 +14288,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1714338624}
-  m_LocalRotation: {x: 0, y: 0, z: -.127901614, w: .991786838}
+  m_LocalRotation: {x: 0, y: 0, z: -.127901629, w: .991786897}
   m_LocalPosition: {x: -154.408356, y: 33.9069595, z: 0}
   m_LocalScale: {x: 2.34690952, y: .591966391, z: 1}
   m_Children: []
@@ -15191,7 +15191,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1873189529}
-  m_LocalRotation: {x: 0, y: 0, z: .293067992, w: .956091702}
+  m_LocalRotation: {x: 0, y: 0, z: .293067992, w: .956091642}
   m_LocalPosition: {x: -54.8953323, y: 34.24366, z: 0}
   m_LocalScale: {x: 6.2876339, y: 1, z: 1}
   m_Children: []
