@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: water_texture
-  m_Shader: {fileID: 10, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 31, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -18,6 +18,13 @@ Material:
           name: _MainTex
         second:
           m_Texture: {fileID: 2800000, guid: 5da00c08fc9744117b9a7d600b789ff1, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _BumpMap
+        second:
+          m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -36,4 +43,4 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .242647052, g: .143594876, b: .0374675654, a: .388235301}
+        second: {r: .235294119, g: .137254909, b: .0392156877, a: .588235319}

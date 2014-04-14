@@ -3,13 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using Parse;
 
-public class DataLogging : MonoBehaviour {
+public static class DataLogging {
 	
-	void Start () {
-		ParseObject.RegisterSubclass<DeathEvent>();
-	}
-
-	void Update () {
+	public static bool enabled = true;
 	
-	}
+	public static ParseObject gameSession;
+	public static ParseObject abilitiesUsed;
+	public static ParseObject playerDeaths;
 }

@@ -5,7 +5,7 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 3
+  serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
   - 114: {fileID: 11400000}
@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1002 &100001
 EditorExtensionImpl:
   serializedVersion: 6
@@ -41,15 +41,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b4eb3a400afab046abb8471a9d746d6, type: 1}
+  m_Script: {fileID: 11500000, guid: 0b4eb3a400afab046abb8471a9d746d6, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   mMat: {fileID: 2100000, guid: e7ef61ebb5c25394c8706a7ea658349f, type: 2}
   mUVRect:
     serializedVersion: 2
     x: 0
-    y: .5
+    y: .208984375
     width: .5
-    height: .5
+    height: .25
   mFont:
     mSize: 28
     mBase: 20
@@ -2619,7 +2620,6 @@ MonoBehaviour:
       kerning: 
   mAtlas: {fileID: 11400000, guid: f95e07e3d350bf748b0c42b453a69d2e, type: 2}
   mReplacement: {fileID: 0}
-  mPixelSize: 1
   mSymbols: []
   mDynamicFont: {fileID: 0}
   mDynamicFontSize: 16

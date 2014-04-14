@@ -14,15 +14,25 @@ public class GUIAbilityControl : MonoBehaviour {
 		}
 	}
 
-    void Update() { 
-        if(Input.GetKey(GlobalConstant.keycode_ability_4)){
-            
+    void Update() {
+        if (Input.GetKey(GlobalConstant.keycode_ability_1))
+        {
+            abilitySlots[0].startCooldownAnimation();
+        }
+        if (Input.GetKey(GlobalConstant.keycode_ability_2))
+        {
+            abilitySlots[1].startCooldownAnimation();
+        }
+        if (Input.GetKey(GlobalConstant.keycode_ability_3))
+        {
+            abilitySlots[2].startCooldownAnimation();
         }
     }
 
 	private void setAbilitySlot(int index, Ability ability) {
 		AbilitySlot abilitySlot = abilitySlots [index];
 		abilitySlot.transform.FindChild ("Texture").GetComponent<UITexture> ().mainTexture = ability.abilityIcon;
+        abilitySlot.initializeCooldownTime(ability.cooldown);
 		abilitySlot.gameObject.SetActive (true);
 		ability.setAbilityGUI (abilitySlot);
 	}

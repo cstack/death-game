@@ -20,7 +20,7 @@ public abstract class EnemyBase : CharacterBase {
 	}
 
 	protected bool canAttack() {
-		return (Time.time - timeOfLastAttack) > cooldownTime;
+		return ((Time.time - timeOfLastAttack) > cooldownTime);
 	}
 
 	protected virtual void Attack() {
