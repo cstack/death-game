@@ -14,7 +14,7 @@ public class AbilitySlot : MonoBehaviour {
 	}
 
     void Update() {
-
+        testRun();
     }
 
 	public void setCount(int count) {
