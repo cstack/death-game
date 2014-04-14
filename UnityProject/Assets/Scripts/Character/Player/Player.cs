@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Parse;
 
 public class Player : CharacterBase {
 	public float maxSpeed = 5f;
@@ -31,6 +32,12 @@ public class Player : CharacterBase {
 	private int aim; // mingrui, for aiming javelin
 	private bool ghost;
 	public GameObject javelin; // mingrui, javelin object
+	
+	void Awake() {
+		if (DataLogging.enabled) {
+			DataLogging.gameSession = new ParseObject("GameSession");
+		}
+	}
 
 	override protected void Start() {
 		base.Start ();
