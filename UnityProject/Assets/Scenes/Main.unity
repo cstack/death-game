@@ -519,6 +519,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnpoint: {fileID: 1062151024}
+  spriteAnimation: {fileID: 0}
 --- !u!61 &55061653
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1480,6 +1481,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance_from_player: 2
+  player: {fileID: 0}
 --- !u!50 &200255363
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -2048,6 +2050,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnpoint: {fileID: 1062151024}
+  spriteAnimation: {fileID: 0}
 --- !u!61 &299956240
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2332,6 +2335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnpoint: {fileID: 1062151024}
+  spriteAnimation: {fileID: 0}
 --- !u!61 &330223694
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12357,6 +12361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnpoint: {fileID: 1062151024}
+  spriteAnimation: {fileID: 0}
 --- !u!61 &1902162359
 BoxCollider2D:
   m_ObjectHideFlags: 0
