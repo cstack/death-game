@@ -110,6 +110,7 @@ public class AbilityControl : MonoBehaviour {
 		}
 
 		abilityToActivate.Activate();
+		current_ability = abilityToActivate;
 
 		if (DataLogging.enabled) {
 			DataLogging.abilitiesUsed.Increment(abilityToActivate.abilityName);
