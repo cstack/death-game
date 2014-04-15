@@ -155,27 +155,25 @@ public class Player : CharacterBase {
 				updateYVelocity(swimSpeed * 2);
 			} else { 
 				animator.SetTrigger("jump");
-				animator.SetBool("grounded", false);
 				
 				//Let animation finish first!
 				Invoke("Jump", jumptimer);
 			}
 		}
 
-		if (!Input.GetButton("Jump") && rigidbody2D.velocity.y > 0 && !feetInWater) {
-			animator.SetTrigger("exitjump");
-			updateYVelocity (0);
-		}
+//		if (!Input.GetButton("Jump") && rigidbody2D.velocity.y > 0 && !feetInWater) {
+//			animator.SetTrigger("exitjump");
+//			updateYVelocity (0);
+//		}
 
 		//Crouch
 
-		if (Input.GetButton("Downward") && grounded && !feetInWater && Input.GetAxis("Horizontal") == 0f) {
+		if (Input.GetButton("Downward") && grounded && !feetInWater && Input.GetAxis("Horizontal") <= 0.1f) {
 			crouching = true;
 			animator.SetBool("crouching", crouching);
 			updateXVelocity (0f);
 			b.size = new Vector2 (1.1f, 1.45f);
 			b.center = new Vector2 (0.1f, 0.75f);
-			Debug.Log (b.size);
 		}
 
 		if (!Input.GetButton("Downward") || !grounded) {
@@ -188,12 +186,13 @@ public class Player : CharacterBase {
 	}
 
 	private void Jump() {
-		if (!Input.GetButton("Jump")) {
-			return;
-		}
+//		if (!Input.GetButton("Jump")) {
+//			return;
+//		}
 
 		updateYVelocity(jumpSpeed);
 		grounded = false;
+		animator.SetBool("grounded", grounded);
 	}
 
 	private void OnCollisionEnter2D (Collision2D other) {

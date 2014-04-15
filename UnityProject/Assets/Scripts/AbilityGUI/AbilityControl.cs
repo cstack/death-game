@@ -23,7 +23,6 @@ public class AbilityControl : MonoBehaviour {
        	if (DataLogging.enabled) {
 			DataLogging.abilitiesUsed = new ParseObject("AbilitiesUsed");
 			DataLogging.gameSession["abilitiesUsed"] = DataLogging.abilitiesUsed;
-			DataLogging.abilitiesUsed["gameSession"] = DataLogging.gameSession;
 			DataLogging.gameSession.SaveAsync();
        	}
 
