@@ -11,10 +11,10 @@ GameObject:
   - 23: {fileID: 2300000}
   - 50: {fileID: 5000000}
   - 61: {fileID: 6100000}
-  - 114: {fileID: 11400000}
   - 33: {fileID: 3300000}
-  m_Layer: 11
-  m_Name: Javelin
+  - 114: {fileID: 11400000}
+  m_Layer: 10
+  m_Name: Dagger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.1538887, y: 3.73388243, z: -1.54999995}
-  m_LocalScale: {x: .100000001, y: 1.29999995, z: .100000001}
+  m_LocalScale: {x: .100000001, y: .699999988, z: .100000001}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!23 &2300000
@@ -68,7 +68,7 @@ Rigidbody2D:
   m_Mass: 5
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 2
+  m_GravityScale: 0
   m_FixedAngle: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -93,13 +93,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d42419abcc8481849aeb5dcbca7e801a, type: 3}
+  m_Script: {fileID: 11500000, guid: 2363a4e042ba80b439337a0cd3aafe7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 25
-  javelinAbility: {fileID: 11400000, guid: 1c25b78009e5c48c7a0cdc5b2a02f516, type: 2}
-  alive_duration: 5
-  thrower: {fileID: 0}
+  attackPower: 50
+  deathAbility: {fileID: 11400000, guid: 1c25b78009e5c48c7a0cdc5b2a02f516, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -36,6 +36,8 @@ public class EnemyShot : EntityBase {
 		else if(other.gameObject.tag == "Enemy" && friendly){
 			Destroy(this.gameObject);
 			Destroy(other.gameObject);
+		} else if (other.gameObject.tag == "Wall" || other.gameObject.tag == "ground") {
+			Destroy(this.gameObject);
 		}
 	}
 
