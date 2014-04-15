@@ -171,6 +171,7 @@ public class Player : CharacterBase {
 		if (Input.GetButton("Downward") && grounded && !feetInWater && Input.GetAxis("Horizontal") <= 0.1f) {
 			crouching = true;
 			animator.SetBool("crouching", crouching);
+			animator.SetFloat("speed", 0f);
 			updateXVelocity (0f);
 			b.size = new Vector2 (1.1f, 1.45f);
 			b.center = new Vector2 (0.1f, 0.75f);
