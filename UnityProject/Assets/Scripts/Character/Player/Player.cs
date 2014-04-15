@@ -27,6 +27,7 @@ public class Player : CharacterBase {
 	}
 
 	public bool dashing;
+	private GameObject spikeShield;
 	private float baseGravity;
 	private AbilityControl ability_control; // mingrui, for array of ability
 	private int aim; // mingrui, for aiming javelin
@@ -48,6 +49,7 @@ public class Player : CharacterBase {
 		ability_control = GetComponent<AbilityControl>(); // mingrui
 		backpack = GetComponent<Backpack>(); // mingrui
 		baseGravity = rigidbody2D.gravityScale;
+		spikeShield = transform.FindChild ("SpikeShield").gameObject;
 
 		b = collider2D as BoxCollider2D;
 	}
@@ -301,5 +303,15 @@ public class Player : CharacterBase {
 			yield return null;
 		}
 		onDashFinished ();
+	}
+
+	public void summonSpikes(float duration) {
+		StartCoroutine (createSpikes(duration));
+	}
+
+	private IEnumerator createSpikes(float duration) {
+		spikeShield.SetActive (true);
+		yield return new WaitForSeconds(duration);
+		spikeShield.SetActive (false);
 	}
 }
