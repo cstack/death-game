@@ -29,4 +29,9 @@ public class GlobalConstant : MonoBehaviour {
 	public enum AbilityAnimation {
 		NotUsingAbility, MeleeAttack, DashAttack
 	}
+
+	public class Tag {
+		public static string Player = "Player";
+		public static string Enemy = "Enemy";
+	}
 }
