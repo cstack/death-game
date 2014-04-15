@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2363a4e042ba80b439337a0cd3aafe7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackPower: 50
+  attackPower: 30
   deathAbility: {fileID: 11400000, guid: 1c25b78009e5c48c7a0cdc5b2a02f516, type: 2}
 --- !u!1001 &100100000
 Prefab:
