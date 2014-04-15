@@ -12,7 +12,10 @@ public class DaggerControl : MonoBehaviour {
         if (col.gameObject.tag == "Player")
         {
             col.gameObject.GetComponent<PlayerHealth>().decreaseHealth(attackPower, deathAbility);
-        }
+		} else if (col.gameObject.tag == "Enemy")
+		{
+			Destroy(col.gameObject);
+		}
         // if with other
 
         Destroy(gameObject);

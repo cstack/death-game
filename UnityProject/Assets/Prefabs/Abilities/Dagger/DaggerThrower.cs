@@ -7,6 +7,7 @@ public class DaggerThrower : MonoBehaviour {
     public GameObject head;
     public GameObject tail;
     public float throw_speed;
+	public bool friendly;
 
     private float dir;
 
@@ -20,6 +21,11 @@ public class DaggerThrower : MonoBehaviour {
         if(Same_Direction()){
             duplicate.transform.RotateAround(Vector3.up, Mathf.PI);
         }
+		if (friendly) {
+			projectile.layer = LayerMask.NameToLayer(GlobalConstant.Layer.PlayerProjectile);
+		} else {
+			projectile.layer = LayerMask.NameToLayer(GlobalConstant.Layer.EnemyProjectile);
+		}
         duplicate.SetActive(true);
         duplicate.rigidbody2D.velocity = (head.transform.position - tail.transform.position) * throw_speed;
     }
