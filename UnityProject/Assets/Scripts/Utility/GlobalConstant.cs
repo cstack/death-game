@@ -34,4 +34,9 @@ public class GlobalConstant : MonoBehaviour {
 		public static string Player = "Player";
 		public static string Enemy = "Enemy";
 	}
+
+	public class Layer {
+		public static string PlayerProjectile = "PlayerProjectile";
+		public static string EnemyProjectile = "EnemyProjectile";
+	}
 }
