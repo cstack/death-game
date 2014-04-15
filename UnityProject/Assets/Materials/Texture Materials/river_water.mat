@@ -50,7 +50,7 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .235294119, g: .137254909, b: .0392156877, a: .588235319}
+        second: {r: .867647052, g: .443393171, b: .0191392917, a: .643137276}
       data:
         first:
           name: _ReflectColor
