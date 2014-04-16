@@ -218,6 +218,28 @@ Transition:
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
+--- !u!1101 &110147475
+Transition:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_SrcState: {fileID: 110221009}
+  m_DstState: {fileID: 110221085}
+  m_TransitionDuration: .375
+  m_TransitionOffset: 0
+  m_Conditions:
+  - m_ConditionMode: 5
+    m_ConditionEvent: 
+    m_EventTreshold: 0
+    m_ExitTime: 1
+  - m_ConditionMode: 1
+    m_ConditionEvent: crouching
+    m_EventTreshold: 0
+    m_ExitTime: 1
+  m_Atomic: 1
+  m_Solo: 0
+  m_Mute: 0
 --- !u!1101 &110151828
 Transition:
   m_ObjectHideFlags: 3
@@ -226,7 +248,7 @@ Transition:
   m_Name: 
   m_SrcState: {fileID: 110290015}
   m_DstState: {fileID: 110236993}
-  m_TransitionDuration: 14.999999
+  m_TransitionDuration: .0909821838
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 2
@@ -442,7 +464,7 @@ Transition:
   - m_ConditionMode: 5
     m_ConditionEvent: crouching
     m_EventTreshold: 0
-    m_ExitTime: 1
+    m_ExitTime: .5
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
@@ -539,6 +561,10 @@ Transition:
   m_Conditions:
   - m_ConditionMode: 5
     m_ConditionEvent: jump
+    m_EventTreshold: 0
+    m_ExitTime: 1
+  - m_ConditionMode: 2
+    m_ConditionEvent: crouching
     m_EventTreshold: 0
     m_ExitTime: 1
   m_Atomic: 1
@@ -673,7 +699,7 @@ State:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Crouch
-  m_Speed: 1
+  m_Speed: 2
   m_CycleOffset: 0
   m_Motions:
   - {fileID: 7400000, guid: bb6bff5783a924cea8c2a6ad387b5dd8, type: 2}
@@ -862,6 +888,7 @@ StateMachine:
       first: {fileID: 110221009}
       second:
       - {fileID: 110189455}
+      - {fileID: 110147475}
     data:
       first: {fileID: 110251353}
       second:
