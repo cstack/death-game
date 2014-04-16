@@ -13,6 +13,7 @@ public class PlayerHealth : MonoBehaviour {
 	public bool invulnerable;
 	public GameObject spawnPoint;
 	public LungCapacityAbility lungs;
+	public int death_count;
 
 	private Player poi;
 	private float lifeTime;
@@ -83,7 +84,7 @@ public class PlayerHealth : MonoBehaviour {
 	public void playerDeath(Ability ability) {
 		DataLogging.TrackPlayerDeath(ability, lifeTime, transform.position);
 
-		--current_life_count;
+		death_count++;
 		resetPlayer ();
 		poi.becomeGhost ();
 		if(current_life_count <= 0){
