@@ -54,7 +54,6 @@ public class Player : CharacterBase {
 
 		spikeShield.SetActive (true);
 		throwers = GetComponentsInChildren<DaggerThrower> ();
-		Debug.Log ("num throwers: " + throwers.Length + " : " + throwers);
 		spikeShield.SetActive (false);
 
 		b = collider2D as BoxCollider2D;

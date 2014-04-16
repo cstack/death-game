@@ -1825,7 +1825,7 @@ MonoBehaviour:
   head: {fileID: 100008}
   tail: {fileID: 100012}
   throw_speed: 15
-  friendly: 0
+  friendly: 1
 --- !u!114 &11400016
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1867,7 +1867,7 @@ MonoBehaviour:
   head: {fileID: 100020}
   tail: {fileID: 100018}
   throw_speed: 15
-  friendly: 0
+  friendly: 1
 --- !u!114 &11400022
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1883,7 +1883,7 @@ MonoBehaviour:
   head: {fileID: 100026}
   tail: {fileID: 100028}
   throw_speed: 15
-  friendly: 0
+  friendly: 1
 --- !u!114 &11400024
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1925,7 +1925,7 @@ MonoBehaviour:
   head: {fileID: 100036}
   tail: {fileID: 100034}
   throw_speed: 15
-  friendly: 0
+  friendly: 1
 --- !u!114 &11400030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1941,7 +1941,7 @@ MonoBehaviour:
   head: {fileID: 100042}
   tail: {fileID: 100044}
   throw_speed: 15
-  friendly: 0
+  friendly: 1
 --- !u!114 &11400032
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1983,7 +1983,7 @@ MonoBehaviour:
   head: {fileID: 100052}
   tail: {fileID: 100050}
   throw_speed: 15
-  friendly: 0
+  friendly: 1
 --- !u!114 &11400038
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1999,7 +1999,7 @@ MonoBehaviour:
   head: {fileID: 100058}
   tail: {fileID: 100060}
   throw_speed: 15
-  friendly: 0
+  friendly: 1
 --- !u!114 &11400040
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2041,7 +2041,7 @@ MonoBehaviour:
   head: {fileID: 100068}
   tail: {fileID: 100066}
   throw_speed: 15
-  friendly: 0
+  friendly: 1
 --- !u!114 &11400046
 MonoBehaviour:
   m_ObjectHideFlags: 1
