@@ -11629,7 +11629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6bc720ca6b2540b59c65933c1794886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackPower: 20
+  attackPower: 40
   deathAbility: {fileID: 0}
 --- !u!61 &1253136417
 BoxCollider2D:
@@ -14377,6 +14377,10 @@ Prefab:
     - target: {fileID: 11400002, guid: 4dc35863c23af450682e65df832d20e2, type: 2}
       propertyPath: range
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 4dc35863c23af450682e65df832d20e2, type: 2}
+      propertyPath: attackPower
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4dc35863c23af450682e65df832d20e2, type: 2}
