@@ -334,14 +334,16 @@ public class Player : CharacterBase {
         return (dir == Direction.Left ? -1 : 1);
     }
 
-	public void summonFireballs(EnemyShot fireball) {
-		StartCoroutine (createFireballs(fireball));
+	public void summonFireballs(EnemyShot fireball, float kickback) {
+		StartCoroutine (createFireballs(fireball, kickback));
 	}
 
-	private IEnumerator createFireballs(EnemyShot fireball) {
+	private IEnumerator createFireballs(EnemyShot fireball, float kickbackForce) {
 		for (int i = 0; i < 3; i++) {
 			EnemyShot shot = (EnemyShot)Instantiate(fireball);
 			shot.init_shot(this, true);
+			Vector3 kickback = shot.rigidbody2D.velocity * kickbackForce * -1;
+			rigidbody2D.AddForce(kickback);
 			yield return new WaitForSeconds(0.1f);
 		}
 
