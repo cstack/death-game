@@ -4,15 +4,13 @@ using System.Collections;
 public class FireballAbility : ActiveAbility {
 
 	public EnemyShot shot_prefab;
+	public float kickback = 200f;
 
 	protected override void Awake() {
 		abilityName = "Fireball";
 	}
 
 	protected override void OnActivate () {
-		EnemyShot shot = (EnemyShot)Instantiate(shot_prefab);
-		shot.init_shot(player, true);
-
-		player.AbilityAnimationFinished();
+		player.summonFireballs (shot_prefab, kickback);
 	}
 }
