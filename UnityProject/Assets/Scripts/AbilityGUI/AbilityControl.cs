@@ -19,20 +19,11 @@ public class AbilityControl : MonoBehaviour {
 	void Start(){
 		player = GameObject.Find ("Player").GetComponent<Player> ();
         gui_ability = GameObject.FindGameObjectWithTag("GUIAbilities").GetComponent<GUIAbilityControl>();
-       	
-       	if (DataLogging.enabled) {
-			DataLogging.abilitiesUsed = new ParseObject("AbilitiesUsed");
-			DataLogging.gameSession["abilitiesUsed"] = DataLogging.abilitiesUsed;
-			DataLogging.gameSession.SaveAsync();
-       	}
 
 		basicAttack.player = player;
 		foreach (Ability ability in abilities) {
 			if (ability != null) {
 				ability.player = player;
-				if (DataLogging.enabled) {
-					DataLogging.abilitiesUsed[ability.abilityName] = 0;
-				}
 			}
 		}
 		updateAbilityUI ();
@@ -111,11 +102,6 @@ public class AbilityControl : MonoBehaviour {
 
 		abilityToActivate.Activate();
 		current_ability = abilityToActivate;
-
-		if (DataLogging.enabled) {
-			DataLogging.abilitiesUsed.Increment(abilityToActivate.abilityName);
-			DataLogging.abilitiesUsed.SaveAsync();
-			DataLogging.gameSession.SaveAsync();
-		}
+		DataLogging.TrackAbilityUsed(current_ability, player.transform.position);
 	}
 }

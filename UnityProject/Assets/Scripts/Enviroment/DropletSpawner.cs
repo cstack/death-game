@@ -15,5 +15,6 @@ public class DropletSpawner : MonoBehaviour {
 	public void Drip() {
 		Lava drop = (Lava) Instantiate (dropletPrefab);
 		drop.transform.position = transform.position;
+		drop.transform.parent = transform;
 	}
 }
