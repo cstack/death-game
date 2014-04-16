@@ -324,4 +324,8 @@ public class Player : CharacterBase {
 		}
 		spikeShield.SetActive (false);
 	}
+
+    public int getFacingDir(){
+        return (dir == Direction.Left ? -1 : 1);
+    }
 }
