@@ -1469,12 +1469,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBreathUnderwater: 0
   backpack: {fileID: 0}
-  cooldownTime: 3
+  cooldownTime: 5
   maxSpeed: 1.5
   range: 15
   attackPower: 50
   deathAbility: {fileID: 0}
   jump_force: 1000
+  charge_force: 1000
 --- !u!50 &141495287
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -12985,6 +12986,14 @@ Prefab:
     - target: {fileID: 400002, guid: 4dc35863c23af450682e65df832d20e2, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 4dc35863c23af450682e65df832d20e2, type: 2}
+      propertyPath: cooldownTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 4dc35863c23af450682e65df832d20e2, type: 2}
+      propertyPath: charge_force
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4dc35863c23af450682e65df832d20e2, type: 2}
