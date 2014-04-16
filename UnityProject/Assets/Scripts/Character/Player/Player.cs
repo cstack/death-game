@@ -18,7 +18,7 @@ public class Player : CharacterBase {
 	public float jumptimer = 0.1f;
 	public float dashSpeed = 15f;
 	public float dashDuration = 0.5f;
-	public float ghostSpeed = 15f;
+	public float ghostTravelTime = 4f;
 
 	public PlayerHealth playerHealth;
 	public float speed;
@@ -34,6 +34,7 @@ public class Player : CharacterBase {
 	private int aim; // mingrui, for aiming javelin
 	private BoxCollider2D b;
 	public bool ghost;
+	private float ghostSpeed;
 	public GameObject javelin; // mingrui, javelin object
 	
 	void Awake() {
@@ -54,7 +55,6 @@ public class Player : CharacterBase {
 
 		spikeShield.SetActive (true);
 		throwers = GetComponentsInChildren<DaggerThrower> ();
-		Debug.Log ("num throwers: " + throwers.Length + " : " + throwers);
 		spikeShield.SetActive (false);
 
 		b = collider2D as BoxCollider2D;
@@ -84,6 +84,11 @@ public class Player : CharacterBase {
 		GetComponent<BoxCollider2D> ().isTrigger = true;
 		playerHealth.invulnerable = true;
 		rigidbody2D.gravityScale = 0f;
+
+		// Calculate spped needed to reach last checkpoint
+		Vector3 target = playerHealth.spawnPoint.transform.position;
+		Vector3 displacement = target - transform.position;
+		ghostSpeed = displacement.magnitude / ghostTravelTime;
 	}
 
 	public void RespawnMove() {
@@ -324,4 +329,8 @@ public class Player : CharacterBase {
 		}
 		spikeShield.SetActive (false);
 	}
+
+    public int getFacingDir(){
+        return (dir == Direction.Left ? -1 : 1);
+    }
 }
