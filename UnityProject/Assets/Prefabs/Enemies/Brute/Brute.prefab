@@ -145,6 +145,7 @@ MonoBehaviour:
   attackPower: 50
   deathAbility: {fileID: 0}
   jump_force: 1000
+  charge_force: 2000
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
