@@ -15,6 +15,6 @@ public class LivesGUI : MonoBehaviour {
 
     void Update()
     {
-        lives_label.text = "X " + player_health.current_life_count;
+        lives_label.text = "Death Count: " + player_health.death_count;
     }
 }
