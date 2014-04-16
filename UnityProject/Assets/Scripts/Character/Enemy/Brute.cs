@@ -9,6 +9,11 @@ public class Brute : EnemyBase {
     
     // jump before charging
     public float jump_force;
+    public float charge_force;
+    private bool do_charge = false;
+    private float charge_wait_duration = 2f;
+    private float charge_wait_timer = 0f;
+    private bool charge_finished = false;
 
 	private GameObject attackCollider;
 
@@ -53,6 +58,16 @@ public class Brute : EnemyBase {
     // in charging range, stop, jump up and down a few times.
     // charge.
     void Update() {
+        if(do_charge){
+            if(canAttack()){
+                do_charge = false;
+                charge_finished = false;
+                return;
+            }
+            Bull_Charge();
+            return;
+        }
+
         float offset = distanceToPlayer();
         float speed = 0;
         if (Mathf.Abs(offset) > range)
@@ -104,7 +119,31 @@ public class Brute : EnemyBase {
         rigidbody2D.AddForce(new Vector2(0, jump_force));
 		//animator.SetTrigger ("Attack");
 		attackCollider.SetActive (true);
+
+        // get ready to charge
+        do_charge = true;
 	}
+
+    private void Bull_Charge() { 
+        // bull charge is a different state
+        // right after attacking
+        if(!charge_finished){
+            // start wait timer, to wait for jump to finished
+            // and give player time to react
+            charge_wait_timer += Time.deltaTime;
+            if(charge_wait_timer > charge_wait_duration){
+                charge_wait_timer = 0;
+                // start charge
+                float c_force = charge_force;
+                if (dir == Direction.Left)
+                {
+                    c_force = -charge_force;
+                }
+                rigidbody2D.AddForce(new Vector2(c_force, 0));
+                charge_finished = true;
+            }
+        }
+    }
 
     private void Stop_Attack() {
         //animator.SetTrigger("Walk");
