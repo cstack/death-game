@@ -71,7 +71,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 1
+  m_GravityScale: 5
   m_FixedAngle: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -144,7 +144,7 @@ MonoBehaviour:
   range: 15
   attackPower: 50
   deathAbility: {fileID: 0}
-  jump_force: 10000
+  jump_force: 1000
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
