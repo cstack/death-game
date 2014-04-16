@@ -124,8 +124,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6bc720ca6b2540b59c65933c1794886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackPower: 20
-  deathAbility: {fileID: 0}
+  attackPower: 40
+  deathAbility: {fileID: 11400000, guid: 84ec750e71bcd45edac6465ed8d16edf, type: 2}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -141,7 +141,7 @@ MonoBehaviour:
   backpack: {fileID: 0}
   cooldownTime: 3
   maxSpeed: 1.5
-  range: 10
+  range: 15
   attackPower: 50
   deathAbility: {fileID: 0}
   jump_force: 10000
