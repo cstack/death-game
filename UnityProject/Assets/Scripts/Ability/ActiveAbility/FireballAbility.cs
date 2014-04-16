@@ -10,9 +10,6 @@ public class FireballAbility : ActiveAbility {
 	}
 
 	protected override void OnActivate () {
-		EnemyShot shot = (EnemyShot)Instantiate(shot_prefab);
-		shot.init_shot(player, true);
-
-		player.AbilityAnimationFinished();
+		player.summonFireballs (shot_prefab);
 	}
 }
