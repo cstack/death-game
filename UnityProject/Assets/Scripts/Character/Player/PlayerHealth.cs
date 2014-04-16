@@ -15,6 +15,7 @@ public class PlayerHealth : MonoBehaviour {
 	public LungCapacityAbility lungs;
 
 	private Player poi;
+	private float lifeTime;
 	private TimerControl timer_control;
 	private BonusAnnouncer bonus_announcer;
 
@@ -22,13 +23,12 @@ public class PlayerHealth : MonoBehaviour {
 		poi = (Player)GameObject.Find("Player").GetComponent<Player>();
 		timer_control = poi.GetComponent<TimerControl>();
 		bonus_announcer = (BonusAnnouncer)GameObject.Find("Bonus Announcer").GetComponent<BonusAnnouncer>();
-		
-		if (DataLogging.enabled) {
-			DataLogging.playerDeaths = new ParseObject("PlayerDeaths");
-			DataLogging.gameSession["playerDeaths"] = DataLogging.playerDeaths;
-			DataLogging.gameSession.SaveAsync();
-		}
 	}
+
+	void Update() {
+		lifeTime += Time.deltaTime;
+	}
+
 
 	public void resetBreath() {
 		currentBreath = maxBreath;
@@ -81,6 +81,8 @@ public class PlayerHealth : MonoBehaviour {
 	
 	// check if perma or temp death
 	public void playerDeath(Ability ability) {
+		DataLogging.TrackPlayerDeath(ability, lifeTime, transform.position);
+
 		--current_life_count;
 		resetPlayer ();
 		poi.becomeGhost ();
@@ -101,7 +103,9 @@ public class PlayerHealth : MonoBehaviour {
 
     // This function does NOT reset time
 	private void resetPlayer() {
+		lifeTime = 0;
 		currentHealth = maxHealth;
+
 		if (poi.feetInWater) {
 			poi.feetExitWater();
 		}
@@ -122,12 +126,5 @@ public class PlayerHealth : MonoBehaviour {
 	
 		poi.AddAbility(ability);
 		bonus_announcer.Announce_Bonus("New Ability: " + ability.abilityName, 5f);
-		
-		if (DataLogging.enabled) {
-			DataLogging.playerDeaths["abilityDiedTo"] = ability.abilityName;
-			DataLogging.playerDeaths["position"] = transform.position.ToString();
-			DataLogging.playerDeaths.SaveAsync();
-			DataLogging.gameSession.SaveAsync();
-		}
 	}
 }

@@ -39,19 +39,20 @@ public class EnemySpawner : MonoBehaviour
 	void SpawnEnemy() {
 		enemy = (GameObject)Instantiate(enemyPrefab, transform.position, transform.rotation);
 		enemyMovement = enemy.GetComponent<EnemyMovement>();
+		enemy.transform.parent = transform;
 
-		if (enemy == null || enemyMovement == null) {
-			return;
+		if (enemy != null) { 
+			enemy.renderer.sortingLayerName = "Enemies";
 		}
 
-		enemy.transform.parent = this.transform;
-		enemy.renderer.sortingLayerName = "Enemies";
-		enemyMovement.spawnPosistion = transform.position;
-		enemyMovement.moveTimePeriod = moveTimePeriod;
-		enemyMovement.moveUpAndDown = moveUpAndDown;
-		enemyMovement.spawnFacingScrooge = spawnFacingPlayer;
-		
-		enemyMovement.Spawn();
+		if (enemyMovement != null) {
+			enemyMovement.spawnPosistion = transform.position;
+			enemyMovement.moveTimePeriod = moveTimePeriod;
+			enemyMovement.moveUpAndDown = moveUpAndDown;
+			enemyMovement.spawnFacingScrooge = spawnFacingPlayer;
+			
+			enemyMovement.Spawn();
+		}
 	}
 }
 

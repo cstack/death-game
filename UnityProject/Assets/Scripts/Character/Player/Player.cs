@@ -28,6 +28,7 @@ public class Player : CharacterBase {
 
 	public bool dashing;
 	private GameObject spikeShield;
+	private DaggerThrower[] throwers;
 	private float baseGravity;
 	private AbilityControl ability_control; // mingrui, for array of ability
 	private int aim; // mingrui, for aiming javelin
@@ -50,6 +51,11 @@ public class Player : CharacterBase {
 		backpack = GetComponent<Backpack>(); // mingrui
 		baseGravity = rigidbody2D.gravityScale;
 		spikeShield = transform.FindChild ("SpikeShield").gameObject;
+
+		spikeShield.SetActive (true);
+		throwers = GetComponentsInChildren<DaggerThrower> ();
+		Debug.Log ("num throwers: " + throwers.Length + " : " + throwers);
+		spikeShield.SetActive (false);
 
 		b = collider2D as BoxCollider2D;
 	}
@@ -313,6 +319,9 @@ public class Player : CharacterBase {
 	private IEnumerator createSpikes(float duration) {
 		spikeShield.SetActive (true);
 		yield return new WaitForSeconds(duration);
+		foreach (DaggerThrower dt in throwers) {
+			dt.Throw_Projectile();
+		}
 		spikeShield.SetActive (false);
 	}
 }
