@@ -46,7 +46,7 @@ public class EnemyShot : EntityBase {
 		float height = source.GetComponent<SpriteRenderer>().bounds.size.y;
 		transform.position = source.transform.position + new Vector3(0, height/2, 0);
 		dir = source.dir;
-		rigidbody2D.velocity = source.rigidbody2D.velocity;
+		updateXVelocity(source.rigidbody2D.velocity.x);
 		if(dir == Direction.Left){
 			rigidbody2D.velocity += new Vector2(-speed, 0);
 			transform.position += new Vector3(-1f, 0, 0);
