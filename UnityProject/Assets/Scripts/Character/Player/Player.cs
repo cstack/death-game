@@ -19,7 +19,9 @@ public class Player : CharacterBase {
 	public float dashSpeed = 15f;
 	public float dashDuration = 0.5f;
 	public float ghostTravelTime = 4f;
-
+	public float slamSpeed = 1f;
+	public float timejump = 0f;
+	public float slamWaitTime = 0.3f;
 	public PlayerHealth playerHealth;
 	public float speed;
 	private enum IdleOrRunningStates {
@@ -33,6 +35,7 @@ public class Player : CharacterBase {
 	private AbilityControl ability_control; // mingrui, for array of ability
 	private int aim; // mingrui, for aiming javelin
 	private BoxCollider2D b;
+	private BoxCollider2D c;
 	public bool ghost;
 	private float ghostSpeed;
 	public GameObject javelin; // mingrui, javelin object
@@ -58,6 +61,7 @@ public class Player : CharacterBase {
 		spikeShield.SetActive (false);
 
 		b = collider2D as BoxCollider2D;
+		c = transform.FindChild("Head").GetComponent<BoxCollider2D> ();
 	}
 
 	private void Update () {
@@ -65,6 +69,7 @@ public class Player : CharacterBase {
 			RespawnMove();
 			return;
 		}
+
 		Get_Aim(); // mingrui
 
 		if (!ability_control.animating) {
@@ -75,6 +80,18 @@ public class Player : CharacterBase {
 			HorizontalMove ();
 		}
 
+		if (timejump <= 0f) {
+			SlamDown ();
+		}
+
+		Crouch ();
+		UpdateTimers ();
+	}
+
+	private void UpdateTimers() {
+		if (timejump > 0f) {
+			timejump -= Time.deltaTime;
+		}
 	}
 
 	public void becomeGhost() {
@@ -179,24 +196,39 @@ public class Player : CharacterBase {
 //			updateYVelocity (0);
 //		}
 
-		//Crouch
 
-		if (Input.GetButton("Downward") && grounded && !feetInWater && Input.GetAxis("Horizontal") <= 0.1f) {
+	}
+
+	private void SlamDown () {
+
+		if (Input.GetButton("Downward") && !grounded) {
+			updateYVelocity(rigidbody2D.velocity.y - slamSpeed);
+		}
+	}
+
+	private void Crouch () {
+		
+		//Crouch
+		
+		if (Input.GetButton("Downward") && grounded && !feetInWater && !Input.GetButton("Right") && !Input.GetButton("Left")) {
 			crouching = true;
 			animator.SetBool("crouching", crouching);
 			animator.SetFloat("speed", 0f);
 			updateXVelocity (0f);
 			b.size = new Vector2 (1.1f, 1.45f);
 			b.center = new Vector2 (0.1f, 0.75f);
+			c.enabled = false;
 		}
 
-		if (!Input.GetButton("Downward") || !grounded) {
-			crouching = false;
-			animator.SetBool("crouching", crouching);
-			b.size = new Vector2 (1.1f, 2.37f);
-			b.center = new Vector2 (0.1f, 1.185f);
+		if (crouching) {
+			if (!Input.GetButton("Downward") || !grounded) {
+				crouching = false;
+				animator.SetBool("crouching", crouching);
+				b.size = new Vector2 (1.1f, 2.37f);
+				b.center = new Vector2 (0.1f, 1.185f);
+				c.enabled = true;
+			}
 		}
-
 	}
 
 	private void Jump() {
@@ -207,6 +239,7 @@ public class Player : CharacterBase {
 		updateYVelocity(jumpSpeed);
 		grounded = false;
 		animator.SetBool("grounded", grounded);
+		timejump = slamWaitTime;
 	}
 
 	private void OnCollisionEnter2D (Collision2D other) {

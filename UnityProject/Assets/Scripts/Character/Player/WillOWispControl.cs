@@ -4,21 +4,21 @@ using System.Collections;
 public class WillOWispControl : MonoBehaviour {
 
     public float distance_from_player;
-    private float speed;
+    private float speed = 10f;
     public GameObject player;
-	private float player_height_offset = 1.5f;
-	private float hover_duration = 1.5f;
-	private float hover_timer = 0;
-	private float hover_speed = 3;
+	public float player_height_offset = 1.5f;
+	public float hover_duration = 0.2f;
+	public float hover_timer = 0;
+	public float hover_speed = 10f;
 
 	// for bored movement
-	private float bored_duration = 3f;
-	private float bored_timer = 0;
-	private float bored_speed = 6;
+	public float bored_duration = 3f;
+	public float bored_timer = 0;
+	public float bored_speed = 6f;
 
 	// Use this for initialization
 	void Start () {
-		speed = player.GetComponent <Player> ().maxSpeed;
+//		speed = player.GetComponent <Player> ().maxSpeed;
 	}
 	
 	// Update is called once per frame
@@ -30,7 +30,7 @@ public class WillOWispControl : MonoBehaviour {
 		if (Mathf.Abs(transform.position.x - player.transform.position.x) > distance_from_player 
 		    || Mathf.Abs(transform.position.y - player.transform.position.y) > distance_from_player)
         {
-            rigidbody2D.velocity = ((new Vector3(player.transform.position.x, player.transform.position.y + player_height_offset, player.transform.position.z) - transform.position).normalized) * speed;
+			rigidbody2D.velocity = ((new Vector3(player.transform.position.x, player.transform.position.y + player_height_offset, player.transform.position.z) - transform.position).normalized) * player.rigidbody2D.velocity.magnitude;
         }
         else {
 			// idle position, do a little hover
