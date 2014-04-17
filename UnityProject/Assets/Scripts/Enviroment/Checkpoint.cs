@@ -17,7 +17,7 @@ public class Checkpoint : MonoBehaviour {
 		{
 			if (!col.gameObject.GetComponent<Player> ().ghost) {
 //				BoxCollider2D b = collider2D as BoxCollider2D;
-				spawnpoint.transform.position = transform.position + new Vector3 (2f, 2f, 0f);
+				spawnpoint.transform.position = transform.parent.position;
 				spriteAnimation.SetBool ("Toggled", true);
 			}
 		}
