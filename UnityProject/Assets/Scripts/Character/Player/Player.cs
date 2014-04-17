@@ -17,7 +17,9 @@ public class Player : CharacterBase {
 	public float waterGravity = 0.5f;
 	public float jumptimer = 0.1f;
 	public float dashSpeed = 15f;
+	public float rollSpeed = 12f;
 	public float dashDuration = 0.5f;
+	public float rollDuration = 2f;
 	public float ghostTravelTime = 4f;
 	public float slamSpeed = 1f;
 	public float timejump = 0f;
@@ -29,6 +31,7 @@ public class Player : CharacterBase {
 	}
 
 	public bool dashing;
+	public bool isRock;
 	private GameObject spikeShield;
 	private DaggerThrower[] throwers;
 	private float baseGravity;
@@ -151,6 +154,11 @@ public class Player : CharacterBase {
 			return;
 		}
 
+		if (isRock) {
+			updateXVelocity(0f);
+			return;
+		}
+
 		if (ability_control.animating) {
 			if (Mathf.Abs(speed) > 0.01f) {
 				//Gradually reduce the player's y velocity - change 10f to ability specific slow down constant
@@ -244,7 +252,8 @@ public class Player : CharacterBase {
 
 	private void OnCollisionEnter2D (Collision2D other) {
 		if (other.gameObject.tag == "Enemy") {
-			if (dashing) {
+			if (dashing ||
+			    (isRock && rigidbody2D.velocity.y < 0)) {
 				Destroy(other.gameObject);
 			}
 		}
@@ -381,5 +390,36 @@ public class Player : CharacterBase {
 		}
 
 		AbilityAnimationFinished();
+	}
+
+	public void startRockAttack() {
+		if (isRock) {
+			return;
+		}
+		
+		animator.SetInteger ("ability", (int) GlobalConstant.AbilityAnimation.RockAttack);
+		animator.SetTrigger ("attack");
+		
+		isRock = true;
+		rigidbody2D.gravityScale = baseGravity * 3f;
+		playerHealth.invulnerable = true;
+		StartCoroutine (rockAttack ());
+	}
+	
+	public void stopRockAttack() {
+		StopCoroutine ("rockAttack");
+		onRockAttackFinished ();
+	}
+
+	private IEnumerator rockAttack() {
+		yield return new WaitForSeconds (2f);
+		onRockAttackFinished ();
+	}
+	
+	private void onRockAttackFinished() {
+		animator.SetInteger ("ability", 0);
+		isRock = false;
+		rigidbody2D.gravityScale = baseGravity;
+		playerHealth.invulnerable = false;
 	}
 }

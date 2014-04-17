@@ -1,0 +1,103 @@
+fileFormatVersion: 2
+guid: a4fe87f3c4bb64ce0a9bb9fee7219891
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: 0
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 50
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: iPhone
+    maxTextureSize: 1024
+    textureFormat: -2
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: rocks_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 158
+        width: 176
+        height: 263
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: rocks_1
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 198
+        width: 124
+        height: 204
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: rocks_2
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 198
+        width: 165
+        height: 204
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: rocks_3
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 16
+        width: 157
+        height: 89
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: rocks_4
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 0
+        width: 103
+        height: 134
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: rocks_5
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 18
+        width: 273
+        height: 114
+      alignment: 7
+      pivot: {x: 0, y: 0}
+  spritePackingTag: 
+  userData: 
