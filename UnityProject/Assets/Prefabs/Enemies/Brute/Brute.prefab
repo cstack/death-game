@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackPower: 40
-  deathAbility: {fileID: 11400000, guid: 84ec750e71bcd45edac6465ed8d16edf, type: 2}
+  deathAbility: {fileID: 11400000, guid: 0eaf050c344a04951baef5b313367671, type: 2}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -143,7 +143,7 @@ MonoBehaviour:
   maxSpeed: 1.5
   range: 15
   attackPower: 50
-  deathAbility: {fileID: 0}
+  deathAbility: {fileID: 11400000, guid: 0eaf050c344a04951baef5b313367671, type: 2}
   jump_force: 1000
   charge_force: 2000
 --- !u!114 &11400004

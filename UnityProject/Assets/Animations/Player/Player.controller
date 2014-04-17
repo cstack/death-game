@@ -356,6 +356,24 @@ Transition:
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
+--- !u!1101 &110164804
+Transition:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_SrcState: {fileID: 110251561}
+  m_DstState: {fileID: 110236993}
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_Conditions:
+  - m_ConditionMode: 6
+    m_ConditionEvent: ability
+    m_EventTreshold: 0
+    m_ExitTime: 2
+  m_Atomic: 1
+  m_Solo: 0
+  m_Mute: 0
 --- !u!1101 &110167509
 Transition:
   m_ObjectHideFlags: 3
@@ -570,6 +588,24 @@ Transition:
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
+--- !u!1101 &110198132
+Transition:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_SrcState: {fileID: 110251353}
+  m_DstState: {fileID: 110251561}
+  m_TransitionDuration: .100000001
+  m_TransitionOffset: 0
+  m_Conditions:
+  - m_ConditionMode: 6
+    m_ConditionEvent: ability
+    m_EventTreshold: 3
+    m_ExitTime: .899999976
+  m_Atomic: 1
+  m_Solo: 0
+  m_Mute: 0
 --- !u!1101 &110198380
 Transition:
   m_ObjectHideFlags: 3
@@ -724,6 +760,21 @@ State:
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
+--- !u!1102 &110251561
+State:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: RockAttack
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Motions:
+  - {fileID: 7400000, guid: dad87a00c817642c2a8a1aa6a4800271, type: 2}
+  m_ParentStateMachine: {fileID: 110720564}
+  m_Position: {x: 516, y: -60, z: 0}
+  m_IKOnFeet: 0
+  m_Mirror: 0
+  m_Tag: 
 --- !u!1102 &110269640
 State:
   m_ObjectHideFlags: 3
@@ -838,6 +889,10 @@ StateMachine:
   - {x: 0, y: -12, z: 0}
   m_OrderedTransitions:
     data:
+      first: {fileID: 110251561}
+      second:
+      - {fileID: 110164804}
+    data:
       first: {fileID: 0}
       second:
       - {fileID: 110156813}
@@ -895,6 +950,7 @@ StateMachine:
       - {fileID: 110173551}
       - {fileID: 110156901}
       - {fileID: 110185312}
+      - {fileID: 110198132}
     data:
       first: {fileID: 110281695}
       second:
@@ -916,6 +972,7 @@ StateMachine:
   - {fileID: 110251353}
   - {fileID: 110281695}
   - {fileID: 110206019}
+  - {fileID: 110251561}
   m_ChildStateMachine: []
   m_ChildStateMachinePosition: []
   m_OrderedTransitions: {}
