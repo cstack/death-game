@@ -274,12 +274,13 @@ public class Player : CharacterBase {
 		}
 	}
 
-	public void AddAbility (Ability newAbility){
+	public bool AddAbility (Ability newAbility){
+		// return true if ability was added
 		if (newAbility == null) {
-			return;
+			return false;
 		}
 
-		ability_control.add_ability(newAbility); // mingrui
+		return ability_control.add_ability(newAbility); // mingrui
 	}
 
 	private void OnCollisionExit2D (Collision2D other) {

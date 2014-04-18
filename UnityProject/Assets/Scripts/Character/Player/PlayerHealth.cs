@@ -128,7 +128,9 @@ public class PlayerHealth : MonoBehaviour {
 		//Prints ability that's being added
 //		Debug.Log ("Died and gained the ability " + ability.abilityName);
 	
-		poi.AddAbility(ability);
-		bonus_announcer.Announce_Bonus("New Ability: " + ability.abilityName, 5f);
+		if (poi.AddAbility(ability)) {
+			bonus_announcer.Announce_Bonus("New Ability: " + ability.abilityName, 5f);
+		}
+
 	}
 }

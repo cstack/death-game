@@ -35,12 +35,13 @@ public class AbilityControl : MonoBehaviour {
 		gui_ability.setAbilities (abilitiesToShow);
 	}
 
-	public void add_ability(Ability new_ability) {
+	public bool add_ability(Ability new_ability) {
+		// return true if ability was added
 		// check if ability is already in the ability list
 		foreach(Ability abi in abilities){
 			// already has ability
 			if(new_ability.name == abi.name){
-				return;
+				return false;
 			}
 		}
 
@@ -52,6 +53,7 @@ public class AbilityControl : MonoBehaviour {
 		new_ability.player = player;
 		abilities.Insert (0, new_ability); // Add ability to newest position
 		updateAbilityUI ();
+		return true;
 	}
 
 	public void Update() {
