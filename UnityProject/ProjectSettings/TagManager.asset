@@ -66,3 +66,7 @@ TagManager:
     userID: 4
     uniqueID: 2355698013
     locked: 0
+  - name: Checkpoint
+    userID: 2
+    uniqueID: 3982647323
+    locked: 0
