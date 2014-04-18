@@ -35,7 +35,7 @@ public class EnemyShot : EntityBase {
 		}
 		else if(other.gameObject.tag == "Enemy" && friendly){
 			Destroy(this.gameObject);
-			Destroy(other.gameObject);
+			other.gameObject.GetComponent<EnemyHealth>().TakeDamage(1f);
 		} else if (other.gameObject.tag == "Wall" || other.gameObject.tag == "ground") {
 			Destroy(this.gameObject);
 		}

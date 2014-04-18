@@ -258,7 +258,7 @@ public class Player : CharacterBase {
 		if (other.gameObject.tag == "Enemy") {
 			if (dashing ||
 			    (isRock && rigidbody2D.velocity.y < 0)) {
-				Destroy(other.gameObject);
+				other.gameObject.GetComponent<EnemyHealth>().TakeDamage(1f);
 			}
 		}
 	}

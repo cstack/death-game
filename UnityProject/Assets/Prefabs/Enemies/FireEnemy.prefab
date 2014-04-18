@@ -14,6 +14,7 @@ GameObject:
   - 61: {fileID: 6100000}
   - 114: {fileID: 11400002}
   - 95: {fileID: 9500000}
+  - 114: {fileID: 11400004}
   m_Layer: 17
   m_Name: FireEnemy
   m_TagString: Enemy
@@ -101,6 +102,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bonus_seconds: 5
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8a989f30b0344c319738907965d371e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 1
+  damageAmount: 1
+  dead: 0
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -14,7 +14,7 @@ public class DaggerControl : MonoBehaviour {
             col.gameObject.GetComponent<PlayerHealth>().decreaseHealth(attackPower, deathAbility);
 		} else if (col.gameObject.tag == "Enemy")
 		{
-			Destroy(col.gameObject);
+			col.gameObject.GetComponent<EnemyHealth>().TakeDamage(1f);
 		}
         // if with other
 
