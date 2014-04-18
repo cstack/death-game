@@ -26,20 +26,22 @@ public class EnemyHealth : MonoBehaviour {
 		if (hp <= 0f) {
 			Die();
 			return true;
-		} else
+		} else {
 			return false;
+		}
 	}
 	
 	void Die() {
+		Destroy (gameObject);
 		//collistionTimer = 0.1f;
-		dead = true;
+		/*dead = true;
 
 		Collider2D[] cols = GetComponents<Collider2D> ();
 		foreach (Collider2D col in cols) {
 			col.isTrigger = true;
 		}
 		rigidbody2D.gravityScale = 1f;
-		rigidbody2D.isKinematic = false;
+		rigidbody2D.isKinematic = false;*/
 	}
 
 }
