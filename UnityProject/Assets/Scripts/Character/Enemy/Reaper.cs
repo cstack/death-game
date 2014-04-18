@@ -6,18 +6,62 @@ public class Reaper : EnemyBase {
 	public float range = 10f;
 	
 	public enum State {
-		Moving
+		Idle, Charging, Spinning
 	};
-	public State state;
+	private State _state;
+	public State state {
+		get {
+			return _state;
+		}
+		set {
+			if (value == state) {
+				return;
+			}
+			StartCoroutine(ExitState(state));
+			_state = value;
+			animator.SetInteger("state", (int) value);
+			StartCoroutine(EnterState(value));
+		}
+	}
+
+	private GameObject attackCollider;
+
+	override protected void Start () {
+		base.Start ();
+		attackCollider = transform.FindChild ("Attack").gameObject;
+	}
 
 	// Update is called once per frame
 	void Update () {
 		switch (state) {
-		case State.Moving:
+		case State.Idle:
 			MoveTowardPlayer();
+			break;
+		case State.Spinning:
+			MoveInStraightLine();
 			break;
 		}
 
+	}
+
+	private IEnumerator EnterState(State newState) {
+		switch (newState) {
+		case State.Spinning:
+			attackCollider.SetActive(true);
+			yield return new WaitForSeconds(3f);
+			state = State.Idle;
+			break;
+		}
+		yield return null;
+	}
+
+	private IEnumerator ExitState(State oldState) {
+		switch (oldState) {
+		case State.Spinning:
+			attackCollider.SetActive(false);
+			break;
+		}
+		yield return null;
 	}
 
 	private void MoveTowardPlayer() {
@@ -39,13 +83,30 @@ public class Reaper : EnemyBase {
 		} else {
 			speed = 0;
 			if (canAttack()) {
-				PerformAttack();
+				Attack();
 			}
 		}
 		updateXVelocity (speed);
 	}
 
-	private void PerformAttack() {
-		Debug.Log("ATTACK!");
+	private void MoveInStraightLine() {
+		float speed = maxSpeed;
+		if (dir == Direction.Left) {
+			speed *= -1;
+		}
+		updateXVelocity (speed);
+	}
+
+	protected override void Attack() {
+		base.Attack ();
+		State[] attacks = {State.Spinning};
+		int attackIndex = (int) Random.value * attacks.Length;
+		StartCoroutine (ChargeAndAttack(attacks[attackIndex]));
+	}
+
+	private IEnumerator ChargeAndAttack(State attackState) {
+		state = State.Charging;
+		yield return new WaitForSeconds(1f);
+		state = attackState;
 	}
 }
