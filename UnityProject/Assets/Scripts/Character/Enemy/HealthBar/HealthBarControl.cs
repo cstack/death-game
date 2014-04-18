@@ -10,25 +10,21 @@ public class HealthBarControl : MonoBehaviour {
 	private void Awake() {
 		enemyHealth = transform.parent.GetComponent<EnemyHealth> ();
 		enemy = transform.parent.GetComponent<EnemyBase> ();
-		bar_right = GameObject.Find("GUI Health Bar Facing Right");
-		bar_left = GameObject.Find("GUI Health Bar Facing Left");
+		bar_right = transform.FindChild("GUI Health Bar Facing Right").gameObject;
+		bar_left = transform.FindChild("GUI Health Bar Facing Left").gameObject;
+		Vector3 scale = transform.localScale;
+		scale.x = enemyHealth.maxHP / 3f;
+		transform.localScale = scale;
 	}
 	
 	private void Update() {
-		if (enemyHealth.maxHP > 1f)
+		if (enemy.dir == EntityBase.Direction.Left)
 		{
-			if (enemy.dir == EntityBase.Direction.Left)
-			{
-				bar_right.SetActive(false);
-				bar_left.SetActive(true);
-			}
-			else {
-				bar_right.SetActive(true);
-				bar_left.SetActive(false);
-			}
+			bar_right.SetActive(false);
+			bar_left.SetActive(true);
 		}
 		else {
-			bar_right.SetActive(false);
+			bar_right.SetActive(true);
 			bar_left.SetActive(false);
 		}
 	}
