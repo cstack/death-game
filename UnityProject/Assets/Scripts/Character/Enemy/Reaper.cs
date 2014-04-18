@@ -4,9 +4,10 @@ using System.Collections;
 public class Reaper : EnemyBase {
 	public float maxSpeed = 2f;
 	public float range = 10f;
+	public FireEnemy impPrefab;
 	
 	public enum State {
-		Idle, Charging, Spinning
+		Idle, Charging, Spinning, SummonImps
 	};
 	private State _state;
 	public State state {
@@ -49,6 +50,13 @@ public class Reaper : EnemyBase {
 		case State.Spinning:
 			attackCollider.SetActive(true);
 			yield return new WaitForSeconds(3f);
+			state = State.Idle;
+			break;
+		case State.SummonImps:
+			for (int i = 0; i < 3; i++) {
+				SummonImp();
+				yield return new WaitForSeconds(1f);
+			}
 			state = State.Idle;
 			break;
 		}
@@ -99,8 +107,8 @@ public class Reaper : EnemyBase {
 
 	protected override void Attack() {
 		base.Attack ();
-		State[] attacks = {State.Spinning};
-		int attackIndex = (int) Random.value * attacks.Length;
+		State[] attacks = {State.Spinning, State.SummonImps};
+		int attackIndex = (int) (Random.value * attacks.Length);
 		StartCoroutine (ChargeAndAttack(attacks[attackIndex]));
 	}
 
@@ -108,5 +116,10 @@ public class Reaper : EnemyBase {
 		state = State.Charging;
 		yield return new WaitForSeconds(1f);
 		state = attackState;
+	}
+
+	private void SummonImp() {
+		FireEnemy imp = (FireEnemy) Instantiate (impPrefab);
+		imp.transform.position = transform.position + new Vector3 (Random.value*10f - 5, Random.value*10f, 0);
 	}
 }

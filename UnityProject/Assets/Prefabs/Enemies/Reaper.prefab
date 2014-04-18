@@ -253,7 +253,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &400000
 Transform:
   m_ObjectHideFlags: 1
@@ -527,9 +527,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBreathUnderwater: 0
   backpack: {fileID: 0}
-  cooldownTime: 8
+  cooldownTime: 7
   maxSpeed: 2
   range: 10
+  impPrefab: {fileID: 11400000, guid: 93083bebbd8cf4cc2a77036a198a7a1d, type: 2}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
