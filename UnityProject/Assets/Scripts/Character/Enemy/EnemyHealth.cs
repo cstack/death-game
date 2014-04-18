@@ -8,6 +8,7 @@ public class EnemyHealth : MonoBehaviour {
 	private float hp;
 	public float damageAmount = 1.0f;
 	public bool dead = false;
+	public bool invulnerable;
 
 	private float collistionTimer = 0f;
 	private bool kill = false;
@@ -27,7 +28,19 @@ public class EnemyHealth : MonoBehaviour {
 		return hp;
 	}
 
+	private IEnumerator Invulnerability() {
+		invulnerable = true;
+		yield return new WaitForSeconds (0.5f);
+		invulnerable = false;
+	}
+
 	public bool TakeDamage(float damage) {
+		if (invulnerable) {
+			return false;
+		} else {
+			StartCoroutine(Invulnerability());
+		}
+
 		hp -= damage;
 		if (hp <= 0f) {
 			Die();

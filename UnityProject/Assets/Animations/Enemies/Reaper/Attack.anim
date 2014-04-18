@@ -13,7 +13,23 @@ AnimationClip:
   m_RotationCurves: []
   m_CompressedRotationCurves: []
   m_PositionCurves: []
-  m_ScaleCurves: []
+  m_ScaleCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 2.47000003, y: 3.42000008, z: 1}
+        inSlope: {x: 6.87692308, y: -.784615755, z: 0}
+        outSlope: {x: 6.87692308, y: -.784615755, z: 0}
+        tangentMode: 0
+      - time: .216666669
+        value: {x: 3.96000004, y: 3.25, z: 1}
+        inSlope: {x: 6.87692308, y: -.784615755, z: 0}
+        outSlope: {x: 6.87692308, y: -.784615755, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    path: Attack
   m_FloatCurves: []
   m_PPtrCurves:
   - curve:
@@ -51,6 +67,63 @@ AnimationClip:
     m_KeepOriginalPositionXZ: 0
     m_HeightFromFeet: 0
     m_Mirror: 0
-  m_EditorCurves: []
+  m_EditorCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 2.47000003
+        inSlope: 6.87692308
+        outSlope: 6.87692308
+        tangentMode: 10
+      - time: .216666669
+        value: 3.96000004
+        inSlope: 6.87692308
+        outSlope: 6.87692308
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_LocalScale.x
+    path: Attack
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 3.42000008
+        inSlope: -.784615755
+        outSlope: -.784615755
+        tangentMode: 10
+      - time: .216666669
+        value: 3.25
+        inSlope: -.784615755
+        outSlope: -.784615755
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_LocalScale.y
+    path: Attack
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: .216666669
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_LocalScale.z
+    path: Attack
+    classID: 4
+    script: {fileID: 0}
   m_EulerEditorCurves: []
   m_Events: []
