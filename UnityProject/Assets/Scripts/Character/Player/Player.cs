@@ -188,6 +188,10 @@ public class Player : CharacterBase {
 
 	private void VerticalMove () {
 
+		if (isRock) {
+			return;
+		}
+
 		if (Input.GetButtonDown("Jump") && (grounded || feetInWater)) {
 			if (feetInWater) {
 				updateYVelocity(swimSpeed * 2);
