@@ -4,7 +4,8 @@ using System.Collections;
 public class EnemyHealth : MonoBehaviour {
 
 
-	public float hp = 1f;
+	public float maxHP = 1f;
+	private float hp;
 	public float damageAmount = 1.0f;
 	public bool dead = false;
 
@@ -16,9 +17,14 @@ public class EnemyHealth : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		sprite = GetComponent<SpriteRenderer>();
+		hp = maxHP;
 	}
 
 	void Update() {
+	}
+
+	public float getHP() {
+		return hp;
 	}
 
 	public bool TakeDamage(float damage) {
