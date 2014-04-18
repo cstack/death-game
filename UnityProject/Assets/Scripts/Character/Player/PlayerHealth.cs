@@ -108,6 +108,8 @@ public class PlayerHealth : MonoBehaviour {
 		lifeTime = 0;
 		currentHealth = maxHealth;
 
+		poi.AbilityAnimationFinished();
+
 		if (poi.feetInWater) {
 			poi.feetExitWater();
 		}
