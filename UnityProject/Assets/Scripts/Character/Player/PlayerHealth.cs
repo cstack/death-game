@@ -24,6 +24,7 @@ public class PlayerHealth : MonoBehaviour {
 		poi = (Player)GameObject.Find("Player").GetComponent<Player>();
 		timer_control = poi.GetComponent<TimerControl>();
 		bonus_announcer = (BonusAnnouncer)GameObject.Find("Bonus Announcer").GetComponent<BonusAnnouncer>();
+		transform.position = spawnPoint.transform.position;
 	}
 
 	void Update() {
