@@ -18,11 +18,23 @@ Material:
           name: _MainTex
         second:
           m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
+          m_Scale: {x: 0, y: 0}
           m_Offset: {x: 0, y: 0}
-    m_Floats: {}
+    m_Floats:
+      data:
+        first:
+          name: _Shininess
+        second: .0188347548
     m_Colors:
       data:
         first:
           name: _Color
-        second: {r: 0, g: .66896534, b: 1, a: 1}
+        second: {r: 0, g: 0, b: 0, a: 1}
+      data:
+        first:
+          name: _SpecColor
+        second: {r: .558823526, g: 0, b: 0, a: 0}
+      data:
+        first:
+          name: _Emission
+        second: {r: .367647052, g: .367647052, b: .367647052, a: 0}
