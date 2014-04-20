@@ -274,7 +274,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23.6176758, y: -15.088953, z: 0}
+  m_LocalPosition: {x: -57.3754196, y: 4.13217115, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400000}
@@ -542,10 +542,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBreathUnderwater: 0
   backpack: {fileID: 0}
-  cooldownTime: 3
-  maxSpeed: 1.5
+  cooldownTime: 4
+  maxSpeed: 3
   range: 15
-  attackPower: 50
   deathAbility: {fileID: 11400000, guid: 0eaf050c344a04951baef5b313367671, type: 2}
   jump_force: 1000
   charge_force: 2000
@@ -575,6 +574,7 @@ MonoBehaviour:
   maxHP: 3
   damageAmount: 1
   dead: 0
+  invulnerable: 0
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
