@@ -4,7 +4,7 @@ using System.Collections;
 public class Brute : EnemyBase {
 	public float maxSpeed = 1.5f;
 	public float range = 1f;
-	public int attackPower = 50;
+	//public int attackPower = 50;
 	public Ability deathAbility = null;
     
     // jump before charging
@@ -14,6 +14,8 @@ public class Brute : EnemyBase {
     private float charge_wait_duration = 2f;
     private float charge_wait_timer = 0f;
     private bool charge_finished = false;
+
+    private bool knockback = false;
 
 	private GameObject attackCollider;
 
@@ -62,6 +64,7 @@ public class Brute : EnemyBase {
             if(canAttack()){
                 do_charge = false;
                 charge_finished = false;
+                attackCollider.SetActive(false);
                 return;
             }
             Bull_Charge();
@@ -141,6 +144,7 @@ public class Brute : EnemyBase {
                 }
                 rigidbody2D.AddForce(new Vector2(c_force, 0));
                 charge_finished = true;
+                knockback = true;
             }
         }
     }
@@ -153,4 +157,21 @@ public class Brute : EnemyBase {
 	public void AbilityAnimationFinished() {
 		attackCollider.SetActive (false);
 	}
+
+    void OnCollisionEnter2D(Collision2D coll) { 
+        if(coll.gameObject.tag == "Player"){
+            if(knockback){
+                attackCollider.SetActive(false);
+                // knock back self
+                if (dir == Direction.Left)
+                {
+                    rigidbody2D.AddForce(new Vector2(1200, 0));
+                }
+                else {
+                    rigidbody2D.AddForce(new Vector2(-1200, 0));
+                }
+                knockback = false;
+            }
+        }
+    }
 }
