@@ -121,10 +121,11 @@ public class Brute : EnemyBase {
         // add a little jump to notify the player of charging
         rigidbody2D.AddForce(new Vector2(0, jump_force));
 		//animator.SetTrigger ("Attack");
-		attackCollider.SetActive (true);
+		attackCollider.SetActive (false); // Jump up will not trigger attack
 
         // get ready to charge
         do_charge = true;
+		knockback = false;
 	}
 
     private void Bull_Charge() { 
@@ -137,6 +138,7 @@ public class Brute : EnemyBase {
             if(charge_wait_timer > charge_wait_duration){
                 charge_wait_timer = 0;
                 // start charge
+				attackCollider.SetActive(true); // Enable blast shield
                 float c_force = charge_force;
                 if (dir == Direction.Left)
                 {
@@ -160,6 +162,13 @@ public class Brute : EnemyBase {
 
     void OnCollisionEnter2D(Collision2D coll) { 
         if(coll.gameObject.tag == "Player"){
+			if(coll.gameObject.GetComponent<PlayerHealth>().invulnerable){
+				// player is invulnerable
+				// 4/20, only possibility is rock ability in use
+				// hurt self.
+				GetComponent<EnemyHealth>().TakeDamage(1);
+			}
+
             if(knockback){
                 attackCollider.SetActive(false);
                 // knock back self
