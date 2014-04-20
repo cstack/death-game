@@ -15,6 +15,8 @@ public class Brute : EnemyBase {
     private float charge_wait_timer = 0f;
     private bool charge_finished = false;
 
+    private bool knockback = false;
+
 	private GameObject attackCollider;
 
 	override protected void Start() {
@@ -142,6 +144,7 @@ public class Brute : EnemyBase {
                 }
                 rigidbody2D.AddForce(new Vector2(c_force, 0));
                 charge_finished = true;
+                knockback = true;
             }
         }
     }
@@ -157,7 +160,7 @@ public class Brute : EnemyBase {
 
     void OnCollisionEnter2D(Collision2D coll) { 
         if(coll.gameObject.tag == "Player"){
-            if(do_charge){
+            if(knockback){
                 attackCollider.SetActive(false);
                 // knock back self
                 if (dir == Direction.Left)
@@ -167,6 +170,7 @@ public class Brute : EnemyBase {
                 else {
                     rigidbody2D.AddForce(new Vector2(-1200, 0));
                 }
+                knockback = false;
             }
         }
     }
