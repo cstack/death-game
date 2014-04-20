@@ -7,9 +7,11 @@ public class Reaper : EnemyBase {
 	public FireEnemy impPrefab;
 	public GameObject birdPrefab;
 	public Brute brutePrefab;
-	
+	public Lava lavaPrefab;
+
 	public enum State {
-		Idle, Charging, Spinning, SummonImps, SummonBirds, SummonBrute
+		Idle, Charging, Spinning, SummonImps, SummonBirds, SummonBrute,
+		SummonLava
 	};
 	private State _state;
 	public State state {
@@ -49,6 +51,16 @@ public class Reaper : EnemyBase {
 
 	private IEnumerator EnterState(State newState) {
 		switch (newState) {
+		case State.Idle:
+		case State.Spinning:
+			rigidbody2D.isKinematic = false;
+			break;
+		default:
+			rigidbody2D.isKinematic = true;
+			break;
+		}
+
+		switch (newState) {
 		case State.Spinning:
 			attackCollider.SetActive(true);
 			yield return new WaitForSeconds(3f);
@@ -72,6 +84,15 @@ public class Reaper : EnemyBase {
 			for (int i = 0; i < 1; i++) {
 				SummonBrute();
 				yield return new WaitForSeconds(1f);
+			}
+			state = State.Idle;
+			break;
+		case State.SummonLava:
+			for (int i = -1; i <= 5; i++) {
+				float x = i * 3 * (dir == Direction.Right ? 1 : -1);
+				Vector3 position = transform.position + new Vector3(x, 15f, 0);
+				SummonLava(position);
+				yield return new WaitForSeconds(0.5f);
 			}
 			state = State.Idle;
 			break;
@@ -123,7 +144,7 @@ public class Reaper : EnemyBase {
 
 	protected override void Attack() {
 		base.Attack ();
-		State[] attacks = {State.Spinning, State.SummonImps, State.SummonBirds, State.SummonBrute};
+		State[] attacks = {State.Spinning, State.SummonImps, State.SummonBirds, State.SummonBrute, State.SummonLava};
 		int attackIndex = (int) (Random.value * attacks.Length);
 		StartCoroutine (ChargeAndAttack(attacks[attackIndex]));
 	}
@@ -147,5 +168,10 @@ public class Reaper : EnemyBase {
 	private void SummonBrute() {
 		Brute brute = (Brute) Instantiate (brutePrefab);
 		brute.transform.position = transform.position + new Vector3 (Random.value*10f - 5, 5f + Random.value*5f, 0);
+	}
+
+	private void SummonLava(Vector3 position) {
+		Lava lava = (Lava) Instantiate (lavaPrefab);
+		lava.transform.position = position;
 	}
 }
