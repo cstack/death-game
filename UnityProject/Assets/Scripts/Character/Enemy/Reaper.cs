@@ -5,9 +5,11 @@ public class Reaper : EnemyBase {
 	public float maxSpeed = 2f;
 	public float range = 10f;
 	public FireEnemy impPrefab;
+	public GameObject birdPrefab;
+	public Brute brutePrefab;
 	
 	public enum State {
-		Idle, Charging, Spinning, SummonImps
+		Idle, Charging, Spinning, SummonImps, SummonBirds, SummonBrute
 	};
 	private State _state;
 	public State state {
@@ -55,6 +57,20 @@ public class Reaper : EnemyBase {
 		case State.SummonImps:
 			for (int i = 0; i < 3; i++) {
 				SummonImp();
+				yield return new WaitForSeconds(1f);
+			}
+			state = State.Idle;
+			break;
+		case State.SummonBirds:
+			for (int i = 0; i < 2; i++) {
+				SummonBird();
+				yield return new WaitForSeconds(1f);
+			}
+			state = State.Idle;
+			break;
+		case State.SummonBrute:
+			for (int i = 0; i < 1; i++) {
+				SummonBrute();
 				yield return new WaitForSeconds(1f);
 			}
 			state = State.Idle;
@@ -107,7 +123,7 @@ public class Reaper : EnemyBase {
 
 	protected override void Attack() {
 		base.Attack ();
-		State[] attacks = {State.Spinning, State.SummonImps};
+		State[] attacks = {State.Spinning, State.SummonImps, State.SummonBirds, State.SummonBrute};
 		int attackIndex = (int) (Random.value * attacks.Length);
 		StartCoroutine (ChargeAndAttack(attacks[attackIndex]));
 	}
@@ -121,5 +137,15 @@ public class Reaper : EnemyBase {
 	private void SummonImp() {
 		FireEnemy imp = (FireEnemy) Instantiate (impPrefab);
 		imp.transform.position = transform.position + new Vector3 (Random.value*10f - 5, Random.value*10f, 0);
+	}
+
+	private void SummonBird() {
+		GameObject bird = (GameObject) Instantiate (birdPrefab);
+		bird.transform.position = transform.position + new Vector3 (Random.value*10f - 5, 5f + Random.value*5f, 0);
+	}
+
+	private void SummonBrute() {
+		Brute brute = (Brute) Instantiate (brutePrefab);
+		brute.transform.position = transform.position + new Vector3 (Random.value*10f - 5, 5f + Random.value*5f, 0);
 	}
 }
