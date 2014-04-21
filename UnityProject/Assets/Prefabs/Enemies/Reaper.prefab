@@ -533,6 +533,8 @@ MonoBehaviour:
   impPrefab: {fileID: 11400000, guid: 93083bebbd8cf4cc2a77036a198a7a1d, type: 2}
   birdPrefab: {fileID: 100000, guid: 0cfe9df389320418b8d0b941c646e900, type: 2}
   brutePrefab: {fileID: 11400002, guid: 4dc35863c23af450682e65df832d20e2, type: 2}
+  lavaPrefab: {fileID: 11400000, guid: 18689ba624f614c63bb6ac74c8253bd8, type: 2}
+  spikesPrefab: {fileID: 11400000, guid: be6eff78358c04ce6894005aa3ea499b, type: 2}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
