@@ -21,7 +21,6 @@ public class JavelinAbility : ActiveAbility, Backpack.Observer {
 				new_javelin = (GameObject)Instantiate(javelin_prefab,
 				                                      player.transform.position + new Vector3(-1, 2f, 0),
 				                                      transform.rotation);
-				new_javelin.transform.FindChild("Sprite").transform.Rotate(0, 0, 180);
 				aim = (int) GlobalConstant.direction.right;
 			}
 

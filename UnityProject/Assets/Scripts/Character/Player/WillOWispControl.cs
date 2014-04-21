@@ -16,7 +16,6 @@ public class WillOWispControl : MonoBehaviour {
 	public float bored_timer = 0;
 	public float bored_speed = 6f;
 
-	public bool movingToCheckpoint = false;
 	// Use this for initialization
 	void Start () {
 //		speed = player.GetComponent <Player> ().maxSpeed;
@@ -24,33 +23,31 @@ public class WillOWispControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (movingToCheckpoint == false) {
-			// updated every frame
-			hover_timer += Time.deltaTime;
+		// updated every frame
+		hover_timer += Time.deltaTime;
 
-	        // follow the player
-			if (Mathf.Abs(transform.position.x - player.transform.position.x) > distance_from_player 
-			    || Mathf.Abs(transform.position.y - player.transform.position.y) > distance_from_player)
-	        {
-				rigidbody2D.velocity = ((new Vector3(player.transform.position.x, player.transform.position.y + player_height_offset, player.transform.position.z) - transform.position).normalized) * player.rigidbody2D.velocity.magnitude;
-	        }
-	        else {
-				// idle position, do a little hover
+        // follow the player
+		if (Mathf.Abs(transform.position.x - player.transform.position.x) > distance_from_player 
+		    || Mathf.Abs(transform.position.y - player.transform.position.y) > distance_from_player)
+        {
+			rigidbody2D.velocity = ((new Vector3(player.transform.position.x, player.transform.position.y + player_height_offset, player.transform.position.z) - transform.position).normalized) * player.rigidbody2D.velocity.magnitude;
+        }
+        else {
+			// idle position, do a little hover
 
-				// reset velocity to zero
-	            rigidbody2D.velocity = new Vector3(0, 0, 0);
+			// reset velocity to zero
+            rigidbody2D.velocity = new Vector3(0, 0, 0);
 
-				// hover
-				if(hover_timer > hover_duration){
-					hover_timer = 0;
-					// change direction
-					hover_speed *= -1;
-					rigidbody2D.velocity = new Vector3(0, hover_speed, 0);
-				}
-	        }
+			// hover
+			if(hover_timer > hover_duration){
+				hover_timer = 0;
+				// change direction
+				hover_speed *= -1;
+				rigidbody2D.velocity = new Vector3(0, hover_speed, 0);
+			}
+        }
 
-			Bored_Movement();
-		}
+		Bored_Movement();
 	}
 
 	// long idle, bored movement
@@ -64,15 +61,4 @@ public class WillOWispControl : MonoBehaviour {
 			// WHAT TO DO HERE OH GOD!
 		}
 	}
-
-	/*public IEnumerator MoveToCheckpoint(Checkpoint checkpoint) {
-		movingToCheckpoint = true;
-		float moveTime = 0.5f;
-		iTween.MoveTo(this.gameObject, checkpoint.transform.position, moveTime);
-		yield return new WaitForSeconds(moveTime);
-		checkpoint.spriteAnimation.SetBool ("Toggled", true);
-		iTween.MoveTo(this.gameObject, player.transform.position, moveTime);
-		yield return new WaitForSeconds(moveTime);
-		movingToCheckpoint = false;
-	}*/
 }

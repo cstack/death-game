@@ -15,10 +15,8 @@ public class Checkpoint : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D col) {
 		if (col.tag == "Player")
 		{
-			Player player = col.gameObject.GetComponent<Player>();
-			if (!player.ghost) {
+			if (!col.gameObject.GetComponent<Player> ().ghost) {
 //				BoxCollider2D b = collider2D as BoxCollider2D;
-				//Debug.Log("Set spawn and move to willo");
 				spawnpoint.transform.position = transform.parent.position;
 				spriteAnimation.SetBool ("Toggled", true);
 			}
