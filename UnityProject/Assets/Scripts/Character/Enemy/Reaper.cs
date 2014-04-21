@@ -157,12 +157,12 @@ public class Reaper : EnemyBase {
 
 	private void SummonImp() {
 		FireEnemy imp = (FireEnemy) Instantiate (impPrefab);
-		imp.transform.position = transform.position + new Vector3 (Random.value*10f - 5, Random.value*10f, 0);
+		imp.transform.position = transform.position + new Vector3 (Random.value*10f - 5, Random.value*8f, 0);
 	}
 
 	private void SummonBird() {
 		GameObject bird = (GameObject) Instantiate (birdPrefab);
-		bird.transform.position = transform.position + new Vector3 (Random.value*10f - 5, 5f + Random.value*5f, 0);
+		bird.transform.position = transform.position + new Vector3 (Random.value*10f - 5, 4f + Random.value*3f, 0);
 	}
 
 	private void SummonBrute() {

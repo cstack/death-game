@@ -527,7 +527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6bc720ca6b2540b59c65933c1794886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackPower: 50
+  attackPower: 40
   deathAbility: {fileID: 11400000, guid: 0eaf050c344a04951baef5b313367671, type: 2}
 --- !u!114 &11400002
 MonoBehaviour:

@@ -12,7 +12,7 @@ public abstract class EnemyBase : CharacterBase {
 	override protected void Start () {
 		base.Start ();
 		player = (GameObject.Find ("Player")).GetComponent<Player>();
-		timeOfLastAttack = Time.time;
+		timeOfLastAttack = Time.time - cooldownTime + 2f;
 	}
 
 	protected float distanceToPlayer() {
