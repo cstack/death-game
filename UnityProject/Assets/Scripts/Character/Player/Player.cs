@@ -42,14 +42,11 @@ public class Player : CharacterBase {
 	public bool ghost;
 	private float ghostSpeed;
 	public GameObject javelin; // mingrui, javelin object
-
-	public WillOWispControl willoControl;
 	
 	void Awake() {
 		if (DataLogging.enabled) {
 			DataLogging.gameSession = new ParseObject("GameSession");
 		}
-		willoControl = GameObject.Find("WillOWisp").GetComponent<WillOWispControl>();
 	}
 
 	override protected void Start() {

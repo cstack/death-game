@@ -2192,7 +2192,6 @@ MonoBehaviour:
   bored_duration: 3
   bored_timer: 0
   bored_speed: 6
-  movingToCheckpoint: 0
 --- !u!50 &200255363
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -14109,7 +14108,6 @@ MonoBehaviour:
   isRock: 0
   ghost: 0
   javelin: {fileID: 100000, guid: df7b4fea313777f46a4d069ee2f2e40a, type: 2}
-  willoControl: {fileID: 0}
 --- !u!61 &1331299039
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14172,7 +14170,7 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayer: 4
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_SortingLayerID: 1041695377
   m_Sprite: {fileID: 21300000, guid: 3def618e1c84549dd973e0c65e99f246, type: 3}
