@@ -47,8 +47,11 @@ public class Ability : MonoBehaviour {
 		abilityName = "Unknown";
 	}
 
-	protected virtual void onAttachedToCharacter() {
+	public virtual void onAttachedToCharacter() {
 		lastuse = 0;
+	}
+
+	public virtual void onRemovedFromCharacter() {
 	}
 
 	protected virtual void Update () {}

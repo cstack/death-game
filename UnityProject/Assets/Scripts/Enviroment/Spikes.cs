@@ -9,7 +9,7 @@ public class Spikes : MonoBehaviour {
 		if (other.gameObject.tag == GlobalConstant.Tag.Player && !friendly) {
 			other.gameObject.GetComponent<PlayerHealth> ().decreaseHealth (100, deathAbility);
 		} else if (other.gameObject.tag == GlobalConstant.Tag.Enemy) {
-			Destroy(other.gameObject);
+			other.GetComponent<EnemyHealth>().TakeDamage(1);
 		}
 	}
 }
