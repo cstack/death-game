@@ -27,7 +27,10 @@ public class RiverWater : Water {
 			if (tmp != null) {
 				tmp.enterRiver (currentStrength);
 			}
+
+			enterWater();
 		}
+		
 	}
 	
 	void OnTriggerExit2D (Collider2D col) {
@@ -38,6 +41,8 @@ public class RiverWater : Water {
 			if (tmp != null) {
 				tmp.exitRiver ();
 			}
+
+			exitWater();
 		}
 	}
 

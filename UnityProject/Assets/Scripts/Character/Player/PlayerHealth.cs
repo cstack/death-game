@@ -7,13 +7,18 @@ public class PlayerHealth : MonoBehaviour {
 	public float maxHealth;
 	public int currentBreath;
 	public int maxBreath;
+	public float hurtTime = 1.0f;
 	private bool inWater;
+	private float hurtTimer = 0f;
 	public float breathPercent = 1f;
 	public int current_life_count;
 	public bool invulnerable;
 	public GameObject spawnPoint;
 	public LungCapacityAbility lungs;
 	public int death_count;
+
+	public AudioClip Hurt;
+	public AudioClip Dying;
 
 	private Player poi;
 	private float lifeTime;
@@ -29,6 +34,10 @@ public class PlayerHealth : MonoBehaviour {
 
 	void Update() {
 		lifeTime += Time.deltaTime;
+
+		if (hurtTimer > 0f) {
+			hurtTimer -= Time.deltaTime;
+		}
 	}
 
 
@@ -56,6 +65,11 @@ public class PlayerHealth : MonoBehaviour {
 	}
 	
 	public void decreaseHealth(float amount, Ability ability) {
+		if (hurtTimer <= 0f) {
+			poi.PlayClipOnAction (Hurt);
+			hurtTimer = hurtTime;
+		}
+
 		if(invulnerable){return;}
 		currentHealth -= amount;
 		checkAlive(ability);
@@ -120,6 +134,9 @@ public class PlayerHealth : MonoBehaviour {
 	
 	private void tempDeath(Ability ability)
 	{
+		if (Dying != null) {
+			poi.PlayClipOnAction (Dying);
+		}
 		if (ability == null) {
 			return;
 		}
