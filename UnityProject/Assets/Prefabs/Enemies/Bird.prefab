@@ -779,7 +779,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: badbf96d50687144793b620479afdaeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 100000, guid: e992bdaad63aea94d9e7c40c1563d9b8, type: 2}
+  projectile: {fileID: 100000, guid: df7b4fea313777f46a4d069ee2f2e40a, type: 2}
   head: {fileID: 100004}
   tail: {fileID: 100006}
   throw_speed: 15
@@ -795,7 +795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: badbf96d50687144793b620479afdaeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 100000, guid: e992bdaad63aea94d9e7c40c1563d9b8, type: 2}
+  projectile: {fileID: 100000, guid: df7b4fea313777f46a4d069ee2f2e40a, type: 2}
   head: {fileID: 100010}
   tail: {fileID: 100008}
   throw_speed: 15
@@ -811,7 +811,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: badbf96d50687144793b620479afdaeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 100000, guid: e992bdaad63aea94d9e7c40c1563d9b8, type: 2}
+  projectile: {fileID: 100000, guid: df7b4fea313777f46a4d069ee2f2e40a, type: 2}
   head: {fileID: 100016}
   tail: {fileID: 100018}
   throw_speed: 15
@@ -830,6 +830,7 @@ MonoBehaviour:
   maxHP: 1
   damageAmount: 1
   dead: 0
+  invulnerable: 0
 --- !u!114 &11400014
 MonoBehaviour:
   m_ObjectHideFlags: 1
