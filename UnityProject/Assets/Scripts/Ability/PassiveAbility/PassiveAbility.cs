@@ -11,7 +11,7 @@ public class PassiveAbility : Ability {
 		abilityName = "Passive";
 	}
 
-	protected override void onAttachedToCharacter() {
+	public override void onAttachedToCharacter() {
 		base.onAttachedToCharacter();
 		Activate ();
 	}

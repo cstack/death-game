@@ -47,6 +47,7 @@ public class AbilityControl : MonoBehaviour {
 
 		if (abilities.Count >= maxAbilities) {
 			// Remove oldest ability
+			abilities[abilities.Count - 1].onRemovedFromCharacter();
 			abilities.RemoveAt(abilities.Count - 1);
 		}
 
