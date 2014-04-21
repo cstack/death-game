@@ -47,6 +47,7 @@ public class Player : CharacterBase {
 	public AudioClip RightStep;
 	public AudioClip Landing;
 	public AudioClip Jumping;
+	public AudioClip RockLanding;
 
 	private AudioSource[] altaudios;
 	
@@ -276,7 +277,11 @@ public class Player : CharacterBase {
 			    Vector2.Dot(other.contacts[0].normal, Vector2.up) > 0.5) {
 				// Play Landing Clip
 				if (!grounded) {
-					PlayClipOnAction(Landing);
+					if (!isRock) {
+						PlayClipOnAction(Landing);
+					} else {
+						PlayClipOnAction(RockLanding);
+					}
 				}
 			}
 		}

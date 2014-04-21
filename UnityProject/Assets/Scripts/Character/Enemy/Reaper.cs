@@ -9,6 +9,12 @@ public class Reaper : EnemyBase {
 	public Brute brutePrefab;
 	public Lava lavaPrefab;
 
+	public AudioClip creepyLaughone;
+	private float noiseTimerone = 5f;
+
+	public AudioClip creepyLaughtwo;
+	private float noiseTimertwo = 3f;
+
 	public enum State {
 		Idle, Charging, Spinning, SummonImps, SummonBirds, SummonBrute,
 		SummonLava
@@ -34,6 +40,8 @@ public class Reaper : EnemyBase {
 	override protected void Start () {
 		base.Start ();
 		attackCollider = transform.FindChild ("Attack").gameObject;
+
+		PlayCreepySound (creepyLaughone);
 	}
 
 	// Update is called once per frame
@@ -46,6 +54,8 @@ public class Reaper : EnemyBase {
 			MoveInStraightLine();
 			break;
 		}
+
+		PlayNoises ();
 
 	}
 
@@ -173,5 +183,34 @@ public class Reaper : EnemyBase {
 	private void SummonLava(Vector3 position) {
 		Lava lava = (Lava) Instantiate (lavaPrefab);
 		lava.transform.position = position;
+	}
+
+	private void PlayNoises () {
+		if (noiseTimerone > 0f) {
+			noiseTimerone -= Time.deltaTime;
+		} else {
+			PlayCreepySound (creepyLaughone);
+		}
+
+		if (noiseTimertwo > 0f) {
+			noiseTimertwo -= Time.deltaTime;
+		} else {
+			PlayCreepySound (creepyLaughtwo);
+		}
+	}
+
+	private void PlayCreepySound (AudioClip theSound) {
+		
+		if (audio != null) {
+			audio.enabled = true;
+			audio.loop = false;
+			if (theSound != null && !audio.isPlaying) {
+				audio.clip = theSound;
+				audio.Play ();
+				noiseTimertwo = Random.Range (2f, 5f);
+				noiseTimerone = Random.Range (2f, 5f);
+			}
+		}
+
 	}
 }

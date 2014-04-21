@@ -40,9 +40,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: Spike Shield
   abilityIcon: {fileID: 2800000, guid: 96dc43312f51443109a4d4b8ffa382ad, type: 3}
-  abilityClip: {fileID: 0}
+  abilityClip: {fileID: 8300000, guid: 594e7c7a28c424b7fbcf6e2c10960694, type: 3}
   cooldown: 3
-  spikesPrefab: {fileID: 11400000, guid: be6eff78358c04ce6894005aa3ea499b, type: 2}
+  duration: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
