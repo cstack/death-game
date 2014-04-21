@@ -42,11 +42,20 @@ public class Player : CharacterBase {
 	public bool ghost;
 	private float ghostSpeed;
 	public GameObject javelin; // mingrui, javelin object
+
+	public AudioClip LeftStep;
+	public AudioClip RightStep;
+	public AudioClip Landing;
+	public AudioClip Jumping;
+
+	private AudioSource[] altaudios;
 	
 	void Awake() {
 		if (DataLogging.enabled) {
 			DataLogging.gameSession = new ParseObject("GameSession");
 		}
+
+		altaudios = GetComponents<AudioSource> ();
 	}
 
 	override protected void Start() {
@@ -247,7 +256,7 @@ public class Player : CharacterBase {
 //		if (!Input.GetButton("Jump")) {
 //			return;
 //		}
-
+		PlayClipOnAction (Jumping);
 		updateYVelocity(jumpSpeed);
 		grounded = false;
 		animator.SetBool("grounded", grounded);
@@ -259,6 +268,16 @@ public class Player : CharacterBase {
 			if (dashing ||
 			    (isRock && rigidbody2D.velocity.y < 0)) {
 				other.gameObject.GetComponent<EnemyHealth>().TakeDamage(1f);
+			}
+		}
+
+		if (other.gameObject.tag == "ground") {
+			if (other.contacts.Length > 0 && rigidbody2D.velocity.y <= 4 &&
+			    Vector2.Dot(other.contacts[0].normal, Vector2.up) > 0.5) {
+				// Play Landing Clip
+				if (!grounded) {
+					PlayClipOnAction(Landing);
+				}
 			}
 		}
 	}
@@ -349,6 +368,7 @@ public class Player : CharacterBase {
 		dashing = false;
 		rigidbody2D.gravityScale = baseGravity;
 		playerHealth.invulnerable = false;
+		Invoke ("StopClip", 0.2f);
 	}
 
 	private IEnumerator dash() {
@@ -426,5 +446,43 @@ public class Player : CharacterBase {
 		isRock = false;
 		rigidbody2D.gravityScale = baseGravity;
 		playerHealth.invulnerable = false;
+	}
+
+	public void LeftFoot() {
+		PlayClipOnAction(LeftStep);
+	}
+
+	public void RightFoot() {
+		PlayClipOnAction(RightStep);
+	}
+
+	public void PlayClipOnAction (AudioClip theClip) {
+		if (feetInWater) {
+			return;
+		}
+
+		foreach (AudioSource aud in altaudios) {
+			if (theClip != null && aud != null) {
+				if (!aud.enabled) {
+					aud.enabled = true;
+				}
+				aud.loop = false;
+				if (!aud.isPlaying) {
+					if (aud.clip != theClip) {
+						aud.clip = theClip;
+					}
+					aud.Play ();
+					break;
+				} 
+			}
+		}
+	}
+
+	public void StopClip () {
+		foreach (AudioSource aud in altaudios) {
+			if (aud.isPlaying) {
+				aud.Stop ();
+			}
+		}
 	}
 }
