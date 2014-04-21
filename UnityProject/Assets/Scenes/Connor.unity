@@ -14417,13 +14417,13 @@ AudioSource:
     type: 2}
   m_PrefabInternal: {fileID: 1574228423}
   m_GameObject: {fileID: 1331299030}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_audioClip: {fileID: 8300000, guid: 33ffdd18a5a304bdeb63beb6c47ef175, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Priority: 128
   DopplerLevel: 1
@@ -14654,6 +14654,8 @@ MonoBehaviour:
   isRock: 0
   ghost: 0
   javelin: {fileID: 100000, guid: df7b4fea313777f46a4d069ee2f2e40a, type: 2}
+  LeftStep: {fileID: 0}
+  RightStep: {fileID: 0}
 --- !u!61 &1331299039
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17149,6 +17151,18 @@ Prefab:
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 1062151024}
+    - target: {fileID: 8200000, guid: 99c0ed75dca6c4391b1cf4ea4c9c0792, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 99c0ed75dca6c4391b1cf4ea4c9c0792, type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 99c0ed75dca6c4391b1cf4ea4c9c0792, type: 2}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 99c0ed75dca6c4391b1cf4ea4c9c0792, type: 2}
   m_RootGameObject: {fileID: 1331299030}
