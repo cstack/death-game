@@ -42,9 +42,6 @@ public class Player : CharacterBase {
 	public bool ghost;
 	private float ghostSpeed;
 	public GameObject javelin; // mingrui, javelin object
-
-	public AudioClip LeftStep;
-	public AudioClip RightStep;
 	
 	void Awake() {
 		if (DataLogging.enabled) {
@@ -325,33 +322,6 @@ public class Player : CharacterBase {
 		if (ability_control.current_ability != null) {
 			ability_control.current_ability.Finish ();
 			ability_control.current_ability = null;
-		}
-	}
-
-	public void LeftFoot () {
-		Debug.Log ("osmgw");
-		if (LeftStep != null) {
-			if (!audio.enabled) {
-				audio.enabled = true;
-			}
-			audio.loop = false;
-			if (audio.clip != LeftStep) {
-				audio.clip = LeftStep;
-			}
-			audio.Play();
-		}
-	}
-
-	public void RightFoot () {
-		if (RightStep != null) {
-			if (!audio.enabled) {
-				audio.enabled = true;
-			}
-			audio.loop = false;
-			if (audio.clip != RightStep) {
-				audio.clip = RightStep;
-			}
-			audio.Play();
 		}
 	}
 
