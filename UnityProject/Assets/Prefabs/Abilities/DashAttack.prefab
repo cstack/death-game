@@ -40,7 +40,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: Dash
   abilityIcon: {fileID: 2800000, guid: 8aa4cacfbd3554715a1241de390b0a8e, type: 3}
-  abilityClip: {fileID: 0}
+  abilityClip: {fileID: 8300000, guid: 7fab59b7f1b6c4768a91f495dc2f460e, type: 3}
   cooldown: 2
 --- !u!1001 &100100000
 Prefab:

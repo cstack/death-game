@@ -67,6 +67,7 @@ public class Ability : MonoBehaviour {
 				// refresh lastuse
 				UpdateLastuse();
 				OnActivate();
+				PlayClip();
 			}
 			else {
 				Debug.Log("Abilit still on cooldown!");
@@ -99,5 +100,11 @@ public class Ability : MonoBehaviour {
 
 	private void UpdateLastuse(){
 		lastuse = Time.time;
+	}
+
+	private void PlayClip () {
+		if (abilityClip != null) {
+			player.PlayClipOnAction (abilityClip);
+		}
 	}
 }

@@ -12,5 +12,17 @@ public class StillWater : Water {
 			renderer.material.mainTexture = frames[index];
 		}
 	}
-
+	
+	void OnTriggerEnter2D (Collider2D col) {
+		if (col.gameObject.tag != "PlayerHead") {
+			enterWater();
+		}
+		
+	}
+	
+	void OnTriggerExit2D (Collider2D col) {
+		if (col.gameObject.tag != "PlayerHead") {
+			exitWater();
+		}
+	}
 }

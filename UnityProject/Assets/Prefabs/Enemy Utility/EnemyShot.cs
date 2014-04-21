@@ -30,6 +30,9 @@ public class EnemyShot : EntityBase {
 
 	void OnTriggerEnter2D (Collider2D other){
 		if(other.gameObject.tag == "Player" && !friendly){
+			if (audio != null) {
+				audio.Stop ();
+			}
 			Destroy(this.gameObject);
 			other.gameObject.GetComponent<PlayerHealth>().decreaseHealth(attackPower, ability);
 		}
