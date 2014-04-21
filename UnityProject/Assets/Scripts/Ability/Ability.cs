@@ -67,6 +67,7 @@ public class Ability : MonoBehaviour {
 				// refresh lastuse
 				UpdateLastuse();
 				OnActivate();
+				SetAudioClip();
 			}
 			else {
 				Debug.Log("Abilit still on cooldown!");
@@ -99,5 +100,18 @@ public class Ability : MonoBehaviour {
 
 	private void UpdateLastuse(){
 		lastuse = Time.time;
+	}
+
+	private void SetAudioClip() {
+		if (abilityClip != null && player.audio != null) {
+			if (!player.audio.enabled) {
+				player.audio.enabled = true;
+			}
+			player.audio.loop = false;
+			if (player.audio.clip != abilityClip) {
+				player.audio.clip = abilityClip;
+			}
+			player.audio.Play();
+		}
 	}
 }
