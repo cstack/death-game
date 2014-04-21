@@ -39,7 +39,7 @@ public class JavelinControl : MonoBehaviour {
 	void Update () {
 		ReturnToBag();
 
-        if (launch) // initial throw
+        if (launch && thrower != null) // initial throw
         {
 			launch = false;
             flying = true;
