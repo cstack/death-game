@@ -232,7 +232,7 @@ public class Player : CharacterBase {
 		
 		//Crouch
 		
-		if (Input.GetButton("Downward") && grounded && !feetInWater && !Input.GetButton("Right") && !Input.GetButton("Left")) {
+		if (Input.GetButton("Downward") && grounded && !feetInWater) {
 			crouching = true;
 			animator.SetBool("crouching", crouching);
 			animator.SetFloat("speed", 0f);
