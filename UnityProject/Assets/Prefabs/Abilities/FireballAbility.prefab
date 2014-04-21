@@ -40,7 +40,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: Fireball
   abilityIcon: {fileID: 2800000, guid: 2d5f53cfaf4d64f84abea28d8a06fca5, type: 3}
-  abilityClip: {fileID: 0}
+  abilityClip: {fileID: 8300000, guid: fc130dd992f6143cda1fb6485403536d, type: 3}
   cooldown: 1.5
   shot_prefab: {fileID: 11400004, guid: ec2239724f6674316ae0e8daf2d8acce, type: 2}
   kickback: 50
