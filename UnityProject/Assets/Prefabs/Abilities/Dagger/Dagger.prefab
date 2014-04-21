@@ -13,7 +13,7 @@ GameObject:
   - 61: {fileID: 6100000}
   - 33: {fileID: 3300000}
   - 114: {fileID: 11400000}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Dagger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
