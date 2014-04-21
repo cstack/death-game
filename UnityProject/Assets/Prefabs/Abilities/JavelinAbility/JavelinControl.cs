@@ -83,11 +83,13 @@ public class JavelinControl : MonoBehaviour {
                     transform.position.x + 1,
                     transform.position.y + 2,
                     0);
-                transform.Rotate(0, 0, 495);
+                transform.Rotate(0, 0, 135);
                 transform.rigidbody2D.velocity = new Vector2(
                     thrower.transform.rigidbody2D.velocity.x + speed / 2,
                     thrower.transform.rigidbody2D.velocity.y + speed / 2
                     );
+				Transform sprite = transform.FindChild("JavelinSprite");
+				sprite.transform.Rotate(0, 0, -180);
             }
         }
         else // flying
