@@ -29,6 +29,7 @@ public class JavelinControl : MonoBehaviour {
     private int aim;
     private bool launch = true;
     private bool flying = false;
+	private bool frozen = false;
 
     public void Create_Javelin(GameObject _thrower, int direction)
     {
@@ -39,6 +40,10 @@ public class JavelinControl : MonoBehaviour {
 
 	void Update () {
 		ReturnToBag();
+
+		if (frozen) {
+			return;
+		}
 
         if (launch && thrower != null) // initial throw
         {
@@ -126,9 +131,10 @@ public class JavelinControl : MonoBehaviour {
     // if javelin is not attacking, and player is colliding with it, then it is picked
     // up by player
     void OnCollisionEnter2D(Collision2D collision){
-        if (collision.gameObject.tag == "ground" && flying)
+        if (collision.gameObject.tag == "ground" && !frozen)
         {
             // freeze the javelin in place
+			frozen = true;
             rigidbody2D.fixedAngle = true;
 			flying = false;
 			friendly = true;
