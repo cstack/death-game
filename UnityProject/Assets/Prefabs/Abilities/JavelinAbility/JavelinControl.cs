@@ -5,6 +5,7 @@ public class JavelinControl : MonoBehaviour {
 
     public float speed;
 	public JavelinAbility javelinAbility;
+	public float javelinDamage = 30f;
 
 	private float alive_timer = 0f;
 	public float alive_duration;
@@ -139,7 +140,7 @@ public class JavelinControl : MonoBehaviour {
 			if (!friendly) {
 				Destroy(gameObject);
 				PlayerHealth player = collision.gameObject.GetComponent<PlayerHealth>();
-				player.decreaseHealth(50, javelinAbility);
+				player.decreaseHealth(javelinDamage, javelinAbility);
 				return;
 			}
 
