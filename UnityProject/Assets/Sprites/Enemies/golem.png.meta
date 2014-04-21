@@ -50,62 +50,80 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 108
-        height: 114
+        width: 210
+        height: 258
       alignment: 7
       pivot: {x: 0, y: 0}
     - name: golem_1
       rect:
         serializedVersion: 2
-        x: 108
+        x: 210
         y: 0
-        width: 108
-        height: 114
+        width: 210
+        height: 258
       alignment: 7
       pivot: {x: 0, y: 0}
     - name: golem_2
       rect:
         serializedVersion: 2
-        x: 216
+        x: 420
         y: 0
-        width: 108
-        height: 114
+        width: 210
+        height: 258
       alignment: 7
       pivot: {x: 0, y: 0}
     - name: golem_3
       rect:
         serializedVersion: 2
-        x: 324
+        x: 630
         y: 0
-        width: 108
-        height: 114
+        width: 210
+        height: 258
       alignment: 7
       pivot: {x: 0, y: 0}
     - name: golem_4
       rect:
         serializedVersion: 2
-        x: 432
+        x: 840
         y: 0
-        width: 108
-        height: 114
+        width: 210
+        height: 258
       alignment: 7
       pivot: {x: 0, y: 0}
     - name: golem_5
       rect:
         serializedVersion: 2
-        x: 540
+        x: 1050
         y: 0
-        width: 108
-        height: 114
+        width: 210
+        height: 258
       alignment: 7
       pivot: {x: 0, y: 0}
     - name: golem_6
       rect:
         serializedVersion: 2
-        x: 648
+        x: 1260
         y: 0
-        width: 108
-        height: 114
+        width: 210
+        height: 258
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: golem_7
+      rect:
+        serializedVersion: 2
+        x: 1470
+        y: 0
+        width: 210
+        height: 258
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: golem_8
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 0
+        width: 210
+        height: 258
       alignment: 7
       pivot: {x: 0, y: 0}
   spritePackingTag: 
