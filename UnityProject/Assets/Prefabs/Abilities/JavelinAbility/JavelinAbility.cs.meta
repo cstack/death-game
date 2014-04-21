@@ -2,7 +2,10 @@ fileFormatVersion: 2
 guid: 5187dcc1c382c46c1866b935adae88ba
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - abilityIcon: {instanceID: 0}
+  - abilityClip: {instanceID: 0}
+  - javelin_prefab: {fileID: 100000, guid: df7b4fea313777f46a4d069ee2f2e40a, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

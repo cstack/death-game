@@ -19,7 +19,7 @@ public class DaggerThrower : MonoBehaviour {
     public void Throw_Projectile() {
         GameObject duplicate = Instantiate(projectile, transform.position, transform.rotation) as GameObject;
         if(Same_Direction()){
-            duplicate.transform.RotateAround(Vector3.up, Mathf.PI);
+            duplicate.transform.Rotate(Vector3.up, Mathf.PI);
         }
 		if (friendly) {
 			projectile.layer = LayerMask.NameToLayer(GlobalConstant.Layer.PlayerProjectile);
