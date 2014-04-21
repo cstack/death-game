@@ -1950,7 +1950,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: badbf96d50687144793b620479afdaeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 100000, guid: e992bdaad63aea94d9e7c40c1563d9b8, type: 2}
+  projectile: {fileID: 100000, guid: 66b8e1ce7fcf4426d9d766e4365c2d83, type: 2}
   head: {fileID: 100008}
   tail: {fileID: 100012}
   throw_speed: 15
@@ -1992,7 +1992,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: badbf96d50687144793b620479afdaeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 100000, guid: e992bdaad63aea94d9e7c40c1563d9b8, type: 2}
+  projectile: {fileID: 100000, guid: 66b8e1ce7fcf4426d9d766e4365c2d83, type: 2}
   head: {fileID: 100020}
   tail: {fileID: 100018}
   throw_speed: 15
@@ -2008,7 +2008,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: badbf96d50687144793b620479afdaeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 100000, guid: e992bdaad63aea94d9e7c40c1563d9b8, type: 2}
+  projectile: {fileID: 100000, guid: 66b8e1ce7fcf4426d9d766e4365c2d83, type: 2}
   head: {fileID: 100026}
   tail: {fileID: 100028}
   throw_speed: 15
@@ -2050,7 +2050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: badbf96d50687144793b620479afdaeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 100000, guid: e992bdaad63aea94d9e7c40c1563d9b8, type: 2}
+  projectile: {fileID: 100000, guid: 66b8e1ce7fcf4426d9d766e4365c2d83, type: 2}
   head: {fileID: 100036}
   tail: {fileID: 100034}
   throw_speed: 15
@@ -2066,7 +2066,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: badbf96d50687144793b620479afdaeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 100000, guid: e992bdaad63aea94d9e7c40c1563d9b8, type: 2}
+  projectile: {fileID: 100000, guid: 66b8e1ce7fcf4426d9d766e4365c2d83, type: 2}
   head: {fileID: 100042}
   tail: {fileID: 100044}
   throw_speed: 15
@@ -2108,7 +2108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: badbf96d50687144793b620479afdaeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 100000, guid: e992bdaad63aea94d9e7c40c1563d9b8, type: 2}
+  projectile: {fileID: 100000, guid: 66b8e1ce7fcf4426d9d766e4365c2d83, type: 2}
   head: {fileID: 100052}
   tail: {fileID: 100050}
   throw_speed: 15
@@ -2124,7 +2124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: badbf96d50687144793b620479afdaeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 100000, guid: e992bdaad63aea94d9e7c40c1563d9b8, type: 2}
+  projectile: {fileID: 100000, guid: 66b8e1ce7fcf4426d9d766e4365c2d83, type: 2}
   head: {fileID: 100058}
   tail: {fileID: 100060}
   throw_speed: 15
@@ -2166,7 +2166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: badbf96d50687144793b620479afdaeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 100000, guid: e992bdaad63aea94d9e7c40c1563d9b8, type: 2}
+  projectile: {fileID: 100000, guid: 66b8e1ce7fcf4426d9d766e4365c2d83, type: 2}
   head: {fileID: 100068}
   tail: {fileID: 100066}
   throw_speed: 15
