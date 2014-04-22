@@ -154,7 +154,7 @@ public class Reaper : EnemyBase {
 
 	protected override void Attack() {
 		base.Attack ();
-		State[] attacks = {State.Spinning, State.SummonImps, State.SummonBirds, State.SummonBrute, State.SummonLava};
+		State[] attacks = {State.Spinning};
 		int attackIndex = (int) (Random.value * attacks.Length);
 		StartCoroutine (ChargeAndAttack(attacks[attackIndex]));
 	}

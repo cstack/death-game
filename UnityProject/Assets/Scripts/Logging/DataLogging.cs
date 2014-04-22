@@ -29,7 +29,7 @@ public static class DataLogging {
 	public static void TrackPlayerDeath(Ability abilityDiedTo, float lifeTime, Vector3 deathLocation) {
 		if (enabled) {
 			Dictionary<string, string> args = new Dictionary<string, string>() {
-				{"diedToAbility", abilityDiedTo.abilityName},
+				{"diedToAbility", abilityDiedTo != null ? abilityDiedTo.abilityName : "No ability"},
 				{"lifeTime", lifeTime.ToString()},
 				{"location", deathLocation.ToString()},
 				{"level", Application.loadedLevelName}
