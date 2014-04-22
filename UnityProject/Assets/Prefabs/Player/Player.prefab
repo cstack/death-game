@@ -2940,7 +2940,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70770917ce18e944d99b4d01299d445d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TrackedEvents: 0100000002000000
+  TrackedEvents: 010000000200000000000000
   TrackedEventsFoldOut: 0
   TrackTarget: 1
   ShowGizmo: 1
