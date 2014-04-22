@@ -52,11 +52,8 @@ public class Player : CharacterBase {
 	private AudioSource[] altaudios;
 	
 	void Awake() {
-		if (DataLogging.enabled) {
-			DataLogging.gameSession = new ParseObject("GameSession");
-		}
-
 		altaudios = GetComponents<AudioSource> ();
+		DataLogging.Init();
 	}
 
 	override protected void Start() {

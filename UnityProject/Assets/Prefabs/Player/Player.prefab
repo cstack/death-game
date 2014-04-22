@@ -21,6 +21,7 @@ GameObject:
   - 82: {fileID: 8200000}
   - 82: {fileID: 8200004}
   - 82: {fileID: 8200002}
+  - 114: {fileID: 11400084}
   m_Layer: 13
   m_Name: Player
   m_TagString: Player
@@ -1787,6 +1788,7 @@ MonoBehaviour:
   RightStep: {fileID: 8300000, guid: 27b8ead83744747f9aff521d1e65dee4, type: 3}
   Landing: {fileID: 8300000, guid: efbec266c2d494fccb2d119c0b0baa04, type: 3}
   Jumping: {fileID: 8300000, guid: 5f9cfd0c55b7a46cb944a11568d22a73, type: 3}
+  RockLanding: {fileID: 0}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1893,12 +1895,15 @@ MonoBehaviour:
   maxHealth: 100
   currentBreath: 50
   maxBreath: 50
+  hurtTime: 1
   breathPercent: 1
   current_life_count: 6
   invulnerable: 0
   spawnPoint: {fileID: 0}
   lungs: {fileID: 11400000, guid: 0ef81addfa1b047da969855cd0c7904d, type: 2}
   death_count: 0
+  Hurt: {fileID: 0}
+  Dying: {fileID: 0}
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2924,6 +2929,22 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
+--- !u!114 &11400084
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70770917ce18e944d99b4d01299d445d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TrackedEvents: 0100000002000000
+  TrackedEventsFoldOut: 0
+  TrackTarget: 1
+  ShowGizmo: 1
+  BreadCrumbTrackInterval: 1
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

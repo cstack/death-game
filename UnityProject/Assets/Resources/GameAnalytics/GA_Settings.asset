@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d0c0342116464e26abb476a494c827a, type: 3}
+  m_Name: GA_Settings
+  m_EditorClassIdentifier: 
+  TotalMessagesSubmitted: 22
+  TotalMessagesFailed: 0
+  DesignMessagesSubmitted: 7
+  DesignMessagesFailed: 0
+  QualityMessagesSubmitted: 15
+  QualityMessagesFailed: 0
+  ErrorMessagesSubmitted: 0
+  ErrorMessagesFailed: 0
+  BusinessMessagesSubmitted: 0
+  BusinessMessagesFailed: 0
+  UserMessagesSubmitted: 0
+  UserMessagesFailed: 0
+  CustomArea: 
+  TrackTarget: {fileID: 0}
+  GameKey: a5b7a473930a3b506b61703325de7295
+  SecretKey: c36c27803d6d898bef6f0d8afc2c9ef4f7c7eb15
+  ApiKey: fd35f447071104dade5f2e76e758dc20415ef713
+  Build: 0.1
+  DebugMode: 1
+  DebugAddEvent: 0
+  SendExampleGameDataToMyGame: 0
+  RunInEditorPlayMode: 1
+  UseBundleVersion: 0
+  AllowRoaming: 1
+  ArchiveData: 1
+  NewSessionOnResume: 1
+  AutoSubmitUserInfo: 1
+  HeatmapGridSize: {x: 1, y: 1, z: 1}
+  CustomUserID: 0
+  SubmitInterval: 10
+  InternetConnectivity: 1
+  Start_AlwaysShowAds: 0
+  Start_TimePlayed: 0
+  Start_Sessions: 0
+  TimePlayed: 300
+  Sessions: 1
+  Trigger_AdsEnabled: 0
+  Trigger_AdsEnabled_network: 0
+  Trigger_SceneChange: 0
+  Trigger_SceneChange_network: 0
+  IAD_foldout: 1
+  IAD_enabled: 0
+  IAD_type: 0
+  IAD_layout: 0
+  IAD_position: {x: 0, y: 0}
+  IAD_Duration: 10
+  CB_foldout: 1
+  CB_enabled: 0
+  CB_appID: 
+  CB_appSig: 
+  CurrentInspectorState: 0
+  ClosedHints: 
+  DisplayHints: 0
+  DisplayHintsScrollState: {x: 0, y: 0}
+  Logo: {fileID: 2800000, guid: 00ab0042267904964b8686dec9230a6c, type: 3}
+  UpdateIcon: {fileID: 2800000, guid: 810bbb19deed24f3cb7b854f9bafde26, type: 3}
+  CustomAdTriggers: []

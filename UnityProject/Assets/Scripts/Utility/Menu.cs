@@ -9,7 +9,6 @@ public class Menu : MonoBehaviour {
     // signals are sent from buttons using NGUI's native api
     public void OnPlayClicked() {
         //Debug.Log("Play button clicked");
-
         Application.LoadLevel("Main");
     }
 }
