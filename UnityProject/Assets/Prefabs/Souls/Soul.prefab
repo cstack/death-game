@@ -70,7 +70,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 428367f35d37344819588b471044d171, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  waypoints: []
+  speed: 3
+  explode: 0
+  explosionOrigin: {x: 0, y: 0, z: 0}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
