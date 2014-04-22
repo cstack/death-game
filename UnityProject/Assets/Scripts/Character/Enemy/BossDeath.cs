@@ -23,5 +23,7 @@ public class BossDeath : MonoBehaviour {
 
 		GameObject enemyDestroyer = (GameObject) Instantiate (EnemyDestroyer);
 		enemyDestroyer.transform.position = transform.position;
+
+		Destroy (GameObject.Find ("BossGate"));
 	}
 }
