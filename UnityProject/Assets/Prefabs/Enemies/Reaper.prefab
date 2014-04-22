@@ -15,7 +15,6 @@ GameObject:
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
   - 82: {fileID: 8200000}
-  - 114: {fileID: 11400044}
   m_Layer: 17
   m_Name: Reaper
   m_TagString: Enemy
@@ -594,6 +593,9 @@ MonoBehaviour:
   birdPrefab: {fileID: 100000, guid: 0cfe9df389320418b8d0b941c646e900, type: 2}
   brutePrefab: {fileID: 11400002, guid: 4dc35863c23af450682e65df832d20e2, type: 2}
   lavaPrefab: {fileID: 11400000, guid: 18689ba624f614c63bb6ac74c8253bd8, type: 2}
+  soulPrefab: {fileID: 11400000, guid: 6b6cadaa887964964998b4d4615e412a, type: 2}
+  waypoints: []
+  EnemyDestroyer: {fileID: 100000, guid: dc2d63af83c2d49b4a09dec7df0685cf, type: 2}
   creepyLaughone: {fileID: 8300000, guid: b9343f63c92bc47b59f2bb21b357855a, type: 3}
   creepyLaughtwo: {fileID: 8300000, guid: 8d9a4a2c364704d2287800900b325490, type: 3}
 --- !u!114 &11400002
@@ -1375,20 +1377,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackPower: 40
   deathAbility: {fileID: 0}
---- !u!114 &11400044
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ae0c2153c7ca4ea181d8f9b6e1563a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soulPrefab: {fileID: 11400000, guid: 6b6cadaa887964964998b4d4615e412a, type: 2}
-  waypoints: []
-  EnemyDestroyer: {fileID: 100000, guid: dc2d63af83c2d49b4a09dec7df0685cf, type: 2}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
