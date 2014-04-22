@@ -11,13 +11,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d0c0342116464e26abb476a494c827a, type: 3}
   m_Name: GA_Settings
   m_EditorClassIdentifier: 
-  TotalMessagesSubmitted: 22
+  TotalMessagesSubmitted: 512
   TotalMessagesFailed: 0
-  DesignMessagesSubmitted: 7
+  DesignMessagesSubmitted: 482
   DesignMessagesFailed: 0
-  QualityMessagesSubmitted: 15
+  QualityMessagesSubmitted: 20
   QualityMessagesFailed: 0
-  ErrorMessagesSubmitted: 0
+  ErrorMessagesSubmitted: 10
   ErrorMessagesFailed: 0
   BusinessMessagesSubmitted: 0
   BusinessMessagesFailed: 0
@@ -30,7 +30,7 @@ MonoBehaviour:
   ApiKey: fd35f447071104dade5f2e76e758dc20415ef713
   Build: 0.1
   DebugMode: 1
-  DebugAddEvent: 0
+  DebugAddEvent: 1
   SendExampleGameDataToMyGame: 0
   RunInEditorPlayMode: 1
   UseBundleVersion: 0
@@ -61,7 +61,7 @@ MonoBehaviour:
   CB_enabled: 0
   CB_appID: 
   CB_appSig: 
-  CurrentInspectorState: 0
+  CurrentInspectorState: 2
   ClosedHints: 
   DisplayHints: 0
   DisplayHintsScrollState: {x: 0, y: 0}
