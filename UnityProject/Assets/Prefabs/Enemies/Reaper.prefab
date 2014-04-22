@@ -1374,7 +1374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackPower: 40
-  deathAbility: {fileID: 11400000, guid: 0eaf050c344a04951baef5b313367671, type: 2}
+  deathAbility: {fileID: 0}
 --- !u!114 &11400044
 MonoBehaviour:
   m_ObjectHideFlags: 1
