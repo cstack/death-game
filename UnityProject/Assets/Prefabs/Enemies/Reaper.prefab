@@ -15,6 +15,7 @@ GameObject:
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
   - 82: {fileID: 8200000}
+  - 114: {fileID: 11400044}
   m_Layer: 17
   m_Name: Reaper
   m_TagString: Enemy
@@ -1374,6 +1375,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackPower: 40
   deathAbility: {fileID: 11400000, guid: 0eaf050c344a04951baef5b313367671, type: 2}
+--- !u!114 &11400044
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ae0c2153c7ca4ea181d8f9b6e1563a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soulPrefab: {fileID: 11400000, guid: 6b6cadaa887964964998b4d4615e412a, type: 2}
+  waypoints: []
+  EnemyDestroyer: {fileID: 100000, guid: dc2d63af83c2d49b4a09dec7df0685cf, type: 2}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
