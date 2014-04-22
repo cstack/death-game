@@ -51,7 +51,9 @@ public class EnemyHealth : MonoBehaviour {
 	}
 	
 	void Die() {
-		GetComponent<EnemyBase> ().OnDie ();
+		EnemyBase enemy = GetComponent<EnemyBase>();
+		enemy.OnDie ();
+		DataLogging.TrackKilledEnemy(enemy, transform.position);
 		Destroy (gameObject);
 		//collistionTimer = 0.1f;
 		/*dead = true;
