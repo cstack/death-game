@@ -14553,8 +14553,8 @@ MonoBehaviour:
   DownloadingData: 0
   BuildingHeatmap: 0
   BuildHeatmapPercentage: 0
-  _startDateTime: 04/08/2014 15:58:55
-  _endDateTime: 04/22/2014 15:58:55
+  _startDateTime: 04/08/2014 18:21:38
+  _endDateTime: 04/22/2014 18:21:38
   AvailableAreas: []
   CurrentAreaIndex: 0
   AvailableEvents: []
@@ -19574,12 +19574,12 @@ MonoBehaviour:
   SubmitErrors: 1
   MaxErrorCount: 10
   SubmitErrorStackTrace: 1
-  SubmitErrorSystemInfo: 1
-  SubmitFpsAverage: 0
+  SubmitErrorSystemInfo: 0
+  SubmitFpsAverage: 1
   SubmitFpsCritical: 0
   FpsCriticalThreshold: 30
   FpsCirticalSubmitInterval: 10
-  GuiEnabled: 1
+  GuiEnabled: 0
   GuiAllowScreenshot: 0
   ErrorFoldOut: 1
 --- !u!114 &1542395874
