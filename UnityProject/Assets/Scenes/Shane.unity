@@ -16532,7 +16532,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TrackedEvents: 0100000000000000
-  TrackedEventsFoldOut: 1
+  TrackedEventsFoldOut: 0
   TrackTarget: 1
   ShowGizmo: 1
   BreadCrumbTrackInterval: 1
