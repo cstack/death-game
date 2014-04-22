@@ -26,4 +26,6 @@ public abstract class EnemyBase : CharacterBase {
 	protected virtual void Attack() {
 		timeOfLastAttack = Time.time;
 	}
+
+	public virtual void OnDie() {}
 }
