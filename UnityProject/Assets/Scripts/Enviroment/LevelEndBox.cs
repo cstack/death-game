@@ -19,6 +19,7 @@ public class LevelEndBox : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D col) {
 		if (col.gameObject.tag == "Player") {
 			if (ginfo != null) {
+				DataLogging.TrackLevelCompleted(ginfo.levelCompletionTime);
 				Application.LoadLevel (ginfo.nextLevel());
 			} else {
 				Debug.Log ("No GameInfo GameObject Found, Restarting Current Level");
