@@ -49,9 +49,7 @@ public static class DataLogging {
 		GA.API.Design.NewEvent("Level Complete", time);
 	}
 
-	public static void TrackKilledEnemy(EnemyBase enemyScript, Ability abilityUsed, Vector3 deathLocation) {
+	public static void TrackKilledEnemy(EnemyBase enemyScript, Vector3 deathLocation) {
 		GA.API.Design.NewEvent("Enemy Died: " + enemyScript.name, deathLocation);
-		GA.API.Design.NewEvent("Enemy Killed By: " + abilityUsed.abilityName, deathLocation);
-		GA.API.Design.NewEvent("Enemy Died: " + enemyScript.name + ", Killed By: " + abilityUsed.abilityName, deathLocation) ;
 	}
 }
