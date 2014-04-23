@@ -11,7 +11,7 @@ public class JavelinAbility : ActiveAbility, Backpack.Observer {
 
 	protected override void onGUIAttached() {
 		abilityGUI.setCount (player.backpack.Get_Javelin());
-		abilityGUI.showCount ();
+		//abilityGUI.showCount ();
 		player.backpack.AddObserver (this);
 	}
 
