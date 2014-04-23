@@ -9,6 +9,7 @@ public class EnemyHealth : MonoBehaviour {
 	public float damageAmount = 1.0f;
 	public bool dead = false;
 	public bool invulnerable;
+	public float invulnerableTime = 0.5f;
 
 	private float collistionTimer = 0f;
 	private bool kill = false;
@@ -30,7 +31,7 @@ public class EnemyHealth : MonoBehaviour {
 
 	private IEnumerator Invulnerability() {
 		invulnerable = true;
-		yield return new WaitForSeconds (0.5f);
+		yield return new WaitForSeconds (invulnerableTime);
 		invulnerable = false;
 	}
 

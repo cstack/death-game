@@ -588,7 +588,8 @@ MonoBehaviour:
   backpack: {fileID: 0}
   cooldownTime: 7
   maxSpeed: 4
-  range: 8
+  range: 10
+  minDistance: 5
   impPrefab: {fileID: 11400000, guid: 93083bebbd8cf4cc2a77036a198a7a1d, type: 2}
   birdPrefab: {fileID: 100000, guid: 0cfe9df389320418b8d0b941c646e900, type: 2}
   brutePrefab: {fileID: 11400002, guid: 4dc35863c23af450682e65df832d20e2, type: 2}
@@ -613,6 +614,7 @@ MonoBehaviour:
   damageAmount: 1
   dead: 0
   invulnerable: 0
+  invulnerableTime: 1
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
