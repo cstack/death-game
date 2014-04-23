@@ -9,16 +9,19 @@ public class DaggerThrower : MonoBehaviour {
     public float throw_speed;
 	public bool friendly;
 
+	private CharacterBase character;
+
     private float dir;
 
     void Start() { 
         // remember initial facing direction
         dir = head.transform.position.x - tail.transform.position.x;
+		character = transform.parent.parent.GetComponent<CharacterBase> ();
     }
 
     public void Throw_Projectile() {
         ProjectileBase duplicate = (ProjectileBase) Instantiate(projectile, transform.position, transform.rotation);
-        if(Same_Direction()){
+        if(character.dir == EntityBase.Direction.Left){
             duplicate.transform.RotateAround(Vector3.up, Mathf.PI);
         }
 		duplicate.friendly = friendly;
