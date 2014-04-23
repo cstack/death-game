@@ -5,6 +5,7 @@ using System.Collections.Generic; // List
 public class Reaper : EnemyBase {
 	public float maxSpeed = 2f;
 	public float range = 10f;
+	public float minDistance = 2f;
 	public FireEnemy impPrefab;
 	public GameObject birdPrefab;
 	public Brute brutePrefab;
@@ -143,13 +144,20 @@ public class Reaper : EnemyBase {
 			} else {
 				speed = -1 * maxSpeed;
 			}
+		} else if (Mathf.Abs(offset) < minDistance) {
+			if (offset > 0) {
+				speed = -1 * maxSpeed;
+			} else {
+				speed = maxSpeed;
+			}
 		} else {
 			speed = 0;
-			if (canAttack()) {
-				Attack();
-			}
 		}
 		updateXVelocity (speed);
+
+		if (canAttack()) {
+			Attack();
+		}
 	}
 
 	private void MoveInStraightLine() {
