@@ -3,7 +3,7 @@ using System.Collections;
 
 public class DaggerThrower : MonoBehaviour {
 
-    public GameObject projectile;
+    public ProjectileBase projectile;
     public GameObject head;
     public GameObject tail;
     public float throw_speed;
@@ -17,16 +17,12 @@ public class DaggerThrower : MonoBehaviour {
     }
 
     public void Throw_Projectile() {
-        GameObject duplicate = Instantiate(projectile, transform.position, transform.rotation) as GameObject;
+        ProjectileBase duplicate = (ProjectileBase) Instantiate(projectile, transform.position, transform.rotation);
         if(Same_Direction()){
             duplicate.transform.RotateAround(Vector3.up, Mathf.PI);
         }
-		if (friendly) {
-			projectile.layer = LayerMask.NameToLayer(GlobalConstant.Layer.PlayerProjectile);
-		} else {
-			projectile.layer = LayerMask.NameToLayer(GlobalConstant.Layer.EnemyProjectile);
-		}
-        duplicate.SetActive(true);
+		duplicate.friendly = friendly;
+        duplicate.gameObject.SetActive(true);
         duplicate.rigidbody2D.velocity = (head.transform.position - tail.transform.position) * throw_speed;
     }
 
