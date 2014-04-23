@@ -147,7 +147,7 @@ MonoBehaviour:
 
     QWER = abilities
 
-    ESC = pause'
+    ESC = menu/pause'
   mFontSize: 30
   mFontStyle: 0
   mAlignment: 0
