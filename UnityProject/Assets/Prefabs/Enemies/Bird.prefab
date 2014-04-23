@@ -384,7 +384,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: .0044665765, w: .999990046}
-  m_LocalPosition: {x: 82.9722748, y: -86.9399338, z: 0}
+  m_LocalPosition: {x: -67.1724854, y: 9.60440826, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400014}
@@ -779,7 +779,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: badbf96d50687144793b620479afdaeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 100000, guid: df7b4fea313777f46a4d069ee2f2e40a, type: 2}
+  projectile: {fileID: 11400000, guid: df7b4fea313777f46a4d069ee2f2e40a, type: 2}
   head: {fileID: 100004}
   tail: {fileID: 100006}
   throw_speed: 15
@@ -795,7 +795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: badbf96d50687144793b620479afdaeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 100000, guid: df7b4fea313777f46a4d069ee2f2e40a, type: 2}
+  projectile: {fileID: 11400000, guid: df7b4fea313777f46a4d069ee2f2e40a, type: 2}
   head: {fileID: 100010}
   tail: {fileID: 100008}
   throw_speed: 15
@@ -811,7 +811,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: badbf96d50687144793b620479afdaeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 100000, guid: df7b4fea313777f46a4d069ee2f2e40a, type: 2}
+  projectile: {fileID: 11400000, guid: df7b4fea313777f46a4d069ee2f2e40a, type: 2}
   head: {fileID: 100016}
   tail: {fileID: 100018}
   throw_speed: 15
@@ -1140,7 +1140,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3008
+  startingRenderQueue: 3007
   mAlpha: 1
   mClipping: 0
   mClipRange: {x: 0, y: 0, z: 300, w: 200}

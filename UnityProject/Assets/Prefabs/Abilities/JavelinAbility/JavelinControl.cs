@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class JavelinControl : MonoBehaviour {
+public class JavelinControl : ProjectileBase {
 
     public float speed;
 	public JavelinAbility javelinAbility;
@@ -9,21 +9,6 @@ public class JavelinControl : MonoBehaviour {
 
 	private float alive_timer = 0f;
 	public float alive_duration;
-
-	private bool _friendly;
-	public bool friendly {
-		set {
-			_friendly = value;
-			if (_friendly) {
-				gameObject.layer = 11;
-			} else {
-				gameObject.layer = 10;
-			}
-		}
-		get {
-			return _friendly;
-		}
-	}
 
     public GameObject thrower;
     private int aim;
@@ -122,6 +107,7 @@ public class JavelinControl : MonoBehaviour {
 	void ReturnToBag(){
 		alive_timer += Time.deltaTime;
 		if(alive_timer > alive_duration){
+			Debug.Log("destroy because alive time > alive duration");
 			Destroy(gameObject);
 		}
 	}	
@@ -131,7 +117,11 @@ public class JavelinControl : MonoBehaviour {
     // if javelin is not attacking, and player is colliding with it, then it is picked
     // up by player
     void OnCollisionEnter2D(Collision2D collision){
-        if (collision.gameObject.tag == "ground" && !frozen)
+		if (frozen) {
+			return;
+		}
+
+        if (collision.gameObject.tag == GlobalConstant.Tag.Ground)
         {
             // freeze the javelin in place
 			frozen = true;
@@ -141,47 +131,19 @@ public class JavelinControl : MonoBehaviour {
 			gameObject.layer = LayerMask.NameToLayer("NeutralProjectile");
         }
 
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
+        if (collision.gameObject.tag == GlobalConstant.Tag.Player && !friendly)
         {
-			if (!friendly) {
-				Destroy(gameObject);
-				PlayerHealth player = collision.gameObject.GetComponent<PlayerHealth>();
-				player.decreaseHealth(javelinDamage, javelinAbility);
-				return;
-			}
-
-            if (flying)
-            {
-				flying = false;
-                if (collision.transform == thrower.transform)
-                {
-                    // arrow cannot hurt thrower that launched it
-                    return;
-                }
-                else
-                {
-					PlayerHealth player = collision.gameObject.GetComponent<PlayerHealth>();
-					player.decreaseHealth(50, javelinAbility);
-                }
-            }
-            else
-            {
-                // collect javelin if it is not moving
-                //collision.transform.GetComponent<PlayerTitanAttack>().arrow_count++;
-                Backpack pack = collision.transform.GetComponent<Backpack>();
-                if (pack)
-                {
-                    pack.add_javelin(1);
-                }
-                Destroy(gameObject);
-            }
+			Destroy(gameObject);
+			PlayerHealth player = collision.gameObject.GetComponent<PlayerHealth>();
+			player.decreaseHealth(javelinDamage, javelinAbility);
+			return;
         }
 
         // if collided with Enemy and it is not "frozen" on ground
-        if (collision.transform.tag == "Enemy" && flying)
+        if (collision.transform.tag == GlobalConstant.Tag.Enemy && friendly)
 		{
 			Destroy(gameObject);
-			Destroy(collision.gameObject);
+			collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(1f);
         }
     }
 

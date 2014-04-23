@@ -36,11 +36,7 @@ public static class DataLogging {
 
 	public static void TrackPlayerDeath(Ability abilityDiedTo, float lifeTime, Vector3 deathLocation) {
 		if (enabled) {
-			string abilityName = abilityDiedTo.abilityName;
-
-			if (abilityName == null) {
-				abilityName = "No ability";
-			}
+			string abilityName = abilityDiedTo != null ? abilityDiedTo.abilityName : "No Ability";
 
 			// Parse
 			Dictionary<string, string> args = new Dictionary<string, string>() {

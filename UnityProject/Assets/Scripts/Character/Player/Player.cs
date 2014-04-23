@@ -33,7 +33,8 @@ public class Player : CharacterBase {
 	public bool dashing;
 	public bool isRock;
 	private GameObject spikeShield;
-	private DaggerThrower[] throwers;
+	private DaggerThrower[] spikeThrowers;
+	private DaggerThrower[] javelinThrowers;
 	private float baseGravity;
 	private AbilityControl ability_control; // mingrui, for array of ability
 	private int aim; // mingrui, for aiming javelin
@@ -67,8 +68,10 @@ public class Player : CharacterBase {
 		spikeShield = transform.FindChild ("SpikeShield").gameObject;
 
 		spikeShield.SetActive (true);
-		throwers = GetComponentsInChildren<DaggerThrower> ();
+		spikeThrowers = spikeShield.GetComponentsInChildren<DaggerThrower> ();
 		spikeShield.SetActive (false);
+
+		javelinThrowers = transform.FindChild ("JavelinThrowers").gameObject.GetComponentsInChildren<DaggerThrower> ();
 
 		b = collider2D as BoxCollider2D;
 		c = transform.FindChild("Head").GetComponent<BoxCollider2D> ();
@@ -393,7 +396,7 @@ public class Player : CharacterBase {
 	private IEnumerator createSpikes(float duration) {
 		spikeShield.SetActive (true);
 		yield return new WaitForSeconds(duration);
-		foreach (DaggerThrower dt in throwers) {
+		foreach (DaggerThrower dt in spikeThrowers) {
 			dt.Throw_Projectile();
 		}
 		spikeShield.SetActive (false);
@@ -485,6 +488,12 @@ public class Player : CharacterBase {
 			if (aud.isPlaying) {
 				aud.Stop ();
 			}
+		}
+	}
+
+	public void ShootJavelins() {
+		foreach (DaggerThrower thrower in javelinThrowers) {
+			thrower.Throw_Projectile();
 		}
 	}
 }
