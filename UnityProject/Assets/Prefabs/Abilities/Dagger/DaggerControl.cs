@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DaggerControl : MonoBehaviour {
+public class DaggerControl : ProjectileBase {
 
     public int attackPower = 50;
     public Ability deathAbility = null;

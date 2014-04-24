@@ -50,27 +50,36 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 26
-      alignment: 7
+        width: 120
+        height: 60
+      alignment: 0
       pivot: {x: 0, y: 0}
     - name: fireball_1
       rect:
         serializedVersion: 2
-        x: 64
+        x: 120
         y: 0
-        width: 64
-        height: 26
-      alignment: 7
+        width: 120
+        height: 60
+      alignment: 0
       pivot: {x: 0, y: 0}
     - name: fireball_2
       rect:
         serializedVersion: 2
-        x: 128
+        x: 240
         y: 0
-        width: 64
-        height: 26
-      alignment: 7
+        width: 120
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: fireball_3
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 0
+        width: 120
+        height: 60
+      alignment: 0
       pivot: {x: 0, y: 0}
   spritePackingTag: 
   userData: 

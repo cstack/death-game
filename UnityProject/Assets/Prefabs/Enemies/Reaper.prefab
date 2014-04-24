@@ -588,11 +588,15 @@ MonoBehaviour:
   backpack: {fileID: 0}
   cooldownTime: 7
   maxSpeed: 4
-  range: 8
+  range: 10
+  minDistance: 5
   impPrefab: {fileID: 11400000, guid: 93083bebbd8cf4cc2a77036a198a7a1d, type: 2}
   birdPrefab: {fileID: 100000, guid: 0cfe9df389320418b8d0b941c646e900, type: 2}
   brutePrefab: {fileID: 11400002, guid: 4dc35863c23af450682e65df832d20e2, type: 2}
   lavaPrefab: {fileID: 11400000, guid: 18689ba624f614c63bb6ac74c8253bd8, type: 2}
+  soulPrefab: {fileID: 11400000, guid: 6b6cadaa887964964998b4d4615e412a, type: 2}
+  waypoints: []
+  EnemyDestroyer: {fileID: 100000, guid: dc2d63af83c2d49b4a09dec7df0685cf, type: 2}
   creepyLaughone: {fileID: 8300000, guid: b9343f63c92bc47b59f2bb21b357855a, type: 3}
   creepyLaughtwo: {fileID: 8300000, guid: 8d9a4a2c364704d2287800900b325490, type: 3}
 --- !u!114 &11400002
@@ -610,6 +614,7 @@ MonoBehaviour:
   damageAmount: 1
   dead: 0
   invulnerable: 0
+  invulnerableTime: 1
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1373,7 +1378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackPower: 40
-  deathAbility: {fileID: 11400000, guid: 0eaf050c344a04951baef5b313367671, type: 2}
+  deathAbility: {fileID: 0}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

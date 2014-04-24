@@ -16,9 +16,13 @@ public class LevelEndBox : MonoBehaviour {
 		ginfo = tmp.GetComponent<GameInfo> ();
 	}
 
-	void OnTriggerEnter2D (Collider2D col) {
+	private IEnumerator OnTriggerEnter2D (Collider2D col) {
 		if (col.gameObject.tag == "Player") {
+			yield return new WaitForSeconds(5f);
+			GameObject.Find("EndOfLevelSound").GetComponent<EndOfLevelSound>().FadeOut(5f);
+			yield return new WaitForSeconds(5f);
 			if (ginfo != null) {
+				DataLogging.TrackLevelCompleted(ginfo.levelCompletionTime);
 				Application.LoadLevel (ginfo.nextLevel());
 			} else {
 				Debug.Log ("No GameInfo GameObject Found, Restarting Current Level");

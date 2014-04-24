@@ -13,3 +13,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Jake.unity
   - enabled: 0
     path: Assets/Scenes/Jake2.unity
+  - enabled: 0
+    path: Assets/Scenes/Shane.unity
