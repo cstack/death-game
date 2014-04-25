@@ -2299,6 +2299,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnpoint: {fileID: 0}
   spriteAnimation: {fileID: 266986444}
+  bossapproaching: {fileID: 0}
 --- !u!61 &249429000
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4155,6 +4156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnpoint: {fileID: 0}
   spriteAnimation: {fileID: 2134754448}
+  bossapproaching: {fileID: 0}
 --- !u!61 &414559264
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8953,6 +8955,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnpoint: {fileID: 0}
   spriteAnimation: {fileID: 1324001705}
+  bossapproaching: {fileID: 0}
 --- !u!61 &759653540
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10024,6 +10027,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnpoint: {fileID: 0}
   spriteAnimation: {fileID: 113972176}
+  bossapproaching: {fileID: 0}
 --- !u!61 &840943939
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11301,6 +11305,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnpoint: {fileID: 0}
   spriteAnimation: {fileID: 1876692010}
+  bossapproaching: {fileID: 0}
 --- !u!61 &915298073
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15198,6 +15203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnpoint: {fileID: 0}
   spriteAnimation: {fileID: 417363374}
+  bossapproaching: {fileID: 0}
 --- !u!61 &1239663892
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20737,7 +20743,7 @@ AudioSource:
   m_GameObject: {fileID: 1621446972}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 33c362bdfec694e1cb3500ae353b9ddc, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 78c13026718a3470192811d97f3e1ba3, type: 3}
   m_PlayOnAwake: 1
   m_Volume: .119999997
   m_Pitch: 1
@@ -23834,8 +23840,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1911064057}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.87828064, y: -1.38021851, z: 0}
-  m_LocalScale: {x: 11, y: 11, z: 1}
+  m_LocalPosition: {x: -14.9989395, y: -1.38021851, z: 0}
+  m_LocalScale: {x: 15.8503113, y: 11, z: 1}
   m_Children: []
   m_Father: {fileID: 2067183693}
 --- !u!1 &1911963792
@@ -25404,6 +25410,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnpoint: {fileID: 0}
   spriteAnimation: {fileID: 906185666}
+  bossapproaching: {fileID: 0}
 --- !u!61 &1996575891
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26131,6 +26138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnpoint: {fileID: 0}
   spriteAnimation: {fileID: 184013551}
+  bossapproaching: {fileID: 8300000, guid: d5822268297164ad39b02977f89e5b9e, type: 3}
 --- !u!61 &2067183695
 BoxCollider2D:
   m_ObjectHideFlags: 0

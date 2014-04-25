@@ -599,6 +599,7 @@ MonoBehaviour:
   EnemyDestroyer: {fileID: 100000, guid: dc2d63af83c2d49b4a09dec7df0685cf, type: 2}
   creepyLaughone: {fileID: 8300000, guid: b9343f63c92bc47b59f2bb21b357855a, type: 3}
   creepyLaughtwo: {fileID: 8300000, guid: 8d9a4a2c364704d2287800900b325490, type: 3}
+  boss: {fileID: 8300000, guid: 6c90993b29d4d436298497322a33c89e, type: 3}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

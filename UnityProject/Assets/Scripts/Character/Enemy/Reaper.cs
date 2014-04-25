@@ -20,6 +20,8 @@ public class Reaper : EnemyBase {
 
 	public AudioClip creepyLaughtwo;
 	private float noiseTimertwo = 3f;
+	
+	public AudioClip boss;
 
 	public enum State {
 		Idle, Charging, Spinning, SummonImps, SummonBirds, SummonBrute,
@@ -51,6 +53,15 @@ public class Reaper : EnemyBase {
 
 		waypoints.Add (GameObject.Find ("Waypoint 4"));
 		waypoints.Add (GameObject.Find ("Waypoint 5"));
+		
+		if (boss != null) {
+			if (Camera.main.audio != null) {
+				Camera.main.audio.Stop ();
+				Camera.main.audio.clip = boss;
+				Camera.main.audio.loop = true;
+				Camera.main.audio.Play ();
+			}
+		}
 	}
 
 	// Update is called once per frame
