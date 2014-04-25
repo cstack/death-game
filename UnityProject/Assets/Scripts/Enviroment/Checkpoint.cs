@@ -7,6 +7,7 @@ public class Checkpoint : MonoBehaviour {
 	public Animator spriteAnimation;
 
 	public AudioClip bossapproaching; 
+	private bool played = false;
 
 	void Start () {
 		if (spawnpoint == null) {
@@ -22,13 +23,14 @@ public class Checkpoint : MonoBehaviour {
 				spawnpoint.transform.position = transform.parent.position;
 				spriteAnimation.SetBool ("Toggled", true);
 
-				if (bossapproaching != null) {
+				if (bossapproaching != null && !played) {
 					if (Camera.main.audio != null) {
 						if (Camera.main.audio.clip != bossapproaching || !Camera.main.audio.isPlaying) {
 							Camera.main.audio.Stop ();
 							Camera.main.audio.clip = bossapproaching;
 							Camera.main.audio.loop = true;
 							Camera.main.audio.Play ();
+							played = true;
 						}
 					}
 				}
