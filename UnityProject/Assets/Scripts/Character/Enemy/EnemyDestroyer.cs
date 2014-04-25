@@ -4,7 +4,6 @@ using System.Collections;
 public class EnemyDestroyer : MonoBehaviour {
 
 	private IEnumerator Start() {
-		Camera.main.GetComponent<CameraFollow> ().bossalive = false;
 		float initialVolume = Camera.main.audio.volume;
 		float volume = initialVolume;
 		float initialTime = Time.time;
