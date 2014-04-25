@@ -17,7 +17,7 @@ public class PauseMenu : MonoBehaviour {
 	}
 
     void detect_pause() {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.JoystickButton9))
         {
             if(is_paused) {
                 is_paused = false;

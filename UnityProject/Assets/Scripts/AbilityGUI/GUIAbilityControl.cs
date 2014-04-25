@@ -15,15 +15,21 @@ public class GUIAbilityControl : MonoBehaviour {
 	}
 
     void Update() {
-        if (Input.GetKey(GlobalConstant.keycode_ability_1))
+        if (Input.GetKey(GlobalConstant.keycode_ability_1)
+            || Input.GetKeyDown(GlobalConstant.controller_ability_1)
+		    || Input.GetKeyDown(GlobalConstant.mac_controller_ability_1))
         {
             abilitySlots[0].startCooldownAnimation();
         }
-        if (Input.GetKey(GlobalConstant.keycode_ability_2))
+        if (Input.GetKey(GlobalConstant.keycode_ability_2)
+            || Input.GetKeyDown(GlobalConstant.controller_ability_2)
+		    || Input.GetKeyDown(GlobalConstant.mac_controller_ability_2))
         {
             abilitySlots[1].startCooldownAnimation();
         }
-        if (Input.GetKey(GlobalConstant.keycode_ability_3))
+        if (Input.GetKey(GlobalConstant.keycode_ability_3)
+            || Input.GetKeyDown(GlobalConstant.controller_ability_3)
+		    || Input.GetKeyDown(GlobalConstant.mac_controller_ability_3))
         {
             abilitySlots[2].startCooldownAnimation();
         }

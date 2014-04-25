@@ -202,7 +202,9 @@ public class Player : CharacterBase {
 			return;
 		}
 
-		if (Input.GetButtonDown("Jump") && (grounded || feetInWater)) {
+		if ((Input.GetKeyDown(GlobalConstant.keycode_jump)
+            || Input.GetKeyDown(GlobalConstant.controller_jump)
+		     || Input.GetKeyDown(GlobalConstant.mac_controller_jump)) && (grounded || feetInWater)) {
 			if (feetInWater) {
 				updateYVelocity(swimSpeed * 2);
 			} else { 
@@ -223,7 +225,8 @@ public class Player : CharacterBase {
 
 	private void SlamDown () {
 
-		if (Input.GetButton("Downward") && !grounded) {
+		if ((Input.GetButton("Downward")
+            || Input.GetAxisRaw("Vertical") < 0) && !grounded) {
 			updateYVelocity(rigidbody2D.velocity.y - slamSpeed);
 		}
 	}
@@ -232,7 +235,8 @@ public class Player : CharacterBase {
 		
 		//Crouch
 		
-		if (Input.GetButton("Downward") && grounded && !feetInWater) {
+		if ((Input.GetButton("Downward")
+            /*|| Input.GetAxisRaw("Vertical") < 0*/) && grounded && !feetInWater) {
 			crouching = true;
 			animator.SetBool("crouching", crouching);
 			animator.SetFloat("speed", 0f);
@@ -243,7 +247,9 @@ public class Player : CharacterBase {
 		}
 
 		if (crouching) {
-			if (!Input.GetButton("Downward") || !grounded) {
+            if ((Input.GetButton("Downward")
+            /*|| Input.GetAxisRaw("Vertical") < 0*/) || !grounded)
+            {
 				crouching = false;
 				animator.SetBool("crouching", crouching);
 				b.size = new Vector2 (1.1f, 2.37f);

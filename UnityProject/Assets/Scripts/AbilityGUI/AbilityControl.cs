@@ -72,7 +72,10 @@ public class AbilityControl : MonoBehaviour {
 	void AbilityDetect () {
 		abilityToActivate = null;
 
-		if (Input.GetKeyDown(GlobalConstant.keycode_ability_1)) {
+		if (Input.GetKeyDown(GlobalConstant.keycode_ability_1) ||
+            Input.GetKeyDown(GlobalConstant.controller_ability_1)
+		    || Input.GetKeyDown(GlobalConstant.mac_controller_ability_1))
+        {
 			abilityToActivate = basicAttack;
 
 			//Example Animation Timer Use - Move Time (0.5f now) Into Each Ability, As Well As OnAbilityHit/Finish Timers, Calls, etc.
@@ -81,15 +84,21 @@ public class AbilityControl : MonoBehaviour {
 
 //			player.updateXVelocity(0f);
 
-		} else if (Input.GetKeyDown(GlobalConstant.keycode_ability_2)) {
+		} else if (Input.GetKeyDown(GlobalConstant.keycode_ability_2)
+            || Input.GetKeyDown(GlobalConstant.controller_ability_2)
+		    || Input.GetKeyDown(GlobalConstant.mac_controller_ability_2))
+        {
 			if (abilities.Count > 0) {
 				abilityToActivate = abilities[0];
 			}
-		} else if (Input.GetKeyDown(GlobalConstant.keycode_ability_3)) {
+		} else if (Input.GetKeyDown(GlobalConstant.keycode_ability_3)
+            || Input.GetKeyDown(GlobalConstant.controller_ability_3)
+		    || Input.GetKeyDown(GlobalConstant.mac_controller_ability_3)) {
 			if (abilities.Count > 1) {
 				abilityToActivate = abilities[1];
 			}
-		} else if (Input.GetKeyDown(GlobalConstant.keycode_ability_4)) {
+		} else if (Input.GetKeyDown(GlobalConstant.keycode_ability_4)
+            || Input.GetKeyDown(GlobalConstant.controller_ability_4)) {
 			if (abilities.Count > 2) {
 				abilityToActivate = abilities[2];
 			}
