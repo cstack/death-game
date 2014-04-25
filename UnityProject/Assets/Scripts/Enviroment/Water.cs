@@ -8,11 +8,17 @@ public abstract class Water : MonoBehaviour {
 
 	void OnBecameVisible () {
 		if (audio != null) {
-			if (!GameObject.Find ("Player").GetComponent<Player> ().headUnderwater) {
-				audio.enabled = true;
-				audio.loop = true;
-			} else {
-				audio.enabled = false;
+			if (audio.clip != null) {
+				if (!GameObject.Find ("Player").GetComponent<Player> ().headUnderwater) {
+					audio.enabled = true;
+					audio.loop = true;
+				} else {
+					audio.enabled = false;
+				}
+			} else if (aboveWater != null) {
+				audio.clip = aboveWater;
+			} else if (underWater != null && GameObject.Find ("Player").GetComponent<Player> ().headUnderwater) {
+				audio.clip = underWater;
 			}
 		}
 	}

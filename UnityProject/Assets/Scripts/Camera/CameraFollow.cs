@@ -48,7 +48,8 @@ public class CameraFollow : MonoBehaviour {
 
 	void IncreaseVolume () {
 		if (audio != null) {
-			if (audio.enabled = true && audio.clip != null && audio.isPlaying) {
+			audio.enabled = true;
+			if (audio.clip != null && audio.isPlaying) {
 				if (curVolume < endVolume) {
 					curVolume += Time.deltaTime * volvelocity;
 					audio.volume = curVolume;
