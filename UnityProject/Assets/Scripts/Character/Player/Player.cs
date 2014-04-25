@@ -203,7 +203,8 @@ public class Player : CharacterBase {
 		}
 
 		if ((Input.GetKeyDown(GlobalConstant.keycode_jump)
-            || Input.GetKeyDown(GlobalConstant.controller_jump)) && (grounded || feetInWater)) {
+            || Input.GetKeyDown(GlobalConstant.controller_jump)
+		     || Input.GetKeyDown(GlobalConstant.mac_controller_jump)) && (grounded || feetInWater)) {
 			if (feetInWater) {
 				updateYVelocity(swimSpeed * 2);
 			} else { 

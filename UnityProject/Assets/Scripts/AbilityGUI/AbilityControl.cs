@@ -73,7 +73,8 @@ public class AbilityControl : MonoBehaviour {
 		abilityToActivate = null;
 
 		if (Input.GetKeyDown(GlobalConstant.keycode_ability_1) ||
-            Input.GetKeyDown(GlobalConstant.controller_ability_1))
+            Input.GetKeyDown(GlobalConstant.controller_ability_1)
+		    || Input.GetKeyDown(GlobalConstant.mac_controller_ability_1))
         {
 			abilityToActivate = basicAttack;
 
@@ -84,13 +85,15 @@ public class AbilityControl : MonoBehaviour {
 //			player.updateXVelocity(0f);
 
 		} else if (Input.GetKeyDown(GlobalConstant.keycode_ability_2)
-            || Input.GetKeyDown(GlobalConstant.controller_ability_2))
+            || Input.GetKeyDown(GlobalConstant.controller_ability_2)
+		    || Input.GetKeyDown(GlobalConstant.mac_controller_ability_2))
         {
 			if (abilities.Count > 0) {
 				abilityToActivate = abilities[0];
 			}
 		} else if (Input.GetKeyDown(GlobalConstant.keycode_ability_3)
-            || Input.GetKeyDown(GlobalConstant.controller_ability_3)) {
+            || Input.GetKeyDown(GlobalConstant.controller_ability_3)
+		    || Input.GetKeyDown(GlobalConstant.mac_controller_ability_3)) {
 			if (abilities.Count > 1) {
 				abilityToActivate = abilities[1];
 			}
