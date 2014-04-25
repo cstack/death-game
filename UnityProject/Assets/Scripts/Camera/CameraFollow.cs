@@ -10,6 +10,7 @@ public class CameraFollow : MonoBehaviour {
 	public float maxY = 200f;
 	public float yOffest = 5f;
 	public float z = -9f;
+	public bool mainsong = true;
 
 	private float volvelocity;
 	private float curVolume;
@@ -43,7 +44,9 @@ public class CameraFollow : MonoBehaviour {
 	}
 
 	void Update () {
-		IncreaseVolume ();
+		if (mainsong) {
+			IncreaseVolume ();
+		}
 	}
 
 	void IncreaseVolume () {

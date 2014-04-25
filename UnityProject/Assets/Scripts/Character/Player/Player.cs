@@ -292,7 +292,7 @@ public class Player : CharacterBase
         if (crouching)
         {
             if (!(Input.GetButton("Downward")
-                || Input.GetAxis("Vertical") < -0.5f)
+                || Input.GetAxis("Vertical") < -0.1f)
                 || !grounded)
             {
                 crouching = false;

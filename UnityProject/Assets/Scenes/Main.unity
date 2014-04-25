@@ -27504,6 +27504,7 @@ MonoBehaviour:
   maxY: 200
   yOffest: 1.5
   z: -9
+  bossalive: 1
 --- !u!81 &2135503973
 AudioListener:
   m_ObjectHideFlags: 0

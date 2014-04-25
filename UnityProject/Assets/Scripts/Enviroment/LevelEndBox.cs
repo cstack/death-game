@@ -18,6 +18,7 @@ public class LevelEndBox : MonoBehaviour {
 
 	private IEnumerator OnTriggerEnter2D (Collider2D col) {
 		if (col.gameObject.tag == "Player") {
+			col.gameObject.GetComponent<Player> ().crouching = true;
 			yield return new WaitForSeconds(5f);
 			GameObject.Find("EndOfLevelSound").GetComponent<EndOfLevelSound>().FadeOut(5f);
 			yield return new WaitForSeconds(5f);

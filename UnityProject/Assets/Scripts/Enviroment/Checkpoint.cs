@@ -24,6 +24,8 @@ public class Checkpoint : MonoBehaviour {
 				spriteAnimation.SetBool ("Toggled", true);
 
 				if (bossapproaching != null && !played) {
+					Camera.main.GetComponent<CameraFollow> ().mainsong = false;
+
 					if (Camera.main.audio != null) {
 						if (Camera.main.audio.clip != bossapproaching || !Camera.main.audio.isPlaying) {
 							Camera.main.audio.Stop ();
