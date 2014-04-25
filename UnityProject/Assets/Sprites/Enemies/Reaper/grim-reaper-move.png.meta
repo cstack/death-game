@@ -49,54 +49,54 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1
-        width: 63
-        height: 80
+        y: 0
+        width: 320
+        height: 320
       alignment: 7
       pivot: {x: 0, y: 0}
     - name: grim-reaper-move_1
       rect:
         serializedVersion: 2
-        x: 63
-        y: 1
-        width: 63
-        height: 80
+        x: 320
+        y: 0
+        width: 320
+        height: 320
       alignment: 7
       pivot: {x: 0, y: 0}
     - name: grim-reaper-move_2
       rect:
         serializedVersion: 2
-        x: 126
-        y: 1
-        width: 63
-        height: 80
+        x: 640
+        y: 0
+        width: 320
+        height: 320
       alignment: 7
       pivot: {x: 0, y: 0}
     - name: grim-reaper-move_3
       rect:
         serializedVersion: 2
-        x: 189
-        y: 1
-        width: 63
-        height: 80
+        x: 960
+        y: 0
+        width: 320
+        height: 320
       alignment: 7
       pivot: {x: 0, y: 0}
     - name: grim-reaper-move_4
       rect:
         serializedVersion: 2
-        x: 252
-        y: 1
-        width: 63
-        height: 80
+        x: 1280
+        y: 0
+        width: 320
+        height: 320
       alignment: 7
       pivot: {x: 0, y: 0}
     - name: grim-reaper-move_5
       rect:
         serializedVersion: 2
-        x: 315
-        y: 1
-        width: 63
-        height: 80
+        x: 1600
+        y: 0
+        width: 320
+        height: 320
       alignment: 7
       pivot: {x: 0, y: 0}
   spritePackingTag: 

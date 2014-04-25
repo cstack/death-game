@@ -21,7 +21,7 @@ TextureImporter:
   generateCubemap: 0
   seamlessCubemap: 0
   textureFormat: -1
-  maxTextureSize: 1024
+  maxTextureSize: 2048
   textureSettings:
     filterMode: -1
     aniso: 1
@@ -49,36 +49,36 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 2
-        width: 75
-        height: 75
+        y: 0
+        width: 320
+        height: 320
       alignment: 7
       pivot: {x: 0, y: 0}
     - name: grim-reaper-attack_1
       rect:
         serializedVersion: 2
-        x: 75
-        y: 2
-        width: 75
-        height: 75
+        x: 320
+        y: 0
+        width: 320
+        height: 320
       alignment: 7
       pivot: {x: 0, y: 0}
     - name: grim-reaper-attack_2
       rect:
         serializedVersion: 2
-        x: 150
-        y: 2
-        width: 75
-        height: 75
+        x: 640
+        y: 0
+        width: 320
+        height: 320
       alignment: 7
       pivot: {x: 0, y: 0}
     - name: grim-reaper-attack_3
       rect:
         serializedVersion: 2
-        x: 225
-        y: 2
-        width: 75
-        height: 75
+        x: 960
+        y: 0
+        width: 320
+        height: 320
       alignment: 7
       pivot: {x: 0, y: 0}
   spritePackingTag: 
