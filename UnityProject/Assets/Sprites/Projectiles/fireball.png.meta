@@ -52,7 +52,7 @@ TextureImporter:
         y: 0
         width: 120
         height: 60
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: fireball_1
       rect:
@@ -61,7 +61,7 @@ TextureImporter:
         y: 0
         width: 120
         height: 60
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: fireball_2
       rect:
@@ -70,7 +70,7 @@ TextureImporter:
         y: 0
         width: 120
         height: 60
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: fireball_3
       rect:
@@ -79,7 +79,7 @@ TextureImporter:
         y: 0
         width: 120
         height: 60
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
   spritePackingTag: 
   userData: 

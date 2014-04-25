@@ -17,26 +17,26 @@ public abstract class Water : MonoBehaviour {
 		}
 	}
 
+	void OnBecameInvisible() {
+		audio.enabled = false;
+	}
+
 	protected void enterWater () {
-		if (audio != null) {
-			audio.Stop();
-			if (underWater != null) {
-				audio.enabled = true;
-				audio.Stop();
-				audio.loop = true;
-				audio.clip = underWater;
-				audio.Play ();
-			}
-		}
+		PlayClip (underWater);
 	}
 
 	protected void exitWater () {
+		PlayClip (aboveWater);
+	}
+
+	private void PlayClip (AudioClip aud) {
+
 		if (audio != null) {
 			audio.Stop();
 			if (aboveWater != null) {
 				audio.enabled = true;
 				audio.loop = true;
-				audio.clip = aboveWater;
+				audio.clip = aud;
 				audio.Play ();
 			}
 		}

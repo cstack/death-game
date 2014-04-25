@@ -6,7 +6,7 @@ public class Lava : MonoBehaviour {
 	public Ability deathAbility;
 
 	private void OnTriggerStay2D (Collider2D other) {
-		if (other.gameObject.tag == "Player") {
+		if (other.gameObject.tag == "Player" && !other.isTrigger) {
 			other.gameObject.GetComponent<PlayerHealth>().decreaseHealth(Time.deltaTime * damagePerSecond, deathAbility);
 		}
 	}

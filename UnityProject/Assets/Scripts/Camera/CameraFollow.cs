@@ -11,6 +11,11 @@ public class CameraFollow : MonoBehaviour {
 	public float yOffest = 5f;
 	public float z = -9f;
 
+	private float volvelocity;
+	private float curVolume;
+	private float minVolume = 0.15f;
+	private float endVolume = 0.8f;
+
 	Vector3 targetPos;
 	Vector3 currentPos;
 	Vector3 newPos;
@@ -20,6 +25,13 @@ public class CameraFollow : MonoBehaviour {
 		poi = GameObject.Find ("Player").transform;
 
 		camera.transparencySortMode = TransparencySortMode.Orthographic;
+		
+		if (audio != null) {
+			if (audio.clip != null) {
+				curVolume = audio.volume;
+				volvelocity = (endVolume - curVolume) / audio.clip.length;
+			}
+		}
 	}
 	
 	// Update is called once per frame
@@ -28,5 +40,22 @@ public class CameraFollow : MonoBehaviour {
 		currentPos = transform.position;
 		newPos = (1 - u) * currentPos + u * targetPos;
 		transform.position = new Vector3 (Mathf.Clamp(newPos.x, minX, maxX), Mathf.Clamp(newPos.y + yOffest, minY, maxY), z);
+	}
+
+	void Update () {
+		IncreaseVolume ();
+	}
+
+	void IncreaseVolume () {
+		if (audio != null) {
+			if (audio.enabled = true && audio.clip != null && audio.isPlaying) {
+				if (curVolume < endVolume) {
+					curVolume += Time.deltaTime * volvelocity;
+					audio.volume = curVolume;
+				} else {
+					curVolume = minVolume;
+				}
+			}
+		}
 	}
 }

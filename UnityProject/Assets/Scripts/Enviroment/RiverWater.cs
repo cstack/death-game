@@ -20,7 +20,7 @@ public class RiverWater : Water {
 	}
 
 	void OnTriggerEnter2D (Collider2D col) {
-		if (col.gameObject.tag != "PlayerHead" && !objectsInRiver.Contains (col.gameObject)) {
+		if (col.gameObject.tag != "PlayerHead" && !objectsInRiver.Contains (col.gameObject)  && !col.isTrigger) {
 			objectsInRiver.Add (col.gameObject);
 			EntityBase tmp = col.gameObject.GetComponent<EntityBase> ();
 

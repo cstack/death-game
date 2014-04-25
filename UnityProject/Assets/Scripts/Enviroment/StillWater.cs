@@ -14,7 +14,7 @@ public class StillWater : Water {
 	}
 	
 	void OnTriggerEnter2D (Collider2D col) {
-		if (col.gameObject.tag != "PlayerHead") {
+		if (col.gameObject.tag != "PlayerHead" && !col.isTrigger) {
 			enterWater();
 		}
 		
