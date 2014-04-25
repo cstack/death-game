@@ -19,9 +19,6 @@ public class GlobalConstant : MonoBehaviour
     public static KeyCode controller_jump = KeyCode.Joystick1Button0;
 
     [HideInInspector]
-    public static KeyCode controller_down= KeyCode.;
-
-    [HideInInspector]
     public static KeyCode keycode_ability_1 = KeyCode.Q;
     [HideInInspector]
     public static KeyCode controller_ability_1 = KeyCode.Joystick1Button2;
