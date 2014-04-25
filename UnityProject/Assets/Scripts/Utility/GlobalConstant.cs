@@ -12,6 +12,15 @@ public class GlobalConstant : MonoBehaviour
     [HideInInspector]
     public static KeyCode keycode_right = KeyCode.RightArrow;
 
+
+    [HideInInspector]
+    public static KeyCode keycode_jump = KeyCode.Space;
+    [HideInInspector]
+    public static KeyCode controller_jump = KeyCode.Joystick1Button0;
+
+    [HideInInspector]
+    public static KeyCode controller_down= KeyCode.;
+
     [HideInInspector]
     public static KeyCode keycode_ability_1 = KeyCode.Q;
     [HideInInspector]
@@ -28,9 +37,6 @@ public class GlobalConstant : MonoBehaviour
     public static KeyCode keycode_ability_4 = KeyCode.R;
     [HideInInspector]
     public static KeyCode controller_ability_4 = KeyCode.Joystick1Button5;
-
-    [HideInInspector]
-    public static KeyCode controller_jump = KeyCode.Joystick1Button0;
 
     [HideInInspector]
     public enum direction
